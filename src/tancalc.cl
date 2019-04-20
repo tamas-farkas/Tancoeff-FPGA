@@ -8,8 +8,8 @@
 
 // Tripcount identifiers
 __constant int c_size = LOCAL_MEM_SIZE / 4;
-__constant int c_len = ((DATA_SIZE-1)/VECTOR_SIZE +1)/(LOCAL_MEM_SIZE/4);
-__constant int c_size_in16 = (DATA_SIZE - 1) / VECTOR_SIZE + 1;
+__constant int c_len = (((DATA_SIZE-1)/VECTOR_SIZE) + 1)/(LOCAL_MEM_SIZE/4);
+__constant int c_size_in16 = ((DATA_SIZE - 1) / VECTOR_SIZE) + 1;
 
 
 kernel __attribute__ ((reqd_work_group_size(1,1,1)))
@@ -38,8 +38,9 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 		ushort chunk_size = (LOCAL_MEM_SIZE / 4);
 
 		//boundary checks
-		if ((i + (LOCAL_MEM_SIZE / 4)) > size_in16)
+		if ((i + (LOCAL_MEM_SIZE / 4)) > size_in16){
 			chunk_size = size_in16 - i;
+		}
 
 		//read ref until mem is full and popcount
 		__attribute__((xcl_pipeline_loop(1)))
@@ -59,14 +60,11 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 				ref_local.lo[l] = dataset1_0[i + j];
 				refpopcount[l] = refpopcount[l] + popcount(ref_local.lo[l]);
 				ref_local.lo[l + 1] = dataset1_1[i + j];
-				refpopcount[l + 1] = refpopcount[l + 1]
-						+ popcount(ref_local.lo[l + 1]);
+				refpopcount[l + 1] = refpopcount[l + 1] + popcount(ref_local.lo[l + 1]);
 				ref_local.lo[l + 2] = dataset1_2[i + j];
-				refpopcount[l + 2] = refpopcount[l + 2]
-						+ popcount(ref_local.lo[l + 2]);
+				refpopcount[l + 2] = refpopcount[l + 2] + popcount(ref_local.lo[l + 2]);
 				ref_local.lo[l + 3] = dataset1_3[i + j];
-				refpopcount[l + 3] = refpopcount[l + 3]
-						+ popcount(ref_local.lo[l + 3]);
+				refpopcount[l + 3] = refpopcount[l + 3]	+ popcount(ref_local.lo[l + 3]);
 			}
 
 		}
@@ -112,7 +110,7 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 				__attribute__((xcl_pipeline_loop(1)))
 				__attribute__((xcl_loop_tripcount(4, 4)))
 				for (uchar n = 0; n < 4; n++) {
-					__attribute__((opencl_unroll_hint())
+					__attribute__((opencl_unroll_hint()))
 					for (ushort m = LOCAL_MEM_SIZE - 2; m >= 0; m--) {
 						cmpr_local_p[m + 1] = cmpr_local_p[m];
 						cmprpopcount_p[m + 1] = cmprpopcount_p[m];
@@ -121,7 +119,7 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 					cmprpopcount_p[0] = &cmprpopcount_p[l++];
 
 					//going through the cmprdata and calculate the resoult
-					__attribute__((opencl_unroll_hint())
+					__attribute__((opencl_unroll_hint()))
 					for (ushort n = 0; n < initialized; n++) {
 						temp_andpopcount[n] = popcount(ref_local.hi[n] & *cmpr_local_p.hi[n]) + popcount(ref_local.lo[n] & *cmpr_local_p.lo[n]);
 						result_local[n] = temp_and[n] < (refpopcount[n] + *cmprpopcount_p[n] - temp_and[n]) ? 1 : 0;
@@ -140,12 +138,12 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 		__attribute__((xcl_pipeline_loop(1)))
 		__attribute__((xcl_loop_tripcount(LOCAL_MEM_SIZE, LOCAL_MEM_SIZE)))
 		for (ushort k = 0; k < LOCAL_MEM_SIZE; k++) {
-			__attribute__((opencl_unroll_hint())
+			__attribute__((opencl_unroll_hint()))
 			for (ushort m = LOCAL_MEM_SIZE - 2; m >= 0; m--) {
 				cmpr_local_p[m + 1] = cmpr_local_p[m];
 				cmprpopcount_p[m + 1] = cmprpopcount_p[m];
 			}
-			__attribute__((opencl_unroll_hint())
+			__attribute__((opencl_unroll_hint()))
 			for (ushort n = k; n < LOCAL_MEM_SIZE; n++) {
 				temp_and[n] = popcount(ref_local.hi[n] & *cmpr_local_p.hi[n]) + popcount(ref_local.lo[n] & *cmpr_local_p.lo[n]);
 				result_local[n] = temp_and[n] < (refpopcount[n] + cmprpopcount[n] - temp_and[n]) ? 1 : 0;
@@ -171,3 +169,4 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 				output0[i + j] = temp_result[j];
 			} */
 	}
+}

@@ -33,8 +33,8 @@ int main(int argc, char** argv)
     std::vector<int,aligned_allocator<int>> dataset2_1(data_size);
     std::vector<int,aligned_allocator<int>> dataset2_2(data_size);
     std::vector<int,aligned_allocator<int>> dataset2_3(data_size);
-    std::vector<int,aligned_allocator<int>> source_hw_results(data_size);
-    std::vector<int,aligned_allocator<int>> source_sw_results(data_size);
+    std::vector<int,aligned_allocator<int>> source_hw_results(data_size/32);
+    std::vector<int,aligned_allocator<int>> source_sw_results(data_size/32));
 
     // Create the test data and Software Result
     for(int i = 0 ; i < data_size ; i++){
@@ -46,9 +46,17 @@ int main(int argc, char** argv)
         dataset2_1[i] = i+i+i;
         dataset2_2[i] = i+i;
         dataset2_3[i] = i;
-        source_sw_results[i] = __builtin_popcount(dataset1_0[i])+__builtin_popcount(dataset1_1[i]) + __builtin_popcount(dataset1_2[i]) + __builtin_popcount(dataset1_3[i]);
-        source_hw_results[i] = 0;
     }
+    
+  /*  for(int i = 0; i < data_size/32; i++){
+      for(int j = 0 j < data_size/32 j+=32)
+        for(int k = 0; k < 32;)
+          temp_popcount1[n] =  __builtin_popcount(dataset1_0[i+k]);
+          temp_popcount2[n] =  __builtin_popcount(dataset2_0[i+k]);
+          temp_andpopcount[n] =  __builtin_popcount(dataset1_0[i] & dataset2_0[j]);
+          result_local[n] = temp_and[n] < (refpopcount[n] + *cmprpopcount_p[n] - temp_and[n]) ? 1 : 0;
+          source_hw_results[i+j] = 0;
+    }*/
 
 //OPENCL HOST CODE AREA START
     cl_int err;
@@ -117,7 +125,7 @@ int main(int argc, char** argv)
 //OPENCL HOST CODE AREA END
 
     // Compare the results of the Device to the simulation
-    int match = 0;
+/*    int match = 0;
     for (int i = 0 ; i < data_size ; i++){
         if (source_hw_results[i] != source_sw_results[i]){
             std::cout << "Error: Result mismatch" << std::endl;
@@ -126,7 +134,7 @@ int main(int argc, char** argv)
             match = 1;
             break;
         }
-    }
+    }*/
 
     delete[] fileBuf;
 

@@ -1,5 +1,5 @@
 typedef struct fulldata_struct
 {
-  uint16 first;
-  uint16 second;
+  uint16 hi;
+  uint16 lo;
 } fulldata;

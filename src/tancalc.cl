@@ -7,9 +7,9 @@
 #include "datatype.h"
 
 // Tripcount identifiers
-__constant int c_size = LOCAL_MEM_SIZE / 4;
-__constant int c_len = (((DATA_SIZE-1)/VECTOR_SIZE) + 1)/(LOCAL_MEM_SIZE/4);
-__constant int c_size_in16 = ((DATA_SIZE - 1) / VECTOR_SIZE) + 1;
+__constant int c_size = (LOCAL_MEM_SIZE / 4);
+__constant int c_len = ((((DATA_SIZE-1)/VECTOR_SIZE) + 1)/(LOCAL_MEM_SIZE/4));
+__constant int c_size_in16 = (((DATA_SIZE - 1) / VECTOR_SIZE) + 1);
 
 
 kernel __attribute__ ((reqd_work_group_size(1,1,1)))
@@ -46,7 +46,7 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 		__attribute__((xcl_pipeline_loop(1)))
 		__attribute__((xcl_loop_tripcount(c_size, c_size)))
 		for (ushort j = 0, k = 0; j < chunk_size; j++, k += 4) {
-			if (j % 2) {
+			if (j % 2 == 0) {
 				ref_local.hi[k] = dataset1_0[i + j];
 				refpopcount[k] = popcount(ref_local.hi[k]);
 				ref_local.hi[k + 1] = dataset1_1[i + j];
@@ -87,7 +87,7 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 			}
 
 			//
-			if (j % 2) {
+			if (j % 2 == 0) {
 				cmpr_local.hi[k] = dataset2_0[i + j];
 				cmprpopcount[k] = popcount(cmpr_local.hi[k]);
 				cmpr_local.hi[k + 1] = dataset2_1[i + j];

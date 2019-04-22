@@ -1,15 +1,17 @@
-#define DATA_SIZE 1024 * 1024 * 32;
+#include "tancalc.h"
+
+#define DATA_SIZE 1024 * 1024 * 32
 #define LOCAL_MEM_SIZE 128
 #define VECTOR_SIZE 16 //   using uint16 datatype so vector size is 16
 #define dataset1_base 0x0000000
 #define dataset2_base 0xFFFFFFF
 
-#include "datatype.h"
+
 
 // Tripcount identifiers
-__constant int c_size = (LOCAL_MEM_SIZE / 4);
-__constant int c_len = ((((DATA_SIZE-1)/VECTOR_SIZE) + 1)/(LOCAL_MEM_SIZE/4));
-__constant int c_size_in16 = (((DATA_SIZE - 1) / VECTOR_SIZE) + 1);
+__constant int c_size = LOCAL_MEM_SIZE / 4;
+__constant int c_len = (((DATA_SIZE-1)/VECTOR_SIZE) + 1)/(LOCAL_MEM_SIZE/4);
+__constant int c_size_in16 = ((DATA_SIZE - 1) / VECTOR_SIZE) + 1;
 
 
 kernel __attribute__ ((reqd_work_group_size(1,1,1)))
@@ -21,11 +23,13 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 // Local Memory to store result
 	local fulldata ref_local[LOCAL_MEM_SIZE];
 	local ushort refpopcount[LOCAL_MEM_SIZE];
+	local ushort16 temppopcount[4];
 	local fulldata cmpr_local[LOCAL_MEM_SIZE];
 	local fulldata* cmpr_local_p[LOCAL_MEM_SIZE];
 	local ushort cmprpopcount[LOCAL_MEM_SIZE];
 	local ushort* cmprpopcount_p[LOCAL_MEM_SIZE];
 	local ushort temp_andpopcount[LOCAL_MEM_SIZE];
+	local ushort16 temp;
 	local bool result_local[LOCAL_MEM_SIZE];
 	//local uint16 temp_result[(c_size_in16*c_size_in16)/512]
 
@@ -47,24 +51,57 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 		__attribute__((xcl_loop_tripcount(c_size, c_size)))
 		for (ushort j = 0, k = 0; j < chunk_size; j++, k += 4) {
 			if (j % 2 == 0) {
-				ref_local.hi[k] = dataset1_0[i + j];
-				refpopcount[k] = popcount(ref_local.hi[k]);
-				ref_local.hi[k + 1] = dataset1_1[i + j];
-				refpopcount[k + 1] = popcount(ref_local.hi[k + 1]);
-				ref_local.hi[k + 2] = dataset1_2[i + j];
-				refpopcount[k + 2] = popcount(ref_local.hi[k + 2]);
-				ref_local.hi[k + 3] = dataset1_3[i + j];
-				refpopcount[k + 3] = popcount(ref_local.hi[k + 3]);
+				ref_local[k].hi = dataset1_0[i + j];
+				temppopcount[0] = convert_ushort16(popcount(ref_local[k].hi));
+				refpopcount[k] = temppopcount[0].s0 + temppopcount[0].s1 + temppopcount[0].s2 + temppopcount[0].s3 +
+								 temppopcount[0].s4 + temppopcount[0].s5 + temppopcount[0].s6 + temppopcount[0].s7 +
+								 temppopcount[0].s8 + temppopcount[0].s9 + temppopcount[0].sA + temppopcount[0].sB +
+								 temppopcount[0].sC + temppopcount[0].sD + temppopcount[0].sE + temppopcount[0].sF;
+				ref_local[k + 1].hi = dataset1_1[i + j];
+				temppopcount[1] = convert_ushort16(popcount(ref_local[k + 1].hi));
+				refpopcount[k + 1] = temppopcount[1].s0 + temppopcount[1].s1 + temppopcount[1].s2 + temppopcount[1].s3 +
+								 temppopcount[1].s4 + temppopcount[1].s5 + temppopcount[1].s6 + temppopcount[1].s7 +
+								 temppopcount[1].s8 + temppopcount[1].s9 + temppopcount[1].sA + temppopcount[1].sB +
+								 temppopcount[1].sC + temppopcount[1].sD + temppopcount[1].sE + temppopcount[1].sF;
+				ref_local[k + 2].hi = dataset1_2[i + j];
+				temppopcount[2] = convert_ushort16(popcount(ref_local[k + 2].hi));
+				refpopcount[k + 2] = temppopcount[2].s0 + temppopcount[2].s1 + temppopcount[2].s2 + temppopcount[2].s3 +
+								 temppopcount[2].s4 + temppopcount[2].s5 + temppopcount[2].s6 + temppopcount[2].s7 +
+								 temppopcount[2].s8 + temppopcount[2].s9 + temppopcount[2].sA + temppopcount[2].sB +
+								 temppopcount[2].sC + temppopcount[2].sD + temppopcount[2].sE + temppopcount[2].sF;
+				ref_local[k + 3].hi = dataset1_3[i + j];
+				temppopcount[3] = convert_ushort16(popcount(ref_local[k + 3].hi));
+				refpopcount[k + 3] = temppopcount[3].s0 + temppopcount[3].s1 + temppopcount[3].s2 + temppopcount[3].s3 +
+								 temppopcount[3].s4 + temppopcount[3].s5 + temppopcount[3].s6 + temppopcount[3].s7 +
+								 temppopcount[3].s8 + temppopcount[3].s9 + temppopcount[3].sA + temppopcount[3].sB +
+								 temppopcount[3].sC + temppopcount[3].sD + temppopcount[3].sE + temppopcount[3].sF;
+
 			} else {
 				ushort l = k - 4;
-				ref_local.lo[l] = dataset1_0[i + j];
-				refpopcount[l] = refpopcount[l] + popcount(ref_local.lo[l]);
-				ref_local.lo[l + 1] = dataset1_1[i + j];
-				refpopcount[l + 1] = refpopcount[l + 1] + popcount(ref_local.lo[l + 1]);
-				ref_local.lo[l + 2] = dataset1_2[i + j];
-				refpopcount[l + 2] = refpopcount[l + 2] + popcount(ref_local.lo[l + 2]);
-				ref_local.lo[l + 3] = dataset1_3[i + j];
-				refpopcount[l + 3] = refpopcount[l + 3]	+ popcount(ref_local.lo[l + 3]);
+				ref_local[l].lo = dataset1_0[i + j];
+				temppopcount[0] = convert_ushort16(popcount(ref_local[l].lo));
+				refpopcount[l] = temppopcount[0].s0 + temppopcount[0].s1 + temppopcount[0].s2 + temppopcount[0].s3 +
+								 temppopcount[0].s4 + temppopcount[0].s5 + temppopcount[0].s6 + temppopcount[0].s7 +
+								 temppopcount[0].s8 + temppopcount[0].s9 + temppopcount[0].sA + temppopcount[0].sB +
+								 temppopcount[0].sC + temppopcount[0].sD + temppopcount[0].sE + temppopcount[0].sF;
+				ref_local[l + 1].lo = dataset1_1[i + j];
+				temppopcount[1] = convert_ushort16(popcount(ref_local[l + 1].lo));
+				refpopcount[l + 1] = temppopcount[1].s0 + temppopcount[1].s1 + temppopcount[1].s2 + temppopcount[1].s3 +
+								 temppopcount[1].s4 + temppopcount[1].s5 + temppopcount[1].s6 + temppopcount[1].s7 +
+								 temppopcount[1].s8 + temppopcount[1].s9 + temppopcount[1].sA + temppopcount[1].sB +
+								 temppopcount[1].sC + temppopcount[1].sD + temppopcount[1].sE + temppopcount[1].sF;
+				ref_local[l + 2].lo = dataset1_2[i + j];
+				temppopcount[2] = convert_ushort16(popcount(ref_local[l + 2].lo));
+				refpopcount[l + 2] = temppopcount[2].s0 + temppopcount[2].s1 + temppopcount[2].s2 + temppopcount[2].s3 +
+								 temppopcount[2].s4 + temppopcount[2].s5 + temppopcount[2].s6 + temppopcount[2].s7 +
+								 temppopcount[2].s8 + temppopcount[2].s9 + temppopcount[2].sA + temppopcount[2].sB +
+								 temppopcount[2].sC + temppopcount[2].sD + temppopcount[2].sE + temppopcount[2].sF;
+				ref_local[l + 3].lo = dataset1_3[i + j];
+				temppopcount[3] = convert_ushort16(popcount(ref_local[l + 3].lo));
+				refpopcount[l + 3] = temppopcount[3].s0 + temppopcount[3].s1 + temppopcount[3].s2 + temppopcount[3].s3 +
+								 temppopcount[3].s4 + temppopcount[3].s5 + temppopcount[3].s6 + temppopcount[3].s7 +
+								 temppopcount[3].s8 + temppopcount[3].s9 + temppopcount[3].sA + temppopcount[3].sB +
+								 temppopcount[3].sC + temppopcount[3].sD + temppopcount[3].sE + temppopcount[3].sF;
 			}
 
 		}
@@ -88,24 +125,56 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 
 			//
 			if (j % 2 == 0) {
-				cmpr_local.hi[k] = dataset2_0[i + j];
-				cmprpopcount[k] = popcount(cmpr_local.hi[k]);
-				cmpr_local.hi[k + 1] = dataset2_1[i + j];
-				cmprpopcount[k + 1] = popcount(cmpr_local.hi[k + 1]);
-				cmpr_local.hi[k + 2] = dataset2_2[i + j];
-				cmprpopcount[k + 2] = popcount(cmpr_local.hi[k + 2]);
-				cmpr_local.hi[k + 3] = dataset2_3[i + j];
-				cmprpopcount[k + 3] = popcount(cmpr_local.hi[k] + 3);
+				cmpr_local[k].hi = dataset2_0[i + j];
+				temppopcount[0] = convert_ushort16(popcount(cmpr_local[k].hi));
+				cmprpopcount[k] = temppopcount[0].s0 + temppopcount[0].s1 + temppopcount[0].s2 + temppopcount[0].s3 +
+								 temppopcount[0].s4 + temppopcount[0].s5 + temppopcount[0].s6 + temppopcount[0].s7 +
+								 temppopcount[0].s8 + temppopcount[0].s9 + temppopcount[0].sA + temppopcount[0].sB +
+								 temppopcount[0].sC + temppopcount[0].sD + temppopcount[0].sE + temppopcount[0].sF;
+				cmpr_local[k + 1].hi = dataset2_1[i + j];
+				temppopcount[1] = convert_ushort16(popcount(cmpr_local[k + 1].hi));
+				cmprpopcount[k + 1] = temppopcount[1].s0 + temppopcount[1].s1 + temppopcount[1].s2 + temppopcount[1].s3 +
+								 temppopcount[1].s4 + temppopcount[1].s5 + temppopcount[1].s6 + temppopcount[1].s7 +
+								 temppopcount[1].s8 + temppopcount[1].s9 + temppopcount[1].sA + temppopcount[1].sB +
+								 temppopcount[1].sC + temppopcount[1].sD + temppopcount[1].sE + temppopcount[1].sF;
+				cmpr_local[k + 2].hi = dataset2_2[i + j];
+				temppopcount[2] = convert_ushort16(popcount(cmpr_local[k + 2].hi));
+				cmprpopcount[k + 2] = temppopcount[2].s0 + temppopcount[2].s1 + temppopcount[2].s2 + temppopcount[2].s3 +
+								 temppopcount[2].s4 + temppopcount[2].s5 + temppopcount[2].s6 + temppopcount[2].s7 +
+								 temppopcount[2].s8 + temppopcount[2].s9 + temppopcount[2].sA + temppopcount[2].sB +
+								 temppopcount[2].sC + temppopcount[2].sD + temppopcount[2].sE + temppopcount[2].sF;
+				cmpr_local[k + 3].hi = dataset2_3[i + j];
+				temppopcount[3] = convert_ushort16(popcount(cmpr_local[k + 3].hi));
+				cmprpopcount[k + 3] = temppopcount[3].s0 + temppopcount[3].s1 + temppopcount[3].s2 + temppopcount[3].s3 +
+								 temppopcount[3].s4 + temppopcount[3].s5 + temppopcount[3].s6 + temppopcount[3].s7 +
+								 temppopcount[3].s8 + temppopcount[3].s9 + temppopcount[3].sA + temppopcount[3].sB +
+								 temppopcount[3].sC + temppopcount[3].sD + temppopcount[3].sE + temppopcount[3].sF;
 			} else {
 				ushort l = k - 4;
-				cmpr_local.lo[l] = dataset2_0[i + j];
-				cmprpopcount[l] = cmprpopcount[l] + popcount(cmpr_local.lo[l]);
-				cmpr_local.lo[l + 1] = dataset2_1[i + j];
-				cmprpopcount[l + 1] = cmprpopcount[l + 1] + popcount(cmpr_local.lo[l + 1]);
-				cmpr_local.lo[l + 2] = dataset2_2[i + j];
-				cmprpopcount[l + 2] = cmprpopcount[l + 2] + popcount(cmpr_local.lo[l + 2]);
-				cmpr_local.lo[l + 3] = dataset2_3[i + j];
-				cmprpopcount[l + 3] = cmprpopcount[l + 3] + popcount(cmpr_local.lo[l + 3]);
+				cmpr_local[l].lo = dataset2_0[i + j];
+				temppopcount[0] = convert_ushort16(popcount(cmpr_local[l].lo));
+				cmprpopcount[l] = temppopcount[0].s0 + temppopcount[0].s1 + temppopcount[0].s2 + temppopcount[0].s3 +
+								 temppopcount[0].s4 + temppopcount[0].s5 + temppopcount[0].s6 + temppopcount[0].s7 +
+								 temppopcount[0].s8 + temppopcount[0].s9 + temppopcount[0].sA + temppopcount[0].sB +
+								 temppopcount[0].sC + temppopcount[0].sD + temppopcount[0].sE + temppopcount[0].sF;
+				cmpr_local[l + 1].lo = dataset2_1[i + j];
+				temppopcount[1] = convert_ushort16(popcount(cmpr_local[l + 1].lo));
+				cmprpopcount[l + 1] = temppopcount[1].s0 + temppopcount[1].s1 + temppopcount[1].s2 + temppopcount[1].s3 +
+								 temppopcount[1].s4 + temppopcount[1].s5 + temppopcount[1].s6 + temppopcount[1].s7 +
+								 temppopcount[1].s8 + temppopcount[1].s9 + temppopcount[1].sA + temppopcount[1].sB +
+								 temppopcount[1].sC + temppopcount[1].sD + temppopcount[1].sE + temppopcount[1].sF;
+				cmpr_local[l + 2].lo = dataset2_2[i + j];
+				temppopcount[2] = convert_ushort16(popcount(cmpr_local[l + 2].lo));
+				cmprpopcount[l + 2] = temppopcount[2].s0 + temppopcount[2].s1 + temppopcount[2].s2 + temppopcount[2].s3 +
+								 temppopcount[2].s4 + temppopcount[2].s5 + temppopcount[2].s6 + temppopcount[2].s7 +
+								 temppopcount[2].s8 + temppopcount[2].s9 + temppopcount[2].sA + temppopcount[2].sB +
+								 temppopcount[2].sC + temppopcount[2].sD + temppopcount[2].sE + temppopcount[2].sF;
+				cmpr_local[l + 3].lo = dataset2_3[i + j];
+				temppopcount[3] = convert_ushort16(popcount(cmpr_local[l + 3].lo));
+				cmprpopcount[l + 3] = temppopcount[3].s0 + temppopcount[3].s1 + temppopcount[3].s2 + temppopcount[3].s3 +
+								 temppopcount[3].s4 + temppopcount[3].s5 + temppopcount[3].s6 + temppopcount[3].s7 +
+								 temppopcount[3].s8 + temppopcount[3].s9 + temppopcount[3].sA + temppopcount[3].sB +
+								 temppopcount[3].sC + temppopcount[3].sD + temppopcount[3].sE + temppopcount[3].sF;
 
 				__attribute__((xcl_pipeline_loop(1)))
 				__attribute__((xcl_loop_tripcount(4, 4)))
@@ -116,17 +185,21 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 						cmprpopcount_p[m + 1] = cmprpopcount_p[m];
 					}
 					cmpr_local_p[0] = &cmpr_local[l++];
-					cmprpopcount_p[0] = &cmprpopcount_p[l++];
+					cmprpopcount_p[0] = &cmprpopcount_p[l];
 
 					//going through the cmprdata and calculate the resoult
 					__attribute__((opencl_unroll_hint()))
 					for (ushort n = 0; n < initialized; n++) {
-						temp_andpopcount[n] = popcount(ref_local.hi[n] & *cmpr_local_p.hi[n]) + popcount(ref_local.lo[n] & *cmpr_local_p.lo[n]);
-						result_local[n] = temp_and[n] < (refpopcount[n] + *cmprpopcount_p[n] - temp_and[n]) ? 1 : 0;
+						temp = convert_ushort16(popcount(ref_local[n].hi & cmpr_local_p[n]->hi) + popcount(ref_local[n].lo & cmpr_local_p[n]->lo));
+						temp_andpopcount[n] = temp.s0 + temp.s1 + temp.s2 + temp.s3 +
+											  temp.s4 + temp.s5 + temp.s6 + temp.s7 +
+											  temp.s8 + temp.s9 + temp.sA + temp.sB +
+											  temp.sC + temp.sD + temp.sE + temp.sF;
+						result_local[n] = temp_andpopcount[n] < (refpopcount[n] + *cmprpopcount_p[n] - temp_andpopcount[n]) ? 1 : 0;
 					}
 					//-----
 					__attribute__((xcl_pipeline_loop(1)))
-					__attribute__((xcl_loop_tripcount(0; LOCAL_MEM_SIZE)))
+					__attribute__((xcl_loop_tripcount(1, LOCAL_MEM_SIZE)))
 					for (ushort n = 0; n < initialized; n++) {
 						output0[0] << result_local[n];
 					}
@@ -145,12 +218,16 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 			}
 			__attribute__((opencl_unroll_hint()))
 			for (ushort n = k; n < LOCAL_MEM_SIZE; n++) {
-				temp_and[n] = popcount(ref_local.hi[n] & *cmpr_local_p.hi[n]) + popcount(ref_local.lo[n] & *cmpr_local_p.lo[n]);
-				result_local[n] = temp_and[n] < (refpopcount[n] + cmprpopcount[n] - temp_and[n]) ? 1 : 0;
+				temp = convert_ushort16(popcount(ref_local[n].hi & cmpr_local_p[n]->hi) + popcount(ref_local[n].lo & cmpr_local_p[n]->lo));
+				temp_andpopcount[n] = temp.s0 + temp.s1 + temp.s2 + temp.s3 +
+									  temp.s4 + temp.s5 + temp.s6 + temp.s7 +
+									  temp.s8 + temp.s9 + temp.sA + temp.sB +
+									  temp.sC + temp.sD + temp.sE + temp.sF;
+				result_local[n] = temp_andpopcount[n] < (refpopcount[n] + cmprpopcount[n] - temp_andpopcount[n]) ? 1 : 0;
 			}
 			//-----
 			__attribute__((xcl_pipeline_loop(1)))
-			__attribute__((xcl_loop_tripcount(0; LOCAL_MEM_SIZE)))
+			__attribute__((xcl_loop_tripcount(1, LOCAL_MEM_SIZE)))
 			for (ushort n = 0; n < initialized; n++) {
 				output0[0] << result_local[n];
 			}

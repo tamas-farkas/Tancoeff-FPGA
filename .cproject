@@ -151,7 +151,7 @@
                             							
                             <tool id="com.xilinx.sdx.opencl.toolchain.xocc_compiler.1586604112" name="SDx XOCC Kernel Compiler" superClass="com.xilinx.sdx.opencl.toolchain.xocc_compiler">
                                 								
-                                <option id="com.xilinx.sdx.opencl.toolchain.xocc_compiler.other_flags.264462017" superClass="com.xilinx.sdx.opencl.toolchain.xocc_compiler.other_flags" valueType="stringList">
+                                <option id="com.xilinx.sdx.opencl.toolchain.xocc_compiler.other_flags.264462017" name="Other flags" superClass="com.xilinx.sdx.opencl.toolchain.xocc_compiler.other_flags" valueType="stringList">
                                     									
                                     <listOptionValue builtIn="false" value="--max_memory_ports all"/>
                                     								
@@ -163,9 +163,17 @@
                             							
                             <tool id="com.xilinx.sdx.opencl.toolchain.xocc_linker.1526355523" name="SDx XOCC Kernel Linker" superClass="com.xilinx.sdx.opencl.toolchain.xocc_linker">
                                 								
-                                <option id="com.xilinx.sdx.opencl.toolchain.xocc_linker.other_flags.1243992112" superClass="com.xilinx.sdx.opencl.toolchain.xocc_linker.other_flags" valueType="stringList">
+                                <option id="com.xilinx.sdx.opencl.toolchain.xocc_linker.other_flags.1243992112" name="Other flags" superClass="com.xilinx.sdx.opencl.toolchain.xocc_linker.other_flags" valueType="stringList">
                                     									
                                     <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem0:DDR[0]"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem5:DDR[1]"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem6:DDR[2]"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem7:DDR[3]"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem8:DDR[0]"/>
                                     									
                                     <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem4:DDR[0]"/>
                                     									
@@ -251,7 +259,7 @@
                             							
                             <tool id="com.xilinx.sdx.opencl.toolchain.xocc_compiler.1042792011" name="SDx XOCC Kernel Compiler" superClass="com.xilinx.sdx.opencl.toolchain.xocc_compiler">
                                 								
-                                <option id="com.xilinx.sdx.opencl.toolchain.xocc_compiler.other_flags.1558465849" superClass="com.xilinx.sdx.opencl.toolchain.xocc_compiler.other_flags" valueType="stringList">
+                                <option id="com.xilinx.sdx.opencl.toolchain.xocc_compiler.other_flags.1558465849" name="Other flags" superClass="com.xilinx.sdx.opencl.toolchain.xocc_compiler.other_flags" valueType="stringList">
                                     									
                                     <listOptionValue builtIn="false" value="--max_memory_ports all"/>
                                     								
@@ -263,7 +271,7 @@
                             							
                             <tool id="com.xilinx.sdx.opencl.toolchain.xocc_linker.20045955" name="SDx XOCC Kernel Linker" superClass="com.xilinx.sdx.opencl.toolchain.xocc_linker">
                                 								
-                                <option id="com.xilinx.sdx.opencl.toolchain.xocc_linker.other_flags.559799655" superClass="com.xilinx.sdx.opencl.toolchain.xocc_linker.other_flags" valueType="stringList">
+                                <option id="com.xilinx.sdx.opencl.toolchain.xocc_linker.other_flags.559799655" name="Other flags" superClass="com.xilinx.sdx.opencl.toolchain.xocc_linker.other_flags" valueType="stringList">
                                     									
                                     <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem0:DDR[0]"/>
                                     									

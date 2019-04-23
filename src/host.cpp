@@ -14,12 +14,12 @@ int main(int argc, char** argv)
 
     std::string binaryFile = argv[1];
 
-    int data_size = 1024*1024*32*32;	/* 1GB - 32Mdata */
+    int data_size = 1024*1024*32;	/* 1GB - 1Mdata */
 
     /* Reducing the data size for emulation mode */
     char *xcl_mode = getenv("XCL_EMULATION_MODE");
     if (xcl_mode != NULL){
-    	data_size = 1024 * 1024 * 32;  /* 32MB - 1Mdata*/
+    	data_size = 1024  * 32;  /* 1MB - 1kdata*/
     }
 
     //Allocate Memory in Host Memory
@@ -34,7 +34,7 @@ int main(int argc, char** argv)
     std::vector<int,aligned_allocator<int>> dataset2_2(data_size);
     std::vector<int,aligned_allocator<int>> dataset2_3(data_size);
     std::vector<int,aligned_allocator<int>> source_hw_results(data_size/32);
-    std::vector<int,aligned_allocator<int>> source_sw_results(data_size/32);
+    //std::vector<int,aligned_allocator<int>> source_sw_results(data_size/32);
 
     // Create the test data and Software Result
     for(int i = 0 ; i < data_size ; i++){
@@ -139,5 +139,5 @@ int main(int argc, char** argv)
     delete[] fileBuf;
 
     //std::cout << "TEST " << (match ? "FAILED" : "PASSED") << std::endl;
-    return EXIT_SUCCESS;// (match ? EXIT_FAILURE :  EXIT_SUCCESS);
+    return 0;// (match ? EXIT_FAILURE :  EXIT_SUCCESS);
 }

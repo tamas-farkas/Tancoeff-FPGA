@@ -107,7 +107,7 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 
 		uchar initialized = 1;
 		//read data and popcount and compute result
-		__attribute__((xcl_pipeline_loop(8)))
+		__attribute__((xcl_pipeline_loop(1)))
 		__attribute__((xcl_loop_tripcount(c_size_in16, c_size_in16)))
 		for (ushort j = 0, k = 0; j < size_in16; j++, k += 4) {
 
@@ -173,7 +173,7 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 								 temppopcount[3].s8 + temppopcount[3].s9 + temppopcount[3].sA + temppopcount[3].sB +
 								 temppopcount[3].sC + temppopcount[3].sD + temppopcount[3].sE + temppopcount[3].sF;
 
-				__attribute__((xcl_pipeline_loop(2)))
+				__attribute__((xcl_pipeline_loop(1)))
 				__attribute__((xcl_loop_tripcount(4, 4)))
 				for (uchar n = 0; n < 4; n++) {
 

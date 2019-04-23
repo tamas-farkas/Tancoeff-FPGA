@@ -21,12 +21,13 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 			 int size) {
 
 // Local Memory to store result
-	local fulldata ref_local[LOCAL_MEM_SIZE];
-	local fulldata cmpr_local[LOCAL_MEM_SIZE];
-	local ushort16 temppopcount[4];
-	local ushort temp_andpopcount[LOCAL_MEM_SIZE];
+	local fulldata ref_local[LOCAL_MEM_SIZE]; 	__attribute__((xcl_array_partition(cyclic,LOCAL_MEM_SIZE/2,1)));
+	local fulldata cmpr_local[LOCAL_MEM_SIZE]; 	__attribute__((xcl_array_partition));
+	local fulldata cmpr_temp[LOCAL_MEM_SIZE];	__attribute__((xcl_array_partition));
+	local ushort16 temppopcount[4];				__attribute__((xcl_array_partition(cyclic,2,1)));
+	local ushort temp_andpopcount[LOCAL_MEM_SIZE];	__attribute__((xcl_array_partition));
 	local ushort16 temp;
-	local bool result_local[LOCAL_MEM_SIZE];
+	local bool result_local[LOCAL_MEM_SIZE];	__attribute__((xcl_array_partition));
 	//local uint16 temp_result[(c_size_in16*c_size_in16)/512]
 
 	// Input vector size is in integer. It has to be changed into
@@ -55,7 +56,7 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 								 temppopcount[0].sC + temppopcount[0].sD + temppopcount[0].sE + temppopcount[0].sF;
 				ref_local[k + 1].hi = dataset1_1[i + j];
 				temppopcount[1] = convert_ushort16(popcount(ref_local[k + 1].hi));
-				ref_local[k + 1].popp = temppopcount[1].s0 + temppopcount[1].s1 + temppopcount[1].s2 + temppopcount[1].s3 +
+				ref_local[k + 1].pop = temppopcount[1].s0 + temppopcount[1].s1 + temppopcount[1].s2 + temppopcount[1].s3 +
 								 temppopcount[1].s4 + temppopcount[1].s5 + temppopcount[1].s6 + temppopcount[1].s7 +
 								 temppopcount[1].s8 + temppopcount[1].s9 + temppopcount[1].sA + temppopcount[1].sB +
 								 temppopcount[1].sC + temppopcount[1].sD + temppopcount[1].sE + temppopcount[1].sF;
@@ -106,7 +107,7 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 
 		uchar initialized = 1;
 		//read data and popcount and compute result
-		__attribute__((xcl_pipeline_loop(1)))
+		__attribute__((xcl_pipeline_loop(8)))
 		__attribute__((xcl_loop_tripcount(c_size_in16, c_size_in16)))
 		for (ushort j = 0, k = 0; j < size_in16; j++, k += 4) {
 
@@ -172,12 +173,17 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 								 temppopcount[3].s8 + temppopcount[3].s9 + temppopcount[3].sA + temppopcount[3].sB +
 								 temppopcount[3].sC + temppopcount[3].sD + temppopcount[3].sE + temppopcount[3].sF;
 
-				__attribute__((xcl_pipeline_loop(1)))
+				__attribute__((xcl_pipeline_loop(2)))
 				__attribute__((xcl_loop_tripcount(4, 4)))
 				for (uchar n = 0; n < 4; n++) {
+
 					__attribute__((opencl_unroll_hint()))
 					for (ushort m = LOCAL_MEM_SIZE - 2; m >= 0; m--) {
-						cmpr_local[m + 1] = cmpr_local[m];
+						cmpr_temp[m] = cmpr_local[m];
+					}
+					__attribute__((opencl_unroll_hint()))
+					for (ushort m = LOCAL_MEM_SIZE - 2; m >= 0; m--) {
+						cmpr_local[m + 1] = cmpr_temp[m];
 					}
 					cmpr_local[0] = cmpr_local[l++];
 
@@ -202,14 +208,19 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 			}
 		}
 		//shift cmpr out
-		__attribute__((xcl_pipeline_loop(1)))
+		__attribute__((xcl_pipeline_loop(2)))
 		__attribute__((xcl_loop_tripcount(LOCAL_MEM_SIZE, LOCAL_MEM_SIZE)))
 		for (ushort k = 0; k < LOCAL_MEM_SIZE; k++) {
+
 			__attribute__((opencl_unroll_hint()))
 			for (ushort m = LOCAL_MEM_SIZE - 2; m >= 0; m--) {
-				cmpr_local_p[m + 1] = cmpr_local_p[m];
-				cmprpopcount_p[m + 1] = cmprpopcount_p[m];
+				cmpr_temp[m] = cmpr_local[m];
 			}
+			__attribute__((opencl_unroll_hint()))
+			for (ushort m = LOCAL_MEM_SIZE - 2; m >= 0; m--) {
+				cmpr_local[m + 1] = cmpr_temp[m];
+			}
+
 			__attribute__((opencl_unroll_hint()))
 			for (ushort n = k; n < LOCAL_MEM_SIZE; n++) {
 						temp = convert_ushort16(popcount(ref_local[n].hi & cmpr_local[n].hi) + popcount(ref_local[n].lo & cmpr_local[n].lo));

@@ -27,7 +27,7 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 	local ushort16 temppopcount[4];				__attribute__((xcl_array_partition(cyclic,2,1)));
 	local ushort temp_andpopcount[LOCAL_MEM_SIZE];	__attribute__((xcl_array_partition));
 	local ushort16 temp;
-	local bool result_local[LOCAL_MEM_SIZE];	__attribute__((xcl_array_partition));
+	uint result_local = 0;
 	//local uint16 temp_result[(c_size_in16*c_size_in16)/512]
 
 	// Input vector size is in integer. It has to be changed into
@@ -195,15 +195,10 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 											  temp.s4 + temp.s5 + temp.s6 + temp.s7 +
 											  temp.s8 + temp.s9 + temp.sA + temp.sB +
 											  temp.sC + temp.sD + temp.sE + temp.sF;
-						result_local[n] = temp_andpopcount[n] < (ref_local[n].pop + cmpr_local[n].pop - temp_andpopcount[n]) ? 1 : 0;
+						if(temp_andpopcount[n] <= (ref_local[n].pop + cmpr_local[n].pop - temp_andpopcount[n])){
+						result_local++;
+						}
 					}
-					//-----
-					__attribute__((xcl_pipeline_loop(1)))
-					__attribute__((xcl_loop_tripcount(1, LOCAL_MEM_SIZE)))
-					for (ushort n = 0; n < initialized; n++) {
-						output0[0] << result_local[n];
-					}
-					//-----
 				}
 			}
 		}
@@ -228,27 +223,13 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 									  temp.s4 + temp.s5 + temp.s6 + temp.s7 +
 									  temp.s8 + temp.s9 + temp.sA + temp.sB +
 									  temp.sC + temp.sD + temp.sE + temp.sF;
-						result_local[n] = temp_andpopcount[n] < (ref_local[n].pop + cmpr_local[n].pop - temp_andpopcount[n]) ? 1 : 0;
+				if(temp_andpopcount[n] <= (ref_local[n].pop + cmpr_local[n].pop - temp_andpopcount[n])){
+				result_local++;
+				}
 			}
-			//-----
-			__attribute__((xcl_pipeline_loop(1)))
-			__attribute__((xcl_loop_tripcount(1, LOCAL_MEM_SIZE)))
-			for (ushort n = 0; n < initialized; n++) {
-				output0[0] << result_local[n];
-			}
-			//-----
 		}
-
-		//TODO bool to uint16
-		//burst write the result
-		//__attribute__ ((xcl_dataflow)) ???
-	/*	__attribute__((xcl_pipeline_loop(1)))
-		__attribute__((xcl_loop_tripcount(LOCAL_MEM_SIZE, LOCAL_MEM_SIZE)))
-		for (int j = 0; j < (c_size_in16*c_size_in16/512)); j++){
-			for(i = 0; i < 512; i++){
-				temp_result<<result_local[i];
-			}
-				output0[i + j] = temp_result[j];
-			} */
 	}
+	//-----
+	output0[0].s0 = result_local;
+	//-----
 }

@@ -19,33 +19,33 @@ int main(int argc, char** argv)
     /* Reducing the data size for emulation mode */
     char *xcl_mode = getenv("XCL_EMULATION_MODE");
     if (xcl_mode != NULL){
-    	data_size = 1024  * 32;  /* 1MB - 1kdata*/
+    	data_size = 1024 * 32;  /* 1MB - 1kdata*/
     }
 
     //Allocate Memory in Host Memory
     size_t vector_size_bytes = sizeof(int) * data_size;
 
-    std::vector<int,aligned_allocator<int>> dataset1_0(data_size);
-    std::vector<int,aligned_allocator<int>> dataset1_1(data_size);
-    std::vector<int,aligned_allocator<int>> dataset1_2(data_size);
-    std::vector<int,aligned_allocator<int>> dataset1_3(data_size);
-    std::vector<int,aligned_allocator<int>> dataset2_0(data_size);
-    std::vector<int,aligned_allocator<int>> dataset2_1(data_size);
-    std::vector<int,aligned_allocator<int>> dataset2_2(data_size);
-    std::vector<int,aligned_allocator<int>> dataset2_3(data_size);
+    std::vector<int,aligned_allocator<int>> dummydataset1_0(data_size);
+    std::vector<int,aligned_allocator<int>> dummydataset1_1(data_size);
+    std::vector<int,aligned_allocator<int>> dummydataset1_2(data_size);
+    std::vector<int,aligned_allocator<int>> dummydataset1_3(data_size);
+    std::vector<int,aligned_allocator<int>> dummydataset2_0(data_size);
+    std::vector<int,aligned_allocator<int>> dummydataset2_1(data_size);
+    std::vector<int,aligned_allocator<int>> dummydataset2_2(data_size);
+    std::vector<int,aligned_allocator<int>> dummydataset2_3(data_size);
     std::vector<int,aligned_allocator<int>> source_hw_results(data_size/32);
     //std::vector<int,aligned_allocator<int>> source_sw_results(data_size/32);
 
     // Create the test data and Software Result
     for(int i = 0 ; i < data_size ; i++){
-        dataset1_0[i] = i;
-        dataset1_1[i] = i+i;
-        dataset1_2[i] = i+i+i;
-        dataset1_3[i] = i+i+i+i;
-        dataset2_0[i] = i+i+i+i;
-        dataset2_1[i] = i+i+i;
-        dataset2_2[i] = i+i;
-        dataset2_3[i] = i;
+    	dummydataset1_0[i] = i;
+    	dummydataset1_1[i] = i+i;
+    	dummydataset1_2[i] = i+i+i;
+    	dummydataset1_3[i] = i+i+i+i;
+        dummydataset2_0[i] = i+i+i+i;
+        dummydataset2_1[i] = i+i+i;
+        dummydataset2_2[i] = i+i;
+        dummydataset2_3[i] = i;
     }
     
   /*  for(int i = 0; i < data_size/32; i++){
@@ -76,23 +76,23 @@ int main(int argc, char** argv)
 
     //Allocate Buffer in Global Memory
 
-    OCL_CHECK(err, cl::Buffer dataset1_01 (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY,
-            vector_size_bytes, dataset1_0.data(), &err));
-    OCL_CHECK(err, cl::Buffer dataset1_11 (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY,
-            vector_size_bytes, dataset1_1.data(), &err));
-    OCL_CHECK(err, cl::Buffer dataset1_21 (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY,
-            vector_size_bytes, dataset1_2.data(), &err));
-    OCL_CHECK(err, cl::Buffer dataset1_31 (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY,
-            vector_size_bytes, dataset1_3.data(), &err));
+    OCL_CHECK(err, cl::Buffer dataset1_0 (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY,
+            vector_size_bytes, dummydataset1_0.data(), &err));
+    OCL_CHECK(err, cl::Buffer dataset1_1 (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY,
+            vector_size_bytes, dummydataset1_1.data(), &err));
+    OCL_CHECK(err, cl::Buffer dataset1_2 (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY,
+            vector_size_bytes, dummydataset1_2.data(), &err));
+    OCL_CHECK(err, cl::Buffer dataset1_3 (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY,
+            vector_size_bytes, dummydataset1_3.data(), &err));
 
-    OCL_CHECK(err, cl::Buffer dataset2_01 (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY,
-            vector_size_bytes, dataset2_0.data(), &err));
-    OCL_CHECK(err, cl::Buffer dataset2_11 (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY,
-            vector_size_bytes, dataset2_1.data(), &err));
-    OCL_CHECK(err, cl::Buffer dataset2_21 (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY,
-            vector_size_bytes, dataset2_2.data(), &err));
-    OCL_CHECK(err, cl::Buffer dataset2_31 (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY,
-            vector_size_bytes, dataset2_3.data(), &err));
+    OCL_CHECK(err, cl::Buffer dataset2_0 (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY,
+            vector_size_bytes, dummydataset2_0.data(), &err));
+    OCL_CHECK(err, cl::Buffer dataset2_1 (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY,
+            vector_size_bytes, dummydataset2_1.data(), &err));
+    OCL_CHECK(err, cl::Buffer dataset2_2 (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY,
+            vector_size_bytes, dummydataset2_2.data(), &err));
+    OCL_CHECK(err, cl::Buffer dataset2_3 (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY,
+            vector_size_bytes, dummydataset2_3.data(), &err));
 
     OCL_CHECK(err, cl::Buffer output0 (context,CL_MEM_USE_HOST_PTR | CL_MEM_WRITE_ONLY,
             vector_size_bytes, source_hw_results.data(), &err));
@@ -114,7 +114,7 @@ int main(int argc, char** argv)
     OCL_CHECK(err, err = krnl_tancalc.setArg(arg_index++, size));
 
     //Copy input data to device global memory
-    OCL_CHECK(err, err = q.enqueueMigrateMemObjects({dataset1_01, dataset1_11, dataset1_21, dataset1_31, dataset2_01, dataset2_11, dataset2_21, dataset2_31},0/* 0 means from host*/));
+    OCL_CHECK(err, err = q.enqueueMigrateMemObjects({dataset1_0, dataset1_1, dataset1_2, dataset1_3, dataset2_0, dataset2_1, dataset2_2, dataset2_3},0/* 0 means from host*/));
 
     //Launch the Kernel
     OCL_CHECK(err, err = q.enqueueTask(krnl_tancalc));

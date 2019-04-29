@@ -16,6 +16,8 @@ int main(int argc, char** argv)
 
     std::string binaryFile = argv[1];
 
+    std::cout << "program started" << std::endl;
+
     //Allocate Memory in Host Memory
     size_t vector_size_bytes = sizeof(int) * DATA_SIZE;
 
@@ -115,6 +117,8 @@ int main(int argc, char** argv)
     //Copy input data to device global memory
     OCL_CHECK(err, err = q.enqueueMigrateMemObjects({dataset1_0, dataset1_1, dataset1_2, dataset1_3, dataset2_0, dataset2_1, dataset2_2, dataset2_3},0/* 0 means from host*/));
 
+    std::cout << "kernel started" << std::endl;
+
     //Launch the Kernel
     OCL_CHECK(err, err = q.enqueueTask(krnl_tancalc));
 
@@ -138,5 +142,6 @@ int main(int argc, char** argv)
     delete[] fileBuf;
 
     //std::cout << "TEST " << (match ? "FAILED" : "PASSED") << std::endl;
+    std::cout << "program finished" << std::endl;
     return 0;// (match ? EXIT_FAILURE :  EXIT_SUCCESS);
 }

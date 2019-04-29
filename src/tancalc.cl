@@ -1,11 +1,10 @@
-#define DATA_SIZE 1024 * 1024 * 32
+#define DATA_SIZE 1024 * 32
 #define LOCAL_MEM_SIZE 128
-#define VECTOR_SIZE 16 //   using uint16 datatype so vector size is 16
 
 // Tripcount identifiers
-__constant int c_size = LOCAL_MEM_SIZE / 4;
-__constant int c_len = (((DATA_SIZE-1)/VECTOR_SIZE) + 1)/(LOCAL_MEM_SIZE/4);
-__constant int c_size_in16 = ((DATA_SIZE - 1) / VECTOR_SIZE) + 1;
+__constant int c_size = (LOCAL_MEM_SIZE*2) / 4;
+__constant int c_len = (DATA_SIZE/32)/4;
+__constant int c_size_in = (DATA_SIZE*2)/32;
 
 void ref_read0(__global uint16 *dataset1_0, uint16 ref_local[LOCAL_MEM_SIZE][2], ushort *refpop_local, ushort chunk_size, ushort chunk_num){
 	__attribute__((xcl_pipeline_loop(1)))
@@ -202,13 +201,11 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 	local uint result_local = 0;
 
 
-	// Input vector size is in integer. It has to be changed into
-	// Size of int16.
-	ushort size_in16 = (size - 1) / VECTOR_SIZE + 1;
+	ushort size_in = size * 2;
 
 	__attribute__((xcl_loop_tripcount(c_len, c_len)))
-	for (int chunk_num = 0; chunk_num < size_in16; chunk_num += (LOCAL_MEM_SIZE / 4)) {
-		ushort chunk_size = LOCAL_MEM_SIZE / 4;
+	for (int chunk_num = 0; chunk_num < size_in; chunk_num += (LOCAL_MEM_SIZE / 4)) {
+		ushort chunk_size = (LOCAL_MEM_SIZE*2) / 4;
 
 		//read ref until mem is full and popcount
 		ref_read0(dataset1_0, ref_local, refpop_local, chunk_size, chunk_num);
@@ -216,8 +213,8 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 		ref_read2(dataset1_2, ref_local, refpop_local, chunk_size, chunk_num);
 		ref_read3(dataset1_3, ref_local, refpop_local, chunk_size, chunk_num);
 
-		__attribute__((xcl_loop_tripcount(c_size_in16, c_size_in16)))
-		for(ushort cmpr_num = 0; cmpr_num < size_in16; cmpr_num++){
+		__attribute__((xcl_loop_tripcount(c_size_in, c_size_in)))
+		for(ushort cmpr_num = 0; cmpr_num < size_in; cmpr_num++){
 			cmpr_read0(dataset2_0, cmpr_local, cmprpop_local, cmpr_num);
 			cmpr_read1(dataset2_1, cmpr_local, cmprpop_local, cmpr_num);
 			cmpr_read2(dataset2_2, cmpr_local, cmprpop_local, cmpr_num);

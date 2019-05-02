@@ -186,8 +186,28 @@ void cmpr_read3(__global uint16 *dataset2_3, local uint16 cmpr_local[4][2], loca
 	}
 }
 
-__attribute__ ((xcl_dataflow))
+void calculation(local uint16 ref_local[LOCAL_MEM_SIZE][2], local uint16 cmpr_local[4][2], local ushort *refpop_local, local ushort *cmprpop_local, local int *result_local){
+	__attribute__((xcl_pipeline_loop(1)))
+	__attribute__((xcl_loop_tripcount(4, 4)))
+	for(uchar n = 0; n < 4; n++){
+		__attribute__((xcl_loop_tripcount(1, LOCAL_MEM_SIZE)))
+		for(ushort ref_num = 0; ref_num < LOCAL_MEM_SIZE; ref_num++){
+			ushort16 temp;
+			ushort temp2 = 0;
+			temp = convert_ushort16(popcount(ref_local[ref_num][0] & cmpr_local[n][0]) + popcount(ref_local[ref_num][1] & cmpr_local[n][1]));
+			temp2 = temp.s0 + temp.s1 + temp.s2 + temp.s3 +
+								temp.s4 + temp.s5 + temp.s6 + temp.s7 +
+								temp.s8 + temp.s9 + temp.sA + temp.sB +
+								temp.sC + temp.sD + temp.sE + temp.sF;
+			if(temp2 <= (refpop_local[ref_num]  + cmprpop_local[n]  - temp2)){
+				result_local++;
+			}
+		}
+	}
+}
+
 kernel __attribute__ ((reqd_work_group_size(1,1,1)))
+__attribute__ ((xcl_dataflow))
 void tancalc(const __global uint16 *dataset1_0, const __global uint16 *dataset1_1, const __global uint16 *dataset1_2, const __global uint16 *dataset1_3,
 			 const __global uint16 *dataset2_0, const __global uint16 *dataset2_1, const __global uint16 *dataset2_2, const __global uint16 *dataset2_3,
 			 __global int *output0,
@@ -220,23 +240,7 @@ void tancalc(const __global uint16 *dataset1_0, const __global uint16 *dataset1_
 			cmpr_read3(dataset2_3, cmpr_local, cmprpop_local, cmpr_num);
 
 			if (cmpr_num % 2 == 1) {
-				__attribute__((xcl_pipeline_loop(1)))
-				__attribute__((xcl_loop_tripcount(4, 4)))
-				for(uchar n = 0; n < 4; n++){
-					__attribute__((xcl_loop_tripcount(1, LOCAL_MEM_SIZE)))
-					for(ushort ref_num = 0; ref_num < LOCAL_MEM_SIZE; ref_num++){
-						ushort16 temp;
-						ushort temp2 = 0;
-						temp = convert_ushort16(popcount(ref_local[ref_num][0] & cmpr_local[n][0]) + popcount(ref_local[ref_num][1] & cmpr_local[n][1]));
-						temp2 = temp.s0 + temp.s1 + temp.s2 + temp.s3 +
-											temp.s4 + temp.s5 + temp.s6 + temp.s7 +
-											temp.s8 + temp.s9 + temp.sA + temp.sB +
-											temp.sC + temp.sD + temp.sE + temp.sF;
-						if(temp2 <= (refpop_local[ref_num]  + cmprpop_local[n]  - temp2)){
-							result_local++;
-						}
-					}
-				}
+				calculation(ref_local, cmpr_local, refpop_local, cmprpop_local, result_local){
 			}
 		}
 	}

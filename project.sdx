@@ -3,7 +3,7 @@
   <configuration name="Emulation-SW" id="com.xilinx.sdx.opencl.config.sw_emu.1968697092">
     <configBuildOptions xsi:type="openclProject:OpenCLOptions" kernelDebug="true" reportType="None">
       <binaryContainers name="onlab">
-        <kernels name="tancalc" sourceFile="src/tancalc.cl" maxMemoryPorts="true">
+        <kernels name="tancalc" sourceFile="src/tancalc.cl">
           <computeUnits name="tancalc_1" slr="">
             <args name="input0" master="true" memory=""/>
             <args name="input1" master="true" memory=""/>
@@ -42,10 +42,10 @@
       </binaryContainers>
     </lastBuildOptions>
   </configuration>
-  <configuration name="Emulation-HW" id="com.xilinx.sdx.opencl.config.hw_emu.992012887" dirty="true">
+  <configuration name="Emulation-HW" id="com.xilinx.sdx.opencl.config.hw_emu.992012887">
     <configBuildOptions xsi:type="openclProject:OpenCLOptions" kernelDebug="true" target="hw_emu">
       <binaryContainers name="onlab">
-        <kernels name="tancalc" sourceFile="src/tancalc.cl" maxMemoryPorts="true">
+        <kernels name="tancalc" sourceFile="src/tancalc.cl">
           <computeUnits name="tancalc_1" profileExecution="true" profileStalls="true" slr="">
             <args name="input0" master="true" memory="" profileAll="true"/>
             <args name="input1" master="true" memory="" profileAll="true"/>
@@ -65,13 +65,13 @@
     </configBuildOptions>
     <lastBuildOptions xsi:type="openclProject:OpenCLOptions" kernelDebug="true" target="hw_emu">
       <binaryContainers name="onlab">
-        <kernels name="tancalc" sourceFile="src/tancalc.cl" maxMemoryPorts="true">
-          <computeUnits name="tancalc_1" slr="">
-            <args name="input0" master="true" memory=""/>
-            <args name="input1" master="true" memory=""/>
-            <args name="input2" master="true" memory=""/>
-            <args name="input3" master="true" memory=""/>
-            <args name="output0" master="true" memory=""/>
+        <kernels name="tancalc" sourceFile="src/tancalc.cl">
+          <computeUnits name="tancalc_1" profileExecution="true" profileStalls="true" slr="">
+            <args name="input0" master="true" memory="" profileAll="true"/>
+            <args name="input1" master="true" memory="" profileAll="true"/>
+            <args name="input2" master="true" memory="" profileAll="true"/>
+            <args name="input3" master="true" memory="" profileAll="true"/>
+            <args name="output0" master="true" memory="" profileAll="true"/>
             <args name="size" memory=""/>
           </computeUnits>
           <args name="input0" master="true"/>
@@ -84,10 +84,10 @@
       </binaryContainers>
     </lastBuildOptions>
   </configuration>
-  <configuration name="System" id="com.xilinx.sdx.opencl.config.hw.693039109" dirty="true">
+  <configuration name="System" id="com.xilinx.sdx.opencl.config.hw.693039109">
     <configBuildOptions xsi:type="openclProject:OpenCLOptions" target="hw">
       <binaryContainers name="onlab">
-        <kernels name="tancalc" sourceFile="src/tancalc.cl" maxMemoryPorts="true">
+        <kernels name="tancalc" sourceFile="src/tancalc.cl">
           <computeUnits name="tancalc_1" profileExecution="true" profileStalls="true" slr="">
             <args name="input0" master="true" memory="" profileAll="true"/>
             <args name="input1" master="true" memory="" profileAll="true"/>
@@ -107,13 +107,13 @@
     </configBuildOptions>
     <lastBuildOptions xsi:type="openclProject:OpenCLOptions" target="hw">
       <binaryContainers name="onlab">
-        <kernels name="tancalc" sourceFile="src/tancalc.cl" maxMemoryPorts="true">
-          <computeUnits name="tancalc_1" slr="">
-            <args name="input0" master="true" memory=""/>
-            <args name="input1" master="true" memory=""/>
-            <args name="input2" master="true" memory=""/>
-            <args name="input3" master="true" memory=""/>
-            <args name="output0" master="true" memory=""/>
+        <kernels name="tancalc" sourceFile="src/tancalc.cl">
+          <computeUnits name="tancalc_1" profileExecution="true" profileStalls="true" slr="">
+            <args name="input0" master="true" memory="" profileAll="true"/>
+            <args name="input1" master="true" memory="" profileAll="true"/>
+            <args name="input2" master="true" memory="" profileAll="true"/>
+            <args name="input3" master="true" memory="" profileAll="true"/>
+            <args name="output0" master="true" memory="" profileAll="true"/>
             <args name="size" memory=""/>
           </computeUnits>
           <args name="input0" master="true"/>

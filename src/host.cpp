@@ -142,6 +142,6 @@ int main(int argc, char** argv)
     delete[] fileBuf;
 
     //std::cout << "TEST " << (match ? "FAILED" : "PASSED") << std::endl;
-    std::cout << "program finished," << " result = " << "source_hw_results[0]" << std::endl;
+    std::cout << "program finished," << " result = " << source_hw_results[0] << std::endl;
     return 0;// (match ? EXIT_FAILURE :  EXIT_SUCCESS);
 }

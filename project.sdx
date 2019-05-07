@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <openclProject:OpenCLProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:openclProject="http://www.xilinx.com/openclproject" name="onlab" location="/home/student/workspace2018.3/onlab" platform="/opt/xilinx/platforms/xilinx_vcu1525_xdma_201830_1/xilinx_vcu1525_xdma_201830_1.xpfm" platformUID="xilinx:vcu1525:xdma:201830.1" systemProject="onlab_system" sysConfig="Linux" cpu="" cpuInstance="" os="linux">
-  <configuration name="Emulation-SW" id="com.xilinx.sdx.opencl.config.sw_emu.1968697092">
+  <configuration name="Emulation-SW" id="com.xilinx.sdx.opencl.config.sw_emu.1968697092" dirty="true">
     <configBuildOptions xsi:type="openclProject:OpenCLOptions" kernelDebug="true" reportType="None">
       <binaryContainers name="binary_container_1">
         <kernels name="tancalc" sourceFile="src/tancalc.cl">
@@ -62,14 +62,56 @@
     <configBuildOptions xsi:type="openclProject:OpenCLOptions" kernelDebug="true" target="hw_emu">
       <binaryContainers name="binary_container_1">
         <kernels name="tancalc" sourceFile="src/tancalc.cl">
-          <computeUnits name="tancalc_1" slr=""/>
+          <computeUnits name="tancalc_1" slr="">
+            <args name="dataset1_0" master="true" memory=""/>
+            <args name="dataset1_1" master="true" memory=""/>
+            <args name="dataset1_2" master="true" memory=""/>
+            <args name="dataset1_3" master="true" memory=""/>
+            <args name="dataset2_0" master="true" memory=""/>
+            <args name="dataset2_1" master="true" memory=""/>
+            <args name="dataset2_2" master="true" memory=""/>
+            <args name="dataset2_3" master="true" memory=""/>
+            <args name="output0" master="true" memory=""/>
+            <args name="size" memory=""/>
+          </computeUnits>
+          <args name="dataset1_0" master="true"/>
+          <args name="dataset1_1" master="true"/>
+          <args name="dataset1_2" master="true"/>
+          <args name="dataset1_3" master="true"/>
+          <args name="dataset2_0" master="true"/>
+          <args name="dataset2_1" master="true"/>
+          <args name="dataset2_2" master="true"/>
+          <args name="dataset2_3" master="true"/>
+          <args name="output0" master="true"/>
+          <args name="size"/>
         </kernels>
       </binaryContainers>
     </configBuildOptions>
     <lastBuildOptions xsi:type="openclProject:OpenCLOptions" kernelDebug="true" target="hw_emu">
       <binaryContainers name="binary_container_1">
         <kernels name="tancalc" sourceFile="src/tancalc.cl">
-          <computeUnits name="tancalc_1" slr=""/>
+          <computeUnits name="tancalc_1" slr="">
+            <args name="dataset1_0" master="true" memory=""/>
+            <args name="dataset1_1" master="true" memory=""/>
+            <args name="dataset1_2" master="true" memory=""/>
+            <args name="dataset1_3" master="true" memory=""/>
+            <args name="dataset2_0" master="true" memory=""/>
+            <args name="dataset2_1" master="true" memory=""/>
+            <args name="dataset2_2" master="true" memory=""/>
+            <args name="dataset2_3" master="true" memory=""/>
+            <args name="output0" master="true" memory=""/>
+            <args name="size" memory=""/>
+          </computeUnits>
+          <args name="dataset1_0" master="true"/>
+          <args name="dataset1_1" master="true"/>
+          <args name="dataset1_2" master="true"/>
+          <args name="dataset1_3" master="true"/>
+          <args name="dataset2_0" master="true"/>
+          <args name="dataset2_1" master="true"/>
+          <args name="dataset2_2" master="true"/>
+          <args name="dataset2_3" master="true"/>
+          <args name="output0" master="true"/>
+          <args name="size"/>
         </kernels>
       </binaryContainers>
     </lastBuildOptions>
@@ -78,25 +120,54 @@
     <configBuildOptions xsi:type="openclProject:OpenCLOptions" target="hw">
       <binaryContainers name="binary_container_1">
         <kernels name="tancalc" sourceFile="src/tancalc.cl">
-          <computeUnits name="tancalc_1" slr=""/>
+          <computeUnits name="tancalc_1" profileExecution="true" profileStalls="true" slr="">
+            <args name="dataset1_0" master="true" memory="" protocolChecker="true" profileAll="true"/>
+            <args name="dataset1_1" master="true" memory="" protocolChecker="true" profileAll="true"/>
+            <args name="dataset1_2" master="true" memory="" protocolChecker="true" profileAll="true"/>
+            <args name="dataset1_3" master="true" memory="" protocolChecker="true" profileAll="true"/>
+            <args name="dataset2_0" master="true" memory="" protocolChecker="true" profileAll="true"/>
+            <args name="dataset2_1" master="true" memory="" protocolChecker="true" profileAll="true"/>
+            <args name="dataset2_2" master="true" memory="" protocolChecker="true" profileAll="true"/>
+            <args name="dataset2_3" master="true" memory="" protocolChecker="true" profileAll="true"/>
+            <args name="output0" master="true" memory="" protocolChecker="true" profileAll="true"/>
+            <args name="size" memory=""/>
+          </computeUnits>
+          <args name="dataset1_0" master="true"/>
+          <args name="dataset1_1" master="true"/>
+          <args name="dataset1_2" master="true"/>
+          <args name="dataset1_3" master="true"/>
+          <args name="dataset2_0" master="true"/>
+          <args name="dataset2_1" master="true"/>
+          <args name="dataset2_2" master="true"/>
+          <args name="dataset2_3" master="true"/>
+          <args name="output0" master="true"/>
+          <args name="size"/>
         </kernels>
       </binaryContainers>
     </configBuildOptions>
     <lastBuildOptions xsi:type="openclProject:OpenCLOptions" target="hw">
-      <binaryContainers name="onlab">
+      <binaryContainers name="binary_container_1">
         <kernels name="tancalc" sourceFile="src/tancalc.cl">
           <computeUnits name="tancalc_1" profileExecution="true" profileStalls="true" slr="">
-            <args name="input0" master="true" memory="" profileAll="true"/>
-            <args name="input1" master="true" memory="" profileAll="true"/>
-            <args name="input2" master="true" memory="" profileAll="true"/>
-            <args name="input3" master="true" memory="" profileAll="true"/>
-            <args name="output0" master="true" memory="" profileAll="true"/>
+            <args name="dataset1_0" master="true" memory="" protocolChecker="true" profileAll="true"/>
+            <args name="dataset1_1" master="true" memory="" protocolChecker="true" profileAll="true"/>
+            <args name="dataset1_2" master="true" memory="" protocolChecker="true" profileAll="true"/>
+            <args name="dataset1_3" master="true" memory="" protocolChecker="true" profileAll="true"/>
+            <args name="dataset2_0" master="true" memory="" protocolChecker="true" profileAll="true"/>
+            <args name="dataset2_1" master="true" memory="" protocolChecker="true" profileAll="true"/>
+            <args name="dataset2_2" master="true" memory="" protocolChecker="true" profileAll="true"/>
+            <args name="dataset2_3" master="true" memory="" protocolChecker="true" profileAll="true"/>
+            <args name="output0" master="true" memory="" protocolChecker="true" profileAll="true"/>
             <args name="size" memory=""/>
           </computeUnits>
-          <args name="input0" master="true"/>
-          <args name="input1" master="true"/>
-          <args name="input2" master="true"/>
-          <args name="input3" master="true"/>
+          <args name="dataset1_0" master="true"/>
+          <args name="dataset1_1" master="true"/>
+          <args name="dataset1_2" master="true"/>
+          <args name="dataset1_3" master="true"/>
+          <args name="dataset2_0" master="true"/>
+          <args name="dataset2_1" master="true"/>
+          <args name="dataset2_2" master="true"/>
+          <args name="dataset2_3" master="true"/>
           <args name="output0" master="true"/>
           <args name="size"/>
         </kernels>

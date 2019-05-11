@@ -5,7 +5,7 @@
 #include <string.h>
 #include <vector>
 
-#define DATA_SIZE 64 * 32		//2*4*1MB
+#define DATA_SIZE 1024 * 1024 * 32		//2*4*1MB
 
 int main(int argc, char** argv)
 {
@@ -138,10 +138,10 @@ int main(int argc, char** argv)
             break;
         }
     }*/
+    std::cout << "program finished," << " result = " << source_hw_results[0] << std::endl;
 
     delete[] fileBuf;
 
     //std::cout << "TEST " << (match ? "FAILED" : "PASSED") << std::endl;
-    std::cout << "program finished," << " result = " << source_hw_results[0] << std::endl;
     return 0;// (match ? EXIT_FAILURE :  EXIT_SUCCESS);
 }

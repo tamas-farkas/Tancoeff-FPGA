@@ -1,11 +1,11 @@
-#define DATA_SIZE 128 * 32
-#define LOCAL_MEM_SIZE 32
+#define DATA_SIZE 1024 * 1024 * 32
+#define LOCAL_MEM_SIZE 256
 
 // Tripcount identifiers
 __constant int c_size = (LOCAL_MEM_SIZE * 2) / 4;
 __constant int c_size_in = (DATA_SIZE*2)/32;
 
-void ref_read0(__global uint16 *dataset1_0,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort *refpop_local, ushort chunk_num, ushort ref_num){
+void ref_read0(__global uint16 *dataset1_0,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort refpop_local[LOCAL_MEM_SIZE], ushort chunk_num, ushort ref_num){
 	if (ref_num % 2 == 0) {
 		ref_local[2*ref_num][0] = dataset1_0[chunk_num + ref_num];
 	}
@@ -15,7 +15,7 @@ void ref_read0(__global uint16 *dataset1_0,  uint16 ref_local[LOCAL_MEM_SIZE][2]
 	}
 }
 
-void ref_read1(__global uint16 *dataset1_1,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort *refpop_local, ushort chunk_num, ushort ref_num){
+void ref_read1(__global uint16 *dataset1_1,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort refpop_local[LOCAL_MEM_SIZE], ushort chunk_num, ushort ref_num){
 	if (ref_num % 2 == 0) {
 		ref_local[2*ref_num + 1][0] = dataset1_1[chunk_num + ref_num];
 	}
@@ -25,7 +25,7 @@ void ref_read1(__global uint16 *dataset1_1,  uint16 ref_local[LOCAL_MEM_SIZE][2]
 	}
 }
 
-void ref_read2(__global uint16 *dataset1_2,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort *refpop_local, ushort chunk_num, ushort ref_num){
+void ref_read2(__global uint16 *dataset1_2,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort refpop_local[LOCAL_MEM_SIZE], ushort chunk_num, ushort ref_num){
 	if (ref_num % 2 == 0) {
 		ref_local[2*ref_num + 2][0] = dataset1_2[chunk_num + ref_num];
 	}
@@ -35,7 +35,7 @@ void ref_read2(__global uint16 *dataset1_2,  uint16 ref_local[LOCAL_MEM_SIZE][2]
 	}
 }
 
-void ref_read3(__global uint16 *dataset1_3,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort *refpop_local, ushort chunk_num, ushort ref_num){
+void ref_read3(__global uint16 *dataset1_3,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort refpop_local[LOCAL_MEM_SIZE], ushort chunk_num, ushort ref_num){
 	if (ref_num % 2 == 0) {
 		ref_local[2*ref_num + 3][0] = dataset1_3[chunk_num + ref_num];
 	}
@@ -45,7 +45,7 @@ void ref_read3(__global uint16 *dataset1_3,  uint16 ref_local[LOCAL_MEM_SIZE][2]
 	}
 }
 
-void ref_popcount0(__global uint16 *dataset1_0,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort *refpop_local, ushort ref_num){
+void ref_popcount0(__global uint16 *dataset1_0,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort refpop_local[LOCAL_MEM_SIZE], ushort ref_num){
 	ushort16 temp;
 	if (ref_num % 2 == 0) {
 		temp = convert_ushort16(popcount(ref_local[2*ref_num][0]));
@@ -64,7 +64,7 @@ void ref_popcount0(__global uint16 *dataset1_0,  uint16 ref_local[LOCAL_MEM_SIZE
 	}
 }
 
-void ref_popcount1(__global uint16 *dataset1_1,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort *refpop_local, ushort ref_num){
+void ref_popcount1(__global uint16 *dataset1_1,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort refpop_local[LOCAL_MEM_SIZE], ushort ref_num){
 	ushort16 temp;
 	if (ref_num % 2 == 0) {
 		temp = convert_ushort16(popcount(ref_local[2*ref_num + 1][0]));
@@ -83,7 +83,7 @@ void ref_popcount1(__global uint16 *dataset1_1,  uint16 ref_local[LOCAL_MEM_SIZE
 	}
 }
 
-void ref_popcount2(__global uint16 *dataset1_2,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort *refpop_local, ushort ref_num){
+void ref_popcount2(__global uint16 *dataset1_2,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort refpop_local[LOCAL_MEM_SIZE], ushort ref_num){
 	ushort16 temp;
 	if (ref_num % 2 == 0) {
 		temp = convert_ushort16(popcount(ref_local[2*ref_num + 2][0]));
@@ -102,7 +102,7 @@ void ref_popcount2(__global uint16 *dataset1_2,  uint16 ref_local[LOCAL_MEM_SIZE
 	}
 }
 
-void ref_popcount3(__global uint16 *dataset1_3,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort *refpop_local, ushort ref_num){
+void ref_popcount3(__global uint16 *dataset1_3,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort refpop_local[LOCAL_MEM_SIZE], ushort ref_num){
 	ushort16 temp;
 	if (ref_num % 2 == 0) {
 		temp = convert_ushort16(popcount(ref_local[2*ref_num + 3][0]));
@@ -122,7 +122,7 @@ void ref_popcount3(__global uint16 *dataset1_3,  uint16 ref_local[LOCAL_MEM_SIZE
 }
 
 
-void ref_read(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global uint16 *dataset1_2, __global uint16 *dataset1_3,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort *refpop_local, ushort chunk_num){
+void ref_read(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global uint16 *dataset1_2, __global uint16 *dataset1_3,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort refpop_local[LOCAL_MEM_SIZE], ushort chunk_num){
 	__attribute__((xcl_pipeline_loop(1)))
 	__attribute__((xcl_loop_tripcount(c_size, c_size)))
 	ref_read: for (ushort ref_num = 0; ref_num < c_size; ref_num++){
@@ -137,7 +137,7 @@ void ref_read(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global
 	}
 }
 
-/*void ref_read(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global uint16 *dataset1_2, __global uint16 *dataset1_3,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort *refpop_local, ushort chunk_num){
+/*void ref_read(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global uint16 *dataset1_2, __global uint16 *dataset1_3,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort refpop_local[LOCAL_MEM_SIZE], ushort chunk_num){
 	ushort16 temp;
 	__attribute__((xcl_pipeline_loop(1)))
 	__attribute__((xcl_loop_tripcount(c_size, c_size)))
@@ -199,7 +199,7 @@ void ref_read(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global
 }
 */
 
-void cmpr_read0(__global uint16 *dataset2_0,  uint16 cmpr_local[4][2],  ushort *cmprpop_local, ushort cmpr_num){
+void cmpr_read0(__global uint16 *dataset2_0,  uint16 cmpr_local[4][2],  ushort cmprpop_local[4], ushort cmpr_num){
 	ushort16 temp;
 	if (cmpr_num % 2 == 0) {
 		cmpr_local[0][0] = dataset2_0[cmpr_num];
@@ -219,7 +219,7 @@ void cmpr_read0(__global uint16 *dataset2_0,  uint16 cmpr_local[4][2],  ushort *
 	}
 }
 
-void cmpr_read1(__global uint16 *dataset2_1,  uint16 cmpr_local[4][2],  ushort *cmprpop_local, ushort cmpr_num){
+void cmpr_read1(__global uint16 *dataset2_1,  uint16 cmpr_local[4][2],  ushort cmprpop_local[4], ushort cmpr_num){
 	ushort16 temp;
 	if (cmpr_num % 2 == 0) {
 		cmpr_local[1][0] = dataset2_1[cmpr_num];
@@ -239,7 +239,7 @@ void cmpr_read1(__global uint16 *dataset2_1,  uint16 cmpr_local[4][2],  ushort *
 	}
 }
 
-void cmpr_read2(__global uint16 *dataset2_2,  uint16 cmpr_local[4][2],  ushort *cmprpop_local, ushort cmpr_num){
+void cmpr_read2(__global uint16 *dataset2_2,  uint16 cmpr_local[4][2],  ushort cmprpop_local[4], ushort cmpr_num){
 	ushort16 temp;
 	if (cmpr_num % 2 == 0) {
 		cmpr_local[2][0] = dataset2_2[cmpr_num];
@@ -259,7 +259,7 @@ void cmpr_read2(__global uint16 *dataset2_2,  uint16 cmpr_local[4][2],  ushort *
 	}
 }
 
-void cmpr_read3(__global uint16 *dataset2_3,  uint16 cmpr_local[4][2],  ushort *cmprpop_local, ushort cmpr_num){
+void cmpr_read3(__global uint16 *dataset2_3,  uint16 cmpr_local[4][2],  ushort cmprpop_local[4], ushort cmpr_num){
 	ushort16 temp;
 	if (cmpr_num % 2 == 0) {
 		cmpr_local[3][0] = dataset2_3[cmpr_num];
@@ -279,8 +279,8 @@ void cmpr_read3(__global uint16 *dataset2_3,  uint16 cmpr_local[4][2],  ushort *
 	}
 }
 
-__attribute__ ((xcl_dataflow))
-void cmpr_read(__global uint16 *dataset2_0, __global uint16 *dataset2_1, __global uint16 *dataset2_2, __global uint16 *dataset2_3,  uint16 cmpr_local[4][2],  ushort *cmprpop_local, ushort cmpr_num){
+//__attribute__ ((xcl_dataflow))
+void cmpr_read(__global uint16 *dataset2_0, __global uint16 *dataset2_1, __global uint16 *dataset2_2, __global uint16 *dataset2_3,  uint16 cmpr_local[4][2],  ushort cmprpop_local[4], ushort cmpr_num){
 	cmpr_read0(dataset2_0, cmpr_local, cmprpop_local, cmpr_num);
 	cmpr_read1(dataset2_1, cmpr_local, cmprpop_local, cmpr_num);
 	cmpr_read2(dataset2_2, cmpr_local, cmprpop_local, cmpr_num);
@@ -288,7 +288,7 @@ void cmpr_read(__global uint16 *dataset2_0, __global uint16 *dataset2_1, __globa
 }
 
 
-void calculation( uint16 ref_local[LOCAL_MEM_SIZE][2],  uint16 cmpr_local[4][2],  ushort *refpop_local,  ushort *cmprpop_local, int result_local){
+void calculation( uint16 ref_local[LOCAL_MEM_SIZE][2],  uint16 cmpr_local[4][2],  ushort refpop_local[LOCAL_MEM_SIZE],  ushort cmprpop_local[4], int result_local){
 	__attribute__((xcl_pipeline_loop(1)))
 	__attribute__((xcl_loop_tripcount(4, 4)))
 	cmpr_read: for(uchar n = 0; n < 4; n++){

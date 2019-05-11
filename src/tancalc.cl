@@ -87,8 +87,7 @@ void ref_popcount0(__global uint16 *dataset1_0,  uint16 ref_local[LOCAL_MEM_SIZE
 	else {
 		ushort l = 2*(ref_num - 1);
 		temp = convert_ushort16(popcount(ref_local[l][1]));
-		vector_to_scalar(temp, &refpop_local[l];
-		}
+		vector_to_scalar(temp, &refpop_local[l]);
 	}
 }
 
@@ -102,7 +101,7 @@ void ref_popcount1(__global uint16 *dataset1_1,  uint16 ref_local[LOCAL_MEM_SIZE
 	else {
 		ushort l = 2*(ref_num - 1);
 		temp = convert_ushort16(popcount(ref_local[l + 1][1]));
-		vector_to_scalar(temp, &refpop_local[l + 1];
+		vector_to_scalar(temp, &refpop_local[l + 1]);
 	}
 }
 
@@ -116,7 +115,7 @@ void ref_popcount2(__global uint16 *dataset1_2,  uint16 ref_local[LOCAL_MEM_SIZE
 	else {
 		ushort l = 2*(ref_num - 1);
 		temp = convert_ushort16(popcount(ref_local[l + 2][1]));
-		vector_to_scalar(temp, &refpop_local[l +  2];
+		vector_to_scalar(temp, &refpop_local[l +  2]);
 	}
 }
 
@@ -130,7 +129,7 @@ void ref_popcount3(__global uint16 *dataset1_3,  uint16 ref_local[LOCAL_MEM_SIZE
 	else {
 		ushort l = 2*(ref_num - 1);
 		temp = convert_ushort16(popcount(ref_local[l + 3][1]));
-		vector_to_scalar(temp, &refpop_local[l +  3];
+		vector_to_scalar(temp, &refpop_local[l +  3]);
 	}
 }
 
@@ -192,6 +191,7 @@ void cmpr_read2(__global uint16 *dataset2_2,  uint16 cmpr_local[4][2],  ushort c
 		cmpr_local[2][1] = dataset2_2[cmpr_num];
 		temp = convert_ushort16(popcount(cmpr_local[2][1]));
 		vector_to_scalar(temp, &cmprpop_local[2]);
+	}
 }
 
 void cmpr_read3(__global uint16 *dataset2_3,  uint16 cmpr_local[4][2],  ushort cmprpop_local[4], ushort cmpr_num){
@@ -238,36 +238,36 @@ void calculation( uint16 ref_local[LOCAL_MEM_SIZE][2],  uint16 cmpr_local[4][2],
 __kernel
 __attribute__ ((reqd_work_group_size(1,1,1)))
 void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global uint16 *dataset1_2, __global uint16 *dataset1_3,
-			 __global uint16 *dataset2_0, __global uint16 *dataset2_1, __global uint16 *dataset2_2, __global uint16 *dataset2_3,
-			 __global int *output0,
-			 int size) {
+	__global uint16 *dataset2_0, __global uint16 *dataset2_1, __global uint16 *dataset2_2, __global uint16 *dataset2_3,
+	__global int *output0,
+	int size) {
 
-// Local Memory
-	 uint16 ref_local[LOCAL_MEM_SIZE][2];__attribute__((xcl_array_partition(complete, 0)))
-	 ushort refpop_local[LOCAL_MEM_SIZE];__attribute__((xcl_array_partition(complete, 0)))
-	 uint16 cmpr_local[4][2];__attribute__((xcl_array_partition(complete, 0)))
-	 ushort cmprpop_local[4];__attribute__((xcl_array_partition(complete, 0)))
-	 int result_local = 0;
+		// Local Memory
+		uint16 ref_local[LOCAL_MEM_SIZE][2];__attribute__((xcl_array_partition(complete, 0)))
+		ushort refpop_local[LOCAL_MEM_SIZE];__attribute__((xcl_array_partition(complete, 0)))
+		uint16 cmpr_local[4][2];__attribute__((xcl_array_partition(complete, 0)))
+		ushort cmprpop_local[4];__attribute__((xcl_array_partition(complete, 0)))
+		int result_local = 0;
 
-	ushort size_in = size * 2;
+		ushort size_in = size * 2;
 
-	__attribute__((xcl_loop_tripcount(c_size_in/4, c_size_in/4)))
-	mainloop: for (ushort chunk_num = 0; chunk_num < size_in; chunk_num += c_size) {
+		__attribute__((xcl_loop_tripcount(c_size_in/4, c_size_in/4)))
+		mainloop: for (ushort chunk_num = 0; chunk_num < size_in; chunk_num += c_size) {
 
-		//read ref until mem is full and popcount
-		ref_read(dataset1_0, dataset1_1, dataset1_2, dataset1_3, ref_local, refpop_local, chunk_num);
+			//read ref until mem is full and popcount
+			ref_read(dataset1_0, dataset1_1, dataset1_2, dataset1_3, ref_local, refpop_local, chunk_num);
 
-		__attribute__((xcl_pipeline_loop(1)))
-		__attribute__((xcl_loop_tripcount(c_size_in, c_size_in)))
-		cmprmain: for(ushort cmpr_num = 0; cmpr_num < size_in; cmpr_num++){
-			cmpr_read(dataset2_0, dataset2_1, dataset2_2, dataset2_3, cmpr_local, cmprpop_local, cmpr_num);
-			if (cmpr_num % 2 == 1) {
-				calculation(ref_local, cmpr_local, refpop_local, cmprpop_local, result_local);
+			__attribute__((xcl_pipeline_loop(1)))
+			__attribute__((xcl_loop_tripcount(c_size_in, c_size_in)))
+			cmprmain: for(ushort cmpr_num = 0; cmpr_num < size_in; cmpr_num++){
+				cmpr_read(dataset2_0, dataset2_1, dataset2_2, dataset2_3, cmpr_local, cmprpop_local, cmpr_num);
+				if (cmpr_num % 2 == 1) {
+					calculation(ref_local, cmpr_local, refpop_local, cmprpop_local, result_local);
+				}
 			}
 		}
-	}
 
-	//-----
-	output0[0] = result_local;
-	//-----
-}
+		//-----
+		output0[0] = result_local;
+		//-----
+	}

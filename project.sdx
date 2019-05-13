@@ -116,7 +116,7 @@
       </binaryContainers>
     </lastBuildOptions>
   </configuration>
-  <configuration name="System" id="com.xilinx.sdx.opencl.config.hw.693039109">
+  <configuration name="System" id="com.xilinx.sdx.opencl.config.hw.693039109" dirty="true">
     <configBuildOptions xsi:type="openclProject:OpenCLOptions" target="hw">
       <binaryContainers name="binary_container_1">
         <kernels name="tancalc" sourceFile="src/tancalc.cl">

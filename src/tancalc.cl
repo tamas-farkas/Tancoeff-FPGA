@@ -30,7 +30,7 @@ ushort vector_data(ushort16 vec, uchar num){
 }
 
 void vector_to_scalar(ushort16 vector, ushort *scalar){
-	__attribute__((xcl_unroll_hint(16)))
+	__attribute__((opencl_unroll_hint(16)))
 	__attribute__((xcl_loop_tripcount(16, 16)))
 	for(uchar i = 0; i < 16; i++){
 		*scalar +=  vector_data(vector, i);
@@ -149,72 +149,105 @@ void ref_read(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global
 }
 
 
-void cmpr_read0(__global uint16 *dataset2_0,  uint16 cmpr_local[4][2],  ushort cmprpop_local[4], uint cmpr_num){
-	ushort16 temp;
+void cmpr_read0(__global uint16 *dataset2_0,  uint16 cmpr_local[4][2], uint cmpr_num){
 	if (cmpr_num % 2 == 0) {
 		cmpr_local[0][0] = dataset2_0[cmpr_num];
+	}
+	else{
+		cmpr_local[0][1] = dataset2_0[cmpr_num];
+	}
+}
+
+void cmpr_read1(__global uint16 *dataset2_1,  uint16 cmpr_local[4][2], uint cmpr_num){
+	if (cmpr_num % 2 == 0) {
+		cmpr_local[1][0] = dataset2_1[cmpr_num];
+	}
+	else{
+		cmpr_local[1][1] = dataset2_1[cmpr_num];
+	}
+}
+
+void cmpr_read2(__global uint16 *dataset2_2,  uint16 cmpr_local[4][2], uint cmpr_num){;
+	if (cmpr_num % 2 == 0) {
+		cmpr_local[2][0] = dataset2_2[cmpr_num];
+	}
+	else{
+		cmpr_local[2][1] = dataset2_2[cmpr_num];
+	}
+}
+
+void cmpr_read3(__global uint16 *dataset2_3,  uint16 cmpr_local[4][2], uint cmpr_num){
+	if (cmpr_num % 2 == 0) {
+		cmpr_local[3][0] = dataset2_3[cmpr_num];
+	}
+	else{
+		cmpr_local[3][1] = dataset2_3[cmpr_num];
+	}
+}
+
+void cmpr_popcount0(uint16 cmpr_local[4][2],  ushort cmprpop_local[4], uint cmpr_num){
+	ushort16 temp;
+	if (cmpr_num % 2 == 0) {
 		temp = convert_ushort16(popcount(cmpr_local[0][0]));
 		cmprpop_local[0] = 0;
 		vector_to_scalar(temp, &cmprpop_local[0]);
 	}
 	else{
-		cmpr_local[0][1] = dataset2_0[cmpr_num];
 		temp = convert_ushort16(popcount(cmpr_local[0][1]));
 		vector_to_scalar(temp, &cmprpop_local[0]);
 	}
 }
 
-void cmpr_read1(__global uint16 *dataset2_1,  uint16 cmpr_local[4][2],  ushort cmprpop_local[4], uint cmpr_num){
+void cmpr_popcount1(uint16 cmpr_local[4][2],  ushort cmprpop_local[4], uint cmpr_num){
 	ushort16 temp;
 	if (cmpr_num % 2 == 0) {
-		cmpr_local[1][0] = dataset2_1[cmpr_num];
 		temp = convert_ushort16(popcount(cmpr_local[1][0]));
 		cmprpop_local[1] = 0;
 		vector_to_scalar(temp, &cmprpop_local[1]);
 	}
 	else{
-		cmpr_local[1][1] = dataset2_1[cmpr_num];
 		temp = convert_ushort16(popcount(cmpr_local[1][1]));
 		vector_to_scalar(temp, &cmprpop_local[1]);
 	}
 }
-
-void cmpr_read2(__global uint16 *dataset2_2,  uint16 cmpr_local[4][2],  ushort cmprpop_local[4], uint cmpr_num){
+void cmpr_popcount2(uint16 cmpr_local[4][2],  ushort cmprpop_local[4], uint cmpr_num){
 	ushort16 temp;
 	if (cmpr_num % 2 == 0) {
-		cmpr_local[2][0] = dataset2_2[cmpr_num];
 		temp = convert_ushort16(popcount(cmpr_local[2][0]));
 		cmprpop_local[2] = 0;
 		vector_to_scalar(temp, &cmprpop_local[2]);
 	}
 	else{
-		cmpr_local[2][1] = dataset2_2[cmpr_num];
 		temp = convert_ushort16(popcount(cmpr_local[2][1]));
 		vector_to_scalar(temp, &cmprpop_local[2]);
 	}
 }
-
-void cmpr_read3(__global uint16 *dataset2_3,  uint16 cmpr_local[4][2],  ushort cmprpop_local[4], uint cmpr_num){
+void cmpr_popcount3(uint16 cmpr_local[4][2],  ushort cmprpop_local[4], uint cmpr_num){
 	ushort16 temp;
 	if (cmpr_num % 2 == 0) {
-		cmpr_local[3][0] = dataset2_3[cmpr_num];
 		temp = convert_ushort16(popcount(cmpr_local[3][0]));
 		cmprpop_local[3] = 0;
 		vector_to_scalar(temp, &cmprpop_local[3]);
 	}
 	else{
-		cmpr_local[3][1] = dataset2_3[cmpr_num];
 		temp = convert_ushort16(popcount(cmpr_local[3][1]));
 		vector_to_scalar(temp, &cmprpop_local[3]);
 	}
 }
 
-__attribute__ ((xcl_dataflow))
+//__attribute__ ((xcl_dataflow))
 void cmpr_read(__global uint16 *dataset2_0, __global uint16 *dataset2_1, __global uint16 *dataset2_2, __global uint16 *dataset2_3,  uint16 cmpr_local[4][2],  ushort cmprpop_local[4], uint cmpr_num){
-	cmpr_read0(dataset2_0, cmpr_local, cmprpop_local, cmpr_num);
-	cmpr_read1(dataset2_1, cmpr_local, cmprpop_local, cmpr_num);
-	cmpr_read2(dataset2_2, cmpr_local, cmprpop_local, cmpr_num);
-	cmpr_read3(dataset2_3, cmpr_local, cmprpop_local, cmpr_num);
+	for(uchar i = 0; i < 2; i++){
+	cmpr_read0(dataset2_0, cmpr_local, cmpr_num);
+	cmpr_read1(dataset2_1, cmpr_local, cmpr_num);
+	cmpr_read2(dataset2_2, cmpr_local, cmpr_num);
+	cmpr_read3(dataset2_3, cmpr_local, cmpr_num);
+	cmpr_popcount0(cmpr_local, cmprpop_local, cmpr_num);
+	cmpr_popcount1(cmpr_local, cmprpop_local, cmpr_num);
+	cmpr_popcount2(cmpr_local, cmprpop_local, cmpr_num);
+	cmpr_popcount3(cmpr_local, cmprpop_local, cmpr_num);
+	cmpr_num++;
+	}
 }
 
 
@@ -260,15 +293,15 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 
 			//__attribute__((xcl_pipeline_loop(1)))
 			__attribute__((xcl_loop_tripcount(c_size_in, c_size_in)))
-			cmprmain: for(uint cmpr_num = 0; cmpr_num < size_in; cmpr_num++){
+			cmprmain: for(uint cmpr_num = 0; cmpr_num < size_in; cmpr_num+=2){
 				cmpr_read(dataset2_0, dataset2_1, dataset2_2, dataset2_3, cmpr_local, cmprpop_local, cmpr_num);
-				if (cmpr_num % 2 == 1) {
+				//if (cmpr_num % 2 == 1) {
 					calculation(ref_local, cmpr_local, refpop_local, cmprpop_local, result_local);
-				}
+				//}
 			}
 		}
 
 		//-----
-		output0[0] = result_local[0];
+		output0[0] = result_local;
 		//-----
 	}

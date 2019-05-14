@@ -201,6 +201,10 @@
                                 								
                                 <option id="com.xilinx.sdx.opencl.cpp.compiler.include.paths.776757760" name="Include paths (-I)" superClass="com.xilinx.sdx.opencl.cpp.compiler.include.paths"/>
                                 								
+                                <option id="com.xilinx.sdx.opencl.toolchain.hw_emu.debug.gcc_compiler.option.debug.998275689" superClass="com.xilinx.sdx.opencl.toolchain.hw_emu.debug.gcc_compiler.option.debug" value="gnu.cpp.compiler.debugging.level.default" valueType="enumerated"/>
+                                								
+                                <option id="com.xilinx.sdx.opencl.toolchain.hw_emu.debug.gcc_compiler.option.optimization.492330636" superClass="com.xilinx.sdx.opencl.toolchain.hw_emu.debug.gcc_compiler.option.optimization" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+                                								
                                 <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1939565930" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
                                 							
                             </tool>

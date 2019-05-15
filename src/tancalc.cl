@@ -237,6 +237,7 @@ void cmpr_popcount3(uint16 cmpr_local[4][2],  ushort cmprpop_local[4], uint cmpr
 
 //__attribute__ ((xcl_dataflow))
 void cmpr_read(__global uint16 *dataset2_0, __global uint16 *dataset2_1, __global uint16 *dataset2_2, __global uint16 *dataset2_3,  uint16 cmpr_local[4][2],  ushort cmprpop_local[4], uint cmpr_num){
+	__attribute__((opencl_unroll_hint(2)))
 	for(uchar i = 0; i < 2; i++){
 	cmpr_read0(dataset2_0, cmpr_local, cmpr_num);
 	cmpr_read1(dataset2_1, cmpr_local, cmpr_num);
@@ -255,7 +256,7 @@ void calculation( uint16 ref_local[LOCAL_MEM_SIZE][2],  uint16 cmpr_local[4][2],
 	__attribute__((xcl_pipeline_loop(1)))
 	__attribute__((xcl_loop_tripcount(4, 4)))
 	cmpr_read: for(uchar n = 0; n < 4; n++){
-		__attribute__((opencl_unroll_hint(LOCAL_MEM_SIZE)))
+		//__attribute__((opencl_unroll_hint(LOCAL_MEM_SIZE)))
 		__attribute__((xcl_loop_tripcount(LOCAL_MEM_SIZE, LOCAL_MEM_SIZE)))
 		calculation: for(ushort ref_num = 0; ref_num < LOCAL_MEM_SIZE; ref_num++){
 			ushort16 temp;

@@ -303,6 +303,6 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 		}
 
 		//-----
-		output0[0] = result_local;
+		output0[0] = result_local[0];
 		//-----
 	}

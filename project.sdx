@@ -16,7 +16,7 @@
       </binaryContainers>
     </lastBuildOptions>
   </configuration>
-  <configuration name="Emulation-HW" id="com.xilinx.sdx.opencl.config.hw_emu.992012887" dirty="true">
+  <configuration name="Emulation-HW" id="com.xilinx.sdx.opencl.config.hw_emu.992012887">
     <configBuildOptions xsi:type="openclProject:OpenCLOptions" kernelDebug="true" target="hw_emu">
       <binaryContainers name="binary_container_1">
         <kernels name="tancalc" sourceFile="src/tancalc.cl">

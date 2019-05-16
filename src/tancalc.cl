@@ -293,7 +293,7 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 			ref_read(dataset1_0, dataset1_1, dataset1_2, dataset1_3, ref_local, refpop_local, chunk_num);
 
 			//__attribute__((xcl_pipeline_loop(1)))
-			__attribute__((xcl_loop_tripcount(c_size_in, c_size_in)))
+			__attribute__((xcl_loop_tripcount(c_size_in/2, c_size_in/2)))
 			cmprmain: for(uint cmpr_num = 0; cmpr_num < size_in; cmpr_num+=2){
 				cmpr_read(dataset2_0, dataset2_1, dataset2_2, dataset2_3, cmpr_local, cmprpop_local, cmpr_num);
 				//if (cmpr_num % 2 == 1) {

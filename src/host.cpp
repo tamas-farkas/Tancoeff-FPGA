@@ -5,7 +5,7 @@
 #include <string.h>
 #include <vector>
 
-#define DATA_SIZE 8 * 32		//2*4*1MB
+#define DATA_SIZE 1024 * 32		//2*4*1MB
 
 int main(int argc, char** argv)
 {

@@ -1,5 +1,5 @@
-#define DATA_SIZE 8 * 32
-#define LOCAL_MEM_SIZE 4
+#define DATA_SIZE 1024 * 32		//Sim:8,4
+#define LOCAL_MEM_SIZE 128
 
 // Tripcount identifiers
 __constant int c_size = (LOCAL_MEM_SIZE * 2) / 4;
@@ -37,7 +37,7 @@ void vector_to_scalar(ushort16 vector, ushort *scalar){
 	}
 }
 
-void ref_read0(__global const uint16 *dataset1_0,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort *refpop_local, ushort chunk_num, ushort ref_num, ushort offset){
+void ref_read0(__global const uint16 *dataset1_0,  uint16 ref_local[LOCAL_MEM_SIZE][2], ushort chunk_num, ushort ref_num, ushort offset){
 	if (ref_num % 2 == 0) {
 		ref_local[offset][0] = dataset1_0[chunk_num + ref_num];
 	}
@@ -46,7 +46,7 @@ void ref_read0(__global const uint16 *dataset1_0,  uint16 ref_local[LOCAL_MEM_SI
 	}
 }
 
-void ref_read1(__global const uint16 *dataset1_1,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort *refpop_local, ushort chunk_num, ushort ref_num, ushort offset){
+void ref_read1(__global const uint16 *dataset1_1,  uint16 ref_local[LOCAL_MEM_SIZE][2], ushort chunk_num, ushort ref_num, ushort offset){
 	if (ref_num % 2 == 0) {
 		ref_local[offset + 1][0] = dataset1_1[chunk_num + ref_num];
 	}
@@ -55,7 +55,7 @@ void ref_read1(__global const uint16 *dataset1_1,  uint16 ref_local[LOCAL_MEM_SI
 	}
 }
 
-void ref_read2(__global const uint16 *dataset1_2,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort *refpop_local, ushort chunk_num, ushort ref_num, ushort offset){
+void ref_read2(__global const uint16 *dataset1_2,  uint16 ref_local[LOCAL_MEM_SIZE][2], ushort chunk_num, ushort ref_num, ushort offset){
 	if (ref_num % 2 == 0) {
 		ref_local[offset + 2][0] = dataset1_2[chunk_num + ref_num];
 	}
@@ -64,7 +64,7 @@ void ref_read2(__global const uint16 *dataset1_2,  uint16 ref_local[LOCAL_MEM_SI
 	}
 }
 
-void ref_read3(__global const uint16 *dataset1_3,  uint16 ref_local[LOCAL_MEM_SIZE][2],  ushort *refpop_local, ushort chunk_num, ushort ref_num, ushort offset){
+void ref_read3(__global const uint16 *dataset1_3,  uint16 ref_local[LOCAL_MEM_SIZE][2], ushort chunk_num, ushort ref_num, ushort offset){
 	if (ref_num % 2 == 0) {
 		ref_local[offset + 3][0] = dataset1_3[chunk_num + ref_num];
 	}
@@ -136,10 +136,10 @@ void ref_read(__global const uint16 *dataset1_0, __global const uint16 *dataset1
 	__attribute__((xcl_loop_tripcount(c_size, c_size)))
 	ref_read_c: for (ushort ref_num = 0; ref_num < c_size; ref_num++){
 		offset = 2*ref_num;
-		ref_read0(dataset1_0, ref_local, refpop_local, chunk_num, ref_num, offset);
-		ref_read1(dataset1_1, ref_local, refpop_local, chunk_num, ref_num, offset);
-		ref_read2(dataset1_2, ref_local, refpop_local, chunk_num, ref_num, offset);
-		ref_read3(dataset1_3, ref_local, refpop_local, chunk_num, ref_num, offset);
+		ref_read0(dataset1_0, ref_local, chunk_num, ref_num, offset);
+		ref_read1(dataset1_1, ref_local, chunk_num, ref_num, offset);
+		ref_read2(dataset1_2, ref_local, chunk_num, ref_num, offset);
+		ref_read3(dataset1_3, ref_local, chunk_num, ref_num, offset);
 		ref_popcount0(ref_local, refpop_local, ref_num, offset);
 		ref_popcount1(ref_local, refpop_local, ref_num, offset);
 		ref_popcount2(ref_local, refpop_local, ref_num, offset);
@@ -256,8 +256,8 @@ void cmpr_read(__global const uint16 *dataset2_0, __global const uint16 *dataset
 }
 
 
-void calculation( uint16 ref_local[LOCAL_MEM_SIZE][2],  uint16 cmpr_local[4][2],  ushort *refpop_local,  ushort *cmprpop_local, int result_local[LOCAL_MEM_SIZE][4]){
-	__attribute__((xcl_pipeline_loop(1)))
+void calculation( uint16 ref_local[LOCAL_MEM_SIZE][2],  uint16 cmpr_local[4][2],  ushort *refpop_local,  ushort *cmprpop_local, uchar result_local[LOCAL_MEM_SIZE][4]){
+	//__attribute__((xcl_pipeline_loop(1)))
 	__attribute__((xcl_loop_tripcount(4, 4)))
 	calculation_c1: for(uchar n = 0; n < 4; n++){
 		__attribute__((xcl_loop_tripcount(LOCAL_MEM_SIZE, LOCAL_MEM_SIZE)))
@@ -285,10 +285,12 @@ void tancalc(__global const uint16 *dataset1_0, __global const uint16 *dataset1_
 		ushort refpop_local[LOCAL_MEM_SIZE];__attribute__((xcl_array_partition(complete, 1)))
 		uint16 cmpr_local[4][2];__attribute__((xcl_array_partition(complete, 0)))
 		ushort cmprpop_local[4];__attribute__((xcl_array_partition(complete, 1)))
-		uchar result_local[LOCAL_MEM_SIZE][4];__attribute__((xcl_array_partition(complete, 0)))
+		uint result_local[LOCAL_MEM_SIZE][4];__attribute__((xcl_array_partition(complete, 0)))
 		int result = 0;
 
+		__attribute__((xcl_loop_tripcount(4, 4)))
 		for(ushort i = 0; i < 4; i++){
+			__attribute__((xcl_loop_tripcount(LOCAL_MEM_SIZE,LOCAL_MEM_SIZE)))
 			for(ushort k = 0; k < LOCAL_MEM_SIZE; k++){
 				result_local[k][i] = 0;
 			}
@@ -308,7 +310,10 @@ void tancalc(__global const uint16 *dataset1_0, __global const uint16 *dataset1_
 				cmpr_read(dataset2_0, dataset2_1, dataset2_2, dataset2_3, cmpr_local, cmprpop_local, cmpr_num);
 				calculation(ref_local, cmpr_local, refpop_local, cmprpop_local, result_local);
 			}
+
+			__attribute__((xcl_loop_tripcount(4, 4)))
 			result_c1:for(ushort i = 0; i < 4; i++){
+				__attribute__((xcl_loop_tripcount(LOCAL_MEM_SIZE,LOCAL_MEM_SIZE)))
 				result_c2:for(ushort k = 0; k < LOCAL_MEM_SIZE; k++){
 					result += result_local[k][i];
 					result_local[k][i] = 0;

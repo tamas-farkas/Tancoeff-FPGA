@@ -59,6 +59,14 @@
                                     									
                                     <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem4:DDR[0]"/>
                                     									
+                                    <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem5:DDR[1]"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem6:DDR[2]"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem7:DDR[3]"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem8:DDR[0]"/>
+                                    									
                                     <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem3:DDR[3]"/>
                                     									
                                     <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem1:DDR[1]"/>
@@ -167,6 +175,8 @@
                                     									
                                     <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem0:DDR[0]"/>
                                     									
+                                    <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem4:DDR[0]"/>
+                                    									
                                     <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem5:DDR[1]"/>
                                     									
                                     <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem6:DDR[2]"/>
@@ -174,8 +184,6 @@
                                     <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem7:DDR[3]"/>
                                     									
                                     <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem8:DDR[0]"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem4:DDR[0]"/>
                                     									
                                     <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem3:DDR[3]"/>
                                     									
@@ -277,6 +285,14 @@
                                     									
                                     <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem4:DDR[0]"/>
                                     									
+                                    <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem5:DDR[1]"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem6:DDR[2]"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem7:DDR[3]"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem8:DDR[0]"/>
+                                    									
                                     <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem3:DDR[3]"/>
                                     									
                                     <listOptionValue builtIn="false" value="--sp tancalc_1.m_axi_gmem1:DDR[1]"/>
@@ -364,5 +380,7 @@
         </configuration>
         	
     </storageModule>
+    	
+    <storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
     
 </cproject>

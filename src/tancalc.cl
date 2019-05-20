@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 #include "tancalc.h"
 
 #define DATA_SIZE 32 * 32
 #define LOCAL_MEM_SIZE 8
+=======
+#define DATA_SIZE 1024 * 32		//Sim:8,4
+#define LOCAL_MEM_SIZE 128
+>>>>>>> e66d7f9744c8cbfd32513d6af9c1a65a1e09b250
 
 // Tripcount identifiers
 __constant int c_size = (LOCAL_MEM_SIZE * 2) / 4;
@@ -421,6 +426,6 @@ void tancalc(__global uint16 *dataset1_0, __global uint16 *dataset1_1, __global 
 		}
 
 		//-----
-		output0 = result_local;
+		output0[0] = result;
 		//-----
 	}

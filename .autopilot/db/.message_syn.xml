@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_631" tag="SCHEDULE" content="Option &apos;relax_ii_for_timing&apos; is enabled, will increase II to preserve clock frequency constraints."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;tancoeff/tancoeff/tancalc.c&apos; ..."/>
+	<Message severity="ERROR" prefix="[HLS 200-70]" key="HLS_70_1454" tag="" content="Compilation errors found: In file included from tancoeff/tancoeff/tancalc.c:1:
+tancoeff/tancoeff/tancalc.c:45:1: warning: return type of &apos;main&apos; is not &apos;int&apos; [-Wmain-return-type]
+void main(void){
+^
+tancoeff/tancoeff/tancalc.c:80:2: error: use of undeclared identifier &apos;output&apos;
+ output[0] = result;
+ ^
+1 warning and 1 error generated."/>
+</Messages>

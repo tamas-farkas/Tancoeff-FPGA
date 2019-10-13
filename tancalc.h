@@ -1,15 +1,26 @@
 #ifndef TANCALC_H
 #define TANCALC_H
 
-#define DATA_SIZE 32
-#define LOCAL_MEM_SIZE 8
+#include <string.h>
+#include <ap_int.h>
+
+#define DATA_SIZE1 1024*1024
+#define DATA_SIZE2 1024*1024
+#define BUFFER_SIZE1 64
+#define BUFFER_SIZE2 64
+#define DATAWIDTH 1024
+#define DATATYPE_SIZE 512
+#define VECTOR_SIZE (DATAWIDTH / DATATYPE_SIZE)
+
+typedef ap_uint<DATAWIDTH> data_type;
+typedef ap_uint<DATATYPE_SIZE> din_type;
+typedef ap_uint<11> popcnt_type;
 
 
-unsigned int popcnt(unsigned int x);
-void ref_read(unsigned int *input, unsigned int *ref_local, unsigned int *refpop_local, unsigned short chunk_num);
-void cmpr_read(unsigned int *input, unsigned int *cmpr_local, unsigned int *cmprpop_local, unsigned short chunk_num);
-void calculation(unsigned int *ref_local, unsigned int *cmpr_local, unsigned int *refpop_local, unsigned int *cmprpop_local, unsigned int *result_local, unsigned int *result);
-void tancalc(unsigned int* input1, unsigned int* input2, unsigned int* output, unsigned int size);
+popcnt_type popcnt(din_type x);
+void data_read(din_type *input, data_type *data_local, short *datapop_local, int chunk_num);
+void calculation(data_type *ref_local, data_type *cmpr_local, short *refpop_local, short *cmprpop_local, short *result_local, int *result);
+void tancalc( din_type *input, int *output);
 
 
 #endif

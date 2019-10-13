@@ -1,0 +1,110 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'calculation'" level="0">
+<item name = "Date">Sat Oct 12 18:53:25 2019
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">tancoeff</item>
+<item name = "Solution">tancoeff</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcvu9p-fsgd2104-2L-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">3.33, 2.413, 0.90</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">68, 68, 68, 68, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_popcnt_fu_3273">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3278">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3283">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3288">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3293">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3298">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3303">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3308">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3313">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3318">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3323">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3328">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3333">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3338">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3343">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3348">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3353">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3358">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3363">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3368">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3373">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3378">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3383">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3388">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3393">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3398">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3403">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3408">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3413">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3418">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3423">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3428">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3433">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3438">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3443">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3448">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3453">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3458">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3463">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3468">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3473">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3478">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3483">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3488">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3493">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3498">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3503">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3508">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3513">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3518">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3523">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3528">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3533">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3538">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3543">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3548">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3553">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3558">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3563">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3568">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3573">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3578">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3583">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_3588">popcnt, 1, 1, 1, 1, function</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- calculation_loop1">66, 66, 4, 1, 1, 64, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

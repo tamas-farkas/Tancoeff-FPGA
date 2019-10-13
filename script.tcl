@@ -6,7 +6,8 @@
 open_project tancoeff
 set_top tancalc
 add_files tancoeff/tancoeff/tancalc.h
-add_files tancoeff/tancoeff/tancalc.c
+add_files tancoeff/tancoeff/tancalc.cpp
+add_files -tb tancoeff/tancoeff/test.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "tancoeff"
 set_part {xcvu9p-fsgd2104-2L-e} -tool vivado
 create_clock -period 300MHz -name default
@@ -18,7 +19,7 @@ config_rtl -module_auto_prefix -register_reset_num 3
 config_interface -m_axi_addr64
 set_clock_uncertainty 27%
 #source "./tancoeff/tancoeff/directives.tcl"
-#csim_design
+csim_design
 csynth_design
-#cosim_design
+cosim_design
 export_design -format ip_catalog

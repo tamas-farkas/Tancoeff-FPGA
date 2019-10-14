@@ -5,7 +5,7 @@
 `timescale 1ns/1ps
 `default_nettype none
 
-module tancalc_tancalc_gmem_m_axi
+module tancalc_tancalc_gmem0_m_axi
 #(parameter
     CONSERVATIVE            = 0,
     NUM_READ_OUTSTANDING    = 2,
@@ -149,7 +149,7 @@ wire                                WVALID_Dummy;
 wire                                WREADY_Dummy;
 
 // Write Address channel throttling unit
-tancalc_tancalc_gmem_m_axi_throttl #(
+tancalc_tancalc_gmem0_m_axi_throttl #(
     .USED_FIX(0),
     .ADDR_WIDTH(C_M_AXI_ADDR_WIDTH),
     .DATA_WIDTH(C_M_AXI_DATA_WIDTH),
@@ -189,8 +189,8 @@ assign I_RLAST = 1'b0;
 assign I_RUSER = C_USER_VALUE;
 //------------------------Instantiation------------------
 
-// tancalc_tancalc_gmem_m_axi_write
-tancalc_tancalc_gmem_m_axi_write #(
+// tancalc_tancalc_gmem0_m_axi_write
+tancalc_tancalc_gmem0_m_axi_write #(
     .NUM_WRITE_OUTSTANDING   ( NUM_WRITE_OUTSTANDING ),
     .MAX_WRITE_BURST_LENGTH  ( MAX_WRITE_BURST_LENGTH ),
     .C_M_AXI_ID_WIDTH        ( C_M_AXI_ID_WIDTH ),
@@ -254,8 +254,8 @@ tancalc_tancalc_gmem_m_axi_write #(
     .wrsp              ( I_BRESP )
 );
 
-// tancalc_tancalc_gmem_m_axi_read
-tancalc_tancalc_gmem_m_axi_read #(
+// tancalc_tancalc_gmem0_m_axi_read
+tancalc_tancalc_gmem0_m_axi_read #(
     .NUM_READ_OUTSTANDING     ( NUM_READ_OUTSTANDING ),
     .MAX_READ_BURST_LENGTH    ( MAX_READ_BURST_LENGTH ),
     .C_M_AXI_ID_WIDTH         ( C_M_AXI_ID_WIDTH ),
@@ -311,7 +311,7 @@ tancalc_tancalc_gmem_m_axi_read #(
 endmodule
 `default_nettype wire
 
-module tancalc_tancalc_gmem_m_axi_reg_slice
+module tancalc_tancalc_gmem0_m_axi_reg_slice
 #(parameter
     N = 8   // data width
 ) (
@@ -415,7 +415,7 @@ end
 
 endmodule
 
-module tancalc_tancalc_gmem_m_axi_fifo
+module tancalc_tancalc_gmem0_m_axi_fifo
 #(parameter
     DATA_BITS  = 8,
     DEPTH      = 16,
@@ -524,7 +524,7 @@ begin
 end
 endmodule
 
-module tancalc_tancalc_gmem_m_axi_buffer
+module tancalc_tancalc_gmem0_m_axi_buffer
 #(parameter
     MEM_STYLE  = "block",
     DATA_WIDTH = 32,
@@ -689,7 +689,7 @@ end
 endmodule
 `timescale 1ns/1ps
 
-module tancalc_tancalc_gmem_m_axi_decoder
+module tancalc_tancalc_gmem0_m_axi_decoder
 #(parameter
     DIN_WIDTH       = 3
 )(
@@ -705,7 +705,7 @@ module tancalc_tancalc_gmem_m_axi_decoder
 endmodule
 
 
-module tancalc_tancalc_gmem_m_axi_throttl
+module tancalc_tancalc_gmem0_m_axi_throttl
 #(parameter
     USED_FIX       = 0,
     FIX_VALUE      = 4,
@@ -840,7 +840,7 @@ begin
     end
 end
 
-tancalc_tancalc_gmem_m_axi_fifo #(
+tancalc_tancalc_gmem0_m_axi_fifo #(
     .DATA_BITS(ADDR_WIDTH + 8),
     .DEPTH(USER_MAXREQS),
     .DEPTH_BITS(log2(USER_MAXREQS))
@@ -879,7 +879,7 @@ begin
     end
 end
 
-tancalc_tancalc_gmem_m_axi_fifo #(
+tancalc_tancalc_gmem0_m_axi_fifo #(
     .DATA_BITS(DATA_WIDTH + DATA_WIDTH/8 + 1),
     .DEPTH(DEPTH),
     .DEPTH_BITS(log2(DEPTH))
@@ -901,7 +901,7 @@ endmodule
 
 `timescale 1ns/1ps
 
-module tancalc_tancalc_gmem_m_axi_read
+module tancalc_tancalc_gmem0_m_axi_read
 #(parameter
     NUM_READ_OUTSTANDING      = 2,
     MAX_READ_BURST_LENGTH     = 16,
@@ -1067,7 +1067,7 @@ endfunction
 
 //------------------------AR channel begin---------------
 //------------------------Instantiation------------------
-    tancalc_tancalc_gmem_m_axi_reg_slice #(
+    tancalc_tancalc_gmem0_m_axi_reg_slice #(
         .N(USER_AW + 32)
     ) rs_rreq (
         .sclk(ACLK),
@@ -1079,7 +1079,7 @@ endfunction
         .m_valid(rs2f_rreq_valid),
         .m_ready(rs2f_rreq_ack));
 
-    tancalc_tancalc_gmem_m_axi_fifo #(
+    tancalc_tancalc_gmem0_m_axi_fifo #(
         .DATA_BITS(USER_AW + 32),
         .DEPTH(USER_MAXREQS),
         .DEPTH_BITS(log2(USER_MAXREQS))
@@ -1398,7 +1398,7 @@ endfunction
 
 //------------------------R channel begin----------------
 //------------------------Instantiation------------------
-    tancalc_tancalc_gmem_m_axi_buffer #(
+    tancalc_tancalc_gmem0_m_axi_buffer #(
         .DATA_WIDTH(BUS_DATA_WIDTH + 3),
         .DEPTH(NUM_READ_OUTSTANDING * MAX_READ_BURST_LENGTH),
         .ADDR_WIDTH(log2(NUM_READ_OUTSTANDING * MAX_READ_BURST_LENGTH))
@@ -1415,7 +1415,7 @@ endfunction
         .if_read(next_beat),
         .if_dout(data_pack));
 
-    tancalc_tancalc_gmem_m_axi_reg_slice #(
+    tancalc_tancalc_gmem0_m_axi_reg_slice #(
         .N(USER_DW + 2)
     ) rs_rdata (
         .sclk(ACLK),
@@ -1427,7 +1427,7 @@ endfunction
         .m_valid(rdata_valid),
         .m_ready(rdata_ack));
 
-    tancalc_tancalc_gmem_m_axi_fifo #(
+    tancalc_tancalc_gmem0_m_axi_fifo #(
         .DATA_BITS(2),
         .DEPTH(NUM_READ_OUTSTANDING-1),
         .DEPTH_BITS(log2(NUM_READ_OUTSTANDING-1))
@@ -1512,7 +1512,7 @@ endfunction
         wire                            last_split;
         wire                            ready_for_data;
 
-        tancalc_tancalc_gmem_m_axi_fifo #(
+        tancalc_tancalc_gmem0_m_axi_fifo #(
             .DATA_BITS(2*SPLIT_ALIGN + 8),
             .DEPTH(USER_MAXREQS),
             .DEPTH_BITS(log2(USER_MAXREQS))
@@ -1698,7 +1698,7 @@ endfunction
 //------------------------R channel end------------------
 endmodule
 
-module tancalc_tancalc_gmem_m_axi_write
+module tancalc_tancalc_gmem0_m_axi_write
 #(parameter
     NUM_WRITE_OUTSTANDING     = 2,
     MAX_WRITE_BURST_LENGTH    = 16,
@@ -1879,7 +1879,7 @@ endfunction
 
 //------------------------AW channel begin---------------
 //------------------------Instantiation------------------
-    tancalc_tancalc_gmem_m_axi_reg_slice #(
+    tancalc_tancalc_gmem0_m_axi_reg_slice #(
         .N(USER_AW + 32)
     ) rs_wreq (
         .sclk(ACLK),
@@ -1891,7 +1891,7 @@ endfunction
         .m_valid(rs2f_wreq_valid),
         .m_ready(rs2f_wreq_ack));
 
-    tancalc_tancalc_gmem_m_axi_fifo #(
+    tancalc_tancalc_gmem0_m_axi_fifo #(
         .DATA_BITS(USER_AW + 32),
         .DEPTH(USER_MAXREQS),
         .DEPTH_BITS(log2(USER_MAXREQS))
@@ -2226,7 +2226,7 @@ endfunction
 
 //------------------------W channel begin----------------
 //------------------------Instantiation------------------
-    tancalc_tancalc_gmem_m_axi_buffer #(
+    tancalc_tancalc_gmem0_m_axi_buffer #(
         .DATA_WIDTH(USER_DW + USER_DW/8),
         .DEPTH(NUM_WRITE_OUTSTANDING * MAX_WRITE_BURST_LENGTH),
         .ADDR_WIDTH(log2(NUM_WRITE_OUTSTANDING * MAX_WRITE_BURST_LENGTH))
@@ -2259,7 +2259,7 @@ endfunction
         wire [7:0]                          tmp_burst_info;
         wire                                ready_for_data;
 
-        tancalc_tancalc_gmem_m_axi_fifo #(
+        tancalc_tancalc_gmem0_m_axi_fifo #(
             .DATA_BITS(8),
             .DEPTH(USER_MAXREQS),
             .DEPTH_BITS(log2(USER_MAXREQS))
@@ -2354,7 +2354,7 @@ endfunction
         wire                                        last_split;
         wire                                        ready_for_data;
 
-        tancalc_tancalc_gmem_m_axi_fifo #(
+        tancalc_tancalc_gmem0_m_axi_fifo #(
             .DATA_BITS(8),
             .DEPTH(USER_MAXREQS),
             .DEPTH_BITS(log2(USER_MAXREQS))
@@ -2481,7 +2481,7 @@ endfunction
         wire                                        last_beat;
         wire                                        next_beat;
 
-        tancalc_tancalc_gmem_m_axi_fifo #(
+        tancalc_tancalc_gmem0_m_axi_fifo #(
             .DATA_BITS(8 + 2*PAD_ALIGN),
             .DEPTH(USER_MAXREQS),
             .DEPTH_BITS(log2(USER_MAXREQS))
@@ -2504,13 +2504,13 @@ endfunction
         assign awlen_tmp_t = awlen_tmp;
         assign tmp_burst_info = {awaddr_tmp[BUS_ADDR_ALIGN - 1:USER_ADDR_ALIGN], burst_end[BUS_ADDR_ALIGN - 1:USER_ADDR_ALIGN], awlen_tmp_t};
 
-        tancalc_tancalc_gmem_m_axi_decoder #(
+        tancalc_tancalc_gmem0_m_axi_decoder #(
             .DIN_WIDTH(PAD_ALIGN)
         ) head_pad_decoder (
             .din(head_pads),
             .dout(head_pad_sel));
 
-        tancalc_tancalc_gmem_m_axi_decoder #(
+        tancalc_tancalc_gmem0_m_axi_decoder #(
             .DIN_WIDTH(PAD_ALIGN)
         ) tail_pad_decoder (
             .din(tail_pads),
@@ -2629,7 +2629,7 @@ endfunction
 
 //------------------------B channel begin----------------
 //------------------------Instantiation------------------
-    tancalc_tancalc_gmem_m_axi_fifo #(
+    tancalc_tancalc_gmem0_m_axi_fifo #(
         .DATA_BITS(2),
         .DEPTH(NUM_WRITE_OUTSTANDING-1),
         .DEPTH_BITS(log2(NUM_WRITE_OUTSTANDING-1))
@@ -2644,7 +2644,7 @@ endfunction
         .q(aw2b_bdata),
         .data(aw2b_awdata));
 
-    tancalc_tancalc_gmem_m_axi_fifo #(
+    tancalc_tancalc_gmem0_m_axi_fifo #(
         .DATA_BITS(2),
         .DEPTH(USER_MAXREQS),
         .DEPTH_BITS(log2(USER_MAXREQS))

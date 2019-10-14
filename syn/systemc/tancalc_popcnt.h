@@ -53,7 +53,7 @@ struct tancalc_popcnt : public sc_module {
     sc_signal< sc_lv<1> > p_Result_7_fu_1120_p3;
     sc_signal< sc_lv<1> > p_Result_8_fu_1132_p3;
     sc_signal< sc_lv<1> > p_Result_9_fu_1144_p3;
-    sc_signal< sc_lv<1> > p_Result_s_10_fu_1156_p3;
+    sc_signal< sc_lv<1> > p_Result_s_13_fu_1156_p3;
     sc_signal< sc_lv<1> > p_Result_10_fu_1168_p3;
     sc_signal< sc_lv<1> > p_Result_11_fu_1180_p3;
     sc_signal< sc_lv<1> > p_Result_12_fu_1192_p3;
@@ -3630,7 +3630,7 @@ struct tancalc_popcnt : public sc_module {
     void thread_p_Result_98_fu_2224_p3();
     void thread_p_Result_99_fu_2236_p3();
     void thread_p_Result_9_fu_1144_p3();
-    void thread_p_Result_s_10_fu_1156_p3();
+    void thread_p_Result_s_13_fu_1156_p3();
     void thread_p_Result_s_fu_1036_p3();
     void thread_zext_ln621_100_fu_2244_p1();
     void thread_zext_ln621_101_fu_2256_p1();

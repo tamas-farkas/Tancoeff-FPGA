@@ -72,31 +72,32 @@ void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpo
 
 void tancalc(din_type *input, int *output){
 
-#pragma HLS INTERFACE m_axi port=input offset=slave bundle=gmem
-#pragma HLS INTERFACE m_axi port=output offset=slave bundle=gmem
+#pragma HLS INTERFACE m_axi port=input offset=slave bundle=gmem0
+#pragma HLS INTERFACE m_axi port=output offset=slave bundle=gmem1
 #pragma HLS INTERFACE s_axilite port = input bundle = control
 #pragma HLS INTERFACE s_axilite port = output bundle = control
 #pragma HLS INTERFACE s_axilite port = return bundle = control
 
 	data_type ref_local[BUFFER_SIZE1];
-		#pragma HLS ARRAY_PARTITION variable=ref_local complete
+//		#pragma HLS ARRAY_PARTITION variable=ref_local complete dim=1
 	popcnt_type refpop_local[BUFFER_SIZE1];
-		#pragma HLS ARRAY_PARTITION variable=refpop_local complete
+//		#pragma HLS ARRAY_PARTITION variable=refpop_local complete dim=1
 	data_type cmpr_local[BUFFER_SIZE2];
-		#pragma HLS ARRAY_PARTITION variable=cmpr_local complete
+		#pragma HLS ARRAY_PARTITION variable=cmpr_local complete dim=1
 	popcnt_type cmprpop_local[BUFFER_SIZE2];
-		#pragma HLS ARRAY_PARTITION variable=cmprpop_local complete
+		#pragma HLS ARRAY_PARTITION variable=cmprpop_local complete dim=1
 	short result_local[BUFFER_SIZE2];	// Local Memory to store result
-		#pragma HLS ARRAY_PARTITION variable=result_local complete
+		#pragma HLS ARRAY_PARTITION variable=result_local complete dim=1
 
 
 	int result = 0;
 
 
-	mainloop: for (int ref_chunk_num = 0; ref_chunk_num < DATA_SIZE1; ref_chunk_num += BUFFER_SIZE1) {
-		data_read(input, ref_local, refpop_local, ref_chunk_num);
-		calculation_loop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < DATA_SIZE2; cmpr_chunk_num += BUFFER_SIZE2){
-			data_read(&input[DATA_SIZE1], cmpr_local, cmprpop_local, cmpr_chunk_num);
+	mainloop: for (int ref_chunk_num = 0; ref_chunk_num < DATA_SIZE1/BUFFER_SIZE1; ref_chunk_num++ ) {
+		data_read(input, ref_local, refpop_local, ref_chunk_num*BUFFER_SIZE1);
+		calculation_loop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < DATA_SIZE2/BUFFER_SIZE2; cmpr_chunk_num++){
+		//#pragma HLS dataflow
+			data_read(&input[DATA_SIZE1], cmpr_local, cmprpop_local, cmpr_chunk_num*BUFFER_SIZE2);
 			calculation(ref_local, cmpr_local, refpop_local, cmprpop_local, result_local, &result);
 		}
 	}

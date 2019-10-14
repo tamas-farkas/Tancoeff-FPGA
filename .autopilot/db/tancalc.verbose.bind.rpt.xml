@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'tancalc'" level="0">
-<item name = "Date">Sat Oct 12 18:55:00 2019
+<item name = "Date">Mon Oct 14 11:57:26 2019
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">tancoeff</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">3.33, 2.433, 0.90</column>
+<column name="ap_clk">3.33, 2.850, 0.90</column>
 </table>
 </item>
 </section>
@@ -24,22 +24,22 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">57179127815, 57179127815, 57179127815, 57179127815, none</column>
+<column name="">203031559, 203031559, 203031559, 203031559, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_calculation_fu_1412">calculation, 68, 68, 68, 68, none</column>
-<column name="grp_data_read_fu_1737">data_read, 142, 142, 142, 142, none</column>
-<column name="grp_data_read_1_fu_1874">data_read_1, 142, 142, 142, 142, none</column>
+<column name="grp_data_read_fu_932">data_read, 2062, 2062, 2062, 2062, none</column>
+<column name="grp_calculation_fu_1068">calculation, 1029, 1029, 1029, 1029, none</column>
+<column name="grp_data_read_1_fu_1267">data_read_1, 4109, 4109, 4109, 4109, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- mainloop">57179127808, 57179127808, 3489937, -, -, 16384, no</column>
-<column name=" + calculation_loop">3489792, 3489792, 213, -, -, 16384, no</column>
+<column name="- mainloop">203031552, 203031552, 3172368, -, -, 64, no</column>
+<column name=" + calculation_loop">3168256, 3168256, 3094, -, -, 1024, no</column>
 </table>
 </item>
 </section>

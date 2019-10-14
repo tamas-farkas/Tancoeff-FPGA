@@ -14,70 +14,7 @@ set isEnableWaveformDebug 1
 set C_modelName {calculation}
 set C_modelType { int 1056 }
 set C_modelArgList {
-	{ ref_local_0_V_read int 1024 regular  }
-	{ ref_local_1_V_read int 1024 regular  }
-	{ ref_local_2_V_read int 1024 regular  }
-	{ ref_local_3_V_read int 1024 regular  }
-	{ ref_local_4_V_read int 1024 regular  }
-	{ ref_local_5_V_read int 1024 regular  }
-	{ ref_local_6_V_read int 1024 regular  }
-	{ ref_local_7_V_read int 1024 regular  }
-	{ ref_local_8_V_read int 1024 regular  }
-	{ ref_local_9_V_read int 1024 regular  }
-	{ ref_local_10_V_read int 1024 regular  }
-	{ ref_local_11_V_read int 1024 regular  }
-	{ ref_local_12_V_read int 1024 regular  }
-	{ ref_local_13_V_read int 1024 regular  }
-	{ ref_local_14_V_read int 1024 regular  }
-	{ ref_local_15_V_read int 1024 regular  }
-	{ ref_local_16_V_read int 1024 regular  }
-	{ ref_local_17_V_read int 1024 regular  }
-	{ ref_local_18_V_read int 1024 regular  }
-	{ ref_local_19_V_read int 1024 regular  }
-	{ ref_local_20_V_read int 1024 regular  }
-	{ ref_local_21_V_read int 1024 regular  }
-	{ ref_local_22_V_read int 1024 regular  }
-	{ ref_local_23_V_read int 1024 regular  }
-	{ ref_local_24_V_read int 1024 regular  }
-	{ ref_local_25_V_read int 1024 regular  }
-	{ ref_local_26_V_read int 1024 regular  }
-	{ ref_local_27_V_read int 1024 regular  }
-	{ ref_local_28_V_read int 1024 regular  }
-	{ ref_local_29_V_read int 1024 regular  }
-	{ ref_local_30_V_read int 1024 regular  }
-	{ ref_local_31_V_read int 1024 regular  }
-	{ ref_local_32_V_read int 1024 regular  }
-	{ ref_local_33_V_read int 1024 regular  }
-	{ ref_local_34_V_read int 1024 regular  }
-	{ ref_local_35_V_read int 1024 regular  }
-	{ ref_local_36_V_read int 1024 regular  }
-	{ ref_local_37_V_read int 1024 regular  }
-	{ ref_local_38_V_read int 1024 regular  }
-	{ ref_local_39_V_read int 1024 regular  }
-	{ ref_local_40_V_read int 1024 regular  }
-	{ ref_local_41_V_read int 1024 regular  }
-	{ ref_local_42_V_read int 1024 regular  }
-	{ ref_local_43_V_read int 1024 regular  }
-	{ ref_local_44_V_read int 1024 regular  }
-	{ ref_local_45_V_read int 1024 regular  }
-	{ ref_local_46_V_read int 1024 regular  }
-	{ ref_local_47_V_read int 1024 regular  }
-	{ ref_local_48_V_read int 1024 regular  }
-	{ ref_local_49_V_read int 1024 regular  }
-	{ ref_local_50_V_read int 1024 regular  }
-	{ ref_local_51_V_read int 1024 regular  }
-	{ ref_local_52_V_read int 1024 regular  }
-	{ ref_local_53_V_read int 1024 regular  }
-	{ ref_local_54_V_read int 1024 regular  }
-	{ ref_local_55_V_read int 1024 regular  }
-	{ ref_local_56_V_read int 1024 regular  }
-	{ ref_local_57_V_read int 1024 regular  }
-	{ ref_local_58_V_read int 1024 regular  }
-	{ ref_local_59_V_read int 1024 regular  }
-	{ ref_local_60_V_read int 1024 regular  }
-	{ ref_local_61_V_read int 1024 regular  }
-	{ ref_local_62_V_read int 1024 regular  }
-	{ ref_local_63_V_read int 1024 regular  }
+	{ ref_local_V int 1024 regular {array 1024 { 1 3 } 1 1 }  }
 	{ cmpr_local_0_V_read int 1024 regular  }
 	{ cmpr_local_1_V_read int 1024 regular  }
 	{ cmpr_local_2_V_read int 1024 regular  }
@@ -142,70 +79,7 @@ set C_modelArgList {
 	{ cmpr_local_61_V_read int 1024 regular  }
 	{ cmpr_local_62_V_read int 1024 regular  }
 	{ cmpr_local_63_V_read int 1024 regular  }
-	{ refpop_local_0_V_read int 11 regular  }
-	{ refpop_local_1_V_read int 11 regular  }
-	{ refpop_local_2_V_read int 11 regular  }
-	{ refpop_local_3_V_read int 11 regular  }
-	{ refpop_local_4_V_read int 11 regular  }
-	{ refpop_local_5_V_read int 11 regular  }
-	{ refpop_local_6_V_read int 11 regular  }
-	{ refpop_local_7_V_read int 11 regular  }
-	{ refpop_local_8_V_read int 11 regular  }
-	{ refpop_local_9_V_read int 11 regular  }
-	{ refpop_local_10_V_read int 11 regular  }
-	{ refpop_local_11_V_read int 11 regular  }
-	{ refpop_local_12_V_read int 11 regular  }
-	{ refpop_local_13_V_read int 11 regular  }
-	{ refpop_local_14_V_read int 11 regular  }
-	{ refpop_local_15_V_read int 11 regular  }
-	{ refpop_local_16_V_read int 11 regular  }
-	{ refpop_local_17_V_read int 11 regular  }
-	{ refpop_local_18_V_read int 11 regular  }
-	{ refpop_local_19_V_read int 11 regular  }
-	{ refpop_local_20_V_read int 11 regular  }
-	{ refpop_local_21_V_read int 11 regular  }
-	{ refpop_local_22_V_read int 11 regular  }
-	{ refpop_local_23_V_read int 11 regular  }
-	{ refpop_local_24_V_read int 11 regular  }
-	{ refpop_local_25_V_read int 11 regular  }
-	{ refpop_local_26_V_read int 11 regular  }
-	{ refpop_local_27_V_read int 11 regular  }
-	{ refpop_local_28_V_read int 11 regular  }
-	{ refpop_local_29_V_read int 11 regular  }
-	{ refpop_local_30_V_read int 11 regular  }
-	{ refpop_local_31_V_read int 11 regular  }
-	{ refpop_local_32_V_read int 11 regular  }
-	{ refpop_local_33_V_read int 11 regular  }
-	{ refpop_local_34_V_read int 11 regular  }
-	{ refpop_local_35_V_read int 11 regular  }
-	{ refpop_local_36_V_read int 11 regular  }
-	{ refpop_local_37_V_read int 11 regular  }
-	{ refpop_local_38_V_read int 11 regular  }
-	{ refpop_local_39_V_read int 11 regular  }
-	{ refpop_local_40_V_read int 11 regular  }
-	{ refpop_local_41_V_read int 11 regular  }
-	{ refpop_local_42_V_read int 11 regular  }
-	{ refpop_local_43_V_read int 11 regular  }
-	{ refpop_local_44_V_read int 11 regular  }
-	{ refpop_local_45_V_read int 11 regular  }
-	{ refpop_local_46_V_read int 11 regular  }
-	{ refpop_local_47_V_read int 11 regular  }
-	{ refpop_local_48_V_read int 11 regular  }
-	{ refpop_local_49_V_read int 11 regular  }
-	{ refpop_local_50_V_read int 11 regular  }
-	{ refpop_local_51_V_read int 11 regular  }
-	{ refpop_local_52_V_read int 11 regular  }
-	{ refpop_local_53_V_read int 11 regular  }
-	{ refpop_local_54_V_read int 11 regular  }
-	{ refpop_local_55_V_read int 11 regular  }
-	{ refpop_local_56_V_read int 11 regular  }
-	{ refpop_local_57_V_read int 11 regular  }
-	{ refpop_local_58_V_read int 11 regular  }
-	{ refpop_local_59_V_read int 11 regular  }
-	{ refpop_local_60_V_read int 11 regular  }
-	{ refpop_local_61_V_read int 11 regular  }
-	{ refpop_local_62_V_read int 11 regular  }
-	{ refpop_local_63_V_read int 11 regular  }
+	{ refpop_local_V int 11 regular {array 1024 { 1 3 } 1 1 }  }
 	{ cmprpop_local_0_V_read int 11 regular  }
 	{ cmprpop_local_1_V_read int 11 regular  }
 	{ cmprpop_local_2_V_read int 11 regular  }
@@ -337,70 +211,7 @@ set C_modelArgList {
 	{ result_read int 32 regular  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "ref_local_0_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_1_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_2_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_3_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_4_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_5_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_6_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_7_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_8_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_9_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_10_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_11_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_12_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_13_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_14_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_15_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_16_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_17_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_18_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_19_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_20_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_21_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_22_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_23_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_24_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_25_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_26_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_27_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_28_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_29_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_30_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_31_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_32_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_33_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_34_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_35_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_36_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_37_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_38_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_39_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_40_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_41_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_42_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_43_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_44_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_45_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_46_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_47_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_48_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_49_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_50_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_51_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_52_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_53_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_54_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_55_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_56_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_57_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_58_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_59_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_60_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_61_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_62_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "ref_local_63_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
+	{ "Name" : "ref_local_V", "interface" : "memory", "bitwidth" : 1024, "direction" : "READONLY"} , 
  	{ "Name" : "cmpr_local_0_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
  	{ "Name" : "cmpr_local_1_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
  	{ "Name" : "cmpr_local_2_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
@@ -465,70 +276,7 @@ set C_modelArgMapList {[
  	{ "Name" : "cmpr_local_61_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
  	{ "Name" : "cmpr_local_62_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
  	{ "Name" : "cmpr_local_63_V_read", "interface" : "wire", "bitwidth" : 1024, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_0_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_1_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_2_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_3_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_4_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_5_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_6_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_7_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_8_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_9_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_10_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_11_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_12_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_13_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_14_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_15_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_16_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_17_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_18_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_19_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_20_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_21_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_22_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_23_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_24_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_25_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_26_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_27_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_28_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_29_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_30_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_31_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_32_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_33_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_34_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_35_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_36_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_37_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_38_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_39_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_40_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_41_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_42_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_43_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_44_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_45_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_46_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_47_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_48_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_49_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_50_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_51_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_52_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_53_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_54_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_55_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_56_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_57_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_58_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_59_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_60_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_61_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_62_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
- 	{ "Name" : "refpop_local_63_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
+ 	{ "Name" : "refpop_local_V", "interface" : "memory", "bitwidth" : 11, "direction" : "READONLY"} , 
  	{ "Name" : "cmprpop_local_0_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
  	{ "Name" : "cmprpop_local_1_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
  	{ "Name" : "cmprpop_local_2_V_read", "interface" : "wire", "bitwidth" : 11, "direction" : "READONLY"} , 
@@ -660,7 +408,7 @@ set C_modelArgMapList {[
  	{ "Name" : "result_read", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 1056} ]}
 # RTL Port declarations: 
-set portNum 392
+set portNum 270
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -668,327 +416,205 @@ set portList {
 	{ ap_done sc_out sc_logic 1 predone -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ ref_local_0_V_read sc_in sc_lv 1024 signal 0 } 
-	{ ref_local_1_V_read sc_in sc_lv 1024 signal 1 } 
-	{ ref_local_2_V_read sc_in sc_lv 1024 signal 2 } 
-	{ ref_local_3_V_read sc_in sc_lv 1024 signal 3 } 
-	{ ref_local_4_V_read sc_in sc_lv 1024 signal 4 } 
-	{ ref_local_5_V_read sc_in sc_lv 1024 signal 5 } 
-	{ ref_local_6_V_read sc_in sc_lv 1024 signal 6 } 
-	{ ref_local_7_V_read sc_in sc_lv 1024 signal 7 } 
-	{ ref_local_8_V_read sc_in sc_lv 1024 signal 8 } 
-	{ ref_local_9_V_read sc_in sc_lv 1024 signal 9 } 
-	{ ref_local_10_V_read sc_in sc_lv 1024 signal 10 } 
-	{ ref_local_11_V_read sc_in sc_lv 1024 signal 11 } 
-	{ ref_local_12_V_read sc_in sc_lv 1024 signal 12 } 
-	{ ref_local_13_V_read sc_in sc_lv 1024 signal 13 } 
-	{ ref_local_14_V_read sc_in sc_lv 1024 signal 14 } 
-	{ ref_local_15_V_read sc_in sc_lv 1024 signal 15 } 
-	{ ref_local_16_V_read sc_in sc_lv 1024 signal 16 } 
-	{ ref_local_17_V_read sc_in sc_lv 1024 signal 17 } 
-	{ ref_local_18_V_read sc_in sc_lv 1024 signal 18 } 
-	{ ref_local_19_V_read sc_in sc_lv 1024 signal 19 } 
-	{ ref_local_20_V_read sc_in sc_lv 1024 signal 20 } 
-	{ ref_local_21_V_read sc_in sc_lv 1024 signal 21 } 
-	{ ref_local_22_V_read sc_in sc_lv 1024 signal 22 } 
-	{ ref_local_23_V_read sc_in sc_lv 1024 signal 23 } 
-	{ ref_local_24_V_read sc_in sc_lv 1024 signal 24 } 
-	{ ref_local_25_V_read sc_in sc_lv 1024 signal 25 } 
-	{ ref_local_26_V_read sc_in sc_lv 1024 signal 26 } 
-	{ ref_local_27_V_read sc_in sc_lv 1024 signal 27 } 
-	{ ref_local_28_V_read sc_in sc_lv 1024 signal 28 } 
-	{ ref_local_29_V_read sc_in sc_lv 1024 signal 29 } 
-	{ ref_local_30_V_read sc_in sc_lv 1024 signal 30 } 
-	{ ref_local_31_V_read sc_in sc_lv 1024 signal 31 } 
-	{ ref_local_32_V_read sc_in sc_lv 1024 signal 32 } 
-	{ ref_local_33_V_read sc_in sc_lv 1024 signal 33 } 
-	{ ref_local_34_V_read sc_in sc_lv 1024 signal 34 } 
-	{ ref_local_35_V_read sc_in sc_lv 1024 signal 35 } 
-	{ ref_local_36_V_read sc_in sc_lv 1024 signal 36 } 
-	{ ref_local_37_V_read sc_in sc_lv 1024 signal 37 } 
-	{ ref_local_38_V_read sc_in sc_lv 1024 signal 38 } 
-	{ ref_local_39_V_read sc_in sc_lv 1024 signal 39 } 
-	{ ref_local_40_V_read sc_in sc_lv 1024 signal 40 } 
-	{ ref_local_41_V_read sc_in sc_lv 1024 signal 41 } 
-	{ ref_local_42_V_read sc_in sc_lv 1024 signal 42 } 
-	{ ref_local_43_V_read sc_in sc_lv 1024 signal 43 } 
-	{ ref_local_44_V_read sc_in sc_lv 1024 signal 44 } 
-	{ ref_local_45_V_read sc_in sc_lv 1024 signal 45 } 
-	{ ref_local_46_V_read sc_in sc_lv 1024 signal 46 } 
-	{ ref_local_47_V_read sc_in sc_lv 1024 signal 47 } 
-	{ ref_local_48_V_read sc_in sc_lv 1024 signal 48 } 
-	{ ref_local_49_V_read sc_in sc_lv 1024 signal 49 } 
-	{ ref_local_50_V_read sc_in sc_lv 1024 signal 50 } 
-	{ ref_local_51_V_read sc_in sc_lv 1024 signal 51 } 
-	{ ref_local_52_V_read sc_in sc_lv 1024 signal 52 } 
-	{ ref_local_53_V_read sc_in sc_lv 1024 signal 53 } 
-	{ ref_local_54_V_read sc_in sc_lv 1024 signal 54 } 
-	{ ref_local_55_V_read sc_in sc_lv 1024 signal 55 } 
-	{ ref_local_56_V_read sc_in sc_lv 1024 signal 56 } 
-	{ ref_local_57_V_read sc_in sc_lv 1024 signal 57 } 
-	{ ref_local_58_V_read sc_in sc_lv 1024 signal 58 } 
-	{ ref_local_59_V_read sc_in sc_lv 1024 signal 59 } 
-	{ ref_local_60_V_read sc_in sc_lv 1024 signal 60 } 
-	{ ref_local_61_V_read sc_in sc_lv 1024 signal 61 } 
-	{ ref_local_62_V_read sc_in sc_lv 1024 signal 62 } 
-	{ ref_local_63_V_read sc_in sc_lv 1024 signal 63 } 
-	{ cmpr_local_0_V_read sc_in sc_lv 1024 signal 64 } 
-	{ cmpr_local_1_V_read sc_in sc_lv 1024 signal 65 } 
-	{ cmpr_local_2_V_read sc_in sc_lv 1024 signal 66 } 
-	{ cmpr_local_3_V_read sc_in sc_lv 1024 signal 67 } 
-	{ cmpr_local_4_V_read sc_in sc_lv 1024 signal 68 } 
-	{ cmpr_local_5_V_read sc_in sc_lv 1024 signal 69 } 
-	{ cmpr_local_6_V_read sc_in sc_lv 1024 signal 70 } 
-	{ cmpr_local_7_V_read sc_in sc_lv 1024 signal 71 } 
-	{ cmpr_local_8_V_read sc_in sc_lv 1024 signal 72 } 
-	{ cmpr_local_9_V_read sc_in sc_lv 1024 signal 73 } 
-	{ cmpr_local_10_V_read sc_in sc_lv 1024 signal 74 } 
-	{ cmpr_local_11_V_read sc_in sc_lv 1024 signal 75 } 
-	{ cmpr_local_12_V_read sc_in sc_lv 1024 signal 76 } 
-	{ cmpr_local_13_V_read sc_in sc_lv 1024 signal 77 } 
-	{ cmpr_local_14_V_read sc_in sc_lv 1024 signal 78 } 
-	{ cmpr_local_15_V_read sc_in sc_lv 1024 signal 79 } 
-	{ cmpr_local_16_V_read sc_in sc_lv 1024 signal 80 } 
-	{ cmpr_local_17_V_read sc_in sc_lv 1024 signal 81 } 
-	{ cmpr_local_18_V_read sc_in sc_lv 1024 signal 82 } 
-	{ cmpr_local_19_V_read sc_in sc_lv 1024 signal 83 } 
-	{ cmpr_local_20_V_read sc_in sc_lv 1024 signal 84 } 
-	{ cmpr_local_21_V_read sc_in sc_lv 1024 signal 85 } 
-	{ cmpr_local_22_V_read sc_in sc_lv 1024 signal 86 } 
-	{ cmpr_local_23_V_read sc_in sc_lv 1024 signal 87 } 
-	{ cmpr_local_24_V_read sc_in sc_lv 1024 signal 88 } 
-	{ cmpr_local_25_V_read sc_in sc_lv 1024 signal 89 } 
-	{ cmpr_local_26_V_read sc_in sc_lv 1024 signal 90 } 
-	{ cmpr_local_27_V_read sc_in sc_lv 1024 signal 91 } 
-	{ cmpr_local_28_V_read sc_in sc_lv 1024 signal 92 } 
-	{ cmpr_local_29_V_read sc_in sc_lv 1024 signal 93 } 
-	{ cmpr_local_30_V_read sc_in sc_lv 1024 signal 94 } 
-	{ cmpr_local_31_V_read sc_in sc_lv 1024 signal 95 } 
-	{ cmpr_local_32_V_read sc_in sc_lv 1024 signal 96 } 
-	{ cmpr_local_33_V_read sc_in sc_lv 1024 signal 97 } 
-	{ cmpr_local_34_V_read sc_in sc_lv 1024 signal 98 } 
-	{ cmpr_local_35_V_read sc_in sc_lv 1024 signal 99 } 
-	{ cmpr_local_36_V_read sc_in sc_lv 1024 signal 100 } 
-	{ cmpr_local_37_V_read sc_in sc_lv 1024 signal 101 } 
-	{ cmpr_local_38_V_read sc_in sc_lv 1024 signal 102 } 
-	{ cmpr_local_39_V_read sc_in sc_lv 1024 signal 103 } 
-	{ cmpr_local_40_V_read sc_in sc_lv 1024 signal 104 } 
-	{ cmpr_local_41_V_read sc_in sc_lv 1024 signal 105 } 
-	{ cmpr_local_42_V_read sc_in sc_lv 1024 signal 106 } 
-	{ cmpr_local_43_V_read sc_in sc_lv 1024 signal 107 } 
-	{ cmpr_local_44_V_read sc_in sc_lv 1024 signal 108 } 
-	{ cmpr_local_45_V_read sc_in sc_lv 1024 signal 109 } 
-	{ cmpr_local_46_V_read sc_in sc_lv 1024 signal 110 } 
-	{ cmpr_local_47_V_read sc_in sc_lv 1024 signal 111 } 
-	{ cmpr_local_48_V_read sc_in sc_lv 1024 signal 112 } 
-	{ cmpr_local_49_V_read sc_in sc_lv 1024 signal 113 } 
-	{ cmpr_local_50_V_read sc_in sc_lv 1024 signal 114 } 
-	{ cmpr_local_51_V_read sc_in sc_lv 1024 signal 115 } 
-	{ cmpr_local_52_V_read sc_in sc_lv 1024 signal 116 } 
-	{ cmpr_local_53_V_read sc_in sc_lv 1024 signal 117 } 
-	{ cmpr_local_54_V_read sc_in sc_lv 1024 signal 118 } 
-	{ cmpr_local_55_V_read sc_in sc_lv 1024 signal 119 } 
-	{ cmpr_local_56_V_read sc_in sc_lv 1024 signal 120 } 
-	{ cmpr_local_57_V_read sc_in sc_lv 1024 signal 121 } 
-	{ cmpr_local_58_V_read sc_in sc_lv 1024 signal 122 } 
-	{ cmpr_local_59_V_read sc_in sc_lv 1024 signal 123 } 
-	{ cmpr_local_60_V_read sc_in sc_lv 1024 signal 124 } 
-	{ cmpr_local_61_V_read sc_in sc_lv 1024 signal 125 } 
-	{ cmpr_local_62_V_read sc_in sc_lv 1024 signal 126 } 
-	{ cmpr_local_63_V_read sc_in sc_lv 1024 signal 127 } 
-	{ refpop_local_0_V_read sc_in sc_lv 11 signal 128 } 
-	{ refpop_local_1_V_read sc_in sc_lv 11 signal 129 } 
-	{ refpop_local_2_V_read sc_in sc_lv 11 signal 130 } 
-	{ refpop_local_3_V_read sc_in sc_lv 11 signal 131 } 
-	{ refpop_local_4_V_read sc_in sc_lv 11 signal 132 } 
-	{ refpop_local_5_V_read sc_in sc_lv 11 signal 133 } 
-	{ refpop_local_6_V_read sc_in sc_lv 11 signal 134 } 
-	{ refpop_local_7_V_read sc_in sc_lv 11 signal 135 } 
-	{ refpop_local_8_V_read sc_in sc_lv 11 signal 136 } 
-	{ refpop_local_9_V_read sc_in sc_lv 11 signal 137 } 
-	{ refpop_local_10_V_read sc_in sc_lv 11 signal 138 } 
-	{ refpop_local_11_V_read sc_in sc_lv 11 signal 139 } 
-	{ refpop_local_12_V_read sc_in sc_lv 11 signal 140 } 
-	{ refpop_local_13_V_read sc_in sc_lv 11 signal 141 } 
-	{ refpop_local_14_V_read sc_in sc_lv 11 signal 142 } 
-	{ refpop_local_15_V_read sc_in sc_lv 11 signal 143 } 
-	{ refpop_local_16_V_read sc_in sc_lv 11 signal 144 } 
-	{ refpop_local_17_V_read sc_in sc_lv 11 signal 145 } 
-	{ refpop_local_18_V_read sc_in sc_lv 11 signal 146 } 
-	{ refpop_local_19_V_read sc_in sc_lv 11 signal 147 } 
-	{ refpop_local_20_V_read sc_in sc_lv 11 signal 148 } 
-	{ refpop_local_21_V_read sc_in sc_lv 11 signal 149 } 
-	{ refpop_local_22_V_read sc_in sc_lv 11 signal 150 } 
-	{ refpop_local_23_V_read sc_in sc_lv 11 signal 151 } 
-	{ refpop_local_24_V_read sc_in sc_lv 11 signal 152 } 
-	{ refpop_local_25_V_read sc_in sc_lv 11 signal 153 } 
-	{ refpop_local_26_V_read sc_in sc_lv 11 signal 154 } 
-	{ refpop_local_27_V_read sc_in sc_lv 11 signal 155 } 
-	{ refpop_local_28_V_read sc_in sc_lv 11 signal 156 } 
-	{ refpop_local_29_V_read sc_in sc_lv 11 signal 157 } 
-	{ refpop_local_30_V_read sc_in sc_lv 11 signal 158 } 
-	{ refpop_local_31_V_read sc_in sc_lv 11 signal 159 } 
-	{ refpop_local_32_V_read sc_in sc_lv 11 signal 160 } 
-	{ refpop_local_33_V_read sc_in sc_lv 11 signal 161 } 
-	{ refpop_local_34_V_read sc_in sc_lv 11 signal 162 } 
-	{ refpop_local_35_V_read sc_in sc_lv 11 signal 163 } 
-	{ refpop_local_36_V_read sc_in sc_lv 11 signal 164 } 
-	{ refpop_local_37_V_read sc_in sc_lv 11 signal 165 } 
-	{ refpop_local_38_V_read sc_in sc_lv 11 signal 166 } 
-	{ refpop_local_39_V_read sc_in sc_lv 11 signal 167 } 
-	{ refpop_local_40_V_read sc_in sc_lv 11 signal 168 } 
-	{ refpop_local_41_V_read sc_in sc_lv 11 signal 169 } 
-	{ refpop_local_42_V_read sc_in sc_lv 11 signal 170 } 
-	{ refpop_local_43_V_read sc_in sc_lv 11 signal 171 } 
-	{ refpop_local_44_V_read sc_in sc_lv 11 signal 172 } 
-	{ refpop_local_45_V_read sc_in sc_lv 11 signal 173 } 
-	{ refpop_local_46_V_read sc_in sc_lv 11 signal 174 } 
-	{ refpop_local_47_V_read sc_in sc_lv 11 signal 175 } 
-	{ refpop_local_48_V_read sc_in sc_lv 11 signal 176 } 
-	{ refpop_local_49_V_read sc_in sc_lv 11 signal 177 } 
-	{ refpop_local_50_V_read sc_in sc_lv 11 signal 178 } 
-	{ refpop_local_51_V_read sc_in sc_lv 11 signal 179 } 
-	{ refpop_local_52_V_read sc_in sc_lv 11 signal 180 } 
-	{ refpop_local_53_V_read sc_in sc_lv 11 signal 181 } 
-	{ refpop_local_54_V_read sc_in sc_lv 11 signal 182 } 
-	{ refpop_local_55_V_read sc_in sc_lv 11 signal 183 } 
-	{ refpop_local_56_V_read sc_in sc_lv 11 signal 184 } 
-	{ refpop_local_57_V_read sc_in sc_lv 11 signal 185 } 
-	{ refpop_local_58_V_read sc_in sc_lv 11 signal 186 } 
-	{ refpop_local_59_V_read sc_in sc_lv 11 signal 187 } 
-	{ refpop_local_60_V_read sc_in sc_lv 11 signal 188 } 
-	{ refpop_local_61_V_read sc_in sc_lv 11 signal 189 } 
-	{ refpop_local_62_V_read sc_in sc_lv 11 signal 190 } 
-	{ refpop_local_63_V_read sc_in sc_lv 11 signal 191 } 
-	{ cmprpop_local_0_V_read sc_in sc_lv 11 signal 192 } 
-	{ cmprpop_local_1_V_read sc_in sc_lv 11 signal 193 } 
-	{ cmprpop_local_2_V_read sc_in sc_lv 11 signal 194 } 
-	{ cmprpop_local_3_V_read sc_in sc_lv 11 signal 195 } 
-	{ cmprpop_local_4_V_read sc_in sc_lv 11 signal 196 } 
-	{ cmprpop_local_5_V_read sc_in sc_lv 11 signal 197 } 
-	{ cmprpop_local_6_V_read sc_in sc_lv 11 signal 198 } 
-	{ cmprpop_local_7_V_read sc_in sc_lv 11 signal 199 } 
-	{ cmprpop_local_8_V_read sc_in sc_lv 11 signal 200 } 
-	{ cmprpop_local_9_V_read sc_in sc_lv 11 signal 201 } 
-	{ cmprpop_local_10_V_read sc_in sc_lv 11 signal 202 } 
-	{ cmprpop_local_11_V_read sc_in sc_lv 11 signal 203 } 
-	{ cmprpop_local_12_V_read sc_in sc_lv 11 signal 204 } 
-	{ cmprpop_local_13_V_read sc_in sc_lv 11 signal 205 } 
-	{ cmprpop_local_14_V_read sc_in sc_lv 11 signal 206 } 
-	{ cmprpop_local_15_V_read sc_in sc_lv 11 signal 207 } 
-	{ cmprpop_local_16_V_read sc_in sc_lv 11 signal 208 } 
-	{ cmprpop_local_17_V_read sc_in sc_lv 11 signal 209 } 
-	{ cmprpop_local_18_V_read sc_in sc_lv 11 signal 210 } 
-	{ cmprpop_local_19_V_read sc_in sc_lv 11 signal 211 } 
-	{ cmprpop_local_20_V_read sc_in sc_lv 11 signal 212 } 
-	{ cmprpop_local_21_V_read sc_in sc_lv 11 signal 213 } 
-	{ cmprpop_local_22_V_read sc_in sc_lv 11 signal 214 } 
-	{ cmprpop_local_23_V_read sc_in sc_lv 11 signal 215 } 
-	{ cmprpop_local_24_V_read sc_in sc_lv 11 signal 216 } 
-	{ cmprpop_local_25_V_read sc_in sc_lv 11 signal 217 } 
-	{ cmprpop_local_26_V_read sc_in sc_lv 11 signal 218 } 
-	{ cmprpop_local_27_V_read sc_in sc_lv 11 signal 219 } 
-	{ cmprpop_local_28_V_read sc_in sc_lv 11 signal 220 } 
-	{ cmprpop_local_29_V_read sc_in sc_lv 11 signal 221 } 
-	{ cmprpop_local_30_V_read sc_in sc_lv 11 signal 222 } 
-	{ cmprpop_local_31_V_read sc_in sc_lv 11 signal 223 } 
-	{ cmprpop_local_32_V_read sc_in sc_lv 11 signal 224 } 
-	{ cmprpop_local_33_V_read sc_in sc_lv 11 signal 225 } 
-	{ cmprpop_local_34_V_read sc_in sc_lv 11 signal 226 } 
-	{ cmprpop_local_35_V_read sc_in sc_lv 11 signal 227 } 
-	{ cmprpop_local_36_V_read sc_in sc_lv 11 signal 228 } 
-	{ cmprpop_local_37_V_read sc_in sc_lv 11 signal 229 } 
-	{ cmprpop_local_38_V_read sc_in sc_lv 11 signal 230 } 
-	{ cmprpop_local_39_V_read sc_in sc_lv 11 signal 231 } 
-	{ cmprpop_local_40_V_read sc_in sc_lv 11 signal 232 } 
-	{ cmprpop_local_41_V_read sc_in sc_lv 11 signal 233 } 
-	{ cmprpop_local_42_V_read sc_in sc_lv 11 signal 234 } 
-	{ cmprpop_local_43_V_read sc_in sc_lv 11 signal 235 } 
-	{ cmprpop_local_44_V_read sc_in sc_lv 11 signal 236 } 
-	{ cmprpop_local_45_V_read sc_in sc_lv 11 signal 237 } 
-	{ cmprpop_local_46_V_read sc_in sc_lv 11 signal 238 } 
-	{ cmprpop_local_47_V_read sc_in sc_lv 11 signal 239 } 
-	{ cmprpop_local_48_V_read sc_in sc_lv 11 signal 240 } 
-	{ cmprpop_local_49_V_read sc_in sc_lv 11 signal 241 } 
-	{ cmprpop_local_50_V_read sc_in sc_lv 11 signal 242 } 
-	{ cmprpop_local_51_V_read sc_in sc_lv 11 signal 243 } 
-	{ cmprpop_local_52_V_read sc_in sc_lv 11 signal 244 } 
-	{ cmprpop_local_53_V_read sc_in sc_lv 11 signal 245 } 
-	{ cmprpop_local_54_V_read sc_in sc_lv 11 signal 246 } 
-	{ cmprpop_local_55_V_read sc_in sc_lv 11 signal 247 } 
-	{ cmprpop_local_56_V_read sc_in sc_lv 11 signal 248 } 
-	{ cmprpop_local_57_V_read sc_in sc_lv 11 signal 249 } 
-	{ cmprpop_local_58_V_read sc_in sc_lv 11 signal 250 } 
-	{ cmprpop_local_59_V_read sc_in sc_lv 11 signal 251 } 
-	{ cmprpop_local_60_V_read sc_in sc_lv 11 signal 252 } 
-	{ cmprpop_local_61_V_read sc_in sc_lv 11 signal 253 } 
-	{ cmprpop_local_62_V_read sc_in sc_lv 11 signal 254 } 
-	{ cmprpop_local_63_V_read sc_in sc_lv 11 signal 255 } 
-	{ result_local_0_read sc_in sc_lv 16 signal 256 } 
-	{ result_local_1_read sc_in sc_lv 16 signal 257 } 
-	{ result_local_2_read sc_in sc_lv 16 signal 258 } 
-	{ result_local_3_read sc_in sc_lv 16 signal 259 } 
-	{ result_local_4_read sc_in sc_lv 16 signal 260 } 
-	{ result_local_5_read sc_in sc_lv 16 signal 261 } 
-	{ result_local_6_read sc_in sc_lv 16 signal 262 } 
-	{ result_local_7_read sc_in sc_lv 16 signal 263 } 
-	{ result_local_8_read sc_in sc_lv 16 signal 264 } 
-	{ result_local_9_read sc_in sc_lv 16 signal 265 } 
-	{ result_local_10_read sc_in sc_lv 16 signal 266 } 
-	{ result_local_11_read sc_in sc_lv 16 signal 267 } 
-	{ result_local_12_read sc_in sc_lv 16 signal 268 } 
-	{ result_local_13_read sc_in sc_lv 16 signal 269 } 
-	{ result_local_14_read sc_in sc_lv 16 signal 270 } 
-	{ result_local_15_read sc_in sc_lv 16 signal 271 } 
-	{ result_local_16_read sc_in sc_lv 16 signal 272 } 
-	{ result_local_17_read sc_in sc_lv 16 signal 273 } 
-	{ result_local_18_read sc_in sc_lv 16 signal 274 } 
-	{ result_local_19_read sc_in sc_lv 16 signal 275 } 
-	{ result_local_20_read sc_in sc_lv 16 signal 276 } 
-	{ result_local_21_read sc_in sc_lv 16 signal 277 } 
-	{ result_local_22_read sc_in sc_lv 16 signal 278 } 
-	{ result_local_23_read sc_in sc_lv 16 signal 279 } 
-	{ result_local_24_read sc_in sc_lv 16 signal 280 } 
-	{ result_local_25_read sc_in sc_lv 16 signal 281 } 
-	{ result_local_26_read sc_in sc_lv 16 signal 282 } 
-	{ result_local_27_read sc_in sc_lv 16 signal 283 } 
-	{ result_local_28_read sc_in sc_lv 16 signal 284 } 
-	{ result_local_29_read sc_in sc_lv 16 signal 285 } 
-	{ result_local_30_read sc_in sc_lv 16 signal 286 } 
-	{ result_local_31_read sc_in sc_lv 16 signal 287 } 
-	{ result_local_32_read sc_in sc_lv 16 signal 288 } 
-	{ result_local_33_read sc_in sc_lv 16 signal 289 } 
-	{ result_local_34_read sc_in sc_lv 16 signal 290 } 
-	{ result_local_35_read sc_in sc_lv 16 signal 291 } 
-	{ result_local_36_read sc_in sc_lv 16 signal 292 } 
-	{ result_local_37_read sc_in sc_lv 16 signal 293 } 
-	{ result_local_38_read sc_in sc_lv 16 signal 294 } 
-	{ result_local_39_read sc_in sc_lv 16 signal 295 } 
-	{ result_local_40_read sc_in sc_lv 16 signal 296 } 
-	{ result_local_41_read sc_in sc_lv 16 signal 297 } 
-	{ result_local_42_read sc_in sc_lv 16 signal 298 } 
-	{ result_local_43_read sc_in sc_lv 16 signal 299 } 
-	{ result_local_44_read sc_in sc_lv 16 signal 300 } 
-	{ result_local_45_read sc_in sc_lv 16 signal 301 } 
-	{ result_local_46_read sc_in sc_lv 16 signal 302 } 
-	{ result_local_47_read sc_in sc_lv 16 signal 303 } 
-	{ result_local_48_read sc_in sc_lv 16 signal 304 } 
-	{ result_local_49_read sc_in sc_lv 16 signal 305 } 
-	{ result_local_50_read sc_in sc_lv 16 signal 306 } 
-	{ result_local_51_read sc_in sc_lv 16 signal 307 } 
-	{ result_local_52_read sc_in sc_lv 16 signal 308 } 
-	{ result_local_53_read sc_in sc_lv 16 signal 309 } 
-	{ result_local_54_read sc_in sc_lv 16 signal 310 } 
-	{ result_local_55_read sc_in sc_lv 16 signal 311 } 
-	{ result_local_56_read sc_in sc_lv 16 signal 312 } 
-	{ result_local_57_read sc_in sc_lv 16 signal 313 } 
-	{ result_local_58_read sc_in sc_lv 16 signal 314 } 
-	{ result_local_59_read sc_in sc_lv 16 signal 315 } 
-	{ result_local_60_read sc_in sc_lv 16 signal 316 } 
-	{ result_local_61_read sc_in sc_lv 16 signal 317 } 
-	{ result_local_62_read sc_in sc_lv 16 signal 318 } 
-	{ result_local_63_read sc_in sc_lv 16 signal 319 } 
-	{ result_read sc_in sc_lv 32 signal 320 } 
+	{ ref_local_V_address0 sc_out sc_lv 10 signal 0 } 
+	{ ref_local_V_ce0 sc_out sc_logic 1 signal 0 } 
+	{ ref_local_V_q0 sc_in sc_lv 1024 signal 0 } 
+	{ cmpr_local_0_V_read sc_in sc_lv 1024 signal 1 } 
+	{ cmpr_local_1_V_read sc_in sc_lv 1024 signal 2 } 
+	{ cmpr_local_2_V_read sc_in sc_lv 1024 signal 3 } 
+	{ cmpr_local_3_V_read sc_in sc_lv 1024 signal 4 } 
+	{ cmpr_local_4_V_read sc_in sc_lv 1024 signal 5 } 
+	{ cmpr_local_5_V_read sc_in sc_lv 1024 signal 6 } 
+	{ cmpr_local_6_V_read sc_in sc_lv 1024 signal 7 } 
+	{ cmpr_local_7_V_read sc_in sc_lv 1024 signal 8 } 
+	{ cmpr_local_8_V_read sc_in sc_lv 1024 signal 9 } 
+	{ cmpr_local_9_V_read sc_in sc_lv 1024 signal 10 } 
+	{ cmpr_local_10_V_read sc_in sc_lv 1024 signal 11 } 
+	{ cmpr_local_11_V_read sc_in sc_lv 1024 signal 12 } 
+	{ cmpr_local_12_V_read sc_in sc_lv 1024 signal 13 } 
+	{ cmpr_local_13_V_read sc_in sc_lv 1024 signal 14 } 
+	{ cmpr_local_14_V_read sc_in sc_lv 1024 signal 15 } 
+	{ cmpr_local_15_V_read sc_in sc_lv 1024 signal 16 } 
+	{ cmpr_local_16_V_read sc_in sc_lv 1024 signal 17 } 
+	{ cmpr_local_17_V_read sc_in sc_lv 1024 signal 18 } 
+	{ cmpr_local_18_V_read sc_in sc_lv 1024 signal 19 } 
+	{ cmpr_local_19_V_read sc_in sc_lv 1024 signal 20 } 
+	{ cmpr_local_20_V_read sc_in sc_lv 1024 signal 21 } 
+	{ cmpr_local_21_V_read sc_in sc_lv 1024 signal 22 } 
+	{ cmpr_local_22_V_read sc_in sc_lv 1024 signal 23 } 
+	{ cmpr_local_23_V_read sc_in sc_lv 1024 signal 24 } 
+	{ cmpr_local_24_V_read sc_in sc_lv 1024 signal 25 } 
+	{ cmpr_local_25_V_read sc_in sc_lv 1024 signal 26 } 
+	{ cmpr_local_26_V_read sc_in sc_lv 1024 signal 27 } 
+	{ cmpr_local_27_V_read sc_in sc_lv 1024 signal 28 } 
+	{ cmpr_local_28_V_read sc_in sc_lv 1024 signal 29 } 
+	{ cmpr_local_29_V_read sc_in sc_lv 1024 signal 30 } 
+	{ cmpr_local_30_V_read sc_in sc_lv 1024 signal 31 } 
+	{ cmpr_local_31_V_read sc_in sc_lv 1024 signal 32 } 
+	{ cmpr_local_32_V_read sc_in sc_lv 1024 signal 33 } 
+	{ cmpr_local_33_V_read sc_in sc_lv 1024 signal 34 } 
+	{ cmpr_local_34_V_read sc_in sc_lv 1024 signal 35 } 
+	{ cmpr_local_35_V_read sc_in sc_lv 1024 signal 36 } 
+	{ cmpr_local_36_V_read sc_in sc_lv 1024 signal 37 } 
+	{ cmpr_local_37_V_read sc_in sc_lv 1024 signal 38 } 
+	{ cmpr_local_38_V_read sc_in sc_lv 1024 signal 39 } 
+	{ cmpr_local_39_V_read sc_in sc_lv 1024 signal 40 } 
+	{ cmpr_local_40_V_read sc_in sc_lv 1024 signal 41 } 
+	{ cmpr_local_41_V_read sc_in sc_lv 1024 signal 42 } 
+	{ cmpr_local_42_V_read sc_in sc_lv 1024 signal 43 } 
+	{ cmpr_local_43_V_read sc_in sc_lv 1024 signal 44 } 
+	{ cmpr_local_44_V_read sc_in sc_lv 1024 signal 45 } 
+	{ cmpr_local_45_V_read sc_in sc_lv 1024 signal 46 } 
+	{ cmpr_local_46_V_read sc_in sc_lv 1024 signal 47 } 
+	{ cmpr_local_47_V_read sc_in sc_lv 1024 signal 48 } 
+	{ cmpr_local_48_V_read sc_in sc_lv 1024 signal 49 } 
+	{ cmpr_local_49_V_read sc_in sc_lv 1024 signal 50 } 
+	{ cmpr_local_50_V_read sc_in sc_lv 1024 signal 51 } 
+	{ cmpr_local_51_V_read sc_in sc_lv 1024 signal 52 } 
+	{ cmpr_local_52_V_read sc_in sc_lv 1024 signal 53 } 
+	{ cmpr_local_53_V_read sc_in sc_lv 1024 signal 54 } 
+	{ cmpr_local_54_V_read sc_in sc_lv 1024 signal 55 } 
+	{ cmpr_local_55_V_read sc_in sc_lv 1024 signal 56 } 
+	{ cmpr_local_56_V_read sc_in sc_lv 1024 signal 57 } 
+	{ cmpr_local_57_V_read sc_in sc_lv 1024 signal 58 } 
+	{ cmpr_local_58_V_read sc_in sc_lv 1024 signal 59 } 
+	{ cmpr_local_59_V_read sc_in sc_lv 1024 signal 60 } 
+	{ cmpr_local_60_V_read sc_in sc_lv 1024 signal 61 } 
+	{ cmpr_local_61_V_read sc_in sc_lv 1024 signal 62 } 
+	{ cmpr_local_62_V_read sc_in sc_lv 1024 signal 63 } 
+	{ cmpr_local_63_V_read sc_in sc_lv 1024 signal 64 } 
+	{ refpop_local_V_address0 sc_out sc_lv 10 signal 65 } 
+	{ refpop_local_V_ce0 sc_out sc_logic 1 signal 65 } 
+	{ refpop_local_V_q0 sc_in sc_lv 11 signal 65 } 
+	{ cmprpop_local_0_V_read sc_in sc_lv 11 signal 66 } 
+	{ cmprpop_local_1_V_read sc_in sc_lv 11 signal 67 } 
+	{ cmprpop_local_2_V_read sc_in sc_lv 11 signal 68 } 
+	{ cmprpop_local_3_V_read sc_in sc_lv 11 signal 69 } 
+	{ cmprpop_local_4_V_read sc_in sc_lv 11 signal 70 } 
+	{ cmprpop_local_5_V_read sc_in sc_lv 11 signal 71 } 
+	{ cmprpop_local_6_V_read sc_in sc_lv 11 signal 72 } 
+	{ cmprpop_local_7_V_read sc_in sc_lv 11 signal 73 } 
+	{ cmprpop_local_8_V_read sc_in sc_lv 11 signal 74 } 
+	{ cmprpop_local_9_V_read sc_in sc_lv 11 signal 75 } 
+	{ cmprpop_local_10_V_read sc_in sc_lv 11 signal 76 } 
+	{ cmprpop_local_11_V_read sc_in sc_lv 11 signal 77 } 
+	{ cmprpop_local_12_V_read sc_in sc_lv 11 signal 78 } 
+	{ cmprpop_local_13_V_read sc_in sc_lv 11 signal 79 } 
+	{ cmprpop_local_14_V_read sc_in sc_lv 11 signal 80 } 
+	{ cmprpop_local_15_V_read sc_in sc_lv 11 signal 81 } 
+	{ cmprpop_local_16_V_read sc_in sc_lv 11 signal 82 } 
+	{ cmprpop_local_17_V_read sc_in sc_lv 11 signal 83 } 
+	{ cmprpop_local_18_V_read sc_in sc_lv 11 signal 84 } 
+	{ cmprpop_local_19_V_read sc_in sc_lv 11 signal 85 } 
+	{ cmprpop_local_20_V_read sc_in sc_lv 11 signal 86 } 
+	{ cmprpop_local_21_V_read sc_in sc_lv 11 signal 87 } 
+	{ cmprpop_local_22_V_read sc_in sc_lv 11 signal 88 } 
+	{ cmprpop_local_23_V_read sc_in sc_lv 11 signal 89 } 
+	{ cmprpop_local_24_V_read sc_in sc_lv 11 signal 90 } 
+	{ cmprpop_local_25_V_read sc_in sc_lv 11 signal 91 } 
+	{ cmprpop_local_26_V_read sc_in sc_lv 11 signal 92 } 
+	{ cmprpop_local_27_V_read sc_in sc_lv 11 signal 93 } 
+	{ cmprpop_local_28_V_read sc_in sc_lv 11 signal 94 } 
+	{ cmprpop_local_29_V_read sc_in sc_lv 11 signal 95 } 
+	{ cmprpop_local_30_V_read sc_in sc_lv 11 signal 96 } 
+	{ cmprpop_local_31_V_read sc_in sc_lv 11 signal 97 } 
+	{ cmprpop_local_32_V_read sc_in sc_lv 11 signal 98 } 
+	{ cmprpop_local_33_V_read sc_in sc_lv 11 signal 99 } 
+	{ cmprpop_local_34_V_read sc_in sc_lv 11 signal 100 } 
+	{ cmprpop_local_35_V_read sc_in sc_lv 11 signal 101 } 
+	{ cmprpop_local_36_V_read sc_in sc_lv 11 signal 102 } 
+	{ cmprpop_local_37_V_read sc_in sc_lv 11 signal 103 } 
+	{ cmprpop_local_38_V_read sc_in sc_lv 11 signal 104 } 
+	{ cmprpop_local_39_V_read sc_in sc_lv 11 signal 105 } 
+	{ cmprpop_local_40_V_read sc_in sc_lv 11 signal 106 } 
+	{ cmprpop_local_41_V_read sc_in sc_lv 11 signal 107 } 
+	{ cmprpop_local_42_V_read sc_in sc_lv 11 signal 108 } 
+	{ cmprpop_local_43_V_read sc_in sc_lv 11 signal 109 } 
+	{ cmprpop_local_44_V_read sc_in sc_lv 11 signal 110 } 
+	{ cmprpop_local_45_V_read sc_in sc_lv 11 signal 111 } 
+	{ cmprpop_local_46_V_read sc_in sc_lv 11 signal 112 } 
+	{ cmprpop_local_47_V_read sc_in sc_lv 11 signal 113 } 
+	{ cmprpop_local_48_V_read sc_in sc_lv 11 signal 114 } 
+	{ cmprpop_local_49_V_read sc_in sc_lv 11 signal 115 } 
+	{ cmprpop_local_50_V_read sc_in sc_lv 11 signal 116 } 
+	{ cmprpop_local_51_V_read sc_in sc_lv 11 signal 117 } 
+	{ cmprpop_local_52_V_read sc_in sc_lv 11 signal 118 } 
+	{ cmprpop_local_53_V_read sc_in sc_lv 11 signal 119 } 
+	{ cmprpop_local_54_V_read sc_in sc_lv 11 signal 120 } 
+	{ cmprpop_local_55_V_read sc_in sc_lv 11 signal 121 } 
+	{ cmprpop_local_56_V_read sc_in sc_lv 11 signal 122 } 
+	{ cmprpop_local_57_V_read sc_in sc_lv 11 signal 123 } 
+	{ cmprpop_local_58_V_read sc_in sc_lv 11 signal 124 } 
+	{ cmprpop_local_59_V_read sc_in sc_lv 11 signal 125 } 
+	{ cmprpop_local_60_V_read sc_in sc_lv 11 signal 126 } 
+	{ cmprpop_local_61_V_read sc_in sc_lv 11 signal 127 } 
+	{ cmprpop_local_62_V_read sc_in sc_lv 11 signal 128 } 
+	{ cmprpop_local_63_V_read sc_in sc_lv 11 signal 129 } 
+	{ result_local_0_read sc_in sc_lv 16 signal 130 } 
+	{ result_local_1_read sc_in sc_lv 16 signal 131 } 
+	{ result_local_2_read sc_in sc_lv 16 signal 132 } 
+	{ result_local_3_read sc_in sc_lv 16 signal 133 } 
+	{ result_local_4_read sc_in sc_lv 16 signal 134 } 
+	{ result_local_5_read sc_in sc_lv 16 signal 135 } 
+	{ result_local_6_read sc_in sc_lv 16 signal 136 } 
+	{ result_local_7_read sc_in sc_lv 16 signal 137 } 
+	{ result_local_8_read sc_in sc_lv 16 signal 138 } 
+	{ result_local_9_read sc_in sc_lv 16 signal 139 } 
+	{ result_local_10_read sc_in sc_lv 16 signal 140 } 
+	{ result_local_11_read sc_in sc_lv 16 signal 141 } 
+	{ result_local_12_read sc_in sc_lv 16 signal 142 } 
+	{ result_local_13_read sc_in sc_lv 16 signal 143 } 
+	{ result_local_14_read sc_in sc_lv 16 signal 144 } 
+	{ result_local_15_read sc_in sc_lv 16 signal 145 } 
+	{ result_local_16_read sc_in sc_lv 16 signal 146 } 
+	{ result_local_17_read sc_in sc_lv 16 signal 147 } 
+	{ result_local_18_read sc_in sc_lv 16 signal 148 } 
+	{ result_local_19_read sc_in sc_lv 16 signal 149 } 
+	{ result_local_20_read sc_in sc_lv 16 signal 150 } 
+	{ result_local_21_read sc_in sc_lv 16 signal 151 } 
+	{ result_local_22_read sc_in sc_lv 16 signal 152 } 
+	{ result_local_23_read sc_in sc_lv 16 signal 153 } 
+	{ result_local_24_read sc_in sc_lv 16 signal 154 } 
+	{ result_local_25_read sc_in sc_lv 16 signal 155 } 
+	{ result_local_26_read sc_in sc_lv 16 signal 156 } 
+	{ result_local_27_read sc_in sc_lv 16 signal 157 } 
+	{ result_local_28_read sc_in sc_lv 16 signal 158 } 
+	{ result_local_29_read sc_in sc_lv 16 signal 159 } 
+	{ result_local_30_read sc_in sc_lv 16 signal 160 } 
+	{ result_local_31_read sc_in sc_lv 16 signal 161 } 
+	{ result_local_32_read sc_in sc_lv 16 signal 162 } 
+	{ result_local_33_read sc_in sc_lv 16 signal 163 } 
+	{ result_local_34_read sc_in sc_lv 16 signal 164 } 
+	{ result_local_35_read sc_in sc_lv 16 signal 165 } 
+	{ result_local_36_read sc_in sc_lv 16 signal 166 } 
+	{ result_local_37_read sc_in sc_lv 16 signal 167 } 
+	{ result_local_38_read sc_in sc_lv 16 signal 168 } 
+	{ result_local_39_read sc_in sc_lv 16 signal 169 } 
+	{ result_local_40_read sc_in sc_lv 16 signal 170 } 
+	{ result_local_41_read sc_in sc_lv 16 signal 171 } 
+	{ result_local_42_read sc_in sc_lv 16 signal 172 } 
+	{ result_local_43_read sc_in sc_lv 16 signal 173 } 
+	{ result_local_44_read sc_in sc_lv 16 signal 174 } 
+	{ result_local_45_read sc_in sc_lv 16 signal 175 } 
+	{ result_local_46_read sc_in sc_lv 16 signal 176 } 
+	{ result_local_47_read sc_in sc_lv 16 signal 177 } 
+	{ result_local_48_read sc_in sc_lv 16 signal 178 } 
+	{ result_local_49_read sc_in sc_lv 16 signal 179 } 
+	{ result_local_50_read sc_in sc_lv 16 signal 180 } 
+	{ result_local_51_read sc_in sc_lv 16 signal 181 } 
+	{ result_local_52_read sc_in sc_lv 16 signal 182 } 
+	{ result_local_53_read sc_in sc_lv 16 signal 183 } 
+	{ result_local_54_read sc_in sc_lv 16 signal 184 } 
+	{ result_local_55_read sc_in sc_lv 16 signal 185 } 
+	{ result_local_56_read sc_in sc_lv 16 signal 186 } 
+	{ result_local_57_read sc_in sc_lv 16 signal 187 } 
+	{ result_local_58_read sc_in sc_lv 16 signal 188 } 
+	{ result_local_59_read sc_in sc_lv 16 signal 189 } 
+	{ result_local_60_read sc_in sc_lv 16 signal 190 } 
+	{ result_local_61_read sc_in sc_lv 16 signal 191 } 
+	{ result_local_62_read sc_in sc_lv 16 signal 192 } 
+	{ result_local_63_read sc_in sc_lv 16 signal 193 } 
+	{ result_read sc_in sc_lv 32 signal 194 } 
 	{ ap_return_0 sc_out sc_lv 32 signal -1 } 
 	{ ap_return_1 sc_out sc_lv 16 signal -1 } 
 	{ ap_return_2 sc_out sc_lv 16 signal -1 } 
@@ -1062,70 +688,9 @@ set NewPortList {[
  	{ "name": "ap_done", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "predone", "bundle":{"name": "ap_done", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
- 	{ "name": "ref_local_0_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_0_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_1_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_1_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_2_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_2_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_3_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_3_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_4_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_4_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_5_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_5_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_6_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_6_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_7_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_7_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_8_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_8_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_9_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_9_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_10_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_10_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_11_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_11_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_12_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_12_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_13_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_13_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_14_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_14_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_15_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_15_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_16_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_16_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_17_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_17_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_18_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_18_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_19_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_19_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_20_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_20_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_21_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_21_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_22_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_22_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_23_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_23_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_24_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_24_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_25_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_25_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_26_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_26_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_27_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_27_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_28_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_28_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_29_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_29_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_30_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_30_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_31_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_31_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_32_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_32_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_33_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_33_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_34_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_34_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_35_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_35_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_36_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_36_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_37_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_37_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_38_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_38_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_39_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_39_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_40_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_40_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_41_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_41_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_42_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_42_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_43_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_43_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_44_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_44_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_45_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_45_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_46_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_46_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_47_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_47_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_48_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_48_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_49_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_49_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_50_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_50_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_51_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_51_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_52_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_52_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_53_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_53_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_54_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_54_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_55_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_55_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_56_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_56_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_57_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_57_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_58_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_58_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_59_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_59_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_60_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_60_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_61_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_61_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_62_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_62_V_read", "role": "default" }} , 
- 	{ "name": "ref_local_63_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_63_V_read", "role": "default" }} , 
+ 	{ "name": "ref_local_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "ref_local_V", "role": "address0" }} , 
+ 	{ "name": "ref_local_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "ref_local_V", "role": "ce0" }} , 
+ 	{ "name": "ref_local_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "ref_local_V", "role": "q0" }} , 
  	{ "name": "cmpr_local_0_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "cmpr_local_0_V_read", "role": "default" }} , 
  	{ "name": "cmpr_local_1_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "cmpr_local_1_V_read", "role": "default" }} , 
  	{ "name": "cmpr_local_2_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "cmpr_local_2_V_read", "role": "default" }} , 
@@ -1190,70 +755,9 @@ set NewPortList {[
  	{ "name": "cmpr_local_61_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "cmpr_local_61_V_read", "role": "default" }} , 
  	{ "name": "cmpr_local_62_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "cmpr_local_62_V_read", "role": "default" }} , 
  	{ "name": "cmpr_local_63_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "cmpr_local_63_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_0_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_0_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_1_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_1_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_2_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_2_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_3_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_3_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_4_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_4_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_5_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_5_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_6_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_6_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_7_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_7_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_8_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_8_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_9_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_9_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_10_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_10_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_11_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_11_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_12_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_12_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_13_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_13_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_14_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_14_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_15_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_15_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_16_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_16_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_17_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_17_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_18_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_18_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_19_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_19_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_20_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_20_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_21_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_21_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_22_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_22_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_23_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_23_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_24_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_24_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_25_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_25_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_26_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_26_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_27_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_27_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_28_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_28_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_29_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_29_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_30_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_30_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_31_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_31_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_32_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_32_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_33_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_33_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_34_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_34_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_35_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_35_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_36_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_36_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_37_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_37_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_38_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_38_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_39_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_39_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_40_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_40_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_41_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_41_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_42_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_42_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_43_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_43_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_44_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_44_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_45_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_45_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_46_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_46_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_47_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_47_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_48_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_48_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_49_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_49_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_50_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_50_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_51_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_51_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_52_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_52_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_53_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_53_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_54_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_54_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_55_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_55_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_56_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_56_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_57_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_57_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_58_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_58_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_59_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_59_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_60_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_60_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_61_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_61_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_62_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_62_V_read", "role": "default" }} , 
- 	{ "name": "refpop_local_63_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_63_V_read", "role": "default" }} , 
+ 	{ "name": "refpop_local_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "refpop_local_V", "role": "address0" }} , 
+ 	{ "name": "refpop_local_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "refpop_local_V", "role": "ce0" }} , 
+ 	{ "name": "refpop_local_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "refpop_local_V", "role": "q0" }} , 
  	{ "name": "cmprpop_local_0_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "cmprpop_local_0_V_read", "role": "default" }} , 
  	{ "name": "cmprpop_local_1_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "cmprpop_local_1_V_read", "role": "default" }} , 
  	{ "name": "cmprpop_local_2_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "cmprpop_local_2_V_read", "role": "default" }} , 
@@ -1450,13 +954,13 @@ set NewPortList {[
  	{ "name": "ap_return_64", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "ap_return_64", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64"],
 		"CDFG" : "calculation",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "68", "EstimateLatencyMax" : "68",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1029", "EstimateLatencyMax" : "1029",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -1464,70 +968,7 @@ set RtlHierarchyInfo {[
 		"InDataflowNetwork" : "0",
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
-			{"Name" : "ref_local_0_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_1_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_2_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_3_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_4_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_5_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_6_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_7_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_8_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_9_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_10_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_11_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_12_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_13_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_14_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_15_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_16_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_17_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_18_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_19_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_20_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_21_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_22_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_23_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_24_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_25_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_26_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_27_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_28_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_29_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_30_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_31_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_32_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_33_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_34_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_35_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_36_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_37_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_38_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_39_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_40_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_41_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_42_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_43_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_44_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_45_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_46_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_47_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_48_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_49_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_50_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_51_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_52_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_53_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_54_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_55_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_56_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_57_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_58_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_59_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_60_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_61_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_62_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ref_local_63_V_read", "Type" : "None", "Direction" : "I"},
+			{"Name" : "ref_local_V", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "cmpr_local_0_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "cmpr_local_1_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "cmpr_local_2_V_read", "Type" : "None", "Direction" : "I"},
@@ -1592,70 +1033,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "cmpr_local_61_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "cmpr_local_62_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "cmpr_local_63_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_0_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_1_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_2_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_3_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_4_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_5_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_6_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_7_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_8_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_9_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_10_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_11_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_12_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_13_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_14_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_15_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_16_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_17_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_18_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_19_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_20_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_21_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_22_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_23_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_24_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_25_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_26_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_27_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_28_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_29_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_30_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_31_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_32_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_33_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_34_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_35_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_36_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_37_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_38_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_39_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_40_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_41_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_42_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_43_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_44_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_45_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_46_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_47_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_48_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_49_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_50_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_51_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_52_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_53_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_54_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_55_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_56_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_57_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_58_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_59_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_60_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_61_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_62_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "refpop_local_63_V_read", "Type" : "None", "Direction" : "I"},
+			{"Name" : "refpop_local_V", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "cmprpop_local_0_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "cmprpop_local_1_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "cmprpop_local_2_V_read", "Type" : "None", "Direction" : "I"},
@@ -1785,7 +1163,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "result_local_62_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "result_local_63_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "result_read", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3273", "Parent" : "0",
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2279", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -1800,7 +1178,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3278", "Parent" : "0",
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2284", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -1815,7 +1193,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3283", "Parent" : "0",
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2289", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -1830,7 +1208,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3288", "Parent" : "0",
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2294", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -1845,7 +1223,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3293", "Parent" : "0",
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2299", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -1860,7 +1238,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3298", "Parent" : "0",
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2304", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -1875,7 +1253,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3303", "Parent" : "0",
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2309", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -1890,7 +1268,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3308", "Parent" : "0",
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2314", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -1905,7 +1283,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3313", "Parent" : "0",
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2319", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -1920,7 +1298,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3318", "Parent" : "0",
+	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2324", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -1935,7 +1313,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3323", "Parent" : "0",
+	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2329", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -1950,7 +1328,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3328", "Parent" : "0",
+	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2334", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -1965,7 +1343,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3333", "Parent" : "0",
+	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2339", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -1980,7 +1358,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3338", "Parent" : "0",
+	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2344", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -1995,7 +1373,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3343", "Parent" : "0",
+	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2349", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2010,7 +1388,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3348", "Parent" : "0",
+	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2354", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2025,7 +1403,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3353", "Parent" : "0",
+	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2359", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2040,7 +1418,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "18", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3358", "Parent" : "0",
+	{"ID" : "18", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2364", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2055,7 +1433,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3363", "Parent" : "0",
+	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2369", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2070,7 +1448,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "20", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3368", "Parent" : "0",
+	{"ID" : "20", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2374", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2085,7 +1463,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3373", "Parent" : "0",
+	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2379", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2100,7 +1478,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3378", "Parent" : "0",
+	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2384", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2115,7 +1493,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3383", "Parent" : "0",
+	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2389", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2130,7 +1508,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3388", "Parent" : "0",
+	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2394", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2145,7 +1523,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3393", "Parent" : "0",
+	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2399", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2160,7 +1538,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "26", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3398", "Parent" : "0",
+	{"ID" : "26", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2404", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2175,7 +1553,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "27", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3403", "Parent" : "0",
+	{"ID" : "27", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2409", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2190,7 +1568,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "28", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3408", "Parent" : "0",
+	{"ID" : "28", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2414", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2205,7 +1583,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "29", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3413", "Parent" : "0",
+	{"ID" : "29", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2419", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2220,7 +1598,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "30", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3418", "Parent" : "0",
+	{"ID" : "30", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2424", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2235,7 +1613,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "31", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3423", "Parent" : "0",
+	{"ID" : "31", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2429", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2250,7 +1628,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "32", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3428", "Parent" : "0",
+	{"ID" : "32", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2434", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2265,7 +1643,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "33", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3433", "Parent" : "0",
+	{"ID" : "33", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2439", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2280,7 +1658,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "34", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3438", "Parent" : "0",
+	{"ID" : "34", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2444", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2295,7 +1673,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "35", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3443", "Parent" : "0",
+	{"ID" : "35", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2449", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2310,7 +1688,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "36", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3448", "Parent" : "0",
+	{"ID" : "36", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2454", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2325,7 +1703,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "37", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3453", "Parent" : "0",
+	{"ID" : "37", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2459", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2340,7 +1718,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "38", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3458", "Parent" : "0",
+	{"ID" : "38", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2464", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2355,7 +1733,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "39", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3463", "Parent" : "0",
+	{"ID" : "39", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2469", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2370,7 +1748,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "40", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3468", "Parent" : "0",
+	{"ID" : "40", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2474", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2385,7 +1763,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "41", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3473", "Parent" : "0",
+	{"ID" : "41", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2479", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2400,7 +1778,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "42", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3478", "Parent" : "0",
+	{"ID" : "42", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2484", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2415,7 +1793,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "43", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3483", "Parent" : "0",
+	{"ID" : "43", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2489", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2430,7 +1808,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "44", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3488", "Parent" : "0",
+	{"ID" : "44", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2494", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2445,7 +1823,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "45", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3493", "Parent" : "0",
+	{"ID" : "45", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2499", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2460,7 +1838,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "46", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3498", "Parent" : "0",
+	{"ID" : "46", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2504", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2475,7 +1853,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "47", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3503", "Parent" : "0",
+	{"ID" : "47", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2509", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2490,7 +1868,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "48", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3508", "Parent" : "0",
+	{"ID" : "48", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2514", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2505,7 +1883,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "49", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3513", "Parent" : "0",
+	{"ID" : "49", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2519", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2520,7 +1898,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "50", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3518", "Parent" : "0",
+	{"ID" : "50", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2524", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2535,7 +1913,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "51", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3523", "Parent" : "0",
+	{"ID" : "51", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2529", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2550,7 +1928,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "52", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3528", "Parent" : "0",
+	{"ID" : "52", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2534", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2565,7 +1943,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "53", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3533", "Parent" : "0",
+	{"ID" : "53", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2539", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2580,7 +1958,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "54", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3538", "Parent" : "0",
+	{"ID" : "54", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2544", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2595,7 +1973,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "55", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3543", "Parent" : "0",
+	{"ID" : "55", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2549", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2610,7 +1988,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "56", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3548", "Parent" : "0",
+	{"ID" : "56", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2554", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2625,7 +2003,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "57", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3553", "Parent" : "0",
+	{"ID" : "57", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2559", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2640,7 +2018,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "58", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3558", "Parent" : "0",
+	{"ID" : "58", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2564", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2655,7 +2033,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "59", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3563", "Parent" : "0",
+	{"ID" : "59", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2569", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2670,7 +2048,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "60", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3568", "Parent" : "0",
+	{"ID" : "60", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2574", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2685,7 +2063,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "61", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3573", "Parent" : "0",
+	{"ID" : "61", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2579", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2700,7 +2078,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "62", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3578", "Parent" : "0",
+	{"ID" : "62", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2584", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2715,7 +2093,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "63", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3583", "Parent" : "0",
+	{"ID" : "63", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2589", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2730,7 +2108,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "64", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_3588", "Parent" : "0",
+	{"ID" : "64", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_popcnt_fu_2594", "Parent" : "0",
 		"CDFG" : "popcnt",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -2744,77 +2122,12 @@ set RtlHierarchyInfo {[
 		"InDataflowNetwork" : "0",
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
-			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "65", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.tancalc_mux_646_1024_1_1_U526", "Parent" : "0"},
-	{"ID" : "66", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.tancalc_mux_646_11_1_1_U527", "Parent" : "0"}]}
+			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	calculation {
-		ref_local_0_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_1_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_2_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_3_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_4_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_5_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_6_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_7_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_8_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_9_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_10_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_11_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_12_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_13_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_14_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_15_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_16_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_17_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_18_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_19_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_20_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_21_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_22_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_23_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_24_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_25_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_26_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_27_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_28_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_29_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_30_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_31_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_32_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_33_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_34_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_35_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_36_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_37_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_38_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_39_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_40_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_41_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_42_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_43_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_44_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_45_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_46_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_47_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_48_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_49_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_50_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_51_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_52_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_53_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_54_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_55_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_56_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_57_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_58_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_59_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_60_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_61_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_62_V_read {Type I LastRead 0 FirstWrite -1}
-		ref_local_63_V_read {Type I LastRead 0 FirstWrite -1}
+		ref_local_V {Type I LastRead 1 FirstWrite -1}
 		cmpr_local_0_V_read {Type I LastRead 0 FirstWrite -1}
 		cmpr_local_1_V_read {Type I LastRead 0 FirstWrite -1}
 		cmpr_local_2_V_read {Type I LastRead 0 FirstWrite -1}
@@ -2879,70 +2192,7 @@ set ArgLastReadFirstWriteLatency {
 		cmpr_local_61_V_read {Type I LastRead 0 FirstWrite -1}
 		cmpr_local_62_V_read {Type I LastRead 0 FirstWrite -1}
 		cmpr_local_63_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_0_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_1_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_2_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_3_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_4_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_5_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_6_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_7_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_8_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_9_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_10_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_11_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_12_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_13_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_14_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_15_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_16_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_17_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_18_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_19_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_20_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_21_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_22_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_23_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_24_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_25_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_26_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_27_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_28_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_29_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_30_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_31_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_32_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_33_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_34_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_35_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_36_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_37_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_38_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_39_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_40_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_41_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_42_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_43_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_44_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_45_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_46_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_47_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_48_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_49_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_50_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_51_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_52_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_53_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_54_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_55_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_56_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_57_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_58_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_59_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_60_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_61_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_62_V_read {Type I LastRead 0 FirstWrite -1}
-		refpop_local_63_V_read {Type I LastRead 0 FirstWrite -1}
+		refpop_local_V {Type I LastRead 2 FirstWrite -1}
 		cmprpop_local_0_V_read {Type I LastRead 0 FirstWrite -1}
 		cmprpop_local_1_V_read {Type I LastRead 0 FirstWrite -1}
 		cmprpop_local_2_V_read {Type I LastRead 0 FirstWrite -1}
@@ -3204,8 +2454,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "68", "Max" : "68"}
-	, {"Name" : "Interval", "Min" : "68", "Max" : "68"}
+	{"Name" : "Latency", "Min" : "1029", "Max" : "1029"}
+	, {"Name" : "Interval", "Min" : "1029", "Max" : "1029"}
 ]}
 
 set PipelineEnableSignalInfo {[
@@ -3213,70 +2463,7 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	ref_local_0_V_read { ap_none {  { ref_local_0_V_read in_data 0 1024 } } }
-	ref_local_1_V_read { ap_none {  { ref_local_1_V_read in_data 0 1024 } } }
-	ref_local_2_V_read { ap_none {  { ref_local_2_V_read in_data 0 1024 } } }
-	ref_local_3_V_read { ap_none {  { ref_local_3_V_read in_data 0 1024 } } }
-	ref_local_4_V_read { ap_none {  { ref_local_4_V_read in_data 0 1024 } } }
-	ref_local_5_V_read { ap_none {  { ref_local_5_V_read in_data 0 1024 } } }
-	ref_local_6_V_read { ap_none {  { ref_local_6_V_read in_data 0 1024 } } }
-	ref_local_7_V_read { ap_none {  { ref_local_7_V_read in_data 0 1024 } } }
-	ref_local_8_V_read { ap_none {  { ref_local_8_V_read in_data 0 1024 } } }
-	ref_local_9_V_read { ap_none {  { ref_local_9_V_read in_data 0 1024 } } }
-	ref_local_10_V_read { ap_none {  { ref_local_10_V_read in_data 0 1024 } } }
-	ref_local_11_V_read { ap_none {  { ref_local_11_V_read in_data 0 1024 } } }
-	ref_local_12_V_read { ap_none {  { ref_local_12_V_read in_data 0 1024 } } }
-	ref_local_13_V_read { ap_none {  { ref_local_13_V_read in_data 0 1024 } } }
-	ref_local_14_V_read { ap_none {  { ref_local_14_V_read in_data 0 1024 } } }
-	ref_local_15_V_read { ap_none {  { ref_local_15_V_read in_data 0 1024 } } }
-	ref_local_16_V_read { ap_none {  { ref_local_16_V_read in_data 0 1024 } } }
-	ref_local_17_V_read { ap_none {  { ref_local_17_V_read in_data 0 1024 } } }
-	ref_local_18_V_read { ap_none {  { ref_local_18_V_read in_data 0 1024 } } }
-	ref_local_19_V_read { ap_none {  { ref_local_19_V_read in_data 0 1024 } } }
-	ref_local_20_V_read { ap_none {  { ref_local_20_V_read in_data 0 1024 } } }
-	ref_local_21_V_read { ap_none {  { ref_local_21_V_read in_data 0 1024 } } }
-	ref_local_22_V_read { ap_none {  { ref_local_22_V_read in_data 0 1024 } } }
-	ref_local_23_V_read { ap_none {  { ref_local_23_V_read in_data 0 1024 } } }
-	ref_local_24_V_read { ap_none {  { ref_local_24_V_read in_data 0 1024 } } }
-	ref_local_25_V_read { ap_none {  { ref_local_25_V_read in_data 0 1024 } } }
-	ref_local_26_V_read { ap_none {  { ref_local_26_V_read in_data 0 1024 } } }
-	ref_local_27_V_read { ap_none {  { ref_local_27_V_read in_data 0 1024 } } }
-	ref_local_28_V_read { ap_none {  { ref_local_28_V_read in_data 0 1024 } } }
-	ref_local_29_V_read { ap_none {  { ref_local_29_V_read in_data 0 1024 } } }
-	ref_local_30_V_read { ap_none {  { ref_local_30_V_read in_data 0 1024 } } }
-	ref_local_31_V_read { ap_none {  { ref_local_31_V_read in_data 0 1024 } } }
-	ref_local_32_V_read { ap_none {  { ref_local_32_V_read in_data 0 1024 } } }
-	ref_local_33_V_read { ap_none {  { ref_local_33_V_read in_data 0 1024 } } }
-	ref_local_34_V_read { ap_none {  { ref_local_34_V_read in_data 0 1024 } } }
-	ref_local_35_V_read { ap_none {  { ref_local_35_V_read in_data 0 1024 } } }
-	ref_local_36_V_read { ap_none {  { ref_local_36_V_read in_data 0 1024 } } }
-	ref_local_37_V_read { ap_none {  { ref_local_37_V_read in_data 0 1024 } } }
-	ref_local_38_V_read { ap_none {  { ref_local_38_V_read in_data 0 1024 } } }
-	ref_local_39_V_read { ap_none {  { ref_local_39_V_read in_data 0 1024 } } }
-	ref_local_40_V_read { ap_none {  { ref_local_40_V_read in_data 0 1024 } } }
-	ref_local_41_V_read { ap_none {  { ref_local_41_V_read in_data 0 1024 } } }
-	ref_local_42_V_read { ap_none {  { ref_local_42_V_read in_data 0 1024 } } }
-	ref_local_43_V_read { ap_none {  { ref_local_43_V_read in_data 0 1024 } } }
-	ref_local_44_V_read { ap_none {  { ref_local_44_V_read in_data 0 1024 } } }
-	ref_local_45_V_read { ap_none {  { ref_local_45_V_read in_data 0 1024 } } }
-	ref_local_46_V_read { ap_none {  { ref_local_46_V_read in_data 0 1024 } } }
-	ref_local_47_V_read { ap_none {  { ref_local_47_V_read in_data 0 1024 } } }
-	ref_local_48_V_read { ap_none {  { ref_local_48_V_read in_data 0 1024 } } }
-	ref_local_49_V_read { ap_none {  { ref_local_49_V_read in_data 0 1024 } } }
-	ref_local_50_V_read { ap_none {  { ref_local_50_V_read in_data 0 1024 } } }
-	ref_local_51_V_read { ap_none {  { ref_local_51_V_read in_data 0 1024 } } }
-	ref_local_52_V_read { ap_none {  { ref_local_52_V_read in_data 0 1024 } } }
-	ref_local_53_V_read { ap_none {  { ref_local_53_V_read in_data 0 1024 } } }
-	ref_local_54_V_read { ap_none {  { ref_local_54_V_read in_data 0 1024 } } }
-	ref_local_55_V_read { ap_none {  { ref_local_55_V_read in_data 0 1024 } } }
-	ref_local_56_V_read { ap_none {  { ref_local_56_V_read in_data 0 1024 } } }
-	ref_local_57_V_read { ap_none {  { ref_local_57_V_read in_data 0 1024 } } }
-	ref_local_58_V_read { ap_none {  { ref_local_58_V_read in_data 0 1024 } } }
-	ref_local_59_V_read { ap_none {  { ref_local_59_V_read in_data 0 1024 } } }
-	ref_local_60_V_read { ap_none {  { ref_local_60_V_read in_data 0 1024 } } }
-	ref_local_61_V_read { ap_none {  { ref_local_61_V_read in_data 0 1024 } } }
-	ref_local_62_V_read { ap_none {  { ref_local_62_V_read in_data 0 1024 } } }
-	ref_local_63_V_read { ap_none {  { ref_local_63_V_read in_data 0 1024 } } }
+	ref_local_V { ap_memory {  { ref_local_V_address0 mem_address 1 10 }  { ref_local_V_ce0 mem_ce 1 1 }  { ref_local_V_q0 mem_dout 0 1024 } } }
 	cmpr_local_0_V_read { ap_none {  { cmpr_local_0_V_read in_data 0 1024 } } }
 	cmpr_local_1_V_read { ap_none {  { cmpr_local_1_V_read in_data 0 1024 } } }
 	cmpr_local_2_V_read { ap_none {  { cmpr_local_2_V_read in_data 0 1024 } } }
@@ -3341,70 +2528,7 @@ set Spec2ImplPortList {
 	cmpr_local_61_V_read { ap_none {  { cmpr_local_61_V_read in_data 0 1024 } } }
 	cmpr_local_62_V_read { ap_none {  { cmpr_local_62_V_read in_data 0 1024 } } }
 	cmpr_local_63_V_read { ap_none {  { cmpr_local_63_V_read in_data 0 1024 } } }
-	refpop_local_0_V_read { ap_none {  { refpop_local_0_V_read in_data 0 11 } } }
-	refpop_local_1_V_read { ap_none {  { refpop_local_1_V_read in_data 0 11 } } }
-	refpop_local_2_V_read { ap_none {  { refpop_local_2_V_read in_data 0 11 } } }
-	refpop_local_3_V_read { ap_none {  { refpop_local_3_V_read in_data 0 11 } } }
-	refpop_local_4_V_read { ap_none {  { refpop_local_4_V_read in_data 0 11 } } }
-	refpop_local_5_V_read { ap_none {  { refpop_local_5_V_read in_data 0 11 } } }
-	refpop_local_6_V_read { ap_none {  { refpop_local_6_V_read in_data 0 11 } } }
-	refpop_local_7_V_read { ap_none {  { refpop_local_7_V_read in_data 0 11 } } }
-	refpop_local_8_V_read { ap_none {  { refpop_local_8_V_read in_data 0 11 } } }
-	refpop_local_9_V_read { ap_none {  { refpop_local_9_V_read in_data 0 11 } } }
-	refpop_local_10_V_read { ap_none {  { refpop_local_10_V_read in_data 0 11 } } }
-	refpop_local_11_V_read { ap_none {  { refpop_local_11_V_read in_data 0 11 } } }
-	refpop_local_12_V_read { ap_none {  { refpop_local_12_V_read in_data 0 11 } } }
-	refpop_local_13_V_read { ap_none {  { refpop_local_13_V_read in_data 0 11 } } }
-	refpop_local_14_V_read { ap_none {  { refpop_local_14_V_read in_data 0 11 } } }
-	refpop_local_15_V_read { ap_none {  { refpop_local_15_V_read in_data 0 11 } } }
-	refpop_local_16_V_read { ap_none {  { refpop_local_16_V_read in_data 0 11 } } }
-	refpop_local_17_V_read { ap_none {  { refpop_local_17_V_read in_data 0 11 } } }
-	refpop_local_18_V_read { ap_none {  { refpop_local_18_V_read in_data 0 11 } } }
-	refpop_local_19_V_read { ap_none {  { refpop_local_19_V_read in_data 0 11 } } }
-	refpop_local_20_V_read { ap_none {  { refpop_local_20_V_read in_data 0 11 } } }
-	refpop_local_21_V_read { ap_none {  { refpop_local_21_V_read in_data 0 11 } } }
-	refpop_local_22_V_read { ap_none {  { refpop_local_22_V_read in_data 0 11 } } }
-	refpop_local_23_V_read { ap_none {  { refpop_local_23_V_read in_data 0 11 } } }
-	refpop_local_24_V_read { ap_none {  { refpop_local_24_V_read in_data 0 11 } } }
-	refpop_local_25_V_read { ap_none {  { refpop_local_25_V_read in_data 0 11 } } }
-	refpop_local_26_V_read { ap_none {  { refpop_local_26_V_read in_data 0 11 } } }
-	refpop_local_27_V_read { ap_none {  { refpop_local_27_V_read in_data 0 11 } } }
-	refpop_local_28_V_read { ap_none {  { refpop_local_28_V_read in_data 0 11 } } }
-	refpop_local_29_V_read { ap_none {  { refpop_local_29_V_read in_data 0 11 } } }
-	refpop_local_30_V_read { ap_none {  { refpop_local_30_V_read in_data 0 11 } } }
-	refpop_local_31_V_read { ap_none {  { refpop_local_31_V_read in_data 0 11 } } }
-	refpop_local_32_V_read { ap_none {  { refpop_local_32_V_read in_data 0 11 } } }
-	refpop_local_33_V_read { ap_none {  { refpop_local_33_V_read in_data 0 11 } } }
-	refpop_local_34_V_read { ap_none {  { refpop_local_34_V_read in_data 0 11 } } }
-	refpop_local_35_V_read { ap_none {  { refpop_local_35_V_read in_data 0 11 } } }
-	refpop_local_36_V_read { ap_none {  { refpop_local_36_V_read in_data 0 11 } } }
-	refpop_local_37_V_read { ap_none {  { refpop_local_37_V_read in_data 0 11 } } }
-	refpop_local_38_V_read { ap_none {  { refpop_local_38_V_read in_data 0 11 } } }
-	refpop_local_39_V_read { ap_none {  { refpop_local_39_V_read in_data 0 11 } } }
-	refpop_local_40_V_read { ap_none {  { refpop_local_40_V_read in_data 0 11 } } }
-	refpop_local_41_V_read { ap_none {  { refpop_local_41_V_read in_data 0 11 } } }
-	refpop_local_42_V_read { ap_none {  { refpop_local_42_V_read in_data 0 11 } } }
-	refpop_local_43_V_read { ap_none {  { refpop_local_43_V_read in_data 0 11 } } }
-	refpop_local_44_V_read { ap_none {  { refpop_local_44_V_read in_data 0 11 } } }
-	refpop_local_45_V_read { ap_none {  { refpop_local_45_V_read in_data 0 11 } } }
-	refpop_local_46_V_read { ap_none {  { refpop_local_46_V_read in_data 0 11 } } }
-	refpop_local_47_V_read { ap_none {  { refpop_local_47_V_read in_data 0 11 } } }
-	refpop_local_48_V_read { ap_none {  { refpop_local_48_V_read in_data 0 11 } } }
-	refpop_local_49_V_read { ap_none {  { refpop_local_49_V_read in_data 0 11 } } }
-	refpop_local_50_V_read { ap_none {  { refpop_local_50_V_read in_data 0 11 } } }
-	refpop_local_51_V_read { ap_none {  { refpop_local_51_V_read in_data 0 11 } } }
-	refpop_local_52_V_read { ap_none {  { refpop_local_52_V_read in_data 0 11 } } }
-	refpop_local_53_V_read { ap_none {  { refpop_local_53_V_read in_data 0 11 } } }
-	refpop_local_54_V_read { ap_none {  { refpop_local_54_V_read in_data 0 11 } } }
-	refpop_local_55_V_read { ap_none {  { refpop_local_55_V_read in_data 0 11 } } }
-	refpop_local_56_V_read { ap_none {  { refpop_local_56_V_read in_data 0 11 } } }
-	refpop_local_57_V_read { ap_none {  { refpop_local_57_V_read in_data 0 11 } } }
-	refpop_local_58_V_read { ap_none {  { refpop_local_58_V_read in_data 0 11 } } }
-	refpop_local_59_V_read { ap_none {  { refpop_local_59_V_read in_data 0 11 } } }
-	refpop_local_60_V_read { ap_none {  { refpop_local_60_V_read in_data 0 11 } } }
-	refpop_local_61_V_read { ap_none {  { refpop_local_61_V_read in_data 0 11 } } }
-	refpop_local_62_V_read { ap_none {  { refpop_local_62_V_read in_data 0 11 } } }
-	refpop_local_63_V_read { ap_none {  { refpop_local_63_V_read in_data 0 11 } } }
+	refpop_local_V { ap_memory {  { refpop_local_V_address0 mem_address 1 10 }  { refpop_local_V_ce0 mem_ce 1 1 }  { refpop_local_V_q0 mem_dout 0 11 } } }
 	cmprpop_local_0_V_read { ap_none {  { cmprpop_local_0_V_read in_data 0 11 } } }
 	cmprpop_local_1_V_read { ap_none {  { cmprpop_local_1_V_read in_data 0 11 } } }
 	cmprpop_local_2_V_read { ap_none {  { cmprpop_local_2_V_read in_data 0 11 } } }

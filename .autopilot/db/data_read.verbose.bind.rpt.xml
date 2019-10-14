@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'data_read'" level="0">
-<item name = "Date">Sat Oct 12 18:53:06 2019
+<item name = "Date">Mon Oct 14 11:55:34 2019
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">tancoeff</item>
@@ -24,19 +24,19 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">142, 142, 142, 142, none</column>
+<column name="">2062, 2062, 2062, 2062, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_popcnt_fu_2451">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_2453">popcnt, 1, 1, 1, 1, function</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- read_loop1">133, 133, 7, 1, 1, 128, yes</column>
+<column name="- read_loop1">2053, 2053, 7, 1, 1, 2048, yes</column>
 </table>
 </item>
 </section>

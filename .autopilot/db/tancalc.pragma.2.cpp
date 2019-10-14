@@ -6762,7 +6762,7 @@ void data_read(din_type *input, data_type *data_local, popcnt_type *datapop_loca
 
  short data_part = 0;
  short data_num = 0;
- read_loop1: for (short data_part_num = 0; data_part_num < 64*(1024 / 512); data_part_num++){
+ read_loop1: for (short data_part_num = 0; data_part_num < 1024*(1024 / 512); data_part_num++){
 _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
  if(data_part_num%(1024 / 512) == 0){
    data_part = 0;
@@ -6777,7 +6777,7 @@ _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
 }
 
 void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *cmprpop_local, short *result_local, int *result){
- calculation_loop1: for(unsigned short ref_num = 0; ref_num < 64; ref_num++){
+ calculation_loop1: for(unsigned short ref_num = 0; ref_num < 1024; ref_num++){
 _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
  reset_result:
   for(unsigned short k = 0; k < 64; k++){
@@ -6800,16 +6800,16 @@ _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
 
 void tancalc(din_type *input, int *output){
 
-_ssdm_op_SpecInterface(input, "m_axi", 0, 0, "", 0, 0, "gmem", "slave", "", 16, 16, 16, 16, "", "");
-_ssdm_op_SpecInterface(output, "m_axi", 0, 0, "", 0, 0, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(input, "m_axi", 0, 0, "", 0, 0, "gmem0", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(output, "m_axi", 0, 0, "", 0, 0, "gmem1", "slave", "", 16, 16, 16, 16, "", "");
 _ssdm_op_SpecInterface(input, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(output, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
 
- data_type ref_local[64];
-_ssdm_SpecArrayPartition( ref_local, 1, "COMPLETE", 0, "");
- popcnt_type refpop_local[64];
-_ssdm_SpecArrayPartition( refpop_local, 1, "COMPLETE", 0, "");
+ data_type ref_local[1024];
+
+ popcnt_type refpop_local[1024];
+
  data_type cmpr_local[64];
 _ssdm_SpecArrayPartition( cmpr_local, 1, "COMPLETE", 0, "");
  popcnt_type cmprpop_local[64];
@@ -6821,10 +6821,11 @@ _ssdm_SpecArrayPartition( result_local, 1, "COMPLETE", 0, "");
  int result = 0;
 
 
- mainloop: for (int ref_chunk_num = 0; ref_chunk_num < 1024*1024; ref_chunk_num += 64) {
-  data_read(input, ref_local, refpop_local, ref_chunk_num);
-  calculation_loop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < 1024*1024; cmpr_chunk_num += 64){
-   data_read(&input[1024*1024], cmpr_local, cmprpop_local, cmpr_chunk_num);
+ mainloop: for (int ref_chunk_num = 0; ref_chunk_num < 1024*64/1024; ref_chunk_num++ ) {
+  data_read(input, ref_local, refpop_local, ref_chunk_num*1024);
+  calculation_loop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < 1024*64/64; cmpr_chunk_num++){
+
+   data_read(&input[1024*64], cmpr_local, cmprpop_local, cmpr_chunk_num*64);
    calculation(ref_local, cmpr_local, refpop_local, cmprpop_local, result_local, &result);
   }
  }

@@ -7,970 +7,48 @@ if {${::AESL::PGuard_autoexp_gen}} {
     AESL_LIB_XILADAPTER::native_axis_begin
 }
 
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 528 \
-    name ref_local_0_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_0_V_read \
-    op interface \
-    ports { ref_local_0_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 529 \
-    name ref_local_1_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_1_V_read \
-    op interface \
-    ports { ref_local_1_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 530 \
-    name ref_local_2_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_2_V_read \
-    op interface \
-    ports { ref_local_2_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 531 \
-    name ref_local_3_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_3_V_read \
-    op interface \
-    ports { ref_local_3_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 532 \
-    name ref_local_4_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_4_V_read \
-    op interface \
-    ports { ref_local_4_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 533 \
-    name ref_local_5_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_5_V_read \
-    op interface \
-    ports { ref_local_5_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 534 \
-    name ref_local_6_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_6_V_read \
-    op interface \
-    ports { ref_local_6_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 535 \
-    name ref_local_7_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_7_V_read \
-    op interface \
-    ports { ref_local_7_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 536 \
-    name ref_local_8_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_8_V_read \
-    op interface \
-    ports { ref_local_8_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 537 \
-    name ref_local_9_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_9_V_read \
-    op interface \
-    ports { ref_local_9_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 538 \
-    name ref_local_10_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_10_V_read \
-    op interface \
-    ports { ref_local_10_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 539 \
-    name ref_local_11_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_11_V_read \
-    op interface \
-    ports { ref_local_11_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 540 \
-    name ref_local_12_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_12_V_read \
-    op interface \
-    ports { ref_local_12_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 541 \
-    name ref_local_13_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_13_V_read \
-    op interface \
-    ports { ref_local_13_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 542 \
-    name ref_local_14_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_14_V_read \
-    op interface \
-    ports { ref_local_14_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 543 \
-    name ref_local_15_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_15_V_read \
-    op interface \
-    ports { ref_local_15_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 544 \
-    name ref_local_16_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_16_V_read \
-    op interface \
-    ports { ref_local_16_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 545 \
-    name ref_local_17_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_17_V_read \
-    op interface \
-    ports { ref_local_17_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 546 \
-    name ref_local_18_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_18_V_read \
-    op interface \
-    ports { ref_local_18_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 547 \
-    name ref_local_19_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_19_V_read \
-    op interface \
-    ports { ref_local_19_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 548 \
-    name ref_local_20_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_20_V_read \
-    op interface \
-    ports { ref_local_20_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 549 \
-    name ref_local_21_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_21_V_read \
-    op interface \
-    ports { ref_local_21_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 550 \
-    name ref_local_22_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_22_V_read \
-    op interface \
-    ports { ref_local_22_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 551 \
-    name ref_local_23_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_23_V_read \
-    op interface \
-    ports { ref_local_23_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 552 \
-    name ref_local_24_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_24_V_read \
-    op interface \
-    ports { ref_local_24_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 553 \
-    name ref_local_25_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_25_V_read \
-    op interface \
-    ports { ref_local_25_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 554 \
-    name ref_local_26_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_26_V_read \
-    op interface \
-    ports { ref_local_26_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 555 \
-    name ref_local_27_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_27_V_read \
-    op interface \
-    ports { ref_local_27_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 556 \
-    name ref_local_28_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_28_V_read \
-    op interface \
-    ports { ref_local_28_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 557 \
-    name ref_local_29_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_29_V_read \
-    op interface \
-    ports { ref_local_29_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 558 \
-    name ref_local_30_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_30_V_read \
-    op interface \
-    ports { ref_local_30_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 559 \
-    name ref_local_31_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_31_V_read \
-    op interface \
-    ports { ref_local_31_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 560 \
-    name ref_local_32_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_32_V_read \
-    op interface \
-    ports { ref_local_32_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 561 \
-    name ref_local_33_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_33_V_read \
-    op interface \
-    ports { ref_local_33_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 562 \
-    name ref_local_34_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_34_V_read \
-    op interface \
-    ports { ref_local_34_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 563 \
-    name ref_local_35_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_35_V_read \
-    op interface \
-    ports { ref_local_35_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 564 \
-    name ref_local_36_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_36_V_read \
-    op interface \
-    ports { ref_local_36_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 565 \
-    name ref_local_37_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_37_V_read \
-    op interface \
-    ports { ref_local_37_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 566 \
-    name ref_local_38_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_38_V_read \
-    op interface \
-    ports { ref_local_38_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 567 \
-    name ref_local_39_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_39_V_read \
-    op interface \
-    ports { ref_local_39_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 568 \
-    name ref_local_40_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_40_V_read \
-    op interface \
-    ports { ref_local_40_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 569 \
-    name ref_local_41_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_41_V_read \
-    op interface \
-    ports { ref_local_41_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 570 \
-    name ref_local_42_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_42_V_read \
-    op interface \
-    ports { ref_local_42_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 571 \
-    name ref_local_43_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_43_V_read \
-    op interface \
-    ports { ref_local_43_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 572 \
-    name ref_local_44_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_44_V_read \
-    op interface \
-    ports { ref_local_44_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 573 \
-    name ref_local_45_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_45_V_read \
-    op interface \
-    ports { ref_local_45_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 574 \
-    name ref_local_46_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_46_V_read \
-    op interface \
-    ports { ref_local_46_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 575 \
-    name ref_local_47_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_47_V_read \
-    op interface \
-    ports { ref_local_47_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 576 \
-    name ref_local_48_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_48_V_read \
-    op interface \
-    ports { ref_local_48_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
+# XIL_BRAM:
 if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 577 \
-    name ref_local_49_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_49_V_read \
-    op interface \
-    ports { ref_local_49_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 578 \
-    name ref_local_50_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_50_V_read \
-    op interface \
-    ports { ref_local_50_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 579 \
-    name ref_local_51_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_51_V_read \
-    op interface \
-    ports { ref_local_51_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 580 \
-    name ref_local_52_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_52_V_read \
-    op interface \
-    ports { ref_local_52_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 581 \
-    name ref_local_53_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_53_V_read \
-    op interface \
-    ports { ref_local_53_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 582 \
-    name ref_local_54_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_54_V_read \
-    op interface \
-    ports { ref_local_54_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 583 \
-    name ref_local_55_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_55_V_read \
-    op interface \
-    ports { ref_local_55_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 584 \
-    name ref_local_56_V_read \
-    type other \
-    dir I \
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 270 \
+    name ref_local_V \
     reset_level 1 \
     sync_rst true \
-    corename dc_ref_local_56_V_read \
-    op interface \
-    ports { ref_local_56_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 585 \
-    name ref_local_57_V_read \
-    type other \
     dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_57_V_read \
+    corename ref_local_V \
     op interface \
-    ports { ref_local_57_V_read { I 1024 vector } } \
+    ports { ref_local_V_address0 { O 10 vector } ref_local_V_ce0 { O 1 bit } ref_local_V_q0 { I 1024 vector } } \
 } "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'ref_local_V'"
 }
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 586 \
-    name ref_local_58_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_58_V_read \
-    op interface \
-    ports { ref_local_58_V_read { I 1024 vector } } \
-} "
 }
 
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 587 \
-    name ref_local_59_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_59_V_read \
-    op interface \
-    ports { ref_local_59_V_read { I 1024 vector } } \
-} "
-}
 
-# Direct connection:
+# XIL_BRAM:
 if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 588 \
-    name ref_local_60_V_read \
-    type other \
-    dir I \
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 335 \
+    name refpop_local_V \
     reset_level 1 \
     sync_rst true \
-    corename dc_ref_local_60_V_read \
-    op interface \
-    ports { ref_local_60_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 589 \
-    name ref_local_61_V_read \
-    type other \
     dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_61_V_read \
+    corename refpop_local_V \
     op interface \
-    ports { ref_local_61_V_read { I 1024 vector } } \
+    ports { refpop_local_V_address0 { O 10 vector } refpop_local_V_ce0 { O 1 bit } refpop_local_V_q0 { I 11 vector } } \
 } "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'refpop_local_V'"
 }
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 590 \
-    name ref_local_62_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_62_V_read \
-    op interface \
-    ports { ref_local_62_V_read { I 1024 vector } } \
-} "
 }
 
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 591 \
-    name ref_local_63_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_ref_local_63_V_read \
-    op interface \
-    ports { ref_local_63_V_read { I 1024 vector } } \
-} "
-}
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 592 \
+    id 271 \
     name cmpr_local_0_V_read \
     type other \
     dir I \
@@ -985,7 +63,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 593 \
+    id 272 \
     name cmpr_local_1_V_read \
     type other \
     dir I \
@@ -1000,7 +78,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 594 \
+    id 273 \
     name cmpr_local_2_V_read \
     type other \
     dir I \
@@ -1015,7 +93,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 595 \
+    id 274 \
     name cmpr_local_3_V_read \
     type other \
     dir I \
@@ -1030,7 +108,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 596 \
+    id 275 \
     name cmpr_local_4_V_read \
     type other \
     dir I \
@@ -1045,7 +123,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 597 \
+    id 276 \
     name cmpr_local_5_V_read \
     type other \
     dir I \
@@ -1060,7 +138,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 598 \
+    id 277 \
     name cmpr_local_6_V_read \
     type other \
     dir I \
@@ -1075,7 +153,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 599 \
+    id 278 \
     name cmpr_local_7_V_read \
     type other \
     dir I \
@@ -1090,7 +168,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 600 \
+    id 279 \
     name cmpr_local_8_V_read \
     type other \
     dir I \
@@ -1105,7 +183,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 601 \
+    id 280 \
     name cmpr_local_9_V_read \
     type other \
     dir I \
@@ -1120,7 +198,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 602 \
+    id 281 \
     name cmpr_local_10_V_read \
     type other \
     dir I \
@@ -1135,7 +213,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 603 \
+    id 282 \
     name cmpr_local_11_V_read \
     type other \
     dir I \
@@ -1150,7 +228,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 604 \
+    id 283 \
     name cmpr_local_12_V_read \
     type other \
     dir I \
@@ -1165,7 +243,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 605 \
+    id 284 \
     name cmpr_local_13_V_read \
     type other \
     dir I \
@@ -1180,7 +258,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 606 \
+    id 285 \
     name cmpr_local_14_V_read \
     type other \
     dir I \
@@ -1195,7 +273,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 607 \
+    id 286 \
     name cmpr_local_15_V_read \
     type other \
     dir I \
@@ -1210,7 +288,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 608 \
+    id 287 \
     name cmpr_local_16_V_read \
     type other \
     dir I \
@@ -1225,7 +303,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 609 \
+    id 288 \
     name cmpr_local_17_V_read \
     type other \
     dir I \
@@ -1240,7 +318,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 610 \
+    id 289 \
     name cmpr_local_18_V_read \
     type other \
     dir I \
@@ -1255,7 +333,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 611 \
+    id 290 \
     name cmpr_local_19_V_read \
     type other \
     dir I \
@@ -1270,7 +348,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 612 \
+    id 291 \
     name cmpr_local_20_V_read \
     type other \
     dir I \
@@ -1285,7 +363,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 613 \
+    id 292 \
     name cmpr_local_21_V_read \
     type other \
     dir I \
@@ -1300,7 +378,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 614 \
+    id 293 \
     name cmpr_local_22_V_read \
     type other \
     dir I \
@@ -1315,7 +393,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 615 \
+    id 294 \
     name cmpr_local_23_V_read \
     type other \
     dir I \
@@ -1330,7 +408,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 616 \
+    id 295 \
     name cmpr_local_24_V_read \
     type other \
     dir I \
@@ -1345,7 +423,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 617 \
+    id 296 \
     name cmpr_local_25_V_read \
     type other \
     dir I \
@@ -1360,7 +438,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 618 \
+    id 297 \
     name cmpr_local_26_V_read \
     type other \
     dir I \
@@ -1375,7 +453,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 619 \
+    id 298 \
     name cmpr_local_27_V_read \
     type other \
     dir I \
@@ -1390,7 +468,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 620 \
+    id 299 \
     name cmpr_local_28_V_read \
     type other \
     dir I \
@@ -1405,7 +483,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 621 \
+    id 300 \
     name cmpr_local_29_V_read \
     type other \
     dir I \
@@ -1420,7 +498,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 622 \
+    id 301 \
     name cmpr_local_30_V_read \
     type other \
     dir I \
@@ -1435,7 +513,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 623 \
+    id 302 \
     name cmpr_local_31_V_read \
     type other \
     dir I \
@@ -1450,7 +528,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 624 \
+    id 303 \
     name cmpr_local_32_V_read \
     type other \
     dir I \
@@ -1465,7 +543,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 625 \
+    id 304 \
     name cmpr_local_33_V_read \
     type other \
     dir I \
@@ -1480,7 +558,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 626 \
+    id 305 \
     name cmpr_local_34_V_read \
     type other \
     dir I \
@@ -1495,7 +573,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 627 \
+    id 306 \
     name cmpr_local_35_V_read \
     type other \
     dir I \
@@ -1510,7 +588,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 628 \
+    id 307 \
     name cmpr_local_36_V_read \
     type other \
     dir I \
@@ -1525,7 +603,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 629 \
+    id 308 \
     name cmpr_local_37_V_read \
     type other \
     dir I \
@@ -1540,7 +618,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 630 \
+    id 309 \
     name cmpr_local_38_V_read \
     type other \
     dir I \
@@ -1555,7 +633,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 631 \
+    id 310 \
     name cmpr_local_39_V_read \
     type other \
     dir I \
@@ -1570,7 +648,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 632 \
+    id 311 \
     name cmpr_local_40_V_read \
     type other \
     dir I \
@@ -1585,7 +663,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 633 \
+    id 312 \
     name cmpr_local_41_V_read \
     type other \
     dir I \
@@ -1600,7 +678,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 634 \
+    id 313 \
     name cmpr_local_42_V_read \
     type other \
     dir I \
@@ -1615,7 +693,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 635 \
+    id 314 \
     name cmpr_local_43_V_read \
     type other \
     dir I \
@@ -1630,7 +708,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 636 \
+    id 315 \
     name cmpr_local_44_V_read \
     type other \
     dir I \
@@ -1645,7 +723,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 637 \
+    id 316 \
     name cmpr_local_45_V_read \
     type other \
     dir I \
@@ -1660,7 +738,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 638 \
+    id 317 \
     name cmpr_local_46_V_read \
     type other \
     dir I \
@@ -1675,7 +753,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 639 \
+    id 318 \
     name cmpr_local_47_V_read \
     type other \
     dir I \
@@ -1690,7 +768,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 640 \
+    id 319 \
     name cmpr_local_48_V_read \
     type other \
     dir I \
@@ -1705,7 +783,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 641 \
+    id 320 \
     name cmpr_local_49_V_read \
     type other \
     dir I \
@@ -1720,7 +798,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 642 \
+    id 321 \
     name cmpr_local_50_V_read \
     type other \
     dir I \
@@ -1735,7 +813,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 643 \
+    id 322 \
     name cmpr_local_51_V_read \
     type other \
     dir I \
@@ -1750,7 +828,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 644 \
+    id 323 \
     name cmpr_local_52_V_read \
     type other \
     dir I \
@@ -1765,7 +843,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 645 \
+    id 324 \
     name cmpr_local_53_V_read \
     type other \
     dir I \
@@ -1780,7 +858,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 646 \
+    id 325 \
     name cmpr_local_54_V_read \
     type other \
     dir I \
@@ -1795,7 +873,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 647 \
+    id 326 \
     name cmpr_local_55_V_read \
     type other \
     dir I \
@@ -1810,7 +888,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 648 \
+    id 327 \
     name cmpr_local_56_V_read \
     type other \
     dir I \
@@ -1825,7 +903,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 649 \
+    id 328 \
     name cmpr_local_57_V_read \
     type other \
     dir I \
@@ -1840,7 +918,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 650 \
+    id 329 \
     name cmpr_local_58_V_read \
     type other \
     dir I \
@@ -1855,7 +933,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 651 \
+    id 330 \
     name cmpr_local_59_V_read \
     type other \
     dir I \
@@ -1870,7 +948,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 652 \
+    id 331 \
     name cmpr_local_60_V_read \
     type other \
     dir I \
@@ -1885,7 +963,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 653 \
+    id 332 \
     name cmpr_local_61_V_read \
     type other \
     dir I \
@@ -1900,7 +978,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 654 \
+    id 333 \
     name cmpr_local_62_V_read \
     type other \
     dir I \
@@ -1915,7 +993,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 655 \
+    id 334 \
     name cmpr_local_63_V_read \
     type other \
     dir I \
@@ -1930,967 +1008,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 656 \
-    name refpop_local_0_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_0_V_read \
-    op interface \
-    ports { refpop_local_0_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 657 \
-    name refpop_local_1_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_1_V_read \
-    op interface \
-    ports { refpop_local_1_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 658 \
-    name refpop_local_2_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_2_V_read \
-    op interface \
-    ports { refpop_local_2_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 659 \
-    name refpop_local_3_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_3_V_read \
-    op interface \
-    ports { refpop_local_3_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 660 \
-    name refpop_local_4_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_4_V_read \
-    op interface \
-    ports { refpop_local_4_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 661 \
-    name refpop_local_5_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_5_V_read \
-    op interface \
-    ports { refpop_local_5_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 662 \
-    name refpop_local_6_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_6_V_read \
-    op interface \
-    ports { refpop_local_6_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 663 \
-    name refpop_local_7_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_7_V_read \
-    op interface \
-    ports { refpop_local_7_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 664 \
-    name refpop_local_8_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_8_V_read \
-    op interface \
-    ports { refpop_local_8_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 665 \
-    name refpop_local_9_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_9_V_read \
-    op interface \
-    ports { refpop_local_9_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 666 \
-    name refpop_local_10_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_10_V_read \
-    op interface \
-    ports { refpop_local_10_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 667 \
-    name refpop_local_11_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_11_V_read \
-    op interface \
-    ports { refpop_local_11_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 668 \
-    name refpop_local_12_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_12_V_read \
-    op interface \
-    ports { refpop_local_12_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 669 \
-    name refpop_local_13_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_13_V_read \
-    op interface \
-    ports { refpop_local_13_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 670 \
-    name refpop_local_14_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_14_V_read \
-    op interface \
-    ports { refpop_local_14_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 671 \
-    name refpop_local_15_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_15_V_read \
-    op interface \
-    ports { refpop_local_15_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 672 \
-    name refpop_local_16_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_16_V_read \
-    op interface \
-    ports { refpop_local_16_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 673 \
-    name refpop_local_17_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_17_V_read \
-    op interface \
-    ports { refpop_local_17_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 674 \
-    name refpop_local_18_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_18_V_read \
-    op interface \
-    ports { refpop_local_18_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 675 \
-    name refpop_local_19_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_19_V_read \
-    op interface \
-    ports { refpop_local_19_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 676 \
-    name refpop_local_20_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_20_V_read \
-    op interface \
-    ports { refpop_local_20_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 677 \
-    name refpop_local_21_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_21_V_read \
-    op interface \
-    ports { refpop_local_21_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 678 \
-    name refpop_local_22_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_22_V_read \
-    op interface \
-    ports { refpop_local_22_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 679 \
-    name refpop_local_23_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_23_V_read \
-    op interface \
-    ports { refpop_local_23_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 680 \
-    name refpop_local_24_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_24_V_read \
-    op interface \
-    ports { refpop_local_24_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 681 \
-    name refpop_local_25_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_25_V_read \
-    op interface \
-    ports { refpop_local_25_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 682 \
-    name refpop_local_26_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_26_V_read \
-    op interface \
-    ports { refpop_local_26_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 683 \
-    name refpop_local_27_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_27_V_read \
-    op interface \
-    ports { refpop_local_27_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 684 \
-    name refpop_local_28_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_28_V_read \
-    op interface \
-    ports { refpop_local_28_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 685 \
-    name refpop_local_29_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_29_V_read \
-    op interface \
-    ports { refpop_local_29_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 686 \
-    name refpop_local_30_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_30_V_read \
-    op interface \
-    ports { refpop_local_30_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 687 \
-    name refpop_local_31_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_31_V_read \
-    op interface \
-    ports { refpop_local_31_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 688 \
-    name refpop_local_32_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_32_V_read \
-    op interface \
-    ports { refpop_local_32_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 689 \
-    name refpop_local_33_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_33_V_read \
-    op interface \
-    ports { refpop_local_33_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 690 \
-    name refpop_local_34_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_34_V_read \
-    op interface \
-    ports { refpop_local_34_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 691 \
-    name refpop_local_35_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_35_V_read \
-    op interface \
-    ports { refpop_local_35_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 692 \
-    name refpop_local_36_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_36_V_read \
-    op interface \
-    ports { refpop_local_36_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 693 \
-    name refpop_local_37_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_37_V_read \
-    op interface \
-    ports { refpop_local_37_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 694 \
-    name refpop_local_38_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_38_V_read \
-    op interface \
-    ports { refpop_local_38_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 695 \
-    name refpop_local_39_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_39_V_read \
-    op interface \
-    ports { refpop_local_39_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 696 \
-    name refpop_local_40_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_40_V_read \
-    op interface \
-    ports { refpop_local_40_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 697 \
-    name refpop_local_41_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_41_V_read \
-    op interface \
-    ports { refpop_local_41_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 698 \
-    name refpop_local_42_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_42_V_read \
-    op interface \
-    ports { refpop_local_42_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 699 \
-    name refpop_local_43_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_43_V_read \
-    op interface \
-    ports { refpop_local_43_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 700 \
-    name refpop_local_44_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_44_V_read \
-    op interface \
-    ports { refpop_local_44_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 701 \
-    name refpop_local_45_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_45_V_read \
-    op interface \
-    ports { refpop_local_45_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 702 \
-    name refpop_local_46_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_46_V_read \
-    op interface \
-    ports { refpop_local_46_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 703 \
-    name refpop_local_47_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_47_V_read \
-    op interface \
-    ports { refpop_local_47_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 704 \
-    name refpop_local_48_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_48_V_read \
-    op interface \
-    ports { refpop_local_48_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 705 \
-    name refpop_local_49_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_49_V_read \
-    op interface \
-    ports { refpop_local_49_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 706 \
-    name refpop_local_50_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_50_V_read \
-    op interface \
-    ports { refpop_local_50_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 707 \
-    name refpop_local_51_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_51_V_read \
-    op interface \
-    ports { refpop_local_51_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 708 \
-    name refpop_local_52_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_52_V_read \
-    op interface \
-    ports { refpop_local_52_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 709 \
-    name refpop_local_53_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_53_V_read \
-    op interface \
-    ports { refpop_local_53_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 710 \
-    name refpop_local_54_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_54_V_read \
-    op interface \
-    ports { refpop_local_54_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 711 \
-    name refpop_local_55_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_55_V_read \
-    op interface \
-    ports { refpop_local_55_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 712 \
-    name refpop_local_56_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_56_V_read \
-    op interface \
-    ports { refpop_local_56_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 713 \
-    name refpop_local_57_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_57_V_read \
-    op interface \
-    ports { refpop_local_57_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 714 \
-    name refpop_local_58_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_58_V_read \
-    op interface \
-    ports { refpop_local_58_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 715 \
-    name refpop_local_59_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_59_V_read \
-    op interface \
-    ports { refpop_local_59_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 716 \
-    name refpop_local_60_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_60_V_read \
-    op interface \
-    ports { refpop_local_60_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 717 \
-    name refpop_local_61_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_61_V_read \
-    op interface \
-    ports { refpop_local_61_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 718 \
-    name refpop_local_62_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_62_V_read \
-    op interface \
-    ports { refpop_local_62_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 719 \
-    name refpop_local_63_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_refpop_local_63_V_read \
-    op interface \
-    ports { refpop_local_63_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 720 \
+    id 336 \
     name cmprpop_local_0_V_read \
     type other \
     dir I \
@@ -2905,7 +1023,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 721 \
+    id 337 \
     name cmprpop_local_1_V_read \
     type other \
     dir I \
@@ -2920,7 +1038,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 722 \
+    id 338 \
     name cmprpop_local_2_V_read \
     type other \
     dir I \
@@ -2935,7 +1053,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 723 \
+    id 339 \
     name cmprpop_local_3_V_read \
     type other \
     dir I \
@@ -2950,7 +1068,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 724 \
+    id 340 \
     name cmprpop_local_4_V_read \
     type other \
     dir I \
@@ -2965,7 +1083,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 725 \
+    id 341 \
     name cmprpop_local_5_V_read \
     type other \
     dir I \
@@ -2980,7 +1098,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 726 \
+    id 342 \
     name cmprpop_local_6_V_read \
     type other \
     dir I \
@@ -2995,7 +1113,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 727 \
+    id 343 \
     name cmprpop_local_7_V_read \
     type other \
     dir I \
@@ -3010,7 +1128,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 728 \
+    id 344 \
     name cmprpop_local_8_V_read \
     type other \
     dir I \
@@ -3025,7 +1143,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 729 \
+    id 345 \
     name cmprpop_local_9_V_read \
     type other \
     dir I \
@@ -3040,7 +1158,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 730 \
+    id 346 \
     name cmprpop_local_10_V_read \
     type other \
     dir I \
@@ -3055,7 +1173,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 731 \
+    id 347 \
     name cmprpop_local_11_V_read \
     type other \
     dir I \
@@ -3070,7 +1188,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 732 \
+    id 348 \
     name cmprpop_local_12_V_read \
     type other \
     dir I \
@@ -3085,7 +1203,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 733 \
+    id 349 \
     name cmprpop_local_13_V_read \
     type other \
     dir I \
@@ -3100,7 +1218,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 734 \
+    id 350 \
     name cmprpop_local_14_V_read \
     type other \
     dir I \
@@ -3115,7 +1233,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 735 \
+    id 351 \
     name cmprpop_local_15_V_read \
     type other \
     dir I \
@@ -3130,7 +1248,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 736 \
+    id 352 \
     name cmprpop_local_16_V_read \
     type other \
     dir I \
@@ -3145,7 +1263,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 737 \
+    id 353 \
     name cmprpop_local_17_V_read \
     type other \
     dir I \
@@ -3160,7 +1278,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 738 \
+    id 354 \
     name cmprpop_local_18_V_read \
     type other \
     dir I \
@@ -3175,7 +1293,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 739 \
+    id 355 \
     name cmprpop_local_19_V_read \
     type other \
     dir I \
@@ -3190,7 +1308,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 740 \
+    id 356 \
     name cmprpop_local_20_V_read \
     type other \
     dir I \
@@ -3205,7 +1323,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 741 \
+    id 357 \
     name cmprpop_local_21_V_read \
     type other \
     dir I \
@@ -3220,7 +1338,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 742 \
+    id 358 \
     name cmprpop_local_22_V_read \
     type other \
     dir I \
@@ -3235,7 +1353,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 743 \
+    id 359 \
     name cmprpop_local_23_V_read \
     type other \
     dir I \
@@ -3250,7 +1368,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 744 \
+    id 360 \
     name cmprpop_local_24_V_read \
     type other \
     dir I \
@@ -3265,7 +1383,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 745 \
+    id 361 \
     name cmprpop_local_25_V_read \
     type other \
     dir I \
@@ -3280,7 +1398,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 746 \
+    id 362 \
     name cmprpop_local_26_V_read \
     type other \
     dir I \
@@ -3295,7 +1413,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 747 \
+    id 363 \
     name cmprpop_local_27_V_read \
     type other \
     dir I \
@@ -3310,7 +1428,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 748 \
+    id 364 \
     name cmprpop_local_28_V_read \
     type other \
     dir I \
@@ -3325,7 +1443,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 749 \
+    id 365 \
     name cmprpop_local_29_V_read \
     type other \
     dir I \
@@ -3340,7 +1458,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 750 \
+    id 366 \
     name cmprpop_local_30_V_read \
     type other \
     dir I \
@@ -3355,7 +1473,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 751 \
+    id 367 \
     name cmprpop_local_31_V_read \
     type other \
     dir I \
@@ -3370,7 +1488,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 752 \
+    id 368 \
     name cmprpop_local_32_V_read \
     type other \
     dir I \
@@ -3385,7 +1503,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 753 \
+    id 369 \
     name cmprpop_local_33_V_read \
     type other \
     dir I \
@@ -3400,7 +1518,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 754 \
+    id 370 \
     name cmprpop_local_34_V_read \
     type other \
     dir I \
@@ -3415,7 +1533,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 755 \
+    id 371 \
     name cmprpop_local_35_V_read \
     type other \
     dir I \
@@ -3430,7 +1548,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 756 \
+    id 372 \
     name cmprpop_local_36_V_read \
     type other \
     dir I \
@@ -3445,7 +1563,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 757 \
+    id 373 \
     name cmprpop_local_37_V_read \
     type other \
     dir I \
@@ -3460,7 +1578,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 758 \
+    id 374 \
     name cmprpop_local_38_V_read \
     type other \
     dir I \
@@ -3475,7 +1593,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 759 \
+    id 375 \
     name cmprpop_local_39_V_read \
     type other \
     dir I \
@@ -3490,7 +1608,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 760 \
+    id 376 \
     name cmprpop_local_40_V_read \
     type other \
     dir I \
@@ -3505,7 +1623,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 761 \
+    id 377 \
     name cmprpop_local_41_V_read \
     type other \
     dir I \
@@ -3520,7 +1638,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 762 \
+    id 378 \
     name cmprpop_local_42_V_read \
     type other \
     dir I \
@@ -3535,7 +1653,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 763 \
+    id 379 \
     name cmprpop_local_43_V_read \
     type other \
     dir I \
@@ -3550,7 +1668,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 764 \
+    id 380 \
     name cmprpop_local_44_V_read \
     type other \
     dir I \
@@ -3565,7 +1683,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 765 \
+    id 381 \
     name cmprpop_local_45_V_read \
     type other \
     dir I \
@@ -3580,7 +1698,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 766 \
+    id 382 \
     name cmprpop_local_46_V_read \
     type other \
     dir I \
@@ -3595,7 +1713,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 767 \
+    id 383 \
     name cmprpop_local_47_V_read \
     type other \
     dir I \
@@ -3610,7 +1728,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 768 \
+    id 384 \
     name cmprpop_local_48_V_read \
     type other \
     dir I \
@@ -3625,7 +1743,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 769 \
+    id 385 \
     name cmprpop_local_49_V_read \
     type other \
     dir I \
@@ -3640,7 +1758,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 770 \
+    id 386 \
     name cmprpop_local_50_V_read \
     type other \
     dir I \
@@ -3655,7 +1773,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 771 \
+    id 387 \
     name cmprpop_local_51_V_read \
     type other \
     dir I \
@@ -3670,7 +1788,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 772 \
+    id 388 \
     name cmprpop_local_52_V_read \
     type other \
     dir I \
@@ -3685,7 +1803,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 773 \
+    id 389 \
     name cmprpop_local_53_V_read \
     type other \
     dir I \
@@ -3700,7 +1818,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 774 \
+    id 390 \
     name cmprpop_local_54_V_read \
     type other \
     dir I \
@@ -3715,7 +1833,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 775 \
+    id 391 \
     name cmprpop_local_55_V_read \
     type other \
     dir I \
@@ -3730,7 +1848,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 776 \
+    id 392 \
     name cmprpop_local_56_V_read \
     type other \
     dir I \
@@ -3745,7 +1863,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 777 \
+    id 393 \
     name cmprpop_local_57_V_read \
     type other \
     dir I \
@@ -3760,7 +1878,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 778 \
+    id 394 \
     name cmprpop_local_58_V_read \
     type other \
     dir I \
@@ -3775,7 +1893,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 779 \
+    id 395 \
     name cmprpop_local_59_V_read \
     type other \
     dir I \
@@ -3790,7 +1908,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 780 \
+    id 396 \
     name cmprpop_local_60_V_read \
     type other \
     dir I \
@@ -3805,7 +1923,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 781 \
+    id 397 \
     name cmprpop_local_61_V_read \
     type other \
     dir I \
@@ -3820,7 +1938,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 782 \
+    id 398 \
     name cmprpop_local_62_V_read \
     type other \
     dir I \
@@ -3835,7 +1953,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 783 \
+    id 399 \
     name cmprpop_local_63_V_read \
     type other \
     dir I \
@@ -3850,7 +1968,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 784 \
+    id 400 \
     name result_local_0_read \
     type other \
     dir I \
@@ -3865,7 +1983,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 785 \
+    id 401 \
     name result_local_1_read \
     type other \
     dir I \
@@ -3880,7 +1998,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 786 \
+    id 402 \
     name result_local_2_read \
     type other \
     dir I \
@@ -3895,7 +2013,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 787 \
+    id 403 \
     name result_local_3_read \
     type other \
     dir I \
@@ -3910,7 +2028,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 788 \
+    id 404 \
     name result_local_4_read \
     type other \
     dir I \
@@ -3925,7 +2043,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 789 \
+    id 405 \
     name result_local_5_read \
     type other \
     dir I \
@@ -3940,7 +2058,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 790 \
+    id 406 \
     name result_local_6_read \
     type other \
     dir I \
@@ -3955,7 +2073,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 791 \
+    id 407 \
     name result_local_7_read \
     type other \
     dir I \
@@ -3970,7 +2088,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 792 \
+    id 408 \
     name result_local_8_read \
     type other \
     dir I \
@@ -3985,7 +2103,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 793 \
+    id 409 \
     name result_local_9_read \
     type other \
     dir I \
@@ -4000,7 +2118,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 794 \
+    id 410 \
     name result_local_10_read \
     type other \
     dir I \
@@ -4015,7 +2133,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 795 \
+    id 411 \
     name result_local_11_read \
     type other \
     dir I \
@@ -4030,7 +2148,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 796 \
+    id 412 \
     name result_local_12_read \
     type other \
     dir I \
@@ -4045,7 +2163,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 797 \
+    id 413 \
     name result_local_13_read \
     type other \
     dir I \
@@ -4060,7 +2178,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 798 \
+    id 414 \
     name result_local_14_read \
     type other \
     dir I \
@@ -4075,7 +2193,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 799 \
+    id 415 \
     name result_local_15_read \
     type other \
     dir I \
@@ -4090,7 +2208,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 800 \
+    id 416 \
     name result_local_16_read \
     type other \
     dir I \
@@ -4105,7 +2223,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 801 \
+    id 417 \
     name result_local_17_read \
     type other \
     dir I \
@@ -4120,7 +2238,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 802 \
+    id 418 \
     name result_local_18_read \
     type other \
     dir I \
@@ -4135,7 +2253,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 803 \
+    id 419 \
     name result_local_19_read \
     type other \
     dir I \
@@ -4150,7 +2268,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 804 \
+    id 420 \
     name result_local_20_read \
     type other \
     dir I \
@@ -4165,7 +2283,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 805 \
+    id 421 \
     name result_local_21_read \
     type other \
     dir I \
@@ -4180,7 +2298,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 806 \
+    id 422 \
     name result_local_22_read \
     type other \
     dir I \
@@ -4195,7 +2313,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 807 \
+    id 423 \
     name result_local_23_read \
     type other \
     dir I \
@@ -4210,7 +2328,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 808 \
+    id 424 \
     name result_local_24_read \
     type other \
     dir I \
@@ -4225,7 +2343,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 809 \
+    id 425 \
     name result_local_25_read \
     type other \
     dir I \
@@ -4240,7 +2358,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 810 \
+    id 426 \
     name result_local_26_read \
     type other \
     dir I \
@@ -4255,7 +2373,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 811 \
+    id 427 \
     name result_local_27_read \
     type other \
     dir I \
@@ -4270,7 +2388,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 812 \
+    id 428 \
     name result_local_28_read \
     type other \
     dir I \
@@ -4285,7 +2403,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 813 \
+    id 429 \
     name result_local_29_read \
     type other \
     dir I \
@@ -4300,7 +2418,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 814 \
+    id 430 \
     name result_local_30_read \
     type other \
     dir I \
@@ -4315,7 +2433,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 815 \
+    id 431 \
     name result_local_31_read \
     type other \
     dir I \
@@ -4330,7 +2448,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 816 \
+    id 432 \
     name result_local_32_read \
     type other \
     dir I \
@@ -4345,7 +2463,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 817 \
+    id 433 \
     name result_local_33_read \
     type other \
     dir I \
@@ -4360,7 +2478,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 818 \
+    id 434 \
     name result_local_34_read \
     type other \
     dir I \
@@ -4375,7 +2493,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 819 \
+    id 435 \
     name result_local_35_read \
     type other \
     dir I \
@@ -4390,7 +2508,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 820 \
+    id 436 \
     name result_local_36_read \
     type other \
     dir I \
@@ -4405,7 +2523,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 821 \
+    id 437 \
     name result_local_37_read \
     type other \
     dir I \
@@ -4420,7 +2538,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 822 \
+    id 438 \
     name result_local_38_read \
     type other \
     dir I \
@@ -4435,7 +2553,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 823 \
+    id 439 \
     name result_local_39_read \
     type other \
     dir I \
@@ -4450,7 +2568,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 824 \
+    id 440 \
     name result_local_40_read \
     type other \
     dir I \
@@ -4465,7 +2583,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 825 \
+    id 441 \
     name result_local_41_read \
     type other \
     dir I \
@@ -4480,7 +2598,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 826 \
+    id 442 \
     name result_local_42_read \
     type other \
     dir I \
@@ -4495,7 +2613,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 827 \
+    id 443 \
     name result_local_43_read \
     type other \
     dir I \
@@ -4510,7 +2628,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 828 \
+    id 444 \
     name result_local_44_read \
     type other \
     dir I \
@@ -4525,7 +2643,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 829 \
+    id 445 \
     name result_local_45_read \
     type other \
     dir I \
@@ -4540,7 +2658,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 830 \
+    id 446 \
     name result_local_46_read \
     type other \
     dir I \
@@ -4555,7 +2673,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 831 \
+    id 447 \
     name result_local_47_read \
     type other \
     dir I \
@@ -4570,7 +2688,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 832 \
+    id 448 \
     name result_local_48_read \
     type other \
     dir I \
@@ -4585,7 +2703,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 833 \
+    id 449 \
     name result_local_49_read \
     type other \
     dir I \
@@ -4600,7 +2718,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 834 \
+    id 450 \
     name result_local_50_read \
     type other \
     dir I \
@@ -4615,7 +2733,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 835 \
+    id 451 \
     name result_local_51_read \
     type other \
     dir I \
@@ -4630,7 +2748,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 836 \
+    id 452 \
     name result_local_52_read \
     type other \
     dir I \
@@ -4645,7 +2763,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 837 \
+    id 453 \
     name result_local_53_read \
     type other \
     dir I \
@@ -4660,7 +2778,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 838 \
+    id 454 \
     name result_local_54_read \
     type other \
     dir I \
@@ -4675,7 +2793,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 839 \
+    id 455 \
     name result_local_55_read \
     type other \
     dir I \
@@ -4690,7 +2808,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 840 \
+    id 456 \
     name result_local_56_read \
     type other \
     dir I \
@@ -4705,7 +2823,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 841 \
+    id 457 \
     name result_local_57_read \
     type other \
     dir I \
@@ -4720,7 +2838,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 842 \
+    id 458 \
     name result_local_58_read \
     type other \
     dir I \
@@ -4735,7 +2853,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 843 \
+    id 459 \
     name result_local_59_read \
     type other \
     dir I \
@@ -4750,7 +2868,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 844 \
+    id 460 \
     name result_local_60_read \
     type other \
     dir I \
@@ -4765,7 +2883,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 845 \
+    id 461 \
     name result_local_61_read \
     type other \
     dir I \
@@ -4780,7 +2898,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 846 \
+    id 462 \
     name result_local_62_read \
     type other \
     dir I \
@@ -4795,7 +2913,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 847 \
+    id 463 \
     name result_local_63_read \
     type other \
     dir I \
@@ -4810,7 +2928,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 848 \
+    id 464 \
     name result_read \
     type other \
     dir I \

@@ -4115,7 +4115,7 @@ tancalc_popcnt::tancalc_popcnt(sc_module_name name) : sc_module(name), mVcdFile(
     SC_METHOD(thread_p_Result_9_fu_1144_p3);
     sensitive << ( x_V );
 
-    SC_METHOD(thread_p_Result_s_10_fu_1156_p3);
+    SC_METHOD(thread_p_Result_s_13_fu_1156_p3);
     sensitive << ( x_V );
 
     SC_METHOD(thread_p_Result_s_fu_1036_p3);
@@ -4152,7 +4152,7 @@ tancalc_popcnt::tancalc_popcnt(sc_module_name name) : sc_module(name), mVcdFile(
     sensitive << ( p_Result_108_fu_2344_p3 );
 
     SC_METHOD(thread_zext_ln621_10_fu_1164_p1);
-    sensitive << ( p_Result_s_10_fu_1156_p3 );
+    sensitive << ( p_Result_s_13_fu_1156_p3 );
 
     SC_METHOD(thread_zext_ln621_110_fu_2364_p1);
     sensitive << ( p_Result_109_fu_2356_p3 );
@@ -7224,7 +7224,7 @@ tancalc_popcnt::tancalc_popcnt(sc_module_name name) : sc_module(name), mVcdFile(
     sc_trace(mVcdFile, p_Result_7_fu_1120_p3, "p_Result_7_fu_1120_p3");
     sc_trace(mVcdFile, p_Result_8_fu_1132_p3, "p_Result_8_fu_1132_p3");
     sc_trace(mVcdFile, p_Result_9_fu_1144_p3, "p_Result_9_fu_1144_p3");
-    sc_trace(mVcdFile, p_Result_s_10_fu_1156_p3, "p_Result_s_10_fu_1156_p3");
+    sc_trace(mVcdFile, p_Result_s_13_fu_1156_p3, "p_Result_s_13_fu_1156_p3");
     sc_trace(mVcdFile, p_Result_10_fu_1168_p3, "p_Result_10_fu_1168_p3");
     sc_trace(mVcdFile, p_Result_11_fu_1180_p3, "p_Result_11_fu_1180_p3");
     sc_trace(mVcdFile, p_Result_12_fu_1192_p3, "p_Result_12_fu_1192_p3");

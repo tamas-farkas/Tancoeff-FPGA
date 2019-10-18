@@ -1,19 +1,17 @@
 #include "tancalc.h"
 
-
-
-/*popcnt_type popcnt(data_type x){
-	data_type popcnt = 0;
-	popcnt: for(data_type b = 0; b < DATAWIDTH; b++) {
-    #pragma HLS unroll
-    	popcnt += ((x >> b) & 1);
-     }
-    return popcnt.range(10,0);
-}*/
-
 popcnt_type popcnt(din_type x){
 	popcnt_type popcnt = 0;
 	popcnt: for(din_type b = 0; b < DATATYPE_SIZE; b++) {
+    #pragma HLS unroll
+    	popcnt += x.test(b);
+     }
+    return popcnt;
+}
+
+popcnt_type popcntdata(data_type x){
+	popcnt_type popcnt = 0;
+	popcnt: for(data_type b = 0; b < DATAWIDTH; b++) {
     #pragma HLS unroll
     	popcnt += x.test(b);
      }
@@ -48,27 +46,28 @@ void data_read(din_type *input, data_type *data_local, popcnt_type *datapop_loca
 	}
 }
 
-void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *cmprpop_local, short *result_local, int *result){
+void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *cmprpop_local, short *result_local){
 	calculation_loop1: for(unsigned short ref_num = 0; ref_num < BUFFER_SIZE1; ref_num++){
 		#pragma HLS pipeline II=1
-		reset_result:
-		for(unsigned short k = 0; k < BUFFER_SIZE2; k++){
-			result_local[k] = 0;
-		}
-		calculation_loop2: for(unsigned short cmpr_num = 0; cmpr_num < BUFFER_SIZE2; cmpr_num++){
+		calculation_loop2: for(unsigned short cmpr_num = 0; cmpr_num < BUFFER_SIZE2; cmpr_num++){	//TODO DATATYPE_SIZE (VECTOR_SIZE) PARTIAL &,+ for ref_num
+			#pragma HLS unroll
 			popcnt_type temp;
-			temp = popcnt(ref_local[ref_num] & cmpr_local[cmpr_num]);
+			result_local[cmpr_num] = 0;
+			temp = popcntdata(ref_local[ref_num] & cmpr_local[cmpr_num]);
 			if(temp >= (refpop_local[ref_num]  + cmprpop_local[cmpr_num]  - temp)){
 				result_local[cmpr_num] = 1;
 			}
 		}
-		result_sum:
-		for(unsigned short j = 0; j < BUFFER_SIZE2; j++){
-			*result += result_local[j];
-		}
 	}
 }
 
+void result_write(int *output, short *result_local, int *result){
+	result_sum:
+	for(unsigned short j = 0; j < BUFFER_SIZE2; j++){
+		#pragma HLS unroll
+		*result += result_local[j];
+	}
+}
 
 void tancalc(din_type *input, int *output){
 
@@ -79,9 +78,9 @@ void tancalc(din_type *input, int *output){
 #pragma HLS INTERFACE s_axilite port = return bundle = control
 
 	data_type ref_local[BUFFER_SIZE1];
-//		#pragma HLS ARRAY_PARTITION variable=ref_local complete dim=1
+		#pragma HLS ARRAY_PARTITION variable=ref_local complete dim=1
 	popcnt_type refpop_local[BUFFER_SIZE1];
-//		#pragma HLS ARRAY_PARTITION variable=refpop_local complete dim=1
+		#pragma HLS ARRAY_PARTITION variable=refpop_local complete dim=1
 	data_type cmpr_local[BUFFER_SIZE2];
 		#pragma HLS ARRAY_PARTITION variable=cmpr_local complete dim=1
 	popcnt_type cmprpop_local[BUFFER_SIZE2];
@@ -93,12 +92,15 @@ void tancalc(din_type *input, int *output){
 	int result = 0;
 
 
-	mainloop: for (int ref_chunk_num = 0; ref_chunk_num < DATA_SIZE1/BUFFER_SIZE1; ref_chunk_num++ ) {
-		data_read(input, ref_local, refpop_local, ref_chunk_num*BUFFER_SIZE1);
-		calculation_loop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < DATA_SIZE2/BUFFER_SIZE2; cmpr_chunk_num++){
+	mainloop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < DATA_SIZE2/BUFFER_SIZE2; cmpr_chunk_num++){
 		//#pragma HLS dataflow
-			data_read(&input[DATA_SIZE1], cmpr_local, cmprpop_local, cmpr_chunk_num*BUFFER_SIZE2);
-			calculation(ref_local, cmpr_local, refpop_local, cmprpop_local, result_local, &result);
+		data_read(&input[DATA_SIZE1], cmpr_local, cmprpop_local, cmpr_chunk_num*BUFFER_SIZE2);
+		calculation_loop: for (int ref_chunk_num = 0; ref_chunk_num < DATA_SIZE1/BUFFER_SIZE1; ref_chunk_num++ ) {
+		#pragma HLS dataflow
+		//#pragma HLS pipeline II=1
+			data_read(input, ref_local, refpop_local, ref_chunk_num*BUFFER_SIZE1);
+			calculation(ref_local, cmpr_local, refpop_local, cmprpop_local, result_local);
+			result_write(output,result_local,&result);
 		}
 	}
 	output[0] = result;

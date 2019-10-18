@@ -5,8 +5,8 @@
 ############################################################
 open_project tancoeff
 set_top tancalc
-add_files tancoeff/tancoeff/tancalc.h
 add_files tancoeff/tancoeff/tancalc.cpp
+add_files tancoeff/tancoeff/tancalc.h
 add_files -tb tancoeff/tancoeff/test.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "tancoeff"
 set_part {xcvu9p-fsgd2104-2L-e} -tool vivado

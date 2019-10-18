@@ -7,2936 +7,1953 @@ if {${::AESL::PGuard_autoexp_gen}} {
     AESL_LIB_XILADAPTER::native_axis_begin
 }
 
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 270 \
+eval "cg_default_interface_gen_dc { \
+    id 527 \
     name ref_local_V \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename ref_local_V \
+    corename dc_ref_local_V \
     op interface \
-    ports { ref_local_V_address0 { O 10 vector } ref_local_V_ce0 { O 1 bit } ref_local_V_q0 { I 1024 vector } } \
+    ports { ref_local_V_dout { I 1024 vector } ref_local_V_empty_n { I 1 bit } ref_local_V_read { O 1 bit } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'ref_local_V'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 335 \
+eval "cg_default_interface_gen_dc { \
+    id 528 \
+    name cmpr_local_0_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_0_V \
+    op interface \
+    ports { cmpr_local_0_V_dout { I 1024 vector } cmpr_local_0_V_empty_n { I 1 bit } cmpr_local_0_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 529 \
+    name cmpr_local_1_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_1_V \
+    op interface \
+    ports { cmpr_local_1_V_dout { I 1024 vector } cmpr_local_1_V_empty_n { I 1 bit } cmpr_local_1_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 530 \
+    name cmpr_local_2_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_2_V \
+    op interface \
+    ports { cmpr_local_2_V_dout { I 1024 vector } cmpr_local_2_V_empty_n { I 1 bit } cmpr_local_2_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 531 \
+    name cmpr_local_3_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_3_V \
+    op interface \
+    ports { cmpr_local_3_V_dout { I 1024 vector } cmpr_local_3_V_empty_n { I 1 bit } cmpr_local_3_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 532 \
+    name cmpr_local_4_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_4_V \
+    op interface \
+    ports { cmpr_local_4_V_dout { I 1024 vector } cmpr_local_4_V_empty_n { I 1 bit } cmpr_local_4_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 533 \
+    name cmpr_local_5_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_5_V \
+    op interface \
+    ports { cmpr_local_5_V_dout { I 1024 vector } cmpr_local_5_V_empty_n { I 1 bit } cmpr_local_5_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 534 \
+    name cmpr_local_6_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_6_V \
+    op interface \
+    ports { cmpr_local_6_V_dout { I 1024 vector } cmpr_local_6_V_empty_n { I 1 bit } cmpr_local_6_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 535 \
+    name cmpr_local_7_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_7_V \
+    op interface \
+    ports { cmpr_local_7_V_dout { I 1024 vector } cmpr_local_7_V_empty_n { I 1 bit } cmpr_local_7_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 536 \
+    name cmpr_local_8_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_8_V \
+    op interface \
+    ports { cmpr_local_8_V_dout { I 1024 vector } cmpr_local_8_V_empty_n { I 1 bit } cmpr_local_8_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 537 \
+    name cmpr_local_9_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_9_V \
+    op interface \
+    ports { cmpr_local_9_V_dout { I 1024 vector } cmpr_local_9_V_empty_n { I 1 bit } cmpr_local_9_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 538 \
+    name cmpr_local_10_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_10_V \
+    op interface \
+    ports { cmpr_local_10_V_dout { I 1024 vector } cmpr_local_10_V_empty_n { I 1 bit } cmpr_local_10_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 539 \
+    name cmpr_local_11_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_11_V \
+    op interface \
+    ports { cmpr_local_11_V_dout { I 1024 vector } cmpr_local_11_V_empty_n { I 1 bit } cmpr_local_11_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 540 \
+    name cmpr_local_12_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_12_V \
+    op interface \
+    ports { cmpr_local_12_V_dout { I 1024 vector } cmpr_local_12_V_empty_n { I 1 bit } cmpr_local_12_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 541 \
+    name cmpr_local_13_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_13_V \
+    op interface \
+    ports { cmpr_local_13_V_dout { I 1024 vector } cmpr_local_13_V_empty_n { I 1 bit } cmpr_local_13_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 542 \
+    name cmpr_local_14_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_14_V \
+    op interface \
+    ports { cmpr_local_14_V_dout { I 1024 vector } cmpr_local_14_V_empty_n { I 1 bit } cmpr_local_14_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 543 \
+    name cmpr_local_15_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_15_V \
+    op interface \
+    ports { cmpr_local_15_V_dout { I 1024 vector } cmpr_local_15_V_empty_n { I 1 bit } cmpr_local_15_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 544 \
+    name cmpr_local_16_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_16_V \
+    op interface \
+    ports { cmpr_local_16_V_dout { I 1024 vector } cmpr_local_16_V_empty_n { I 1 bit } cmpr_local_16_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 545 \
+    name cmpr_local_17_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_17_V \
+    op interface \
+    ports { cmpr_local_17_V_dout { I 1024 vector } cmpr_local_17_V_empty_n { I 1 bit } cmpr_local_17_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 546 \
+    name cmpr_local_18_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_18_V \
+    op interface \
+    ports { cmpr_local_18_V_dout { I 1024 vector } cmpr_local_18_V_empty_n { I 1 bit } cmpr_local_18_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 547 \
+    name cmpr_local_19_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_19_V \
+    op interface \
+    ports { cmpr_local_19_V_dout { I 1024 vector } cmpr_local_19_V_empty_n { I 1 bit } cmpr_local_19_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 548 \
+    name cmpr_local_20_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_20_V \
+    op interface \
+    ports { cmpr_local_20_V_dout { I 1024 vector } cmpr_local_20_V_empty_n { I 1 bit } cmpr_local_20_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 549 \
+    name cmpr_local_21_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_21_V \
+    op interface \
+    ports { cmpr_local_21_V_dout { I 1024 vector } cmpr_local_21_V_empty_n { I 1 bit } cmpr_local_21_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 550 \
+    name cmpr_local_22_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_22_V \
+    op interface \
+    ports { cmpr_local_22_V_dout { I 1024 vector } cmpr_local_22_V_empty_n { I 1 bit } cmpr_local_22_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 551 \
+    name cmpr_local_23_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_23_V \
+    op interface \
+    ports { cmpr_local_23_V_dout { I 1024 vector } cmpr_local_23_V_empty_n { I 1 bit } cmpr_local_23_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 552 \
+    name cmpr_local_24_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_24_V \
+    op interface \
+    ports { cmpr_local_24_V_dout { I 1024 vector } cmpr_local_24_V_empty_n { I 1 bit } cmpr_local_24_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 553 \
+    name cmpr_local_25_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_25_V \
+    op interface \
+    ports { cmpr_local_25_V_dout { I 1024 vector } cmpr_local_25_V_empty_n { I 1 bit } cmpr_local_25_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 554 \
+    name cmpr_local_26_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_26_V \
+    op interface \
+    ports { cmpr_local_26_V_dout { I 1024 vector } cmpr_local_26_V_empty_n { I 1 bit } cmpr_local_26_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 555 \
+    name cmpr_local_27_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_27_V \
+    op interface \
+    ports { cmpr_local_27_V_dout { I 1024 vector } cmpr_local_27_V_empty_n { I 1 bit } cmpr_local_27_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 556 \
+    name cmpr_local_28_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_28_V \
+    op interface \
+    ports { cmpr_local_28_V_dout { I 1024 vector } cmpr_local_28_V_empty_n { I 1 bit } cmpr_local_28_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 557 \
+    name cmpr_local_29_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_29_V \
+    op interface \
+    ports { cmpr_local_29_V_dout { I 1024 vector } cmpr_local_29_V_empty_n { I 1 bit } cmpr_local_29_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 558 \
+    name cmpr_local_30_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_30_V \
+    op interface \
+    ports { cmpr_local_30_V_dout { I 1024 vector } cmpr_local_30_V_empty_n { I 1 bit } cmpr_local_30_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 559 \
+    name cmpr_local_31_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_31_V \
+    op interface \
+    ports { cmpr_local_31_V_dout { I 1024 vector } cmpr_local_31_V_empty_n { I 1 bit } cmpr_local_31_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 560 \
+    name cmpr_local_32_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_32_V \
+    op interface \
+    ports { cmpr_local_32_V_dout { I 1024 vector } cmpr_local_32_V_empty_n { I 1 bit } cmpr_local_32_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 561 \
+    name cmpr_local_33_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_33_V \
+    op interface \
+    ports { cmpr_local_33_V_dout { I 1024 vector } cmpr_local_33_V_empty_n { I 1 bit } cmpr_local_33_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 562 \
+    name cmpr_local_34_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_34_V \
+    op interface \
+    ports { cmpr_local_34_V_dout { I 1024 vector } cmpr_local_34_V_empty_n { I 1 bit } cmpr_local_34_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 563 \
+    name cmpr_local_35_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_35_V \
+    op interface \
+    ports { cmpr_local_35_V_dout { I 1024 vector } cmpr_local_35_V_empty_n { I 1 bit } cmpr_local_35_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 564 \
+    name cmpr_local_36_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_36_V \
+    op interface \
+    ports { cmpr_local_36_V_dout { I 1024 vector } cmpr_local_36_V_empty_n { I 1 bit } cmpr_local_36_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 565 \
+    name cmpr_local_37_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_37_V \
+    op interface \
+    ports { cmpr_local_37_V_dout { I 1024 vector } cmpr_local_37_V_empty_n { I 1 bit } cmpr_local_37_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 566 \
+    name cmpr_local_38_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_38_V \
+    op interface \
+    ports { cmpr_local_38_V_dout { I 1024 vector } cmpr_local_38_V_empty_n { I 1 bit } cmpr_local_38_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 567 \
+    name cmpr_local_39_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_39_V \
+    op interface \
+    ports { cmpr_local_39_V_dout { I 1024 vector } cmpr_local_39_V_empty_n { I 1 bit } cmpr_local_39_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 568 \
+    name cmpr_local_40_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_40_V \
+    op interface \
+    ports { cmpr_local_40_V_dout { I 1024 vector } cmpr_local_40_V_empty_n { I 1 bit } cmpr_local_40_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 569 \
+    name cmpr_local_41_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_41_V \
+    op interface \
+    ports { cmpr_local_41_V_dout { I 1024 vector } cmpr_local_41_V_empty_n { I 1 bit } cmpr_local_41_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 570 \
+    name cmpr_local_42_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_42_V \
+    op interface \
+    ports { cmpr_local_42_V_dout { I 1024 vector } cmpr_local_42_V_empty_n { I 1 bit } cmpr_local_42_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 571 \
+    name cmpr_local_43_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_43_V \
+    op interface \
+    ports { cmpr_local_43_V_dout { I 1024 vector } cmpr_local_43_V_empty_n { I 1 bit } cmpr_local_43_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 572 \
+    name cmpr_local_44_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_44_V \
+    op interface \
+    ports { cmpr_local_44_V_dout { I 1024 vector } cmpr_local_44_V_empty_n { I 1 bit } cmpr_local_44_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 573 \
+    name cmpr_local_45_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_45_V \
+    op interface \
+    ports { cmpr_local_45_V_dout { I 1024 vector } cmpr_local_45_V_empty_n { I 1 bit } cmpr_local_45_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 574 \
+    name cmpr_local_46_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_46_V \
+    op interface \
+    ports { cmpr_local_46_V_dout { I 1024 vector } cmpr_local_46_V_empty_n { I 1 bit } cmpr_local_46_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 575 \
+    name cmpr_local_47_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_47_V \
+    op interface \
+    ports { cmpr_local_47_V_dout { I 1024 vector } cmpr_local_47_V_empty_n { I 1 bit } cmpr_local_47_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 576 \
+    name cmpr_local_48_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_48_V \
+    op interface \
+    ports { cmpr_local_48_V_dout { I 1024 vector } cmpr_local_48_V_empty_n { I 1 bit } cmpr_local_48_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 577 \
+    name cmpr_local_49_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_49_V \
+    op interface \
+    ports { cmpr_local_49_V_dout { I 1024 vector } cmpr_local_49_V_empty_n { I 1 bit } cmpr_local_49_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 578 \
+    name cmpr_local_50_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_50_V \
+    op interface \
+    ports { cmpr_local_50_V_dout { I 1024 vector } cmpr_local_50_V_empty_n { I 1 bit } cmpr_local_50_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 579 \
+    name cmpr_local_51_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_51_V \
+    op interface \
+    ports { cmpr_local_51_V_dout { I 1024 vector } cmpr_local_51_V_empty_n { I 1 bit } cmpr_local_51_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 580 \
+    name cmpr_local_52_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_52_V \
+    op interface \
+    ports { cmpr_local_52_V_dout { I 1024 vector } cmpr_local_52_V_empty_n { I 1 bit } cmpr_local_52_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 581 \
+    name cmpr_local_53_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_53_V \
+    op interface \
+    ports { cmpr_local_53_V_dout { I 1024 vector } cmpr_local_53_V_empty_n { I 1 bit } cmpr_local_53_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 582 \
+    name cmpr_local_54_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_54_V \
+    op interface \
+    ports { cmpr_local_54_V_dout { I 1024 vector } cmpr_local_54_V_empty_n { I 1 bit } cmpr_local_54_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 583 \
+    name cmpr_local_55_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_55_V \
+    op interface \
+    ports { cmpr_local_55_V_dout { I 1024 vector } cmpr_local_55_V_empty_n { I 1 bit } cmpr_local_55_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 584 \
+    name cmpr_local_56_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_56_V \
+    op interface \
+    ports { cmpr_local_56_V_dout { I 1024 vector } cmpr_local_56_V_empty_n { I 1 bit } cmpr_local_56_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 585 \
+    name cmpr_local_57_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_57_V \
+    op interface \
+    ports { cmpr_local_57_V_dout { I 1024 vector } cmpr_local_57_V_empty_n { I 1 bit } cmpr_local_57_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 586 \
+    name cmpr_local_58_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_58_V \
+    op interface \
+    ports { cmpr_local_58_V_dout { I 1024 vector } cmpr_local_58_V_empty_n { I 1 bit } cmpr_local_58_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 587 \
+    name cmpr_local_59_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_59_V \
+    op interface \
+    ports { cmpr_local_59_V_dout { I 1024 vector } cmpr_local_59_V_empty_n { I 1 bit } cmpr_local_59_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 588 \
+    name cmpr_local_60_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_60_V \
+    op interface \
+    ports { cmpr_local_60_V_dout { I 1024 vector } cmpr_local_60_V_empty_n { I 1 bit } cmpr_local_60_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 589 \
+    name cmpr_local_61_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_61_V \
+    op interface \
+    ports { cmpr_local_61_V_dout { I 1024 vector } cmpr_local_61_V_empty_n { I 1 bit } cmpr_local_61_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 590 \
+    name cmpr_local_62_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_62_V \
+    op interface \
+    ports { cmpr_local_62_V_dout { I 1024 vector } cmpr_local_62_V_empty_n { I 1 bit } cmpr_local_62_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 591 \
+    name cmpr_local_63_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_cmpr_local_63_V \
+    op interface \
+    ports { cmpr_local_63_V_dout { I 1024 vector } cmpr_local_63_V_empty_n { I 1 bit } cmpr_local_63_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 592 \
     name refpop_local_V \
-    reset_level 1 \
-    sync_rst true \
-    dir I \
-    corename refpop_local_V \
-    op interface \
-    ports { refpop_local_V_address0 { O 10 vector } refpop_local_V_ce0 { O 1 bit } refpop_local_V_q0 { I 11 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'refpop_local_V'"
-}
-}
-
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 271 \
-    name cmpr_local_0_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_0_V_read \
-    op interface \
-    ports { cmpr_local_0_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 272 \
-    name cmpr_local_1_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_1_V_read \
-    op interface \
-    ports { cmpr_local_1_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 273 \
-    name cmpr_local_2_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_2_V_read \
-    op interface \
-    ports { cmpr_local_2_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 274 \
-    name cmpr_local_3_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_3_V_read \
-    op interface \
-    ports { cmpr_local_3_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 275 \
-    name cmpr_local_4_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_4_V_read \
-    op interface \
-    ports { cmpr_local_4_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 276 \
-    name cmpr_local_5_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_5_V_read \
-    op interface \
-    ports { cmpr_local_5_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 277 \
-    name cmpr_local_6_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_6_V_read \
-    op interface \
-    ports { cmpr_local_6_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 278 \
-    name cmpr_local_7_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_7_V_read \
-    op interface \
-    ports { cmpr_local_7_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 279 \
-    name cmpr_local_8_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_8_V_read \
-    op interface \
-    ports { cmpr_local_8_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 280 \
-    name cmpr_local_9_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_9_V_read \
-    op interface \
-    ports { cmpr_local_9_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 281 \
-    name cmpr_local_10_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_10_V_read \
-    op interface \
-    ports { cmpr_local_10_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 282 \
-    name cmpr_local_11_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_11_V_read \
-    op interface \
-    ports { cmpr_local_11_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 283 \
-    name cmpr_local_12_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_12_V_read \
-    op interface \
-    ports { cmpr_local_12_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 284 \
-    name cmpr_local_13_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_13_V_read \
-    op interface \
-    ports { cmpr_local_13_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 285 \
-    name cmpr_local_14_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_14_V_read \
-    op interface \
-    ports { cmpr_local_14_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 286 \
-    name cmpr_local_15_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_15_V_read \
-    op interface \
-    ports { cmpr_local_15_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 287 \
-    name cmpr_local_16_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_16_V_read \
-    op interface \
-    ports { cmpr_local_16_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 288 \
-    name cmpr_local_17_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_17_V_read \
-    op interface \
-    ports { cmpr_local_17_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 289 \
-    name cmpr_local_18_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_18_V_read \
-    op interface \
-    ports { cmpr_local_18_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 290 \
-    name cmpr_local_19_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_19_V_read \
-    op interface \
-    ports { cmpr_local_19_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 291 \
-    name cmpr_local_20_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_20_V_read \
-    op interface \
-    ports { cmpr_local_20_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 292 \
-    name cmpr_local_21_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_21_V_read \
-    op interface \
-    ports { cmpr_local_21_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 293 \
-    name cmpr_local_22_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_22_V_read \
-    op interface \
-    ports { cmpr_local_22_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 294 \
-    name cmpr_local_23_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_23_V_read \
-    op interface \
-    ports { cmpr_local_23_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 295 \
-    name cmpr_local_24_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_24_V_read \
-    op interface \
-    ports { cmpr_local_24_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 296 \
-    name cmpr_local_25_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_25_V_read \
-    op interface \
-    ports { cmpr_local_25_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 297 \
-    name cmpr_local_26_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_26_V_read \
-    op interface \
-    ports { cmpr_local_26_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 298 \
-    name cmpr_local_27_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_27_V_read \
-    op interface \
-    ports { cmpr_local_27_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 299 \
-    name cmpr_local_28_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_28_V_read \
-    op interface \
-    ports { cmpr_local_28_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 300 \
-    name cmpr_local_29_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_29_V_read \
-    op interface \
-    ports { cmpr_local_29_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 301 \
-    name cmpr_local_30_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_30_V_read \
-    op interface \
-    ports { cmpr_local_30_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 302 \
-    name cmpr_local_31_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_31_V_read \
-    op interface \
-    ports { cmpr_local_31_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 303 \
-    name cmpr_local_32_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_32_V_read \
-    op interface \
-    ports { cmpr_local_32_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 304 \
-    name cmpr_local_33_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_33_V_read \
-    op interface \
-    ports { cmpr_local_33_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 305 \
-    name cmpr_local_34_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_34_V_read \
-    op interface \
-    ports { cmpr_local_34_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 306 \
-    name cmpr_local_35_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_35_V_read \
-    op interface \
-    ports { cmpr_local_35_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 307 \
-    name cmpr_local_36_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_36_V_read \
-    op interface \
-    ports { cmpr_local_36_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 308 \
-    name cmpr_local_37_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_37_V_read \
-    op interface \
-    ports { cmpr_local_37_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 309 \
-    name cmpr_local_38_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_38_V_read \
-    op interface \
-    ports { cmpr_local_38_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 310 \
-    name cmpr_local_39_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_39_V_read \
-    op interface \
-    ports { cmpr_local_39_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 311 \
-    name cmpr_local_40_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_40_V_read \
-    op interface \
-    ports { cmpr_local_40_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 312 \
-    name cmpr_local_41_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_41_V_read \
-    op interface \
-    ports { cmpr_local_41_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 313 \
-    name cmpr_local_42_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_42_V_read \
-    op interface \
-    ports { cmpr_local_42_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 314 \
-    name cmpr_local_43_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_43_V_read \
-    op interface \
-    ports { cmpr_local_43_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 315 \
-    name cmpr_local_44_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_44_V_read \
-    op interface \
-    ports { cmpr_local_44_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 316 \
-    name cmpr_local_45_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_45_V_read \
-    op interface \
-    ports { cmpr_local_45_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 317 \
-    name cmpr_local_46_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_46_V_read \
-    op interface \
-    ports { cmpr_local_46_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 318 \
-    name cmpr_local_47_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_47_V_read \
-    op interface \
-    ports { cmpr_local_47_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 319 \
-    name cmpr_local_48_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_48_V_read \
-    op interface \
-    ports { cmpr_local_48_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 320 \
-    name cmpr_local_49_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_49_V_read \
-    op interface \
-    ports { cmpr_local_49_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 321 \
-    name cmpr_local_50_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_50_V_read \
-    op interface \
-    ports { cmpr_local_50_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 322 \
-    name cmpr_local_51_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_51_V_read \
-    op interface \
-    ports { cmpr_local_51_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 323 \
-    name cmpr_local_52_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_52_V_read \
-    op interface \
-    ports { cmpr_local_52_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 324 \
-    name cmpr_local_53_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_53_V_read \
-    op interface \
-    ports { cmpr_local_53_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 325 \
-    name cmpr_local_54_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_54_V_read \
-    op interface \
-    ports { cmpr_local_54_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 326 \
-    name cmpr_local_55_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_55_V_read \
-    op interface \
-    ports { cmpr_local_55_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 327 \
-    name cmpr_local_56_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_56_V_read \
-    op interface \
-    ports { cmpr_local_56_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 328 \
-    name cmpr_local_57_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_57_V_read \
-    op interface \
-    ports { cmpr_local_57_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 329 \
-    name cmpr_local_58_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_58_V_read \
-    op interface \
-    ports { cmpr_local_58_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 330 \
-    name cmpr_local_59_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_59_V_read \
-    op interface \
-    ports { cmpr_local_59_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 331 \
-    name cmpr_local_60_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_60_V_read \
-    op interface \
-    ports { cmpr_local_60_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 332 \
-    name cmpr_local_61_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_61_V_read \
-    op interface \
-    ports { cmpr_local_61_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 333 \
-    name cmpr_local_62_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_62_V_read \
-    op interface \
-    ports { cmpr_local_62_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 334 \
-    name cmpr_local_63_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmpr_local_63_V_read \
-    op interface \
-    ports { cmpr_local_63_V_read { I 1024 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 336 \
-    name cmprpop_local_0_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_0_V_read \
-    op interface \
-    ports { cmprpop_local_0_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 337 \
-    name cmprpop_local_1_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_1_V_read \
-    op interface \
-    ports { cmprpop_local_1_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 338 \
-    name cmprpop_local_2_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_2_V_read \
-    op interface \
-    ports { cmprpop_local_2_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 339 \
-    name cmprpop_local_3_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_3_V_read \
-    op interface \
-    ports { cmprpop_local_3_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 340 \
-    name cmprpop_local_4_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_4_V_read \
-    op interface \
-    ports { cmprpop_local_4_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 341 \
-    name cmprpop_local_5_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_5_V_read \
-    op interface \
-    ports { cmprpop_local_5_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 342 \
-    name cmprpop_local_6_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_6_V_read \
-    op interface \
-    ports { cmprpop_local_6_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 343 \
-    name cmprpop_local_7_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_7_V_read \
-    op interface \
-    ports { cmprpop_local_7_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 344 \
-    name cmprpop_local_8_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_8_V_read \
-    op interface \
-    ports { cmprpop_local_8_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 345 \
-    name cmprpop_local_9_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_9_V_read \
-    op interface \
-    ports { cmprpop_local_9_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 346 \
-    name cmprpop_local_10_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_10_V_read \
-    op interface \
-    ports { cmprpop_local_10_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 347 \
-    name cmprpop_local_11_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_11_V_read \
-    op interface \
-    ports { cmprpop_local_11_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 348 \
-    name cmprpop_local_12_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_12_V_read \
-    op interface \
-    ports { cmprpop_local_12_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 349 \
-    name cmprpop_local_13_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_13_V_read \
-    op interface \
-    ports { cmprpop_local_13_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 350 \
-    name cmprpop_local_14_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_14_V_read \
-    op interface \
-    ports { cmprpop_local_14_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 351 \
-    name cmprpop_local_15_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_15_V_read \
-    op interface \
-    ports { cmprpop_local_15_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 352 \
-    name cmprpop_local_16_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_16_V_read \
-    op interface \
-    ports { cmprpop_local_16_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 353 \
-    name cmprpop_local_17_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_17_V_read \
-    op interface \
-    ports { cmprpop_local_17_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 354 \
-    name cmprpop_local_18_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_18_V_read \
-    op interface \
-    ports { cmprpop_local_18_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 355 \
-    name cmprpop_local_19_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_19_V_read \
-    op interface \
-    ports { cmprpop_local_19_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 356 \
-    name cmprpop_local_20_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_20_V_read \
-    op interface \
-    ports { cmprpop_local_20_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 357 \
-    name cmprpop_local_21_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_21_V_read \
-    op interface \
-    ports { cmprpop_local_21_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 358 \
-    name cmprpop_local_22_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_22_V_read \
-    op interface \
-    ports { cmprpop_local_22_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 359 \
-    name cmprpop_local_23_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_23_V_read \
-    op interface \
-    ports { cmprpop_local_23_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 360 \
-    name cmprpop_local_24_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_24_V_read \
-    op interface \
-    ports { cmprpop_local_24_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 361 \
-    name cmprpop_local_25_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_25_V_read \
-    op interface \
-    ports { cmprpop_local_25_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 362 \
-    name cmprpop_local_26_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_26_V_read \
-    op interface \
-    ports { cmprpop_local_26_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 363 \
-    name cmprpop_local_27_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_27_V_read \
-    op interface \
-    ports { cmprpop_local_27_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 364 \
-    name cmprpop_local_28_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_28_V_read \
-    op interface \
-    ports { cmprpop_local_28_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 365 \
-    name cmprpop_local_29_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_29_V_read \
-    op interface \
-    ports { cmprpop_local_29_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 366 \
-    name cmprpop_local_30_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_30_V_read \
-    op interface \
-    ports { cmprpop_local_30_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 367 \
-    name cmprpop_local_31_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_31_V_read \
-    op interface \
-    ports { cmprpop_local_31_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 368 \
-    name cmprpop_local_32_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_32_V_read \
-    op interface \
-    ports { cmprpop_local_32_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 369 \
-    name cmprpop_local_33_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_33_V_read \
-    op interface \
-    ports { cmprpop_local_33_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 370 \
-    name cmprpop_local_34_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_34_V_read \
-    op interface \
-    ports { cmprpop_local_34_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 371 \
-    name cmprpop_local_35_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_35_V_read \
-    op interface \
-    ports { cmprpop_local_35_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 372 \
-    name cmprpop_local_36_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_36_V_read \
-    op interface \
-    ports { cmprpop_local_36_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 373 \
-    name cmprpop_local_37_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_37_V_read \
-    op interface \
-    ports { cmprpop_local_37_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 374 \
-    name cmprpop_local_38_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_38_V_read \
-    op interface \
-    ports { cmprpop_local_38_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 375 \
-    name cmprpop_local_39_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_39_V_read \
-    op interface \
-    ports { cmprpop_local_39_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 376 \
-    name cmprpop_local_40_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_40_V_read \
-    op interface \
-    ports { cmprpop_local_40_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 377 \
-    name cmprpop_local_41_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_41_V_read \
-    op interface \
-    ports { cmprpop_local_41_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 378 \
-    name cmprpop_local_42_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_42_V_read \
-    op interface \
-    ports { cmprpop_local_42_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 379 \
-    name cmprpop_local_43_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_43_V_read \
-    op interface \
-    ports { cmprpop_local_43_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 380 \
-    name cmprpop_local_44_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_44_V_read \
-    op interface \
-    ports { cmprpop_local_44_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 381 \
-    name cmprpop_local_45_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_45_V_read \
-    op interface \
-    ports { cmprpop_local_45_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 382 \
-    name cmprpop_local_46_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_46_V_read \
-    op interface \
-    ports { cmprpop_local_46_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 383 \
-    name cmprpop_local_47_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_47_V_read \
-    op interface \
-    ports { cmprpop_local_47_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 384 \
-    name cmprpop_local_48_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_48_V_read \
-    op interface \
-    ports { cmprpop_local_48_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 385 \
-    name cmprpop_local_49_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_49_V_read \
-    op interface \
-    ports { cmprpop_local_49_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 386 \
-    name cmprpop_local_50_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_50_V_read \
-    op interface \
-    ports { cmprpop_local_50_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 387 \
-    name cmprpop_local_51_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_51_V_read \
-    op interface \
-    ports { cmprpop_local_51_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 388 \
-    name cmprpop_local_52_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_52_V_read \
-    op interface \
-    ports { cmprpop_local_52_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 389 \
-    name cmprpop_local_53_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_53_V_read \
-    op interface \
-    ports { cmprpop_local_53_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 390 \
-    name cmprpop_local_54_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_54_V_read \
-    op interface \
-    ports { cmprpop_local_54_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 391 \
-    name cmprpop_local_55_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_55_V_read \
-    op interface \
-    ports { cmprpop_local_55_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 392 \
-    name cmprpop_local_56_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_56_V_read \
-    op interface \
-    ports { cmprpop_local_56_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 393 \
-    name cmprpop_local_57_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_57_V_read \
-    op interface \
-    ports { cmprpop_local_57_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 394 \
-    name cmprpop_local_58_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_58_V_read \
-    op interface \
-    ports { cmprpop_local_58_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 395 \
-    name cmprpop_local_59_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_59_V_read \
-    op interface \
-    ports { cmprpop_local_59_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 396 \
-    name cmprpop_local_60_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_60_V_read \
-    op interface \
-    ports { cmprpop_local_60_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 397 \
-    name cmprpop_local_61_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_61_V_read \
-    op interface \
-    ports { cmprpop_local_61_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 398 \
-    name cmprpop_local_62_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_62_V_read \
-    op interface \
-    ports { cmprpop_local_62_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 399 \
-    name cmprpop_local_63_V_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_cmprpop_local_63_V_read \
-    op interface \
-    ports { cmprpop_local_63_V_read { I 11 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 400 \
-    name result_local_0_read \
-    type other \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_0_read \
+    corename dc_refpop_local_V \
     op interface \
-    ports { result_local_0_read { I 16 vector } } \
+    ports { refpop_local_V_dout { I 11 vector } refpop_local_V_empty_n { I 1 bit } refpop_local_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 401 \
-    name result_local_1_read \
-    type other \
+    id 593 \
+    name cmprpop_local_0_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_1_read \
+    corename dc_cmprpop_local_0_V \
     op interface \
-    ports { result_local_1_read { I 16 vector } } \
+    ports { cmprpop_local_0_V_dout { I 11 vector } cmprpop_local_0_V_empty_n { I 1 bit } cmprpop_local_0_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 402 \
-    name result_local_2_read \
-    type other \
+    id 594 \
+    name cmprpop_local_1_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_2_read \
+    corename dc_cmprpop_local_1_V \
     op interface \
-    ports { result_local_2_read { I 16 vector } } \
+    ports { cmprpop_local_1_V_dout { I 11 vector } cmprpop_local_1_V_empty_n { I 1 bit } cmprpop_local_1_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 403 \
-    name result_local_3_read \
-    type other \
+    id 595 \
+    name cmprpop_local_2_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_3_read \
+    corename dc_cmprpop_local_2_V \
     op interface \
-    ports { result_local_3_read { I 16 vector } } \
+    ports { cmprpop_local_2_V_dout { I 11 vector } cmprpop_local_2_V_empty_n { I 1 bit } cmprpop_local_2_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 404 \
-    name result_local_4_read \
-    type other \
+    id 596 \
+    name cmprpop_local_3_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_4_read \
+    corename dc_cmprpop_local_3_V \
     op interface \
-    ports { result_local_4_read { I 16 vector } } \
+    ports { cmprpop_local_3_V_dout { I 11 vector } cmprpop_local_3_V_empty_n { I 1 bit } cmprpop_local_3_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 405 \
-    name result_local_5_read \
-    type other \
+    id 597 \
+    name cmprpop_local_4_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_5_read \
+    corename dc_cmprpop_local_4_V \
     op interface \
-    ports { result_local_5_read { I 16 vector } } \
+    ports { cmprpop_local_4_V_dout { I 11 vector } cmprpop_local_4_V_empty_n { I 1 bit } cmprpop_local_4_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 406 \
-    name result_local_6_read \
-    type other \
+    id 598 \
+    name cmprpop_local_5_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_6_read \
+    corename dc_cmprpop_local_5_V \
     op interface \
-    ports { result_local_6_read { I 16 vector } } \
+    ports { cmprpop_local_5_V_dout { I 11 vector } cmprpop_local_5_V_empty_n { I 1 bit } cmprpop_local_5_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 407 \
-    name result_local_7_read \
-    type other \
+    id 599 \
+    name cmprpop_local_6_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_7_read \
+    corename dc_cmprpop_local_6_V \
     op interface \
-    ports { result_local_7_read { I 16 vector } } \
+    ports { cmprpop_local_6_V_dout { I 11 vector } cmprpop_local_6_V_empty_n { I 1 bit } cmprpop_local_6_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 408 \
-    name result_local_8_read \
-    type other \
+    id 600 \
+    name cmprpop_local_7_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_8_read \
+    corename dc_cmprpop_local_7_V \
     op interface \
-    ports { result_local_8_read { I 16 vector } } \
+    ports { cmprpop_local_7_V_dout { I 11 vector } cmprpop_local_7_V_empty_n { I 1 bit } cmprpop_local_7_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 409 \
-    name result_local_9_read \
-    type other \
+    id 601 \
+    name cmprpop_local_8_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_9_read \
+    corename dc_cmprpop_local_8_V \
     op interface \
-    ports { result_local_9_read { I 16 vector } } \
+    ports { cmprpop_local_8_V_dout { I 11 vector } cmprpop_local_8_V_empty_n { I 1 bit } cmprpop_local_8_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 410 \
-    name result_local_10_read \
-    type other \
+    id 602 \
+    name cmprpop_local_9_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_10_read \
+    corename dc_cmprpop_local_9_V \
     op interface \
-    ports { result_local_10_read { I 16 vector } } \
+    ports { cmprpop_local_9_V_dout { I 11 vector } cmprpop_local_9_V_empty_n { I 1 bit } cmprpop_local_9_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 411 \
-    name result_local_11_read \
-    type other \
+    id 603 \
+    name cmprpop_local_10_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_11_read \
+    corename dc_cmprpop_local_10_V \
     op interface \
-    ports { result_local_11_read { I 16 vector } } \
+    ports { cmprpop_local_10_V_dout { I 11 vector } cmprpop_local_10_V_empty_n { I 1 bit } cmprpop_local_10_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 412 \
-    name result_local_12_read \
-    type other \
+    id 604 \
+    name cmprpop_local_11_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_12_read \
+    corename dc_cmprpop_local_11_V \
     op interface \
-    ports { result_local_12_read { I 16 vector } } \
+    ports { cmprpop_local_11_V_dout { I 11 vector } cmprpop_local_11_V_empty_n { I 1 bit } cmprpop_local_11_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 413 \
-    name result_local_13_read \
-    type other \
+    id 605 \
+    name cmprpop_local_12_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_13_read \
+    corename dc_cmprpop_local_12_V \
     op interface \
-    ports { result_local_13_read { I 16 vector } } \
+    ports { cmprpop_local_12_V_dout { I 11 vector } cmprpop_local_12_V_empty_n { I 1 bit } cmprpop_local_12_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 414 \
-    name result_local_14_read \
-    type other \
+    id 606 \
+    name cmprpop_local_13_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_14_read \
+    corename dc_cmprpop_local_13_V \
     op interface \
-    ports { result_local_14_read { I 16 vector } } \
+    ports { cmprpop_local_13_V_dout { I 11 vector } cmprpop_local_13_V_empty_n { I 1 bit } cmprpop_local_13_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 415 \
-    name result_local_15_read \
-    type other \
+    id 607 \
+    name cmprpop_local_14_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_15_read \
+    corename dc_cmprpop_local_14_V \
     op interface \
-    ports { result_local_15_read { I 16 vector } } \
+    ports { cmprpop_local_14_V_dout { I 11 vector } cmprpop_local_14_V_empty_n { I 1 bit } cmprpop_local_14_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 416 \
-    name result_local_16_read \
-    type other \
+    id 608 \
+    name cmprpop_local_15_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_16_read \
+    corename dc_cmprpop_local_15_V \
     op interface \
-    ports { result_local_16_read { I 16 vector } } \
+    ports { cmprpop_local_15_V_dout { I 11 vector } cmprpop_local_15_V_empty_n { I 1 bit } cmprpop_local_15_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 417 \
-    name result_local_17_read \
-    type other \
+    id 609 \
+    name cmprpop_local_16_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_17_read \
+    corename dc_cmprpop_local_16_V \
     op interface \
-    ports { result_local_17_read { I 16 vector } } \
+    ports { cmprpop_local_16_V_dout { I 11 vector } cmprpop_local_16_V_empty_n { I 1 bit } cmprpop_local_16_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 418 \
-    name result_local_18_read \
-    type other \
+    id 610 \
+    name cmprpop_local_17_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_18_read \
+    corename dc_cmprpop_local_17_V \
     op interface \
-    ports { result_local_18_read { I 16 vector } } \
+    ports { cmprpop_local_17_V_dout { I 11 vector } cmprpop_local_17_V_empty_n { I 1 bit } cmprpop_local_17_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 419 \
-    name result_local_19_read \
-    type other \
+    id 611 \
+    name cmprpop_local_18_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_19_read \
+    corename dc_cmprpop_local_18_V \
     op interface \
-    ports { result_local_19_read { I 16 vector } } \
+    ports { cmprpop_local_18_V_dout { I 11 vector } cmprpop_local_18_V_empty_n { I 1 bit } cmprpop_local_18_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 420 \
-    name result_local_20_read \
-    type other \
+    id 612 \
+    name cmprpop_local_19_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_20_read \
+    corename dc_cmprpop_local_19_V \
     op interface \
-    ports { result_local_20_read { I 16 vector } } \
+    ports { cmprpop_local_19_V_dout { I 11 vector } cmprpop_local_19_V_empty_n { I 1 bit } cmprpop_local_19_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 421 \
-    name result_local_21_read \
-    type other \
+    id 613 \
+    name cmprpop_local_20_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_21_read \
+    corename dc_cmprpop_local_20_V \
     op interface \
-    ports { result_local_21_read { I 16 vector } } \
+    ports { cmprpop_local_20_V_dout { I 11 vector } cmprpop_local_20_V_empty_n { I 1 bit } cmprpop_local_20_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 422 \
-    name result_local_22_read \
-    type other \
+    id 614 \
+    name cmprpop_local_21_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_22_read \
+    corename dc_cmprpop_local_21_V \
     op interface \
-    ports { result_local_22_read { I 16 vector } } \
+    ports { cmprpop_local_21_V_dout { I 11 vector } cmprpop_local_21_V_empty_n { I 1 bit } cmprpop_local_21_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 423 \
-    name result_local_23_read \
-    type other \
+    id 615 \
+    name cmprpop_local_22_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_23_read \
+    corename dc_cmprpop_local_22_V \
     op interface \
-    ports { result_local_23_read { I 16 vector } } \
+    ports { cmprpop_local_22_V_dout { I 11 vector } cmprpop_local_22_V_empty_n { I 1 bit } cmprpop_local_22_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 424 \
-    name result_local_24_read \
-    type other \
+    id 616 \
+    name cmprpop_local_23_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_24_read \
+    corename dc_cmprpop_local_23_V \
     op interface \
-    ports { result_local_24_read { I 16 vector } } \
+    ports { cmprpop_local_23_V_dout { I 11 vector } cmprpop_local_23_V_empty_n { I 1 bit } cmprpop_local_23_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 425 \
-    name result_local_25_read \
-    type other \
+    id 617 \
+    name cmprpop_local_24_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_25_read \
+    corename dc_cmprpop_local_24_V \
     op interface \
-    ports { result_local_25_read { I 16 vector } } \
+    ports { cmprpop_local_24_V_dout { I 11 vector } cmprpop_local_24_V_empty_n { I 1 bit } cmprpop_local_24_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 426 \
-    name result_local_26_read \
-    type other \
+    id 618 \
+    name cmprpop_local_25_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_26_read \
+    corename dc_cmprpop_local_25_V \
     op interface \
-    ports { result_local_26_read { I 16 vector } } \
+    ports { cmprpop_local_25_V_dout { I 11 vector } cmprpop_local_25_V_empty_n { I 1 bit } cmprpop_local_25_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 427 \
-    name result_local_27_read \
-    type other \
+    id 619 \
+    name cmprpop_local_26_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_27_read \
+    corename dc_cmprpop_local_26_V \
     op interface \
-    ports { result_local_27_read { I 16 vector } } \
+    ports { cmprpop_local_26_V_dout { I 11 vector } cmprpop_local_26_V_empty_n { I 1 bit } cmprpop_local_26_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 428 \
-    name result_local_28_read \
-    type other \
+    id 620 \
+    name cmprpop_local_27_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_28_read \
+    corename dc_cmprpop_local_27_V \
     op interface \
-    ports { result_local_28_read { I 16 vector } } \
+    ports { cmprpop_local_27_V_dout { I 11 vector } cmprpop_local_27_V_empty_n { I 1 bit } cmprpop_local_27_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 429 \
-    name result_local_29_read \
-    type other \
+    id 621 \
+    name cmprpop_local_28_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_29_read \
+    corename dc_cmprpop_local_28_V \
     op interface \
-    ports { result_local_29_read { I 16 vector } } \
+    ports { cmprpop_local_28_V_dout { I 11 vector } cmprpop_local_28_V_empty_n { I 1 bit } cmprpop_local_28_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 430 \
-    name result_local_30_read \
-    type other \
+    id 622 \
+    name cmprpop_local_29_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_30_read \
+    corename dc_cmprpop_local_29_V \
     op interface \
-    ports { result_local_30_read { I 16 vector } } \
+    ports { cmprpop_local_29_V_dout { I 11 vector } cmprpop_local_29_V_empty_n { I 1 bit } cmprpop_local_29_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 431 \
-    name result_local_31_read \
-    type other \
+    id 623 \
+    name cmprpop_local_30_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_31_read \
+    corename dc_cmprpop_local_30_V \
     op interface \
-    ports { result_local_31_read { I 16 vector } } \
+    ports { cmprpop_local_30_V_dout { I 11 vector } cmprpop_local_30_V_empty_n { I 1 bit } cmprpop_local_30_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 432 \
-    name result_local_32_read \
-    type other \
+    id 624 \
+    name cmprpop_local_31_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_32_read \
+    corename dc_cmprpop_local_31_V \
     op interface \
-    ports { result_local_32_read { I 16 vector } } \
+    ports { cmprpop_local_31_V_dout { I 11 vector } cmprpop_local_31_V_empty_n { I 1 bit } cmprpop_local_31_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 433 \
-    name result_local_33_read \
-    type other \
+    id 625 \
+    name cmprpop_local_32_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_33_read \
+    corename dc_cmprpop_local_32_V \
     op interface \
-    ports { result_local_33_read { I 16 vector } } \
+    ports { cmprpop_local_32_V_dout { I 11 vector } cmprpop_local_32_V_empty_n { I 1 bit } cmprpop_local_32_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 434 \
-    name result_local_34_read \
-    type other \
+    id 626 \
+    name cmprpop_local_33_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_34_read \
+    corename dc_cmprpop_local_33_V \
     op interface \
-    ports { result_local_34_read { I 16 vector } } \
+    ports { cmprpop_local_33_V_dout { I 11 vector } cmprpop_local_33_V_empty_n { I 1 bit } cmprpop_local_33_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 435 \
-    name result_local_35_read \
-    type other \
+    id 627 \
+    name cmprpop_local_34_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_35_read \
+    corename dc_cmprpop_local_34_V \
     op interface \
-    ports { result_local_35_read { I 16 vector } } \
+    ports { cmprpop_local_34_V_dout { I 11 vector } cmprpop_local_34_V_empty_n { I 1 bit } cmprpop_local_34_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 436 \
-    name result_local_36_read \
-    type other \
+    id 628 \
+    name cmprpop_local_35_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_36_read \
+    corename dc_cmprpop_local_35_V \
     op interface \
-    ports { result_local_36_read { I 16 vector } } \
+    ports { cmprpop_local_35_V_dout { I 11 vector } cmprpop_local_35_V_empty_n { I 1 bit } cmprpop_local_35_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 437 \
-    name result_local_37_read \
-    type other \
+    id 629 \
+    name cmprpop_local_36_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_37_read \
+    corename dc_cmprpop_local_36_V \
     op interface \
-    ports { result_local_37_read { I 16 vector } } \
+    ports { cmprpop_local_36_V_dout { I 11 vector } cmprpop_local_36_V_empty_n { I 1 bit } cmprpop_local_36_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 438 \
-    name result_local_38_read \
-    type other \
+    id 630 \
+    name cmprpop_local_37_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_38_read \
+    corename dc_cmprpop_local_37_V \
     op interface \
-    ports { result_local_38_read { I 16 vector } } \
+    ports { cmprpop_local_37_V_dout { I 11 vector } cmprpop_local_37_V_empty_n { I 1 bit } cmprpop_local_37_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 439 \
-    name result_local_39_read \
-    type other \
+    id 631 \
+    name cmprpop_local_38_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_39_read \
+    corename dc_cmprpop_local_38_V \
     op interface \
-    ports { result_local_39_read { I 16 vector } } \
+    ports { cmprpop_local_38_V_dout { I 11 vector } cmprpop_local_38_V_empty_n { I 1 bit } cmprpop_local_38_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 440 \
-    name result_local_40_read \
-    type other \
+    id 632 \
+    name cmprpop_local_39_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_40_read \
+    corename dc_cmprpop_local_39_V \
     op interface \
-    ports { result_local_40_read { I 16 vector } } \
+    ports { cmprpop_local_39_V_dout { I 11 vector } cmprpop_local_39_V_empty_n { I 1 bit } cmprpop_local_39_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 441 \
-    name result_local_41_read \
-    type other \
+    id 633 \
+    name cmprpop_local_40_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_41_read \
+    corename dc_cmprpop_local_40_V \
     op interface \
-    ports { result_local_41_read { I 16 vector } } \
+    ports { cmprpop_local_40_V_dout { I 11 vector } cmprpop_local_40_V_empty_n { I 1 bit } cmprpop_local_40_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 442 \
-    name result_local_42_read \
-    type other \
+    id 634 \
+    name cmprpop_local_41_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_42_read \
+    corename dc_cmprpop_local_41_V \
     op interface \
-    ports { result_local_42_read { I 16 vector } } \
+    ports { cmprpop_local_41_V_dout { I 11 vector } cmprpop_local_41_V_empty_n { I 1 bit } cmprpop_local_41_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 443 \
-    name result_local_43_read \
-    type other \
+    id 635 \
+    name cmprpop_local_42_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_43_read \
+    corename dc_cmprpop_local_42_V \
     op interface \
-    ports { result_local_43_read { I 16 vector } } \
+    ports { cmprpop_local_42_V_dout { I 11 vector } cmprpop_local_42_V_empty_n { I 1 bit } cmprpop_local_42_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 444 \
-    name result_local_44_read \
-    type other \
+    id 636 \
+    name cmprpop_local_43_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_44_read \
+    corename dc_cmprpop_local_43_V \
     op interface \
-    ports { result_local_44_read { I 16 vector } } \
+    ports { cmprpop_local_43_V_dout { I 11 vector } cmprpop_local_43_V_empty_n { I 1 bit } cmprpop_local_43_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 445 \
-    name result_local_45_read \
-    type other \
+    id 637 \
+    name cmprpop_local_44_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_45_read \
+    corename dc_cmprpop_local_44_V \
     op interface \
-    ports { result_local_45_read { I 16 vector } } \
+    ports { cmprpop_local_44_V_dout { I 11 vector } cmprpop_local_44_V_empty_n { I 1 bit } cmprpop_local_44_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 446 \
-    name result_local_46_read \
-    type other \
+    id 638 \
+    name cmprpop_local_45_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_46_read \
+    corename dc_cmprpop_local_45_V \
     op interface \
-    ports { result_local_46_read { I 16 vector } } \
+    ports { cmprpop_local_45_V_dout { I 11 vector } cmprpop_local_45_V_empty_n { I 1 bit } cmprpop_local_45_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 447 \
-    name result_local_47_read \
-    type other \
+    id 639 \
+    name cmprpop_local_46_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_47_read \
+    corename dc_cmprpop_local_46_V \
     op interface \
-    ports { result_local_47_read { I 16 vector } } \
+    ports { cmprpop_local_46_V_dout { I 11 vector } cmprpop_local_46_V_empty_n { I 1 bit } cmprpop_local_46_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 448 \
-    name result_local_48_read \
-    type other \
+    id 640 \
+    name cmprpop_local_47_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_48_read \
+    corename dc_cmprpop_local_47_V \
     op interface \
-    ports { result_local_48_read { I 16 vector } } \
+    ports { cmprpop_local_47_V_dout { I 11 vector } cmprpop_local_47_V_empty_n { I 1 bit } cmprpop_local_47_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 449 \
-    name result_local_49_read \
-    type other \
+    id 641 \
+    name cmprpop_local_48_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_49_read \
+    corename dc_cmprpop_local_48_V \
     op interface \
-    ports { result_local_49_read { I 16 vector } } \
+    ports { cmprpop_local_48_V_dout { I 11 vector } cmprpop_local_48_V_empty_n { I 1 bit } cmprpop_local_48_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 450 \
-    name result_local_50_read \
-    type other \
+    id 642 \
+    name cmprpop_local_49_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_50_read \
+    corename dc_cmprpop_local_49_V \
     op interface \
-    ports { result_local_50_read { I 16 vector } } \
+    ports { cmprpop_local_49_V_dout { I 11 vector } cmprpop_local_49_V_empty_n { I 1 bit } cmprpop_local_49_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 451 \
-    name result_local_51_read \
-    type other \
+    id 643 \
+    name cmprpop_local_50_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_51_read \
+    corename dc_cmprpop_local_50_V \
     op interface \
-    ports { result_local_51_read { I 16 vector } } \
+    ports { cmprpop_local_50_V_dout { I 11 vector } cmprpop_local_50_V_empty_n { I 1 bit } cmprpop_local_50_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 452 \
-    name result_local_52_read \
-    type other \
+    id 644 \
+    name cmprpop_local_51_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_52_read \
+    corename dc_cmprpop_local_51_V \
     op interface \
-    ports { result_local_52_read { I 16 vector } } \
+    ports { cmprpop_local_51_V_dout { I 11 vector } cmprpop_local_51_V_empty_n { I 1 bit } cmprpop_local_51_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 453 \
-    name result_local_53_read \
-    type other \
+    id 645 \
+    name cmprpop_local_52_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_53_read \
+    corename dc_cmprpop_local_52_V \
     op interface \
-    ports { result_local_53_read { I 16 vector } } \
+    ports { cmprpop_local_52_V_dout { I 11 vector } cmprpop_local_52_V_empty_n { I 1 bit } cmprpop_local_52_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 454 \
-    name result_local_54_read \
-    type other \
+    id 646 \
+    name cmprpop_local_53_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_54_read \
+    corename dc_cmprpop_local_53_V \
     op interface \
-    ports { result_local_54_read { I 16 vector } } \
+    ports { cmprpop_local_53_V_dout { I 11 vector } cmprpop_local_53_V_empty_n { I 1 bit } cmprpop_local_53_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 455 \
-    name result_local_55_read \
-    type other \
+    id 647 \
+    name cmprpop_local_54_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_55_read \
+    corename dc_cmprpop_local_54_V \
     op interface \
-    ports { result_local_55_read { I 16 vector } } \
+    ports { cmprpop_local_54_V_dout { I 11 vector } cmprpop_local_54_V_empty_n { I 1 bit } cmprpop_local_54_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 456 \
-    name result_local_56_read \
-    type other \
+    id 648 \
+    name cmprpop_local_55_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_56_read \
+    corename dc_cmprpop_local_55_V \
     op interface \
-    ports { result_local_56_read { I 16 vector } } \
+    ports { cmprpop_local_55_V_dout { I 11 vector } cmprpop_local_55_V_empty_n { I 1 bit } cmprpop_local_55_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 457 \
-    name result_local_57_read \
-    type other \
+    id 649 \
+    name cmprpop_local_56_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_57_read \
+    corename dc_cmprpop_local_56_V \
     op interface \
-    ports { result_local_57_read { I 16 vector } } \
+    ports { cmprpop_local_56_V_dout { I 11 vector } cmprpop_local_56_V_empty_n { I 1 bit } cmprpop_local_56_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 458 \
-    name result_local_58_read \
-    type other \
+    id 650 \
+    name cmprpop_local_57_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_58_read \
+    corename dc_cmprpop_local_57_V \
     op interface \
-    ports { result_local_58_read { I 16 vector } } \
+    ports { cmprpop_local_57_V_dout { I 11 vector } cmprpop_local_57_V_empty_n { I 1 bit } cmprpop_local_57_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 459 \
-    name result_local_59_read \
-    type other \
+    id 651 \
+    name cmprpop_local_58_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_59_read \
+    corename dc_cmprpop_local_58_V \
     op interface \
-    ports { result_local_59_read { I 16 vector } } \
+    ports { cmprpop_local_58_V_dout { I 11 vector } cmprpop_local_58_V_empty_n { I 1 bit } cmprpop_local_58_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 460 \
-    name result_local_60_read \
-    type other \
+    id 652 \
+    name cmprpop_local_59_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_60_read \
+    corename dc_cmprpop_local_59_V \
     op interface \
-    ports { result_local_60_read { I 16 vector } } \
+    ports { cmprpop_local_59_V_dout { I 11 vector } cmprpop_local_59_V_empty_n { I 1 bit } cmprpop_local_59_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 461 \
-    name result_local_61_read \
-    type other \
+    id 653 \
+    name cmprpop_local_60_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_61_read \
+    corename dc_cmprpop_local_60_V \
     op interface \
-    ports { result_local_61_read { I 16 vector } } \
+    ports { cmprpop_local_60_V_dout { I 11 vector } cmprpop_local_60_V_empty_n { I 1 bit } cmprpop_local_60_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 462 \
-    name result_local_62_read \
-    type other \
+    id 654 \
+    name cmprpop_local_61_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_62_read \
+    corename dc_cmprpop_local_61_V \
     op interface \
-    ports { result_local_62_read { I 16 vector } } \
+    ports { cmprpop_local_61_V_dout { I 11 vector } cmprpop_local_61_V_empty_n { I 1 bit } cmprpop_local_61_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 463 \
-    name result_local_63_read \
-    type other \
+    id 655 \
+    name cmprpop_local_62_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_local_63_read \
+    corename dc_cmprpop_local_62_V \
     op interface \
-    ports { result_local_63_read { I 16 vector } } \
+    ports { cmprpop_local_62_V_dout { I 11 vector } cmprpop_local_62_V_empty_n { I 1 bit } cmprpop_local_62_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 464 \
-    name result_read \
-    type other \
+    id 656 \
+    name cmprpop_local_63_V \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_result_read \
+    corename dc_cmprpop_local_63_V \
     op interface \
-    ports { result_read { I 32 vector } } \
+    ports { cmprpop_local_63_V_dout { I 11 vector } cmprpop_local_63_V_empty_n { I 1 bit } cmprpop_local_63_V_read { O 1 bit } } \
 } "
 }
 
@@ -2950,7 +1967,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename ap_ctrl \
     op interface \
-    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } } \
+    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } ap_continue { I 1 bit } } \
 } "
 }
 

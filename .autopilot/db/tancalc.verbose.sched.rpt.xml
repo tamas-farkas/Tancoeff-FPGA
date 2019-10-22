@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'tancalc'" level="0">
-<item name = "Date">Wed Oct 16 15:59:23 2019
+<item name = "Date">Mon Oct 21 23:22:10 2019
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">tancoeff</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">3.33, 2.433, 0.90</column>
+<column name="ap_clk">3.33, 2.796, 0.90</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1476423687, 1476423687, 1476423687, 1476423687, none</column>
+<column name="">134377479, 134377479, 134377479, 134377479, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,8 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- mainloop">1476423680, 1476423680, 1441820, -, -, 1024, no</column>
+<column name="- mainloop">134377472, 134377472, 131228, -, -, 1024, no</column>
+<column name=" + calculation_loop">131084, 131084, 14, 1, 1, 131072, yes</column>
 </table>
 </item>
 </section>

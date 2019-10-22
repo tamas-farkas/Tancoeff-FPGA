@@ -1,16 +1,17 @@
-#include "stdio.h"
+#include <stdio.h>
+#include <ap_int.h>
 #include "tancalc.h"
 
-#define DATA_SIZE 32
 
-int main(){
+
+int main(void){
 	printf("program started\n");
 
 	din_type input1[(DATA_SIZE1+DATA_SIZE2)*2];
-	int output[] = {0};
+	int output[1];
 
-	for(din_type i = 0; i < (DATA_SIZE1+DATA_SIZE2)*2; i++){
-		input1[i] = i;
+	for(int i = 0; i < (DATA_SIZE1+DATA_SIZE2)*2; i++){
+		//input1[i] = i;
 	}
 
 	tancalc(input1, output);

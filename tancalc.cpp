@@ -21,18 +21,22 @@ popcnt_type popcntdata(data_type x){
 }
 
 
-void data_read(din_type *input, data_type *data_local, popcnt_type *datapop_local, short buffer_size, int chunk_num){
+void data_read(volatile din_type *input, data_type *data_local, popcnt_type *datapop_local, short buffer_size, int chunk_num){
+#pragma HLS INLINE
 	data_read_loop:
 	for(short data_part_num = 0; data_part_num < buffer_size*VECTOR_SIZE; data_part_num++){
 	#pragma HLS pipeline II=1
 		int num = ((data_part_num - data_part_num % VECTOR_SIZE)/VECTOR_SIZE) % buffer_size;
 		int num_hi = DATATYPE_SIZE * (data_part_num % VECTOR_SIZE + 1) - 1;
 		int num_lo = DATATYPE_SIZE * data_part_num % VECTOR_SIZE;
-		data_local[num].range(num_hi, num_lo) = input[chunk_num + num];
+		din_type temp_input = input[chunk_num + data_part_num];
 		if(num_lo == 0){
+			data_local[num] = (din_type(0), temp_input);
 			datapop_local[num] = popcnt(data_local[num].range(num_hi, num_lo));
 		}
 		else{
+			din_type data_local_temp = data_local[num].range(DATATYPE_SIZE - 1, 0);
+			data_local[num] = (temp_input, data_local_temp);
 			datapop_local[num] += popcnt(data_local[num].range(num_hi, num_lo));
 		}
 	}
@@ -64,9 +68,9 @@ void result_write(int *output, short *result_local, int *result){
 	}
 }
 
-void tancalc(din_type *input, int *output){
+void tancalc(volatile din_type *input, volatile int *output){
 
-#pragma HLS INTERFACE m_axi port=input offset=slave bundle=gmem0
+#pragma HLS INTERFACE m_axi depth=database_size port=input offset=slave bundle=gmem0 //max_read_burst_length=256	//TODO	4KB - 64word
 #pragma HLS INTERFACE m_axi port=output offset=slave bundle=gmem1
 #pragma HLS INTERFACE s_axilite port = input bundle = control
 #pragma HLS INTERFACE s_axilite port = output bundle = control
@@ -87,7 +91,7 @@ void tancalc(din_type *input, int *output){
 	int result = 0;
 
 	mainloop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < DATA_SIZE2/BUFFER_SIZE2; cmpr_chunk_num++){
-		data_read(&input[DATA_SIZE1], cmpr_local, cmprpop_local, BUFFER_SIZE2 ,cmpr_chunk_num*BUFFER_SIZE2);
+		data_read(&input[DATA_SIZE1*VECTOR_SIZE], cmpr_local, cmprpop_local, BUFFER_SIZE2 ,cmpr_chunk_num*BUFFER_SIZE2);
 		calculation_loop:
 		for(int data_part_num = 0; data_part_num < DATA_SIZE1*VECTOR_SIZE; data_part_num++){
 		#pragma HLS pipeline II=1
@@ -95,11 +99,14 @@ void tancalc(din_type *input, int *output){
 			int num_hi = DATATYPE_SIZE * (data_part_num % VECTOR_SIZE + 1) - 1;
 			int num_lo = DATATYPE_SIZE * data_part_num % VECTOR_SIZE;
 			//Data_read
-			ref_local[num].range(num_hi, num_lo) = input[num];
+			din_type temp_input = input[data_part_num];
 			if(num_lo == 0){
+				ref_local[num] = (din_type(0),temp_input);
 				refpop_local[num] = popcnt(ref_local[num].range(num_hi, num_lo));
 			}
 			else{
+				din_type ref_local_temp = ref_local[num].range(DATATYPE_SIZE - 1, 0);
+				ref_local[num] = (temp_input, ref_local_temp);
 				refpop_local[num] += popcnt(ref_local[num].range(num_hi, num_lo));
 			}
 			//Data_read

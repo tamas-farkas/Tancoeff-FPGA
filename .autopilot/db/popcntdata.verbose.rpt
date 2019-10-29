@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'popcntdata'
 ================================================================
-* Date:           Mon Oct 21 23:24:37 2019
+* Date:           Tue Oct 29 01:15:55 2019
 
 * Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
 * Project:        tancoeff
@@ -1171,7 +1171,7 @@ HasMFsm: 2
 HasVarLatency: 0
 IsPipeline: 1
 IsRtlPipelined: 1
-IsInstanceOverlapped: 1
+IsInstanceOverlapped: 0
 IsDontTouch: 0
 HasImplIP: 0
 IsGatedGlobalClock: 0
@@ -1216,8 +1216,8 @@ ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%p_Result_8 = call i1 @_ssdm_op_Bit
 ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%zext_ln621_8 = zext i1 %p_Result_8 to i2" [tancoeff/tancoeff/tancalc.cpp:18]   --->   Operation 21 'zext' 'zext_ln621_8' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%p_Result_9 = call i1 @_ssdm_op_BitSelect.i1.i1024.i32(i1024 %x_V_read, i32 9)" [tancoeff/tancoeff/tancalc.cpp:18]   --->   Operation 22 'bitselect' 'p_Result_9' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%zext_ln621_9 = zext i1 %p_Result_9 to i2" [tancoeff/tancoeff/tancalc.cpp:18]   --->   Operation 23 'zext' 'zext_ln621_9' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%p_Result_s_13 = call i1 @_ssdm_op_BitSelect.i1.i1024.i32(i1024 %x_V_read, i32 10)" [tancoeff/tancoeff/tancalc.cpp:18]   --->   Operation 24 'bitselect' 'p_Result_s_13' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%zext_ln621_10 = zext i1 %p_Result_s_13 to i2" [tancoeff/tancoeff/tancalc.cpp:18]   --->   Operation 25 'zext' 'zext_ln621_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%p_Result_s_16 = call i1 @_ssdm_op_BitSelect.i1.i1024.i32(i1024 %x_V_read, i32 10)" [tancoeff/tancoeff/tancalc.cpp:18]   --->   Operation 24 'bitselect' 'p_Result_s_16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%zext_ln621_10 = zext i1 %p_Result_s_16 to i2" [tancoeff/tancoeff/tancalc.cpp:18]   --->   Operation 25 'zext' 'zext_ln621_10' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%p_Result_10 = call i1 @_ssdm_op_BitSelect.i1.i1024.i32(i1024 %x_V_read, i32 11)" [tancoeff/tancoeff/tancalc.cpp:18]   --->   Operation 26 'bitselect' 'p_Result_10' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%zext_ln621_11 = zext i1 %p_Result_10 to i2" [tancoeff/tancoeff/tancalc.cpp:18]   --->   Operation 27 'zext' 'zext_ln621_11' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%p_Result_11 = call i1 @_ssdm_op_BitSelect.i1.i1024.i32(i1024 %x_V_read, i32 12)" [tancoeff/tancoeff/tancalc.cpp:18]   --->   Operation 28 'bitselect' 'p_Result_11' <Predicate = true> <Delay = 0.00>
@@ -5333,7 +5333,7 @@ p_Result_8      (bitselect) [ 000]
 zext_ln621_8    (zext     ) [ 000]
 p_Result_9      (bitselect) [ 000]
 zext_ln621_9    (zext     ) [ 000]
-p_Result_s_13   (bitselect) [ 000]
+p_Result_s_16   (bitselect) [ 000]
 zext_ln621_10   (zext     ) [ 000]
 p_Result_10     (bitselect) [ 000]
 zext_ln621_11   (zext     ) [ 000]
@@ -18907,7 +18907,7 @@ ret_ln20        (ret      ) [ 000]
 </bind>
 </comp>
 
-<comp id="2180" class="1004" name="p_Result_s_13_fu_2180">
+<comp id="2180" class="1004" name="p_Result_s_16_fu_2180">
 <pin_list>
 <pin id="2181" dir="0" index="0" bw="1" slack="0"/>
 <pin id="2182" dir="0" index="1" bw="1024" slack="0"/>
@@ -18916,7 +18916,7 @@ ret_ln20        (ret      ) [ 000]
 </pin_list>
 <bind>
 <opcode="bitselect(1000) " fcode="bitselect"/>
-<opset="p_Result_s_13/1 "/>
+<opset="p_Result_s_16/1 "/>
 </bind>
 </comp>
 
@@ -85313,7 +85313,7 @@ ret_ln20        (ret      ) [ 000]
 |          |    p_Result_7_fu_2144    |    0    |    0    |
 |          |    p_Result_8_fu_2156    |    0    |    0    |
 |          |    p_Result_9_fu_2168    |    0    |    0    |
-|          |   p_Result_s_13_fu_2180  |    0    |    0    |
+|          |   p_Result_s_16_fu_2180  |    0    |    0    |
 |          |    p_Result_10_fu_2192   |    0    |    0    |
 |          |    p_Result_11_fu_2204   |    0    |    0    |
 |          |    p_Result_12_fu_2216   |    0    |    0    |

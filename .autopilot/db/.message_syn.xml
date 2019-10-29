@@ -2,42 +2,40 @@
 <Messages>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_631" tag="SCHEDULE" content="Option &apos;relax_ii_for_timing&apos; is enabled, will increase II to preserve clock frequency constraints."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;tancoeff/tancoeff/tancalc.cpp&apos; ..."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 16062 ; free virtual = 22191"/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 16062 ; free virtual = 22191"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 15453 ; free virtual = 22480"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 15453 ; free virtual = 22480"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 16054 ; free virtual = 22184"/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;data_read&apos; into &apos;tancalc&apos; (tancoeff/tancoeff/tancalc.cpp:94)."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 15446 ; free virtual = 22473"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1472" tag="" content="Checking synthesizability ..."/>
-	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;popcnt&apos; into &apos;data_read&apos; (tancoeff/tancoeff/tancalc.cpp:33) automatically."/>
-	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;popcnt&apos; into &apos;tancalc&apos; (tancoeff/tancoeff/tancalc.cpp:100) automatically."/>
-	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;popcntdata&apos; into &apos;tancalc&apos; (tancoeff/tancoeff/tancalc.cpp:113) automatically."/>
-	<Message severity="WARNING" prefix="[SYNCHK 200-23]" key="SYNCHK_VAR_INDEX_RANGE_359" tag="" content="tancoeff/tancoeff/tancalc.cpp:98: variable-indexed range selection may cause suboptimal QoR."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;popcnt&apos; into &apos;tancalc&apos; (tancoeff/tancoeff/tancalc.cpp:35-&gt;tancoeff/tancoeff/tancalc.cpp:94) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;popcntdata&apos; into &apos;tancalc&apos; (tancoeff/tancoeff/tancalc.cpp:120) automatically."/>
+	<Message severity="WARNING" prefix="[SYNCHK 200-23]" key="SYNCHK_VAR_INDEX_RANGE_359" tag="" content="tancoeff/tancoeff/tancalc.cpp:35: variable-indexed range selection may cause suboptimal QoR."/>
 	<Message severity="INFO" prefix="[SYNCHK 200-10]" key="SYNCHK_SYNCHK_SUMMARY_377" tag="" content="0 error(s), 1 warning(s)."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 16051 ; free virtual = 22181"/>
-	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;calculation_loop&apos; (tancoeff/tancoeff/tancalc.cpp:92) in function &apos;tancalc&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 15443 ; free virtual = 22470"/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;calculation_loop&apos; (tancoeff/tancoeff/tancalc.cpp:96) in function &apos;tancalc&apos; for pipelining."/>
 	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;popcntdata&apos; (tancoeff/tancoeff/tancalc.cpp:16:33)."/>
 	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;popcnt&apos; (tancoeff/tancoeff/tancalc.cpp:6:31)."/>
-	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;calculation_loop2&apos; (tancoeff/tancoeff/tancalc.cpp:109) in function &apos;tancalc&apos; completely with a factor of 64."/>
-	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;result_sum&apos; (tancoeff/tancoeff/tancalc.cpp:120) in function &apos;tancalc&apos; completely with a factor of 64."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;calculation_loop2&apos; (tancoeff/tancoeff/tancalc.cpp:116) in function &apos;tancalc&apos; completely with a factor of 16."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;result_sum&apos; (tancoeff/tancoeff/tancalc.cpp:127) in function &apos;tancalc&apos; completely with a factor of 16."/>
 	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;popcntdata&apos; (tancoeff/tancoeff/tancalc.cpp:16) in function &apos;popcntdata&apos; completely with a factor of 1024."/>
 	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;popcnt&apos; (tancoeff/tancoeff/tancalc.cpp:6) in function &apos;popcnt&apos; completely with a factor of 512."/>
-	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;ref_local.V&apos; (tancoeff/tancoeff/tancalc.cpp:75) in dimension 1 completely."/>
-	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;refpop_local.V&apos; (tancoeff/tancoeff/tancalc.cpp:77) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;ref_local.V&apos; (tancoeff/tancoeff/tancalc.cpp:79) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;refpop_local.V&apos; (tancoeff/tancoeff/tancalc.cpp:81) in dimension 1 completely."/>
 	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;cmpr_local&apos;  in dimension 1 completely."/>
 	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;cmprpop_local&apos;  in dimension 1 completely."/>
-	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;result_local&apos; (tancoeff/tancoeff/tancalc.cpp:83) in dimension 1 completely."/>
-	<Message severity="WARNING" prefix="[XFORM 203-104]" key="XFORM_PARTITION_VAR_INDEX_118" tag="ARRAY,SDX_ARRAY" content="Completely partitioning array &apos;cmpr_local&apos;  accessed through non-constant indices on dimension 1 (tancoeff/tancoeff/tancalc.cpp:31:3), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead."/>
-	<Message severity="WARNING" prefix="[XFORM 203-104]" key="XFORM_PARTITION_VAR_INDEX_118" tag="ARRAY,SDX_ARRAY" content="Completely partitioning array &apos;cmprpop_local&apos;  accessed through non-constant indices on dimension 1 (tancoeff/tancoeff/tancalc.cpp:33:32), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead."/>
-	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (tancoeff/tancoeff/tancalc.cpp:92:85) to (tancoeff/tancoeff/tancalc.cpp:107:4) in function &apos;tancalc&apos;... converting 6 basic blocks."/>
-	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;tancalc&apos; (tancoeff/tancoeff/tancalc.cpp:67)...64 expression(s) balanced."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;result_local&apos; (tancoeff/tancoeff/tancalc.cpp:87) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (tancoeff/tancoeff/tancalc.cpp:96:80) to (tancoeff/tancoeff/tancalc.cpp:114:4) in function &apos;tancalc&apos;... converting 6 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;tancalc&apos; (tancoeff/tancoeff/tancalc.cpp:71)...16 expression(s) balanced."/>
 	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;popcntdata&apos; (tancoeff/tancoeff/tancalc.cpp:18:19)...1023 expression(s) balanced."/>
 	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;popcnt&apos; (tancoeff/tancoeff/tancalc.cpp:8:19)...511 expression(s) balanced."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:01:35 ; elapsed = 00:01:36 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 16014 ; free virtual = 22145"/>
-	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="LOOP,SDX_LOOP" content="Cannot flatten a loop nest &apos;mainloop&apos; (tancoeff/tancoeff/tancalc.cpp:89:87) in function &apos;tancalc&apos; : 
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:01:12 ; elapsed = 00:01:13 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 15408 ; free virtual = 22437"/>
+	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="LOOP,SDX_LOOP" content="Cannot flatten a loop nest &apos;mainloop&apos; (tancoeff/tancoeff/tancalc.cpp:93:82) in function &apos;tancalc&apos; : 
 
-the outer loop is not a perfect loop."/>
-	<Message severity="INFO" prefix="[ANALYSIS 214-11]" key="ANALYSIS_BITWIDTH_OVERSIZE_77" tag="" content="Detected a very large bitwidth 66240 for &apos;&apos;: maximum allowed is 65535."/>
-	<Message severity="INFO" prefix="[ANALYSIS 214-11]" key="ANALYSIS_BITWIDTH_OVERSIZE_77" tag="" content="Detected a very large bitwidth 66240 for &apos;data_read&apos;: maximum allowed is 65535."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:02:21 ; elapsed = 00:02:22 . Memory (MB): peak = 909.750 ; gain = 200.000 ; free physical = 15929 ; free virtual = 22061"/>
+more than one sub loop."/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst read of a total cumulative length 128 on port &apos;gmem0&apos; (tancoeff/tancoeff/tancalc.cpp:102:46). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst read of a total cumulative length 32 on port &apos;gmem0&apos; (tancoeff/tancoeff/tancalc.cpp:32:57). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:01:46 ; elapsed = 00:01:47 . Memory (MB): peak = 909.750 ; gain = 200.000 ; free physical = 15368 ; free virtual = 22397"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1317" tag="" content="Starting hardware synthesis ..."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1385" tag="" content="Synthesizing &apos;tancalc&apos; ..."/>
 	<Message severity="WARNING" prefix="[SYN 201-107]" key="SYN_PORT_NAME_ILLEGAL_593" tag="" content="Renaming port name &apos;tancalc/output&apos; to &apos;tancalc/output_r&apos; to avoid the conflict with HDL keywords or other object names."/>
@@ -48,27 +46,13 @@ the outer loop is not a perfect loop."/>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_46" tag="" content="Pipelining function &apos;popcnt&apos;."/>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 142.75 seconds; current allocated memory: 216.166 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 108.03 seconds; current allocated memory: 170.381 MB."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 2.51 seconds; current allocated memory: 222.183 MB."/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
-	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;data_read&apos;"/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;data_read_loop&apos;."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 12."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 9.92 seconds; current allocated memory: 225.191 MB."/>
-	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
-	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
-	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
-	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
-	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.4 seconds; current allocated memory: 239.691 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 2.14 seconds; current allocated memory: 176.413 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;popcntdata&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
@@ -76,57 +60,40 @@ the outer loop is not a perfect loop."/>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_46" tag="" content="Pipelining function &apos;popcntdata&apos;."/>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 3.92 seconds; current allocated memory: 249.535 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 3.78 seconds; current allocated memory: 186.309 MB."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 6.17 seconds; current allocated memory: 261.512 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 5.55 seconds; current allocated memory: 198.267 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;tancalc&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;data_read_loop&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 5."/>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;calculation_loop&apos;."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 14."/>
-	<Message severity="WARNING" prefix="[SCHED 204-21]" key="SCHED_DELAY_EXCEEDED_76" tag="SDX_KERNEL,SCHEDULE" content="Estimated clock period (2.796ns) exceeds the target (target clock period: 3.333ns, clock uncertainty: 0.9ns, effective delay budget: 2.433ns)."/>
-	<Message severity="WARNING" prefix="[SCHED 204-21]" key="SCHED_DELAY_EXCEEDED_74" tag="SDX_KERNEL,SCHEDULE" content="The critical path in module &apos;tancalc&apos; consists of the following:
-	&apos;load&apos; operation (&apos;result_0_load_1&apos;, tancoeff/tancoeff/tancalc.cpp:122) on local variable &apos;result_0&apos; [690]  (0 ns)
-	&apos;add&apos; operation (&apos;add_ln122&apos;, tancoeff/tancoeff/tancalc.cpp:122) [1270]  (0 ns)
-	&apos;add&apos; operation (&apos;add_ln122_2&apos;, tancoeff/tancoeff/tancalc.cpp:122) [1273]  (0.731 ns)
-	&apos;add&apos; operation (&apos;add_ln122_6&apos;, tancoeff/tancoeff/tancalc.cpp:122) [1280]  (0 ns)
-	&apos;add&apos; operation (&apos;add_ln122_14&apos;, tancoeff/tancoeff/tancalc.cpp:122) [1295]  (0.731 ns)
-	&apos;add&apos; operation (&apos;add_ln122_30&apos;, tancoeff/tancoeff/tancalc.cpp:122) [1326]  (0 ns)
-	&apos;add&apos; operation (&apos;add_ln122_63&apos;, tancoeff/tancoeff/tancalc.cpp:122) [1390]  (0.731 ns)
-	&apos;store&apos; operation (&apos;result_0_write_ln122&apos;, tancoeff/tancoeff/tancalc.cpp:122) of variable &apos;add_ln122_63&apos;, tancoeff/tancoeff/tancalc.cpp:122 on local variable &apos;result_0&apos; [1391]  (0.603 ns)"/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 7."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 5.37 seconds; current allocated memory: 265.971 MB."/>
-	<Message severity="INFO" prefix="[HLS 200-434]" key="HLS 200-434" tag="SDX" content="Only 1 loops out of a total 2 loops have been pipelined in this design."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 3.99 seconds; current allocated memory: 200.760 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-434]" key="HLS 200-434" tag="SDX" content="Only 2 loops out of a total 3 loops have been pipelined in this design."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 35.38 seconds; current allocated memory: 292.855 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 8.92 seconds; current allocated memory: 208.304 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;popcnt&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;popcnt&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 93.4 seconds; current allocated memory: 364.820 MB."/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;data_read&apos;"/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
-	<Message severity="INFO" prefix="[RTGEN 206-104]" key="RTGEN_104_852" tag="" content="Estimated max fanout for &apos;data_read&apos; is 66241 from HDL expression: (1&apos;b1 == ap_CS_fsm_state14)"/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;tancalc_mux_646_1024_1_1&apos;: 65 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;tancalc_mux_646_11_1_1&apos;: 64 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;tancalc_mux_646_1_1_1&apos;: 64 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;data_read&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 12.32 seconds; current allocated memory: 477.715 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 23.87 seconds; current allocated memory: 234.440 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;popcntdata&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;popcntdata&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 4.91 seconds; current allocated memory: 526.590 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 4.95 seconds; current allocated memory: 281.930 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;tancalc&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
@@ -135,13 +102,14 @@ the outer loop is not a perfect loop."/>
 	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;tancalc/input_V&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
 	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;tancalc/output_r&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
 	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on function &apos;tancalc&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_851" tag="" content="Bundling port &apos;return&apos;, &apos;input_V&apos; and &apos;output_r&apos; to AXI-Lite port control."/>
-	<Message severity="INFO" prefix="[RTGEN 206-104]" key="RTGEN_104_852" tag="" content="Estimated max fanout for &apos;tancalc&apos; is 132564 from HDL expression: ((grp_data_read_fu_736_ap_done == 1&apos;b1) &amp; (1&apos;b1 == ap_CS_fsm_state3))"/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;tancalc_mux_42_1024_1_1&apos;: 2 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_851" tag="" content="Bundling port &apos;return&apos;, &apos;input_V&apos; to AXI-Lite port control."/>
+	<Message severity="INFO" prefix="[RTGEN 206-104]" key="RTGEN_104_852" tag="" content="Estimated max fanout for &apos;tancalc&apos; is 16384 from HDL expression: ((1&apos;b0 == ap_block_pp1_stage0_11001) &amp; (icmp_ln114_fu_1729_p2 == 1&apos;d1))"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;tancalc_mux_164_11_1_1&apos;: 16 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;tancalc_mux_42_1024_1_1&apos;: 1 instance(s)."/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;tancalc_mux_42_11_1_1&apos;: 1 instance(s)."/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;tancalc&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 13.93 seconds; current allocated memory: 610.919 MB."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:06:06 ; elapsed = 00:07:14 . Memory (MB): peak = 1489.949 ; gain = 780.199 ; free physical = 15341 ; free virtual = 21567"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 9.72 seconds; current allocated memory: 339.144 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:02:59 ; elapsed = 00:03:20 . Memory (MB): peak = 1117.762 ; gain = 408.012 ; free physical = 15080 ; free virtual = 22189"/>
 	<Message severity="INFO" prefix="[VHDL 208-304]" key="VHDL_304_1063" tag="" content="Generating VHDL RTL for tancalc with prefix tancalc_."/>
 	<Message severity="INFO" prefix="[VLOG 209-307]" key="VLOG_307_1064" tag="" content="Generating Verilog RTL for tancalc with prefix tancalc_."/>
 </Messages>

@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'popcnt'
 ================================================================
-* Date:           Tue Oct 29 01:15:00 2019
+* Date:           Thu Nov  7 02:21:46 2019
 
 * Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
 * Project:        tancoeff
@@ -2139,8 +2139,8 @@ Target clock period: 3.33ns, clock uncertainty: 0.9ns.
  <State 1>: 2.15ns
 The critical path consists of the following:
 	wire read on port 'x_V' (tancoeff/tancoeff/tancalc.cpp:8) [2]  (0 ns)
-	'add' operation ('add_ln700_1069', tancoeff/tancoeff/tancalc.cpp:8) [1121]  (0.138 ns)
-	'add' operation ('add_ln700_1070', tancoeff/tancoeff/tancalc.cpp:8) [1123]  (0.234 ns)
+	'add' operation ('add_ln700_1071', tancoeff/tancoeff/tancalc.cpp:8) [1125]  (0.138 ns)
+	'add' operation ('add_ln700_1073', tancoeff/tancoeff/tancalc.cpp:8) [1129]  (0.234 ns)
 	'add' operation ('add_ln700_1074', tancoeff/tancoeff/tancalc.cpp:8) [1131]  (0.261 ns)
 	'add' operation ('add_ln700_1082', tancoeff/tancoeff/tancalc.cpp:8) [1147]  (0.336 ns)
 	'add' operation ('add_ln700_1083', tancoeff/tancoeff/tancalc.cpp:8) [1149]  (0.341 ns)

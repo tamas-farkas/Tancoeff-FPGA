@@ -86,8 +86,8 @@ void XTancalc_tancalc_DisableAutoRestart(XTancalc_tancalc *InstancePtr);
 
 void XTancalc_tancalc_Set_input_V(XTancalc_tancalc *InstancePtr, u64 Data);
 u64 XTancalc_tancalc_Get_input_V(XTancalc_tancalc *InstancePtr);
-void XTancalc_tancalc_Set_output_r(XTancalc_tancalc *InstancePtr, u64 Data);
-u64 XTancalc_tancalc_Get_output_r(XTancalc_tancalc *InstancePtr);
+void XTancalc_tancalc_Set_output_V(XTancalc_tancalc *InstancePtr, u64 Data);
+u64 XTancalc_tancalc_Get_output_V(XTancalc_tancalc *InstancePtr);
 
 void XTancalc_tancalc_InterruptGlobalEnable(XTancalc_tancalc *InstancePtr);
 void XTancalc_tancalc_InterruptGlobalDisable(XTancalc_tancalc *InstancePtr);

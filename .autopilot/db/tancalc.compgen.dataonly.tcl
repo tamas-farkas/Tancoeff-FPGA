@@ -14,7 +14,7 @@ input_V {
 	offset 16
 	offset_end 27
 }
-output_r { 
+output_V { 
 	dir I
 	width 64
 	depth 1

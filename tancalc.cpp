@@ -42,36 +42,11 @@ void data_read(volatile din_type *input, data_type *data_local, popcnt_type *dat
 	}
 }
 
-
-void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *cmprpop_local, short *result_local){
-	calculation_loop1:
-	for(unsigned short ref_num = 0; ref_num < BUFFER_SIZE1; ref_num++){
-	#pragma HLS pipeline II=1
-		calculation_loop2:
-		for(unsigned short cmpr_num = 0; cmpr_num < BUFFER_SIZE2; cmpr_num++){
-		#pragma HLS unroll
-			popcnt_type temp;
-			result_local[cmpr_num] = 0;
-			temp = popcntdata(ref_local[ref_num] & cmpr_local[cmpr_num]);
-			if(temp >= (refpop_local[ref_num]  + cmprpop_local[cmpr_num]  - temp)){
-				result_local[cmpr_num] = 1;
-			}
-		}
-	}
-}
-
-void result_write(int *output, short *result_local, int *result){
-	result_sum:
-	for(unsigned short j = 0; j < BUFFER_SIZE2; j++){
-	#pragma HLS unroll
-		*result += result_local[j];
-	}
-}
-
-void tancalc(volatile din_type *input, volatile int *output){
+void tancalc(volatile din_type *input, volatile din_type *output){
 
 #pragma HLS INTERFACE m_axi depth=database_size port=input offset=slave bundle=gmem0 //max_read_burst_length=256	//TODO	4KB - 64word
-#pragma HLS INTERFACE m_axi port=output offset=slave bundle=gmem1
+#pragma HLS INTERFACE m_axi depth=output_size port=output offset=slave bundle=gmem1
+//#pragma HLS INTERFACE ap_fifo port=output
 #pragma HLS INTERFACE s_axilite port = input bundle = control
 #pragma HLS INTERFACE s_axilite port = output bundle = control
 #pragma HLS INTERFACE s_axilite port = return bundle = control
@@ -84,11 +59,11 @@ void tancalc(volatile din_type *input, volatile int *output){
 		#pragma HLS ARRAY_PARTITION variable=cmpr_local complete dim=1
 	popcnt_type cmprpop_local[BUFFER_SIZE2];
 		#pragma HLS ARRAY_PARTITION variable=cmprpop_local complete dim=1
-	short result_local[BUFFER_SIZE2];	// Local Memory to store result
+	result_type result_local[BUFFER_SIZE2];	// Local Memory to store result
 		#pragma HLS ARRAY_PARTITION variable=result_local complete dim=1
 
 
-	int result = 0;
+	din_type result = 0;
 
 	mainloop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < DATA_SIZE2/BUFFER_SIZE2; cmpr_chunk_num++){
 		data_read(&input[DATA_SIZE1*VECTOR_SIZE], cmpr_local, cmprpop_local, BUFFER_SIZE2 ,cmpr_chunk_num*BUFFER_SIZE2);
@@ -109,7 +84,6 @@ void tancalc(volatile din_type *input, volatile int *output){
 				ref_local[num] = (temp_input, ref_local_temp);
 				refpop_local[num] += popcnt(ref_local[num].range(num_hi, num_lo));
 			}
-			//Data_read
 			//Calculation
 			if(num_hi == DATAWIDTH - 1){
 				calculation_loop2:
@@ -122,24 +96,15 @@ void tancalc(volatile din_type *input, volatile int *output){
 						result_local[cmpr_num] = 1;
 					}
 				}
-			//Calculation
-				result_sum:
-				for(unsigned short j = 0; j < BUFFER_SIZE2; j++){
-				#pragma HLS unroll
-					result += result_local[j];
-				}
+				//Data_write
+					result_sum:
+					for(unsigned short j = 0; j < BUFFER_SIZE2; j++){
+					#pragma HLS unroll
+						result = (result << 1) || result_local[j];
+					}
+					output[(data_part_num+1)/VECTOR_SIZE - 1 + cmpr_chunk_num*DATA_SIZE1] = result;
+					result = 0;
 			}
 		}
-
-/*
-		calculation_loop:
-		for(int ref_chunk_num = 0; ref_chunk_num < DATA_SIZE1*VECTOR_SIZE; ref_chunk_num++){
-			#pragma HLS dataflow
-			data_read(input, ref_local, refpop_local, BUFFER_SIZE1, ref_chunk_num*BUFFER_SIZE1);
-			calculation(ref_local, cmpr_local, refpop_local, cmprpop_local, result_local);
-			result_write(output,result_local,&result);
-		}
-*/
 	}
-	output[0] = result;
 }

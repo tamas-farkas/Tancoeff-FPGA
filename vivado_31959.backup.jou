@@ -1,0 +1,73 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Nov  3 19:18:01 2019
+# Process ID: 31959
+# Current directory: /home/student/workspace/tancoeff/tancoeff
+# Command line: vivado
+# Log file: /home/student/workspace/tancoeff/tancoeff/vivado.log
+# Journal file: /home/student/workspace/tancoeff/tancoeff/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project tancoeff_vivado /home/student/workspace/tancoeff_vivado -part xcvu9p-fsgd2104-2L-e
+set_property board_part xilinx.com:vcu1525:part0:1.3 [current_project]
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.autotb.v
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse {/home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_slave_control.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_master_gmem0.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_master_gmem1.v}
+update_compile_order -fileset sim_1
+add_files -norecurse {/home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_popcntdata.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_gmem0_m_axi.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_42_11_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.autotb.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_42_1024_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_gmem1_m_axi.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_164_11_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_control_s_axi.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_popcnt.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.autotb.v] -no_script -reset -force -quiet
+remove_files  {/home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.autotb.v}
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.autotb.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_master_gmem0.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_master_gmem1.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_slave_control.v] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 {/home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.autotb.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_master_gmem0.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_master_gmem1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_slave_control.v}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_42_11_1_1.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_42_1024_1_1.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_164_11_1_1.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_control_s_axi.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_popcntdata.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_popcnt.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_gmem1_m_axi.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_gmem0_m_axi.v] -no_script -reset -force -quiet
+remove_files  {/home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_42_11_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_42_1024_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_164_11_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_control_s_axi.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_popcntdata.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_popcnt.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_gmem1_m_axi.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_gmem0_m_axi.v}
+add_files -norecurse {/home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_popcntdata.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_42_11_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_slave_control.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_master_gmem0.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_master_gmem1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_popcnt.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_gmem0_m_axi.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.autotb.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_42_1024_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_gmem1_m_axi.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_164_11_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/glbl.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_control_s_axi.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.autotb.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_control_s_axi.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_gmem0_m_axi.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_gmem1_m_axi.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_popcntdata.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_popcnt.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_164_11_1_1.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_42_1024_1_1.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_42_11_1_1.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_master_gmem0.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_master_gmem1.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_slave_control.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/student/workspace/tancoeff/tancoeff/sim/verilog/glbl.v] -no_script -reset -force -quiet
+remove_files  {/home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.autotb.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_control_s_axi.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_gmem0_m_axi.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_gmem1_m_axi.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_popcntdata.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_popcnt.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_164_11_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_42_1024_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_42_11_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_master_gmem0.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_master_gmem1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_slave_control.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/glbl.v}
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse {/home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_popcntdata.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_42_11_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_slave_control.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_master_gmem0.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_master_gmem1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_popcnt.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_gmem0_m_axi.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.autotb.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_42_1024_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_gmem1_m_axi.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_164_11_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/glbl.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_control_s_axi.v}
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+source apatb_tancalc_top.tcl
+run 10 us
+run 10 us
+run 10 ms
+run all
+add_files -norecurse {/home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_popcntdata.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_42_11_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_slave_control.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_master_gmem0.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/AESL_axi_master_gmem1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_popcnt.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_gmem0_m_axi.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc.autotb.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_42_1024_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_gmem1_m_axi.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_mux_164_11_1_1.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/glbl.v /home/student/workspace/tancoeff/tancoeff/sim/verilog/tancalc_tancalc_control_s_axi.v}
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_sim

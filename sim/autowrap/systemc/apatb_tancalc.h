@@ -5,4 +5,4 @@
 
 extern "C" void AESL_WRAP_tancalc (
 volatile ap_uint<512>* input,
-volatile int* output);
+volatile ap_uint<512>* output);

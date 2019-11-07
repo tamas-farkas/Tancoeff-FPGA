@@ -6737,20 +6737,227 @@ inline bool operator!=(
 # 399 "/tools/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_fixed.h" 2
 # 368 "/tools/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_int.h" 2
 # 6 "tancoeff/tancoeff/tancalc.h" 2
-# 15 "tancoeff/tancoeff/tancalc.h"
+# 1 "/tools/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_stream.h" 1
+# 66 "/tools/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_stream.h"
+# 1 "/tools/Xilinx/Vivado/2019.1/common/technology/autopilot/etc/autopilot_enum.h" 1
+# 58 "/tools/Xilinx/Vivado/2019.1/common/technology/autopilot/etc/autopilot_enum.h"
+enum SsdmDataTypes {
+    _ssdm_sc_int = 0,
+    _ssdm_c_int = _ssdm_sc_int,
+    _ssdm_sc_uint = 1,
+    _ssdm_c_uint = _ssdm_sc_uint,
+    _ssdm_sc_bigint = 2,
+    _ssdm_sc_biguint = 3,
+};
+
+
+
+enum SsdmPortTypes {
+    _ssdm_sc_in = 0,
+    _ssdm_sc_out = 1,
+    _ssdm_sc_inout = 2,
+    _ssdm_sc_in_clk,
+
+    _ssdm_fifo_in,
+    _ssdm_sc_fifo_in = _ssdm_fifo_in,
+    _ssdm_tlm_fifo_in = _ssdm_fifo_in,
+    _ssdm_fifo_out,
+    _ssdm_sc_fifo_out = _ssdm_fifo_out,
+    _ssdm_tlm_fifo_out = _ssdm_fifo_out,
+    _ssdm_fifo_inout,
+    _ssdm_sc_fifo_inout = _ssdm_fifo_inout,
+    _ssdm_tlm_fifo_inout = _ssdm_fifo_inout,
+    _ssdm_sc_bus,
+    _ssdm_hls_bus_port = _ssdm_sc_bus,
+    _ssdm_AXI4M_bus_port = _ssdm_sc_bus,
+    _ssdm_port_end,
+};
+
+
+
+enum SsdmProcessTypes {
+    _ssdm_method = 0,
+    _ssdm_sc_method = _ssdm_method,
+    _ssdm_thread = 1,
+    _ssdm_sc_thread = _ssdm_thread,
+    _ssdm_cthread = 2,
+    _ssdm_sc_cthread = _ssdm_cthread,
+    _ssdm_process_end,
+};
+
+
+
+enum SsdmSensitiveTypes {
+    _ssdm_sensitive = 0,
+    _ssdm_sensitive_pos,
+    _ssdm_sensitive_neg,
+    _ssdm_sensitive_reset0,
+    _ssdm_sensitive_reset1,
+    _ssdm_sensitive_end,
+};
+
+
+
+enum SsdmChannelTypes {
+    _ssdm_sc_sig,
+    _ssdm_fifo,
+    _ssdm_sc_fifo = _ssdm_fifo,
+    _ssdm_mem_fifo,
+    _ssdm_sc_mem_fifo = _ssdm_mem_fifo,
+};
+
+
+enum SsdmRegionTypes {
+    _ssdm_region_reset,
+    _ssdm_region_protocol,
+    _ssdm_region_pipeline,
+    _ssdm_region_parallel,
+};
+# 67 "/tools/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_stream.h" 2
+
+
+namespace hls {
+# 78 "/tools/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_stream.h"
+template<typename __STREAM_T__>
+class stream
+{
+  public:
+
+    inline __attribute__((always_inline)) stream() {
+    }
+
+    inline __attribute__((always_inline)) stream(const char* name) {
+    }
+
+
+  private:
+    inline __attribute__((always_inline)) stream(const stream< __STREAM_T__ >& chn):V(chn.V) {
+    }
+
+    inline __attribute__((always_inline)) stream& operator= (const stream< __STREAM_T__ >& chn) {
+        V = chn.V;
+        return *this;
+    }
+
+  public:
+
+    inline __attribute__((always_inline)) void operator >> (__STREAM_T__& rdata) {
+        read(rdata);
+    }
+
+    inline __attribute__((always_inline)) void operator << (const __STREAM_T__& wdata) {
+        write(wdata);
+    }
+
+
+  public:
+
+    inline __attribute__((always_inline)) bool empty() const {
+
+        bool tmp = _ssdm_StreamCanRead(&V);
+        return !tmp;
+
+
+
+    }
+
+    inline __attribute__((always_inline)) bool full() const {
+
+        bool tmp = _ssdm_StreamCanWrite(&V);
+        return !tmp;
+
+
+
+    }
+
+
+    inline __attribute__((always_inline)) void read(__STREAM_T__& dout) {
+
+        __STREAM_T__ tmp;
+        _ssdm_StreamRead(&V, &tmp);
+        dout = tmp;
+
+
+
+    }
+
+    inline __attribute__((always_inline)) __STREAM_T__ read() {
+       __STREAM_T__ tmp;
+       read(tmp);
+       return tmp;
+    }
+
+
+    inline __attribute__((always_inline)) bool read_nb(__STREAM_T__& dout) {
+
+        __STREAM_T__ tmp;
+        bool empty_n = _ssdm_StreamNbRead(&V, &tmp);
+        dout = tmp;
+        return empty_n;
+
+
+
+    }
+
+
+    inline __attribute__((always_inline)) void write(const __STREAM_T__& din) {
+
+        __STREAM_T__ tmp = din;
+        _ssdm_StreamWrite(&V, &tmp);
+
+
+
+    }
+
+
+    inline __attribute__((always_inline)) bool write_nb(const __STREAM_T__& din) {
+
+        __STREAM_T__ tmp = din;
+        bool full_n = _ssdm_StreamNbWrite(&V, &tmp);
+        return full_n;
+
+
+
+    }
+
+
+
+    inline __attribute__((always_inline)) unsigned size() {
+        unsigned size = _ssdm_StreamSize(&V);
+        return size;
+    }
+
+
+  public:
+    __STREAM_T__ V;
+};
+
+
+}
+# 7 "tancoeff/tancoeff/tancalc.h" 2
+
+
+
+
+
+
+
+
 const unsigned int database_size= 64*64*2;
+const unsigned int output_size= 64*64/16;
 
 typedef ap_uint<1024> data_type;
 typedef ap_uint<512> din_type;
 typedef ap_uint<11> popcnt_type;
+typedef ap_uint<1> result_type;
 
 
 popcnt_type popcnt(din_type x);
 popcnt_type popcntdata(data_type x);
-void data_read(volatile din_type *input, data_type *data_local, short *datapop_local, short buffer_size, int chunk_num);
-
-void calculation(data_type *ref_local, data_type *cmpr_local, short *refpop_local, short *cmprpop_local, short *result_local);
-extern "C" {void tancalc(volatile din_type *input, volatile int *output);}
+void data_read(volatile din_type *input, data_type *data_local, popcnt_type *datapop_local, short buffer_size, int chunk_num);
+void calculation(volatile din_type *input, data_type *ref_local, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *cmprpop_local);
+void result_write(volatile din_type *output, din_type *result_out, int cmpr_chunk_num);
+extern "C" {void tancalc(volatile din_type *input, volatile din_type *output);}
 # 2 "tancoeff/tancoeff/tancalc.cpp" 2
 
 popcnt_type popcnt(din_type x){
@@ -6775,9 +6982,9 @@ popcnt_type popcntdata(data_type x){
 
 
 void data_read(volatile din_type *input, data_type *data_local, popcnt_type *datapop_local, short buffer_size, int chunk_num){
-#pragma HLS INLINE
+
  data_read_loop:
- for(short data_part_num = 0; data_part_num < buffer_size*(1024 / 512); data_part_num++){
+ for(int data_part_num = 0; data_part_num < buffer_size*(1024 / 512); data_part_num++){
 #pragma HLS pipeline II=1
  int num = ((data_part_num - data_part_num % (1024 / 512))/(1024 / 512)) % buffer_size;
   int num_hi = 512 * (data_part_num % (1024 / 512) + 1) - 1;
@@ -6796,35 +7003,36 @@ void data_read(volatile din_type *input, data_type *data_local, popcnt_type *dat
 }
 
 
-void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *cmprpop_local, short *result_local){
- calculation_loop1:
- for(unsigned short ref_num = 0; ref_num < 4; ref_num++){
-#pragma HLS pipeline II=1
+void calculation(volatile din_type *input, data_type *ref_local, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *cmprpop_local, result_type *result_local, int num){
+
  calculation_loop2:
-  for(unsigned short cmpr_num = 0; cmpr_num < 16; cmpr_num++){
+ for(unsigned short cmpr_num = 0; cmpr_num < 16; cmpr_num++){
 #pragma HLS unroll
  popcnt_type temp;
-   result_local[cmpr_num] = 0;
-   temp = popcntdata(ref_local[ref_num] & cmpr_local[cmpr_num]);
-   if(temp >= (refpop_local[ref_num] + cmprpop_local[cmpr_num] - temp)){
-    result_local[cmpr_num] = 1;
-   }
+  result_local[cmpr_num] = 0;
+  temp = popcntdata(ref_local[num] & cmpr_local[cmpr_num]);
+  if(temp >= (refpop_local[num] + cmprpop_local[cmpr_num] - temp)){
+   result_local[cmpr_num] = 1;
   }
  }
 }
 
-void result_write(int *output, short *result_local, int *result){
+void result_write(volatile din_type *output, result_type *result_local, int cmpr_chunk_num, int data_num){
+
+ din_type result = 0;
  result_sum:
  for(unsigned short j = 0; j < 16; j++){
 #pragma HLS unroll
- *result += result_local[j];
+ result = (result << 1) || result_local[j];
  }
+ output[data_num + cmpr_chunk_num*64] = result;
 }
 
-void tancalc(volatile din_type *input, volatile int *output){
+void tancalc(volatile din_type *input, volatile din_type *output){
 
 #pragma HLS INTERFACE m_axi depth=database_size port=&input offset=slave bundle=gmem0
-#pragma HLS INTERFACE m_axi port=&output offset=slave bundle=gmem1
+#pragma HLS INTERFACE m_axi depth=output_size port=&output offset=slave bundle=gmem1
+
 #pragma HLS INTERFACE s_axilite port = &input bundle = control
 #pragma HLS INTERFACE s_axilite port = &output bundle = control
 #pragma HLS INTERFACE s_axilite port = return bundle = control
@@ -6837,53 +7045,19 @@ void tancalc(volatile din_type *input, volatile int *output){
 #pragma HLS ARRAY_PARTITION variable=&cmpr_local complete dim=1
  popcnt_type cmprpop_local[16];
 #pragma HLS ARRAY_PARTITION variable=&cmprpop_local complete dim=1
- short result_local[16];
+ result_type result_local[16];
 #pragma HLS ARRAY_PARTITION variable=&result_local complete dim=1
 
 
- int result = 0;
-
  mainloop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < 64/16; cmpr_chunk_num++){
-  data_read(&input[64*(1024 / 512)], cmpr_local, cmprpop_local, 16 ,cmpr_chunk_num*16);
-  calculation_loop:
-  for(int data_part_num = 0; data_part_num < 64*(1024 / 512); data_part_num++){
-#pragma HLS pipeline II=1
- int num = ((data_part_num - data_part_num % (1024 / 512))/(1024 / 512)) % 4;
-   int num_hi = 512 * (data_part_num % (1024 / 512) + 1) - 1;
-   int num_lo = 512 * data_part_num % (1024 / 512);
-
-   din_type temp_input = input[data_part_num];
-   if(num_lo == 0){
-    ref_local[num] = (din_type(0),temp_input);
-    refpop_local[num] = popcnt(ref_local[num].range(num_hi, num_lo));
-   }
-   else{
-    din_type ref_local_temp = ref_local[num].range(512 - 1, 0);
-    ref_local[num] = (temp_input, ref_local_temp);
-    refpop_local[num] += popcnt(ref_local[num].range(num_hi, num_lo));
-   }
-
-
-   if(num_hi == 1024 - 1){
-    calculation_loop2:
-    for(unsigned short cmpr_num = 0; cmpr_num < 16; cmpr_num++){
-#pragma HLS unroll
- popcnt_type temp;
-     result_local[cmpr_num] = 0;
-     temp = popcntdata(ref_local[num] & cmpr_local[cmpr_num]);
-     if(temp >= (refpop_local[num] + cmprpop_local[cmpr_num] - temp)){
-      result_local[cmpr_num] = 1;
-     }
-    }
-
-    result_sum:
-    for(unsigned short j = 0; j < 16; j++){
-#pragma HLS unroll
- result += result_local[j];
-    }
-   }
+  data_read(&input[64*(1024 / 512)], cmpr_local, cmprpop_local, 16, cmpr_chunk_num*16);
+# 133 "tancoeff/tancoeff/tancalc.cpp"
+  subloop:
+  for(int data_num = 0; data_num < 64; data_num++){
+#pragma HLS dataflow
+ data_read(input, ref_local, refpop_local, 4, data_num*(1024 / 512));
+   calculation(input, ref_local, cmpr_local, refpop_local, cmprpop_local, result_local, data_num%4);
+   result_write(output, result_local, cmpr_chunk_num, data_num);
   }
-# 143 "tancoeff/tancoeff/tancalc.cpp"
  }
- output[0] = result;
 }

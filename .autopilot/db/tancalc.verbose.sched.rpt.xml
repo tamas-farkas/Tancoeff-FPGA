@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'tancalc'" level="0">
-<item name = "Date">Tue Oct 29 01:15:15 2019
+<item name = "Date">Thu Nov  7 01:36:50 2019
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">tancoeff</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">751, 751, 751, 751, none</column>
+<column name="">7209, 7209, 7209, 7209, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,9 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- mainloop">744, 744, 186, -, -, 4, no</column>
-<column name=" + data_read_loop">35, 35, 5, 1, 1, 32, yes</column>
-<column name=" + calculation_loop">133, 133, 7, 1, 1, 128, yes</column>
+<column name="- mainloop">7208, 7208, 1802, -, -, 4, no</column>
 </table>
 </item>
 </section>

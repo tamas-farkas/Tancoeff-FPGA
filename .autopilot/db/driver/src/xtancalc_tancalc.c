@@ -92,22 +92,22 @@ u64 XTancalc_tancalc_Get_input_V(XTancalc_tancalc *InstancePtr) {
     return Data;
 }
 
-void XTancalc_tancalc_Set_output_r(XTancalc_tancalc *InstancePtr, u64 Data) {
+void XTancalc_tancalc_Set_output_V(XTancalc_tancalc *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XTancalc_tancalc_WriteReg(InstancePtr->Control_BaseAddress, XTANCALC_TANCALC_CONTROL_ADDR_OUTPUT_R_DATA, (u32)(Data));
-    XTancalc_tancalc_WriteReg(InstancePtr->Control_BaseAddress, XTANCALC_TANCALC_CONTROL_ADDR_OUTPUT_R_DATA + 4, (u32)(Data >> 32));
+    XTancalc_tancalc_WriteReg(InstancePtr->Control_BaseAddress, XTANCALC_TANCALC_CONTROL_ADDR_OUTPUT_V_DATA, (u32)(Data));
+    XTancalc_tancalc_WriteReg(InstancePtr->Control_BaseAddress, XTANCALC_TANCALC_CONTROL_ADDR_OUTPUT_V_DATA + 4, (u32)(Data >> 32));
 }
 
-u64 XTancalc_tancalc_Get_output_r(XTancalc_tancalc *InstancePtr) {
+u64 XTancalc_tancalc_Get_output_V(XTancalc_tancalc *InstancePtr) {
     u64 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XTancalc_tancalc_ReadReg(InstancePtr->Control_BaseAddress, XTANCALC_TANCALC_CONTROL_ADDR_OUTPUT_R_DATA);
-    Data += (u64)XTancalc_tancalc_ReadReg(InstancePtr->Control_BaseAddress, XTANCALC_TANCALC_CONTROL_ADDR_OUTPUT_R_DATA + 4) << 32;
+    Data = XTancalc_tancalc_ReadReg(InstancePtr->Control_BaseAddress, XTANCALC_TANCALC_CONTROL_ADDR_OUTPUT_V_DATA);
+    Data += (u64)XTancalc_tancalc_ReadReg(InstancePtr->Control_BaseAddress, XTANCALC_TANCALC_CONTROL_ADDR_OUTPUT_V_DATA + 4) << 32;
     return Data;
 }
 

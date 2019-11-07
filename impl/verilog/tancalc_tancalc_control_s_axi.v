@@ -34,7 +34,7 @@ module tancalc_tancalc_control_s_axi
     input  wire                          ap_ready,
     input  wire                          ap_idle,
     output wire [63:0]                   input_V,
-    output wire [63:0]                   output_r
+    output wire [63:0]                   output_V
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -60,10 +60,10 @@ module tancalc_tancalc_control_s_axi
 // 0x14 : Data signal of input_V
 //        bit 31~0 - input_V[63:32] (Read/Write)
 // 0x18 : reserved
-// 0x1c : Data signal of output_r
-//        bit 31~0 - output_r[31:0] (Read/Write)
-// 0x20 : Data signal of output_r
-//        bit 31~0 - output_r[63:32] (Read/Write)
+// 0x1c : Data signal of output_V
+//        bit 31~0 - output_V[31:0] (Read/Write)
+// 0x20 : Data signal of output_V
+//        bit 31~0 - output_V[63:32] (Read/Write)
 // 0x24 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -76,9 +76,9 @@ localparam
     ADDR_INPUT_V_DATA_0  = 6'h10,
     ADDR_INPUT_V_DATA_1  = 6'h14,
     ADDR_INPUT_V_CTRL    = 6'h18,
-    ADDR_OUTPUT_R_DATA_0 = 6'h1c,
-    ADDR_OUTPUT_R_DATA_1 = 6'h20,
-    ADDR_OUTPUT_R_CTRL   = 6'h24,
+    ADDR_OUTPUT_V_DATA_0 = 6'h1c,
+    ADDR_OUTPUT_V_DATA_1 = 6'h20,
+    ADDR_OUTPUT_V_CTRL   = 6'h24,
     WRIDLE               = 2'd0,
     WRDATA               = 2'd1,
     WRRESP               = 2'd2,
@@ -110,7 +110,7 @@ localparam
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
     reg  [63:0]                   int_input_V = 'b0;
-    reg  [63:0]                   int_output_r = 'b0;
+    reg  [63:0]                   int_output_V = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -224,11 +224,11 @@ always @(posedge ACLK) begin
                 ADDR_INPUT_V_DATA_1: begin
                     rdata <= int_input_V[63:32];
                 end
-                ADDR_OUTPUT_R_DATA_0: begin
-                    rdata <= int_output_r[31:0];
+                ADDR_OUTPUT_V_DATA_0: begin
+                    rdata <= int_output_V[31:0];
                 end
-                ADDR_OUTPUT_R_DATA_1: begin
-                    rdata <= int_output_r[63:32];
+                ADDR_OUTPUT_V_DATA_1: begin
+                    rdata <= int_output_V[63:32];
                 end
             endcase
         end
@@ -240,7 +240,7 @@ end
 assign interrupt = int_gie & (|int_isr);
 assign ap_start  = int_ap_start;
 assign input_V   = int_input_V;
-assign output_r  = int_output_r;
+assign output_V  = int_output_V;
 // int_ap_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -357,23 +357,23 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_output_r[31:0]
+// int_output_V[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_output_r[31:0] <= 0;
+        int_output_V[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_OUTPUT_R_DATA_0)
-            int_output_r[31:0] <= (WDATA[31:0] & wmask) | (int_output_r[31:0] & ~wmask);
+        if (w_hs && waddr == ADDR_OUTPUT_V_DATA_0)
+            int_output_V[31:0] <= (WDATA[31:0] & wmask) | (int_output_V[31:0] & ~wmask);
     end
 end
 
-// int_output_r[63:32]
+// int_output_V[63:32]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_output_r[63:32] <= 0;
+        int_output_V[63:32] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_OUTPUT_R_DATA_1)
-            int_output_r[63:32] <= (WDATA[31:0] & wmask) | (int_output_r[63:32] & ~wmask);
+        if (w_hs && waddr == ADDR_OUTPUT_V_DATA_1)
+            int_output_V[63:32] <= (WDATA[31:0] & wmask) | (int_output_V[63:32] & ~wmask);
     end
 end
 

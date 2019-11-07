@@ -7,7 +7,7 @@
 
 #define DATA_SIZE1 64
 #define DATA_SIZE2 64
-#define BUFFER_SIZE1 4
+#define BUFFER_SIZE1 1
 #define BUFFER_SIZE2 16
 #define DATAWIDTH 1024
 #define DATATYPE_SIZE 512

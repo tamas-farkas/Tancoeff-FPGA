@@ -6982,7 +6982,7 @@ _ssdm_Unroll(0,0,0, "");
 
 
 void data_read(volatile din_type *input, data_type *data_local, popcnt_type *datapop_local, short buffer_size, int chunk_num){
-
+_ssdm_InlineSelf(0, "");
  data_read_loop:
  for(int data_part_num = 0; data_part_num < buffer_size*(1024 / 512); data_part_num++){
 _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
@@ -7004,7 +7004,7 @@ _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
 
 
 void calculation(volatile din_type *input, data_type *ref_local, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *cmprpop_local, result_type *result_local, int num){
-
+_ssdm_InlineSelf(0, "");
  calculation_loop2:
  for(unsigned short cmpr_num = 0; cmpr_num < 16; cmpr_num++){
 _ssdm_Unroll(0,0,0, "");
@@ -7018,7 +7018,7 @@ _ssdm_Unroll(0,0,0, "");
 }
 
 void result_write(volatile din_type *output, result_type *result_local, int cmpr_chunk_num, int data_num){
-
+_ssdm_InlineSelf(0, "");
  din_type result = 0;
  result_sum:
  for(unsigned short j = 0; j < 16; j++){
@@ -7037,9 +7037,9 @@ _ssdm_op_SpecInterface(input, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0,
 _ssdm_op_SpecInterface(output, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
 
- data_type ref_local[4];
+ data_type ref_local[1];
 _ssdm_SpecArrayPartition( ref_local, 1, "COMPLETE", 0, "");
- popcnt_type refpop_local[4];
+ popcnt_type refpop_local[1];
 _ssdm_SpecArrayPartition( refpop_local, 1, "COMPLETE", 0, "");
  data_type cmpr_local[16];
 _ssdm_SpecArrayPartition( cmpr_local, 1, "COMPLETE", 0, "");
@@ -7054,9 +7054,10 @@ _ssdm_SpecArrayPartition( result_local, 1, "COMPLETE", 0, "");
 # 133 "tancoeff/tancoeff/tancalc.cpp"
   subloop:
   for(int data_num = 0; data_num < 64; data_num++){
-_ssdm_op_SpecDataflowPipeline(-1, 0, "");
- data_read(input, ref_local, refpop_local, 4, data_num*(1024 / 512));
-   calculation(input, ref_local, cmpr_local, refpop_local, cmprpop_local, result_local, data_num%4);
+
+_ssdm_op_SpecPipeline(1, 1, 1, 0, "");
+ data_read(input, ref_local, refpop_local, 1, data_num*(1024 / 512));
+   calculation(input, ref_local, cmpr_local, refpop_local, cmprpop_local, result_local, data_num%1);
    result_write(output, result_local, cmpr_chunk_num, data_num);
   }
  }

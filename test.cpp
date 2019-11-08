@@ -9,7 +9,7 @@ int main(void){
 	din_type *input;
 	input = (din_type*) malloc((DATA_SIZE1+DATA_SIZE2)*VECTOR_SIZE*DATATYPE_SIZE);
 	din_type *output;
-	output = (din_type*) malloc(DATA_SIZE1*DATA_SIZE2/BUFFER_SIZE2);
+	output = (din_type*) malloc((DATA_SIZE1*DATA_SIZE2/BUFFER_SIZE2)*DATATYPE_SIZE);
 
 	for(int i = 0; i < DATA_SIZE1*VECTOR_SIZE; i++){
 		input[i] = i;

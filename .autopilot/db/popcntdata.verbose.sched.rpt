@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'popcntdata'
 ================================================================
-* Date:           Fri Nov  8 12:19:33 2019
+* Date:           Fri Nov  8 12:30:12 2019
 
 * Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
 * Project:        tancoeff
@@ -4187,12 +4187,12 @@ Target clock period: 3.33ns, clock uncertainty: 0.9ns.
  <State 1>: 2.15ns
 The critical path consists of the following:
 	wire read on port 'x_V' (tancoeff/tancoeff/tancalc.cpp:18) [2]  (0 ns)
-	'add' operation ('add_ln700_86', tancoeff/tancoeff/tancalc.cpp:18) [2223]  (0.138 ns)
-	'add' operation ('add_ln700_87', tancoeff/tancoeff/tancalc.cpp:18) [2225]  (0.234 ns)
-	'add' operation ('add_ln700_91', tancoeff/tancoeff/tancalc.cpp:18) [2233]  (0.261 ns)
-	'add' operation ('add_ln700_92', tancoeff/tancoeff/tancalc.cpp:18) [2235]  (0.336 ns)
-	'add' operation ('add_ln700_93', tancoeff/tancoeff/tancalc.cpp:18) [2237]  (0.341 ns)
-	'add' operation ('add_ln700_125', tancoeff/tancoeff/tancalc.cpp:18) [2301]  (0.434 ns)
+	'add' operation ('add_ln700_1', tancoeff/tancoeff/tancalc.cpp:18) [2053]  (0.138 ns)
+	'add' operation ('add_ln700_2', tancoeff/tancoeff/tancalc.cpp:18) [2055]  (0.234 ns)
+	'add' operation ('add_ln700_6', tancoeff/tancoeff/tancalc.cpp:18) [2063]  (0.261 ns)
+	'add' operation ('add_ln700_14', tancoeff/tancoeff/tancalc.cpp:18) [2079]  (0.336 ns)
+	'add' operation ('add_ln700_30', tancoeff/tancoeff/tancalc.cpp:18) [2111]  (0.341 ns)
+	'add' operation ('add_ln700_62', tancoeff/tancoeff/tancalc.cpp:18) [2175]  (0.434 ns)
 	'add' operation ('add_ln700_126', tancoeff/tancoeff/tancalc.cpp:18) [2303]  (0.404 ns)
 
  <State 2>: 1.54ns

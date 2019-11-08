@@ -75433,6 +75433,7 @@ class stream
 # 7 "/home/student/workspace/tancoeff/tancoeff/tancalc.h" 2
 # 15 "/home/student/workspace/tancoeff/tancoeff/tancalc.h"
 const unsigned int database_size= 64*64*2;
+const unsigned int output_size= 64*64/16;
 
 typedef ap_uint<1024> data_type;
 typedef ap_uint<512> din_type;
@@ -75456,7 +75457,7 @@ int main(void){
  din_type *input;
  input = (din_type*) malloc((64 +64)*(1024 / 512)*512);
  din_type *output;
- output = (din_type*) malloc(64*64/16);
+ output = (din_type*) malloc((64*64/16)*512);
 
  for(int i = 0; i < 64*(1024 / 512); i++){
   input[i] = i;

@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'tancalc'
 ================================================================
-* Date:           Fri Nov  8 12:19:43 2019
+* Date:           Fri Nov  8 12:30:21 2019
 
 * Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
 * Project:        tancoeff
@@ -690,7 +690,7 @@ The critical path consists of the following:
  <State 14>: 0.993ns
 The critical path consists of the following:
 	'call' operation ('cmprpop_local_0_V', tancoeff/tancoeff/tancalc.cpp:35->tancoeff/tancoeff/tancalc.cpp:93) to 'popcnt' [136]  (0.993 ns)
-	'store' operation ('store_ln35', tancoeff/tancoeff/tancalc.cpp:35->tancoeff/tancoeff/tancalc.cpp:93) of variable 'cmprpop_local[0].V', tancoeff/tancoeff/tancalc.cpp:35->tancoeff/tancoeff/tancalc.cpp:93 on local variable 'cmprpop_local[15].V' [170]  (0 ns)
+	'store' operation ('store_ln35', tancoeff/tancoeff/tancalc.cpp:35->tancoeff/tancoeff/tancalc.cpp:93) of variable 'cmprpop_local[0].V', tancoeff/tancoeff/tancalc.cpp:35->tancoeff/tancoeff/tancalc.cpp:93 on local variable 'cmprpop_local[15].V' [182]  (0 ns)
 
  <State 15>: 0.603ns
 The critical path consists of the following:
@@ -753,11 +753,11 @@ The critical path consists of the following:
 
  <State 29>: 1.94ns
 The critical path consists of the following:
-	'add' operation ('add_ln1353_2', tancoeff/tancoeff/tancalc.cpp:54->tancoeff/tancoeff/tancalc.cpp:99) [281]  (0.534 ns)
-	'sub' operation ('sub_ln1354_2', tancoeff/tancoeff/tancalc.cpp:54->tancoeff/tancoeff/tancalc.cpp:99) [284]  (0.526 ns)
-	'icmp' operation ('icmp_ln54', tancoeff/tancoeff/tancalc.cpp:54->tancoeff/tancoeff/tancalc.cpp:99) [285]  (0.64 ns)
-	'xor' operation ('xor_ln54', tancoeff/tancoeff/tancalc.cpp:54->tancoeff/tancoeff/tancalc.cpp:99) [286]  (0 ns)
-	'or' operation ('or_ln66_1', tancoeff/tancoeff/tancalc.cpp:66->tancoeff/tancoeff/tancalc.cpp:100) [396]  (0 ns)
+	'add' operation ('add_ln1353', tancoeff/tancoeff/tancalc.cpp:54->tancoeff/tancoeff/tancalc.cpp:99) [269]  (0.534 ns)
+	'sub' operation ('sub_ln1354', tancoeff/tancoeff/tancalc.cpp:54->tancoeff/tancoeff/tancalc.cpp:99) [272]  (0.526 ns)
+	'icmp' operation ('icmp_ln54_13', tancoeff/tancoeff/tancalc.cpp:54->tancoeff/tancoeff/tancalc.cpp:99) [389]  (0.64 ns)
+	'xor' operation ('xor_ln54_13', tancoeff/tancoeff/tancalc.cpp:54->tancoeff/tancoeff/tancalc.cpp:99) [390]  (0 ns)
+	'or' operation ('or_ln66', tancoeff/tancoeff/tancalc.cpp:66->tancoeff/tancoeff/tancalc.cpp:100) [395]  (0 ns)
 	'or' operation ('or_ln66_2', tancoeff/tancoeff/tancalc.cpp:66->tancoeff/tancoeff/tancalc.cpp:100) [397]  (0.122 ns)
 	'or' operation ('or_ln66_6', tancoeff/tancoeff/tancalc.cpp:66->tancoeff/tancoeff/tancalc.cpp:100) [401]  (0.122 ns)
 

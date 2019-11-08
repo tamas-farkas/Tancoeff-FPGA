@@ -75438,6 +75438,7 @@ class stream
 # 7 "/home/student/workspace/tancoeff/tancoeff/tancalc.h" 2
 # 15 "/home/student/workspace/tancoeff/tancoeff/tancalc.h"
 const unsigned int database_size= 64*64*2;
+const unsigned int output_size= 64*64/16;
 
 typedef ap_uint<1024> data_type;
 typedef ap_uint<512> din_type;
@@ -75524,10 +75525,10 @@ void result_write(volatile din_type *output, result_type *result_local, int cmpr
 void tancalc(volatile din_type *input, volatile din_type *output){
 
 #pragma HLS INTERFACE m_axi depth=database_size port=input offset=slave bundle=gmem0
-#pragma HLS INTERFACE m_axi port=output offset=slave bundle=gmem1
 
+#pragma HLS INTERFACE axis port=output
 #pragma HLS INTERFACE s_axilite port = input bundle = control
-#pragma HLS INTERFACE s_axilite port = output bundle = control
+
 #pragma HLS INTERFACE s_axilite port = return bundle = control
 
  data_type ref_local[1];
@@ -75544,9 +75545,9 @@ void tancalc(volatile din_type *input, volatile din_type *output){
 
  mainloop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < 64/16; cmpr_chunk_num++){
   data_read(&input[64*(1024 / 512)], cmpr_local, cmprpop_local, 16, cmpr_chunk_num*16);
-# 133 "/home/student/workspace/tancoeff/tancoeff/tancalc.cpp"
   subloop:
   for(int data_num = 0; data_num < 64; data_num++){
+
 #pragma HLS pipeline II=1
    data_read(input, ref_local, refpop_local, 1, data_num*(1024 / 512));
    calculation(input, ref_local, cmpr_local, refpop_local, cmprpop_local, result_local, data_num%1);

@@ -1,6 +1,5 @@
 tancalc_tancalc_control_s_axi
 tancalc_tancalc_gmem0_m_axi
-tancalc_tancalc_gmem1_m_axi
 popcnt
 popcntdata
 tancalc

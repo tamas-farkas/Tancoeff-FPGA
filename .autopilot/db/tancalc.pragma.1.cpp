@@ -7031,10 +7031,10 @@ _ssdm_Unroll(0,0,0, "");
 void tancalc(volatile din_type *input, volatile din_type *output){
 
 _ssdm_op_SpecInterface(input, "m_axi", 0, 0, "", 0, database_size, "gmem0", "slave", "", 16, 16, 16, 16, "", "");
-_ssdm_op_SpecInterface(output, "m_axi", 0, 0, "", 0, output_size, "gmem1", "slave", "", 16, 16, 16, 16, "", "");
 
+_ssdm_op_SpecInterface(output, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(input, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(output, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
+
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
 
  data_type ref_local[1];
@@ -7051,7 +7051,6 @@ _ssdm_SpecArrayPartition( result_local, 1, "COMPLETE", 0, "");
 
  mainloop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < 64/16; cmpr_chunk_num++){
   data_read(&input[64*(1024 / 512)], cmpr_local, cmprpop_local, 16, cmpr_chunk_num*16);
-# 133 "tancoeff/tancoeff/tancalc.cpp"
   subloop:
   for(int data_num = 0; data_num < 64; data_num++){
 

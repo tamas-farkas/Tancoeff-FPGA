@@ -70,12 +70,12 @@ void result_write(volatile din_type *output, result_type *result_local, int cmpr
 
 void tancalc(volatile din_type *input, volatile din_type *output){
 
-#pragma HLS INTERFACE m_axi depth=database_size port=input offset=slave bundle=gmem0 //max_read_burst_length=256	//TODO	4KB - 64word
-#pragma HLS INTERFACE m_axi depth=output_size port=output offset=slave bundle=gmem1
-//#pragma HLS INTERFACE ap_fifo port=output
-#pragma HLS INTERFACE s_axilite port = input bundle = control
-#pragma HLS INTERFACE s_axilite port = output bundle = control
-#pragma HLS INTERFACE s_axilite port = return bundle = control
+	#pragma HLS INTERFACE m_axi depth=database_size port=input offset=slave bundle=gmem0 //max_read_burst_length=256	//TODO	4KB - 64word
+	//#pragma HLS INTERFACE m_axi depth=output_size port=output offset=slave bundle=gmem1
+	#pragma HLS INTERFACE axis port=output
+	#pragma HLS INTERFACE s_axilite port = input bundle = control
+	//#pragma HLS INTERFACE s_axilite port = output bundle = control
+	#pragma HLS INTERFACE s_axilite port = return bundle = control
 
 	data_type ref_local[BUFFER_SIZE1];
 		#pragma HLS ARRAY_PARTITION variable=ref_local complete dim=1

@@ -1079,7 +1079,7 @@ architecture behav of tancalc_popcntdata is
     signal p_Result_7_fu_2144_p3 : STD_LOGIC_VECTOR (0 downto 0);
     signal p_Result_8_fu_2156_p3 : STD_LOGIC_VECTOR (0 downto 0);
     signal p_Result_9_fu_2168_p3 : STD_LOGIC_VECTOR (0 downto 0);
-    signal p_Result_s_13_fu_2180_p3 : STD_LOGIC_VECTOR (0 downto 0);
+    signal p_Result_s_12_fu_2180_p3 : STD_LOGIC_VECTOR (0 downto 0);
     signal p_Result_10_fu_2192_p3 : STD_LOGIC_VECTOR (0 downto 0);
     signal p_Result_11_fu_2204_p3 : STD_LOGIC_VECTOR (0 downto 0);
     signal p_Result_12_fu_2216_p3 : STD_LOGIC_VECTOR (0 downto 0);
@@ -7251,7 +7251,7 @@ begin
     p_Result_999_fu_14060_p3 <= x_V(1000 downto 1000);
     p_Result_99_fu_3260_p3 <= x_V(100 downto 100);
     p_Result_9_fu_2168_p3 <= x_V(9 downto 9);
-    p_Result_s_13_fu_2180_p3 <= x_V(10 downto 10);
+    p_Result_s_12_fu_2180_p3 <= x_V(10 downto 10);
     p_Result_s_fu_2060_p3 <= x_V(0 downto 0);
     zext_ln621_1000_fu_14068_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_Result_999_fu_14060_p3),2));
     zext_ln621_1001_fu_14080_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_Result_1000_fu_14072_p3),2));
@@ -7286,7 +7286,7 @@ begin
     zext_ln621_107_fu_3352_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_Result_106_fu_3344_p3),2));
     zext_ln621_108_fu_3364_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_Result_107_fu_3356_p3),2));
     zext_ln621_109_fu_3376_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_Result_108_fu_3368_p3),2));
-    zext_ln621_10_fu_2188_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_Result_s_13_fu_2180_p3),2));
+    zext_ln621_10_fu_2188_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_Result_s_12_fu_2180_p3),2));
     zext_ln621_110_fu_3388_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_Result_109_fu_3380_p3),2));
     zext_ln621_111_fu_3400_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_Result_110_fu_3392_p3),2));
     zext_ln621_112_fu_3412_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_Result_111_fu_3404_p3),2));

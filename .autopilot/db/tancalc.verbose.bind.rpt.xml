@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'tancalc'" level="0">
-<item name = "Date">Thu Nov  7 02:46:29 2019
+<item name = "Date">Fri Nov  8 12:19:48 2019
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">tancoeff</item>
@@ -24,22 +24,22 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">758, 758, 758, 758, none</column>
+<column name="">753, 753, 753, 753, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_popcntdata_fu_387">popcntdata, 1, 1, 1, 1, function</column>
-<column name="grp_popcntdata_fu_392">popcntdata, 1, 1, 1, 1, function</column>
-<column name="grp_popcntdata_fu_397">popcntdata, 1, 1, 1, 1, function</column>
-<column name="grp_popcntdata_fu_402">popcntdata, 1, 1, 1, 1, function</column>
-<column name="grp_popcntdata_fu_407">popcntdata, 1, 1, 1, 1, function</column>
-<column name="grp_popcntdata_fu_412">popcntdata, 1, 1, 1, 1, function</column>
-<column name="grp_popcntdata_fu_417">popcntdata, 1, 1, 1, 1, function</column>
-<column name="grp_popcntdata_fu_422">popcntdata, 1, 1, 1, 1, function</column>
-<column name="grp_popcnt_fu_427">popcnt, 1, 1, 1, 1, function</column>
+<column name="grp_popcntdata_fu_364">popcntdata, 1, 1, 1, 1, function</column>
+<column name="grp_popcntdata_fu_369">popcntdata, 1, 1, 1, 1, function</column>
+<column name="grp_popcntdata_fu_374">popcntdata, 1, 1, 1, 1, function</column>
+<column name="grp_popcntdata_fu_379">popcntdata, 1, 1, 1, 1, function</column>
+<column name="grp_popcntdata_fu_384">popcntdata, 1, 1, 1, 1, function</column>
+<column name="grp_popcntdata_fu_389">popcntdata, 1, 1, 1, 1, function</column>
+<column name="grp_popcntdata_fu_394">popcntdata, 1, 1, 1, 1, function</column>
+<column name="grp_popcntdata_fu_399">popcntdata, 1, 1, 1, 1, function</column>
+<column name="grp_popcnt_fu_404">popcnt, 1, 1, 1, 1, function</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

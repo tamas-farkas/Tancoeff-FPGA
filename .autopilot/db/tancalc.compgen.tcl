@@ -21,14 +21,6 @@ input_V {
 	offset 16
 	offset_end 27
 }
-output_V { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 28
-	offset_end 39
-}
 }
 dict set axilite_register_dict control $port_control
 
@@ -74,26 +66,24 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler tancalc_tancalc_gmem0_m_axi
 }
 
-# Native M_AXI:
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::m_axi_gen] == "::AESL_LIB_XILADAPTER::m_axi_gen"} {
-eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
+# Native AXIS:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
+eval "::AESL_LIB_XILADAPTER::native_axis_add { \
     id 5 \
-    corename {m_axi} \
+    name output_V \
+    reset_level 0 \
+    sync_rst true \
+    corename {} \
+    metadata {  } \
     op interface \
-    max_latency -1 \ 
-    delay_budget 2.433 \ 
-    is_flushable 0 \ 
-    name {tancalc_tancalc_gmem1_m_axi} \
+    ports { output_V_TDATA { O 512 vector } output_V_TVALID { O 1 bit } output_V_TREADY { I 1 bit } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find AXI interface model in the library. Ignored generation of AXI interface for 'gmem1'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'output_V'"
 }
 }
 
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler tancalc_tancalc_gmem1_m_axi
-}
 
 
 # Adapter definition:

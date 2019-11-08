@@ -8,7 +8,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity tancalc_tancalc_control_s_axi is
 generic (
-    C_S_AXI_ADDR_WIDTH    : INTEGER := 6;
+    C_S_AXI_ADDR_WIDTH    : INTEGER := 5;
     C_S_AXI_DATA_WIDTH    : INTEGER := 32);
 port (
     ACLK                  :in   STD_LOGIC;
@@ -36,8 +36,7 @@ port (
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
     ap_idle               :in   STD_LOGIC;
-    input_V               :out  STD_LOGIC_VECTOR(63 downto 0);
-    output_V              :out  STD_LOGIC_VECTOR(63 downto 0)
+    input_V               :out  STD_LOGIC_VECTOR(63 downto 0)
 );
 end entity tancalc_tancalc_control_s_axi;
 
@@ -65,11 +64,6 @@ end entity tancalc_tancalc_control_s_axi;
 -- 0x14 : Data signal of input_V
 --        bit 31~0 - input_V[63:32] (Read/Write)
 -- 0x18 : reserved
--- 0x1c : Data signal of output_V
---        bit 31~0 - output_V[31:0] (Read/Write)
--- 0x20 : Data signal of output_V
---        bit 31~0 - output_V[63:32] (Read/Write)
--- 0x24 : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of tancalc_tancalc_control_s_axi is
@@ -77,17 +71,14 @@ architecture behave of tancalc_tancalc_control_s_axi is
     signal wstate  : states := wrreset;
     signal rstate  : states := rdreset;
     signal wnext, rnext: states;
-    constant ADDR_AP_CTRL         : INTEGER := 16#00#;
-    constant ADDR_GIE             : INTEGER := 16#04#;
-    constant ADDR_IER             : INTEGER := 16#08#;
-    constant ADDR_ISR             : INTEGER := 16#0c#;
-    constant ADDR_INPUT_V_DATA_0  : INTEGER := 16#10#;
-    constant ADDR_INPUT_V_DATA_1  : INTEGER := 16#14#;
-    constant ADDR_INPUT_V_CTRL    : INTEGER := 16#18#;
-    constant ADDR_OUTPUT_V_DATA_0 : INTEGER := 16#1c#;
-    constant ADDR_OUTPUT_V_DATA_1 : INTEGER := 16#20#;
-    constant ADDR_OUTPUT_V_CTRL   : INTEGER := 16#24#;
-    constant ADDR_BITS         : INTEGER := 6;
+    constant ADDR_AP_CTRL        : INTEGER := 16#00#;
+    constant ADDR_GIE            : INTEGER := 16#04#;
+    constant ADDR_IER            : INTEGER := 16#08#;
+    constant ADDR_ISR            : INTEGER := 16#0c#;
+    constant ADDR_INPUT_V_DATA_0 : INTEGER := 16#10#;
+    constant ADDR_INPUT_V_DATA_1 : INTEGER := 16#14#;
+    constant ADDR_INPUT_V_CTRL   : INTEGER := 16#18#;
+    constant ADDR_BITS         : INTEGER := 5;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
     signal wmask               : UNSIGNED(31 downto 0);
@@ -110,7 +101,6 @@ architecture behave of tancalc_tancalc_control_s_axi is
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_input_V         : UNSIGNED(63 downto 0) := (others => '0');
-    signal int_output_V        : UNSIGNED(63 downto 0) := (others => '0');
 
 
 begin
@@ -236,10 +226,6 @@ begin
                         rdata_data <= RESIZE(int_input_V(31 downto 0), 32);
                     when ADDR_INPUT_V_DATA_1 =>
                         rdata_data <= RESIZE(int_input_V(63 downto 32), 32);
-                    when ADDR_OUTPUT_V_DATA_0 =>
-                        rdata_data <= RESIZE(int_output_V(31 downto 0), 32);
-                    when ADDR_OUTPUT_V_DATA_1 =>
-                        rdata_data <= RESIZE(int_output_V(63 downto 32), 32);
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -252,7 +238,6 @@ begin
     interrupt            <= int_gie and (int_isr(0) or int_isr(1));
     ap_start             <= int_ap_start;
     input_V              <= STD_LOGIC_VECTOR(int_input_V);
-    output_V             <= STD_LOGIC_VECTOR(int_output_V);
 
     process (ACLK)
     begin
@@ -396,28 +381,6 @@ begin
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_INPUT_V_DATA_1) then
                     int_input_V(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_input_V(63 downto 32));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_OUTPUT_V_DATA_0) then
-                    int_output_V(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_output_V(31 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_OUTPUT_V_DATA_1) then
-                    int_output_V(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_output_V(63 downto 32));
                 end if;
             end if;
         end if;

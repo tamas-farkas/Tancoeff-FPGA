@@ -205,8 +205,8 @@ void tancalc_popcntdata::thread_p_Result_9_fu_2168_p3() {
     p_Result_9_fu_2168_p3 = x_V.read().range(9, 9);
 }
 
-void tancalc_popcntdata::thread_p_Result_s_13_fu_2180_p3() {
-    p_Result_s_13_fu_2180_p3 = x_V.read().range(10, 10);
+void tancalc_popcntdata::thread_p_Result_s_12_fu_2180_p3() {
+    p_Result_s_12_fu_2180_p3 = x_V.read().range(10, 10);
 }
 
 void tancalc_popcntdata::thread_p_Result_s_fu_2060_p3() {
@@ -346,7 +346,7 @@ void tancalc_popcntdata::thread_zext_ln621_109_fu_3376_p1() {
 }
 
 void tancalc_popcntdata::thread_zext_ln621_10_fu_2188_p1() {
-    zext_ln621_10_fu_2188_p1 = esl_zext<2,1>(p_Result_s_13_fu_2180_p3.read());
+    zext_ln621_10_fu_2188_p1 = esl_zext<2,1>(p_Result_s_12_fu_2180_p3.read());
 }
 
 void tancalc_popcntdata::thread_zext_ln621_110_fu_3388_p1() {

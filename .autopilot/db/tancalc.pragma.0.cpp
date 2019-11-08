@@ -7031,10 +7031,10 @@ void result_write(volatile din_type *output, result_type *result_local, int cmpr
 void tancalc(volatile din_type *input, volatile din_type *output){
 
 #pragma HLS INTERFACE m_axi depth=database_size port=&input offset=slave bundle=gmem0
-#pragma HLS INTERFACE m_axi depth=output_size port=&output offset=slave bundle=gmem1
 
+#pragma HLS INTERFACE axis port=&output
 #pragma HLS INTERFACE s_axilite port = &input bundle = control
-#pragma HLS INTERFACE s_axilite port = &output bundle = control
+
 #pragma HLS INTERFACE s_axilite port = return bundle = control
 
  data_type ref_local[1];
@@ -7051,7 +7051,6 @@ void tancalc(volatile din_type *input, volatile din_type *output){
 
  mainloop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < 64/16; cmpr_chunk_num++){
   data_read(&input[64*(1024 / 512)], cmpr_local, cmprpop_local, 16, cmpr_chunk_num*16);
-# 133 "tancoeff/tancoeff/tancalc.cpp"
   subloop:
   for(int data_num = 0; data_num < 64; data_num++){
 

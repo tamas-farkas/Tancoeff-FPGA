@@ -26,19 +26,12 @@
 // 0x14 : Data signal of input_V
 //        bit 31~0 - input_V[63:32] (Read/Write)
 // 0x18 : reserved
-// 0x1c : Data signal of output_V
-//        bit 31~0 - output_V[31:0] (Read/Write)
-// 0x20 : Data signal of output_V
-//        bit 31~0 - output_V[63:32] (Read/Write)
-// 0x24 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
-#define XTANCALC_TANCALC_CONTROL_ADDR_AP_CTRL       0x00
-#define XTANCALC_TANCALC_CONTROL_ADDR_GIE           0x04
-#define XTANCALC_TANCALC_CONTROL_ADDR_IER           0x08
-#define XTANCALC_TANCALC_CONTROL_ADDR_ISR           0x0c
-#define XTANCALC_TANCALC_CONTROL_ADDR_INPUT_V_DATA  0x10
-#define XTANCALC_TANCALC_CONTROL_BITS_INPUT_V_DATA  64
-#define XTANCALC_TANCALC_CONTROL_ADDR_OUTPUT_V_DATA 0x1c
-#define XTANCALC_TANCALC_CONTROL_BITS_OUTPUT_V_DATA 64
+#define XTANCALC_TANCALC_CONTROL_ADDR_AP_CTRL      0x00
+#define XTANCALC_TANCALC_CONTROL_ADDR_GIE          0x04
+#define XTANCALC_TANCALC_CONTROL_ADDR_IER          0x08
+#define XTANCALC_TANCALC_CONTROL_ADDR_ISR          0x0c
+#define XTANCALC_TANCALC_CONTROL_ADDR_INPUT_V_DATA 0x10
+#define XTANCALC_TANCALC_CONTROL_BITS_INPUT_V_DATA 64
 

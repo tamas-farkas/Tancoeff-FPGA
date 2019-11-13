@@ -23,9 +23,9 @@ add_wave /apatb_tancalc_top/AESL_inst_tancalc_tancalc/s_axi_control_AWVALID -int
 add_wave /apatb_tancalc_top/AESL_inst_tancalc_tancalc/s_axi_control_AWADDR -into $input_V__return_group -radix hex
 set coutputgroup [add_wave_group "C Outputs" -into $designtopgroup]
 set output_group [add_wave_group output(axis) -into $coutputgroup]
-add_wave /apatb_tancalc_top/AESL_inst_tancalc_tancalc/output_V_TREADY -into $output_group -color #ffff00 -radix hex
-add_wave /apatb_tancalc_top/AESL_inst_tancalc_tancalc/output_V_TVALID -into $output_group -color #ffff00 -radix hex
-add_wave /apatb_tancalc_top/AESL_inst_tancalc_tancalc/output_V_TDATA -into $output_group -radix hex
+add_wave /apatb_tancalc_top/AESL_inst_tancalc_tancalc/output_V_V_TREADY -into $output_group -color #ffff00 -radix hex
+add_wave /apatb_tancalc_top/AESL_inst_tancalc_tancalc/output_V_V_TVALID -into $output_group -color #ffff00 -radix hex
+add_wave /apatb_tancalc_top/AESL_inst_tancalc_tancalc/output_V_V_TDATA -into $output_group -radix hex
 set cinputgroup [add_wave_group "C Inputs" -into $designtopgroup]
 set input_group [add_wave_group input(axi_master) -into $cinputgroup]
 set rdata_group [add_wave_group "Read Channel" -into $input_group]
@@ -94,7 +94,7 @@ add_wave /apatb_tancalc_top/ready_cnt -into $tb_simstatus_group -radix hex
 add_wave /apatb_tancalc_top/done_cnt -into $tb_simstatus_group -radix hex
 add_wave /apatb_tancalc_top/LENGTH_gmem0 -into $tb_portdepth_group -radix hex
 add_wave /apatb_tancalc_top/LENGTH_input_V -into $tb_portdepth_group -radix hex
-add_wave /apatb_tancalc_top/LENGTH_output_V -into $tb_portdepth_group -radix hex
+add_wave /apatb_tancalc_top/LENGTH_output_V_V -into $tb_portdepth_group -radix hex
 set tbcinoutgroup [add_wave_group "C InOuts" -into $testbenchgroup]
 set tb_input_V__return_group [add_wave_group input_V__return(axi_slave) -into $tbcinoutgroup]
 add_wave /apatb_tancalc_top/control_INTERRUPT -into $tb_input_V__return_group -color #ffff00 -radix hex
@@ -117,9 +117,9 @@ add_wave /apatb_tancalc_top/control_AWVALID -into $tb_input_V__return_group -col
 add_wave /apatb_tancalc_top/control_AWADDR -into $tb_input_V__return_group -radix hex
 set tbcoutputgroup [add_wave_group "C Outputs" -into $testbenchgroup]
 set tb_output_group [add_wave_group output(axis) -into $tbcoutputgroup]
-add_wave /apatb_tancalc_top/output_V_TREADY -into $tb_output_group -color #ffff00 -radix hex
-add_wave /apatb_tancalc_top/output_V_TVALID -into $tb_output_group -color #ffff00 -radix hex
-add_wave /apatb_tancalc_top/output_V_TDATA -into $tb_output_group -radix hex
+add_wave /apatb_tancalc_top/output_V_V_TREADY -into $tb_output_group -color #ffff00 -radix hex
+add_wave /apatb_tancalc_top/output_V_V_TVALID -into $tb_output_group -color #ffff00 -radix hex
+add_wave /apatb_tancalc_top/output_V_V_TDATA -into $tb_output_group -radix hex
 set tbcinputgroup [add_wave_group "C Inputs" -into $testbenchgroup]
 set tb_input_group [add_wave_group input(axi_master) -into $tbcinputgroup]
 set rdata_group [add_wave_group "Read Channel" -into $tb_input_group]

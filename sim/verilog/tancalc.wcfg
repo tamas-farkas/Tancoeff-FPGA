@@ -182,21 +182,21 @@
          <wvobject type="group" fp_name="group39">
             <obj_property name="label">output(axis)</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject type="logic" fp_name="/apatb_tancalc_top/AESL_inst_tancalc_tancalc/output_V_TREADY">
-               <obj_property name="ElementShortName">output_V_TREADY</obj_property>
-               <obj_property name="ObjectShortName">output_V_TREADY</obj_property>
+            <wvobject type="logic" fp_name="/apatb_tancalc_top/AESL_inst_tancalc_tancalc/output_V_V_TREADY">
+               <obj_property name="ElementShortName">output_V_V_TREADY</obj_property>
+               <obj_property name="ObjectShortName">output_V_V_TREADY</obj_property>
                <obj_property name="CustomSignalColor">#ffff00</obj_property>
                <obj_property name="UseCustomSignalColor">true</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_tancalc_top/AESL_inst_tancalc_tancalc/output_V_TVALID">
-               <obj_property name="ElementShortName">output_V_TVALID</obj_property>
-               <obj_property name="ObjectShortName">output_V_TVALID</obj_property>
+            <wvobject type="logic" fp_name="/apatb_tancalc_top/AESL_inst_tancalc_tancalc/output_V_V_TVALID">
+               <obj_property name="ElementShortName">output_V_V_TVALID</obj_property>
+               <obj_property name="ObjectShortName">output_V_V_TVALID</obj_property>
                <obj_property name="CustomSignalColor">#ffff00</obj_property>
                <obj_property name="UseCustomSignalColor">true</obj_property>
             </wvobject>
-            <wvobject type="array" fp_name="/apatb_tancalc_top/AESL_inst_tancalc_tancalc/output_V_TDATA">
-               <obj_property name="ElementShortName">output_V_TDATA[511:0]</obj_property>
-               <obj_property name="ObjectShortName">output_V_TDATA[511:0]</obj_property>
+            <wvobject type="array" fp_name="/apatb_tancalc_top/AESL_inst_tancalc_tancalc/output_V_V_TDATA">
+               <obj_property name="ElementShortName">output_V_V_TDATA[15:0]</obj_property>
+               <obj_property name="ObjectShortName">output_V_V_TDATA[15:0]</obj_property>
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
          </wvobject>
@@ -533,9 +533,9 @@
                <obj_property name="ObjectShortName">LENGTH_input_V[31:0]</obj_property>
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
-            <wvobject type="array" fp_name="/apatb_tancalc_top/LENGTH_output_V">
-               <obj_property name="ElementShortName">LENGTH_output_V[31:0]</obj_property>
-               <obj_property name="ObjectShortName">LENGTH_output_V[31:0]</obj_property>
+            <wvobject type="array" fp_name="/apatb_tancalc_top/LENGTH_output_V_V">
+               <obj_property name="ElementShortName">LENGTH_output_V_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_output_V_V[31:0]</obj_property>
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
          </wvobject>
@@ -655,21 +655,21 @@
          <wvobject type="group" fp_name="group133">
             <obj_property name="label">output(axis)</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject type="logic" fp_name="/apatb_tancalc_top/output_V_TREADY">
-               <obj_property name="ElementShortName">output_V_TREADY</obj_property>
-               <obj_property name="ObjectShortName">output_V_TREADY</obj_property>
+            <wvobject type="logic" fp_name="/apatb_tancalc_top/output_V_V_TREADY">
+               <obj_property name="ElementShortName">output_V_V_TREADY</obj_property>
+               <obj_property name="ObjectShortName">output_V_V_TREADY</obj_property>
                <obj_property name="CustomSignalColor">#ffff00</obj_property>
                <obj_property name="UseCustomSignalColor">true</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_tancalc_top/output_V_TVALID">
-               <obj_property name="ElementShortName">output_V_TVALID</obj_property>
-               <obj_property name="ObjectShortName">output_V_TVALID</obj_property>
+            <wvobject type="logic" fp_name="/apatb_tancalc_top/output_V_V_TVALID">
+               <obj_property name="ElementShortName">output_V_V_TVALID</obj_property>
+               <obj_property name="ObjectShortName">output_V_V_TVALID</obj_property>
                <obj_property name="CustomSignalColor">#ffff00</obj_property>
                <obj_property name="UseCustomSignalColor">true</obj_property>
             </wvobject>
-            <wvobject type="array" fp_name="/apatb_tancalc_top/output_V_TDATA">
-               <obj_property name="ElementShortName">output_V_TDATA[511:0]</obj_property>
-               <obj_property name="ObjectShortName">output_V_TDATA[511:0]</obj_property>
+            <wvobject type="array" fp_name="/apatb_tancalc_top/output_V_V_TDATA">
+               <obj_property name="ElementShortName">output_V_V_TDATA[15:0]</obj_property>
+               <obj_property name="ObjectShortName">output_V_V_TDATA[15:0]</obj_property>
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
          </wvobject>

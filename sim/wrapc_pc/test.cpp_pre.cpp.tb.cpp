@@ -75436,21 +75436,21 @@ class stream
 }
 # 7 "/home/student/workspace/tancoeff/tancoeff/tancalc.h" 2
 # 15 "/home/student/workspace/tancoeff/tancoeff/tancalc.h"
-const unsigned int database_size= 64*64*2;
-const unsigned int output_size= 64*64/16;
+const int input_size=(64*(1024 / 512)+16*(1024 / 512))*64/16;
+const int output_size=64*64;
+const int fifo_size=16;
 
 typedef ap_uint<1024> data_type;
 typedef ap_uint<512> din_type;
 typedef ap_uint<11> popcnt_type;
-typedef ap_uint<1> result_type;
-
+typedef ap_uint<10> result_type;
 
 popcnt_type popcnt(din_type x);
 popcnt_type popcntdata(data_type x);
-void data_read(volatile din_type *input, data_type *data_local, popcnt_type *datapop_local, short buffer_size, int chunk_num);
-void calculation(volatile din_type *input, data_type *ref_local, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *cmprpop_local);
-void result_write(volatile din_type *output, din_type *result_out, int cmpr_chunk_num);
-extern "C" {void tancalc(volatile din_type *input, volatile din_type *output);}
+void data_read(volatile din_type *input, data_type *data_local, popcnt_type *datapop_local, short buffer_size);
+void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *cmprpop_local, result_type *result_local, int num);
+void result_write(result_type *result_local, hls::stream<result_type> &output);
+extern "C" {void tancalc(volatile din_type *input, hls::stream<result_type> &output);}
 # 3 "/home/student/workspace/tancoeff/tancoeff/test.cpp" 2
 
 
@@ -75465,37 +75465,43 @@ int main(void){
 
  din_type *input;
  input = (din_type*) malloc((64 +64)*(1024 / 512)*512);
- din_type *output;
- output = (din_type*) malloc((64*64/16)*512);
+
+
+
+ hls::stream<result_type> output;
 
  for(int i = 0; i < 64*(1024 / 512); i++){
-  input[i] = i;
+  input[i] = (din_type)2;
  }
  for(int i = 0; i < 64*(1024 / 512); i++){
-  input[i + 64*2] = i;
+  input[i + 64*(1024 / 512)] = (din_type)2;
  }
 
-
+ unsigned int tmp = 0;
  int sum = 0;
  
 #ifndef HLS_FASTSIM
 #define tancalc AESL_WRAP_tancalc
 #endif
-# 23 "/home/student/workspace/tancoeff/tancoeff/test.cpp"
+# 25 "/home/student/workspace/tancoeff/tancoeff/test.cpp"
 tancalc(input, output);
 #undef tancalc
-# 23 "/home/student/workspace/tancoeff/tancoeff/test.cpp"
+# 25 "/home/student/workspace/tancoeff/tancoeff/test.cpp"
 
- for(int i = 0; i < 64*64/16; i++){
-  printf("result:%X \n", (unsigned long long)output[i]);
-  sum += (unsigned long long)output[i];
+ for(int i = 0; i < 64*64*(1024 / 512); i++){
+  if(!output.empty()){
+   tmp = 0;
+   tmp = (unsigned int)output.read();
+   printf("result:%d \n", tmp);
+   sum += tmp;
+  }
  }
 
- printf("result:%d \n", sum);
+ printf("result_sum:%d \n", sum);
 
  printf("program finished \n");
  return 0;
 }
 #endif
-# 33 "/home/student/workspace/tancoeff/tancoeff/test.cpp"
+# 39 "/home/student/workspace/tancoeff/tancoeff/test.cpp"
 

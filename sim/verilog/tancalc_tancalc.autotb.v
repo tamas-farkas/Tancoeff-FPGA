@@ -16,23 +16,23 @@
 
 `define AESL_DEPTH_gmem0 1
 `define AESL_DEPTH_input_V 1
-`define AESL_DEPTH_output_V 1
+`define AESL_DEPTH_output_V_V 1
 `define AUTOTB_TVIN_gmem0  "../tv/cdatafile/c.tancalc_tancalc.autotvin_gmem0.dat"
 `define AUTOTB_TVIN_input_V  "../tv/cdatafile/c.tancalc_tancalc.autotvin_input_V.dat"
-`define AUTOTB_TVIN_output_V  "../tv/cdatafile/c.tancalc_tancalc.autotvin_output_V.dat"
+`define AUTOTB_TVIN_output_V_V  "../tv/cdatafile/c.tancalc_tancalc.autotvin_output_V_V.dat"
 `define AUTOTB_TVIN_gmem0_out_wrapc  "../tv/rtldatafile/rtl.tancalc_tancalc.autotvin_gmem0.dat"
 `define AUTOTB_TVIN_input_V_out_wrapc  "../tv/rtldatafile/rtl.tancalc_tancalc.autotvin_input_V.dat"
-`define AUTOTB_TVIN_output_V_out_wrapc  "../tv/rtldatafile/rtl.tancalc_tancalc.autotvin_output_V.dat"
-`define AUTOTB_TVOUT_output_V  "../tv/cdatafile/c.tancalc_tancalc.autotvout_output_V.dat"
-`define AUTOTB_TVOUT_output_V_out_wrapc  "../tv/rtldatafile/rtl.tancalc_tancalc.autotvout_output_V.dat"
+`define AUTOTB_TVIN_output_V_V_out_wrapc  "../tv/rtldatafile/rtl.tancalc_tancalc.autotvin_output_V_V.dat"
+`define AUTOTB_TVOUT_output_V_V  "../tv/cdatafile/c.tancalc_tancalc.autotvout_output_V_V.dat"
+`define AUTOTB_TVOUT_output_V_V_out_wrapc  "../tv/rtldatafile/rtl.tancalc_tancalc.autotvout_output_V_V.dat"
 module `AUTOTB_TOP;
 
 parameter AUTOTB_TRANSACTION_NUM = 1;
 parameter PROGRESS_TIMEOUT = 10000000;
-parameter LATENCY_ESTIMATION = 753;
-parameter LENGTH_gmem0 = 8192;
+parameter LATENCY_ESTIMATION = 761;
+parameter LENGTH_gmem0 = 640;
 parameter LENGTH_input_V = 1;
-parameter LENGTH_output_V = 1;
+parameter LENGTH_output_V_V = 256;
 
 task read_token;
     input integer fp;
@@ -125,9 +125,9 @@ wire  gmem0_BREADY;
 wire [1 : 0] gmem0_BRESP;
 wire [0 : 0] gmem0_BID;
 wire [0 : 0] gmem0_BUSER;
-wire [511 : 0] output_V_TDATA;
-wire  output_V_TVALID;
-wire  output_V_TREADY;
+wire [15 : 0] output_V_V_TDATA;
+wire  output_V_V_TVALID;
+wire  output_V_V_TREADY;
 integer done_cnt = 0;
 integer AESL_ready_cnt = 0;
 integer ready_cnt = 0;
@@ -221,9 +221,9 @@ wire ap_rst_n_n;
     .m_axi_gmem0_BRESP(gmem0_BRESP),
     .m_axi_gmem0_BID(gmem0_BID),
     .m_axi_gmem0_BUSER(gmem0_BUSER),
-    .output_V_TDATA(output_V_TDATA),
-    .output_V_TVALID(output_V_TVALID),
-    .output_V_TREADY(output_V_TREADY));
+    .output_V_V_TDATA(output_V_V_TDATA),
+    .output_V_V_TVALID(output_V_V_TVALID),
+    .output_V_V_TREADY(output_V_V_TREADY));
 
 // Assignment for control signal
 assign ap_clk = AESL_clock;
@@ -290,44 +290,44 @@ end
 
 
 
-reg [31:0] ap_c_n_tvin_trans_num_output_V;
+reg [31:0] ap_c_n_tvin_trans_num_output_V_V;
 
-reg output_V_ready_reg; // for self-sync
+reg output_V_V_ready_reg; // for self-sync
 
-wire output_V_ready;
-wire output_V_done;
-wire [31:0] output_V_transaction;
-wire axi_s_output_V_TVALID;
-wire axi_s_output_V_TREADY;
+wire output_V_V_ready;
+wire output_V_V_done;
+wire [31:0] output_V_V_transaction;
+wire axi_s_output_V_V_TVALID;
+wire axi_s_output_V_V_TREADY;
 
-AESL_axi_s_output_V AESL_AXI_S_output_V(
+AESL_axi_s_output_V_V AESL_AXI_S_output_V_V(
     .clk(AESL_clock),
     .reset(AESL_reset),
-    .TRAN_output_V_TDATA(output_V_TDATA),
-    .TRAN_output_V_TVALID(axi_s_output_V_TVALID),
-    .TRAN_output_V_TREADY(axi_s_output_V_TREADY),
-    .ready(output_V_ready),
-    .done(output_V_done),
-    .transaction(output_V_transaction));
+    .TRAN_output_V_V_TDATA(output_V_V_TDATA),
+    .TRAN_output_V_V_TVALID(axi_s_output_V_V_TVALID),
+    .TRAN_output_V_V_TREADY(axi_s_output_V_V_TREADY),
+    .ready(output_V_V_ready),
+    .done(output_V_V_done),
+    .transaction(output_V_V_transaction));
 
-assign output_V_ready = 0;
-assign output_V_done = AESL_done;
+assign output_V_V_ready = 0;
+assign output_V_V_done = AESL_done;
 
-assign axi_s_output_V_TVALID = output_V_TVALID;
+assign axi_s_output_V_V_TVALID = output_V_V_TVALID;
 
-reg reg_output_V_TREADY;
-initial begin : gen_reg_output_V_TREADY_process
+reg reg_output_V_V_TREADY;
+initial begin : gen_reg_output_V_V_TREADY_process
     integer proc_rand;
-    reg_output_V_TREADY = axi_s_output_V_TREADY;
+    reg_output_V_V_TREADY = axi_s_output_V_V_TREADY;
     while(1)
     begin
-        @(axi_s_output_V_TREADY);
-        reg_output_V_TREADY = axi_s_output_V_TREADY;
+        @(axi_s_output_V_V_TREADY);
+        reg_output_V_V_TREADY = axi_s_output_V_V_TREADY;
     end
 end
 
 
-assign output_V_TREADY = reg_output_V_TREADY;
+assign output_V_V_TREADY = reg_output_V_V_TREADY;
 
 wire    AESL_axi_master_gmem0_ready;
 wire    AESL_axi_master_gmem0_done;
@@ -488,9 +488,9 @@ reg [31:0] size_gmem0_backup;
 reg end_input_V;
 reg [31:0] size_input_V;
 reg [31:0] size_input_V_backup;
-reg end_output_V;
-reg [31:0] size_output_V;
-reg [31:0] size_output_V_backup;
+reg end_output_V_V;
+reg [31:0] size_output_V_V;
+reg [31:0] size_output_V_V_backup;
 
 initial begin : initial_process
     integer proc_rand;
@@ -592,14 +592,14 @@ begin
   end
 end
 
-reg dump_tvout_finish_output_V;
+reg dump_tvout_finish_output_V_V;
 
-initial begin : dump_tvout_runtime_sign_output_V
+initial begin : dump_tvout_runtime_sign_output_V_V
     integer fp;
-    dump_tvout_finish_output_V = 0;
-    fp = $fopen(`AUTOTB_TVOUT_output_V_out_wrapc, "w");
+    dump_tvout_finish_output_V_V = 0;
+    fp = $fopen(`AUTOTB_TVOUT_output_V_V_out_wrapc, "w");
     if (fp == 0) begin
-        $display("Failed to open file \"%s\"!", `AUTOTB_TVOUT_output_V_out_wrapc);
+        $display("Failed to open file \"%s\"!", `AUTOTB_TVOUT_output_V_V_out_wrapc);
         $display("ERROR: Simulation using HLS TB failed.");
         $finish;
     end
@@ -610,15 +610,15 @@ initial begin : dump_tvout_runtime_sign_output_V
     @ (posedge AESL_clock);
     @ (posedge AESL_clock);
     @ (posedge AESL_clock);
-    fp = $fopen(`AUTOTB_TVOUT_output_V_out_wrapc, "a");
+    fp = $fopen(`AUTOTB_TVOUT_output_V_V_out_wrapc, "a");
     if (fp == 0) begin
-        $display("Failed to open file \"%s\"!", `AUTOTB_TVOUT_output_V_out_wrapc);
+        $display("Failed to open file \"%s\"!", `AUTOTB_TVOUT_output_V_V_out_wrapc);
         $display("ERROR: Simulation using HLS TB failed.");
         $finish;
     end
     $fdisplay(fp,"[[[/runtime]]]");
     $fclose(fp);
-    dump_tvout_finish_output_V = 1;
+    dump_tvout_finish_output_V_V = 1;
 end
 
 

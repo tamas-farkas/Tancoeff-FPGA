@@ -72,7 +72,7 @@ module AESL_axi_master_gmem0 (
  parameter   mem_page_num            =   32'd 3;
  parameter   FIFO_DEPTH_ADDR_WIDTH   =    32'd 32;
 parameter gmem0_C_DATA_BITWIDTH = 32'd 512;
-parameter gmem0_mem_depth = 32'd 8192;
+parameter gmem0_mem_depth = 32'd 640;
 parameter ReadReqLatency = 32'd 1;
 parameter WriteReqLatency = 32'd 1;
 // Input and Output
@@ -865,7 +865,7 @@ initial begin : read_file_process
       end
       mem_page = transaction_num % mem_page_num ;
       mem_tmp [gmem0_DATA_BITWIDTH - 1: 0] = 0;
-      for(i = 0; i < 8192 ; i = i + 1) begin 
+      for(i = 0; i < 640 ; i = i + 1) begin 
           token = read_token(fp);
           ret = $sscanf(token, "0x%x", token_tmp); 
           if (factor == 4) begin

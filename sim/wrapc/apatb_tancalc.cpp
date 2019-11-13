@@ -35,14 +35,16 @@ using namespace sc_dt;
 #define AUTOTB_TVIN_gmem0  "../tv/cdatafile/c.tancalc_tancalc.autotvin_gmem0.dat"
 // wrapc file define: "input_V"
 #define AUTOTB_TVIN_input_V  "../tv/cdatafile/c.tancalc_tancalc.autotvin_input_V.dat"
-// wrapc file define: "output_V"
-#define AUTOTB_TVOUT_output_V  "../tv/cdatafile/c.tancalc_tancalc.autotvout_output_V.dat"
-#define AUTOTB_TVIN_output_V  "../tv/cdatafile/c.tancalc_tancalc.autotvin_output_V.dat"
+// wrapc file define: "output_V_V"
+#define AUTOTB_TVOUT_output_V_V  "../tv/cdatafile/c.tancalc_tancalc.autotvout_output_V_V.dat"
+#define AUTOTB_TVIN_output_V_V  "../tv/cdatafile/c.tancalc_tancalc.autotvin_output_V_V.dat"
+#define WRAPC_STREAM_SIZE_OUT_output_V_V  "../tv/stream_size/stream_size_out_output_V_V.dat"
+#define WRAPC_STREAM_EGRESS_STATUS_output_V_V  "../tv/stream_size/stream_egress_status_output_V_V.dat"
 
 #define INTER_TCL  "../tv/cdatafile/ref.tcl"
 
-// tvout file define: "output_V"
-#define AUTOTB_TVOUT_PC_output_V  "../tv/rtldatafile/rtl.tancalc_tancalc.autotvout_output_V.dat"
+// tvout file define: "output_V_V"
+#define AUTOTB_TVOUT_PC_output_V_V  "../tv/rtldatafile/rtl.tancalc_tancalc.autotvout_output_V_V.dat"
 
 class INTER_TCL_FILE {
 	public:
@@ -50,7 +52,7 @@ class INTER_TCL_FILE {
 			mName = name;
 			gmem0_depth = 0;
 			input_V_depth = 0;
-			output_V_depth = 0;
+			output_V_V_depth = 0;
 			trans_num =0;
 		}
 
@@ -72,7 +74,7 @@ class INTER_TCL_FILE {
 			stringstream total_list;
 			total_list << "{gmem0 " << gmem0_depth << "}\n";
 			total_list << "{input_V " << input_V_depth << "}\n";
-			total_list << "{output_V " << output_V_depth << "}\n";
+			total_list << "{output_V_V " << output_V_V_depth << "}\n";
 			return total_list.str();
 		}
 
@@ -82,7 +84,7 @@ class INTER_TCL_FILE {
 	public:
 		int gmem0_depth;
 		int input_V_depth;
-		int output_V_depth;
+		int output_V_V_depth;
 		int trans_num;
 
 	private:
@@ -92,11 +94,11 @@ class INTER_TCL_FILE {
 
 extern "C" void tancalc (
 volatile ap_uint<512>* input,
-volatile ap_uint<512>* output);
+hls::stream<ap_uint<10> > (&output));
 
 extern "C" void AESL_WRAP_tancalc (
 volatile ap_uint<512>* input,
-volatile ap_uint<512>* output)
+hls::stream<ap_uint<10> > (&output))
 {
 	refine_signal_handler();
 	fstream wrapc_switch_file_token;
@@ -110,20 +112,35 @@ volatile ap_uint<512>* output)
 		string AESL_num;
 		static AESL_FILE_HANDLER aesl_fh;
 
+		// define output stream variables: "output"
+		std::vector<ap_uint<10> > aesl_tmp_0;
+		int aesl_tmp_1;
+		int aesl_tmp_2 = 0;
 
-		// output port post check: "output_V"
-		aesl_fh.read(AUTOTB_TVOUT_PC_output_V, AESL_token); // [[transaction]]
+		// read output stream size: "output"
+		aesl_fh.read(WRAPC_STREAM_SIZE_OUT_output_V_V, AESL_token); // [[transaction]]
+		aesl_fh.read(WRAPC_STREAM_SIZE_OUT_output_V_V, AESL_num); // transaction number
+
+		if (atoi(AESL_num.c_str()) == AESL_transaction_pc)
+		{
+			aesl_fh.read(WRAPC_STREAM_SIZE_OUT_output_V_V, AESL_token); // pop_size
+			aesl_tmp_1 = atoi(AESL_token.c_str());
+			aesl_fh.read(WRAPC_STREAM_SIZE_OUT_output_V_V, AESL_token); // [[/transaction]]
+		}
+
+		// output port post check: "output_V_V"
+		aesl_fh.read(AUTOTB_TVOUT_PC_output_V_V, AESL_token); // [[transaction]]
 		if (AESL_token != "[[transaction]]")
 		{
 			exit(1);
 		}
-		aesl_fh.read(AUTOTB_TVOUT_PC_output_V, AESL_num); // transaction number
+		aesl_fh.read(AUTOTB_TVOUT_PC_output_V_V, AESL_num); // transaction number
 
 		if (atoi(AESL_num.c_str()) == AESL_transaction_pc)
 		{
-			aesl_fh.read(AUTOTB_TVOUT_PC_output_V, AESL_token); // data
+			aesl_fh.read(AUTOTB_TVOUT_PC_output_V_V, AESL_token); // data
 
-			sc_bv<512> *output_V_pc_buffer = new sc_bv<512>[1];
+			std::vector<sc_bv<16> > output_V_V_pc_buffer;
 			int i = 0;
 
 			while (AESL_token != "[[/transaction]]")
@@ -139,7 +156,7 @@ volatile ap_uint<512>* output)
 					{
 						if (!err)
 						{
-							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'output_V', possible cause: There are uninitialized variables in the C design." << endl;
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'output_V_V', possible cause: There are uninitialized variables in the C design." << endl;
 							err = true;
 						}
 						AESL_token.replace(x_found, 1, "0");
@@ -161,7 +178,7 @@ volatile ap_uint<512>* output)
 					{
 						if (!err)
 						{
-							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'output_V', possible cause: There are uninitialized variables in the C design." << endl;
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'output_V_V', possible cause: There are uninitialized variables in the C design." << endl;
 							err = true;
 						}
 						AESL_token.replace(x_found, 1, "0");
@@ -175,65 +192,82 @@ volatile ap_uint<512>* output)
 				// push token into output port buffer
 				if (AESL_token != "")
 				{
-					output_V_pc_buffer[i] = AESL_token.c_str();
+					output_V_V_pc_buffer.push_back(AESL_token.c_str());
 					i++;
 				}
 
-				aesl_fh.read(AUTOTB_TVOUT_PC_output_V, AESL_token); // data or [[/transaction]]
+				aesl_fh.read(AUTOTB_TVOUT_PC_output_V_V, AESL_token); // data or [[/transaction]]
 
-				if (AESL_token == "[[[/runtime]]]" || aesl_fh.eof(AUTOTB_TVOUT_PC_output_V))
+				if (AESL_token == "[[[/runtime]]]" || aesl_fh.eof(AUTOTB_TVOUT_PC_output_V_V))
 				{
 					exit(1);
+				}
+			}
+
+			// correct the buffer size the current transaction
+			if (i != aesl_tmp_1)
+			{
+				aesl_tmp_1 = i;
+			}
+
+			if (aesl_tmp_1 > 0 && aesl_tmp_0.size() < aesl_tmp_1)
+			{
+				int aesl_tmp_0_size = aesl_tmp_0.size();
+
+				for (int tmp_aesl_tmp_0 = 0; tmp_aesl_tmp_0 < aesl_tmp_1 - aesl_tmp_0_size; tmp_aesl_tmp_0++)
+				{
+					ap_uint<10> tmp;
+					aesl_tmp_0.push_back(tmp);
 				}
 			}
 
 			// ***********************************
 			if (i > 0)
 			{
-				// RTL Name: output_V
+				// RTL Name: output_V_V
 				{
-					// bitslice(511, 0)
+					// bitslice(9, 0)
 					// {
-						// celement: output.V(511, 0)
+						// celement: output.V.V(9, 0)
 						// {
-							sc_lv<512>* output_V_lv0_0_0_1 = new sc_lv<512>[1];
+							sc_lv<10>* output_V_V_lv0_0_0_1 = new sc_lv<10>[aesl_tmp_1 - aesl_tmp_2];
 						// }
 					// }
 
-					// bitslice(511, 0)
+					// bitslice(9, 0)
 					{
 						int hls_map_index = 0;
-						// celement: output.V(511, 0)
+						// celement: output.V.V(9, 0)
 						{
-							// carray: (0) => (0) @ (1)
-							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+							// carray: (aesl_tmp_2) => (aesl_tmp_1 - 1) @ (1)
+							for (int i_0 = aesl_tmp_2; i_0 <= aesl_tmp_1 - 1; i_0 += 1)
 							{
-								if (&(output[0]) != NULL) // check the null address if the c port is array or others
+								if (&(aesl_tmp_0[0]) != NULL) // check the null address if the c port is array or others
 								{
-									output_V_lv0_0_0_1[hls_map_index].range(511, 0) = sc_bv<512>(output_V_pc_buffer[hls_map_index].range(511, 0));
+									output_V_V_lv0_0_0_1[hls_map_index].range(9, 0) = sc_bv<10>(output_V_V_pc_buffer[hls_map_index].range(9, 0));
 									hls_map_index++;
 								}
 							}
 						}
 					}
 
-					// bitslice(511, 0)
+					// bitslice(9, 0)
 					{
 						int hls_map_index = 0;
-						// celement: output.V(511, 0)
+						// celement: output.V.V(9, 0)
 						{
-							// carray: (0) => (0) @ (1)
-							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+							// carray: (aesl_tmp_2) => (aesl_tmp_1 - 1) @ (1)
+							for (int i_0 = aesl_tmp_2; i_0 <= aesl_tmp_1 - 1; i_0 += 1)
 							{
 								// sub                    : i_0
-								// ori_name               : output[i_0]
+								// ori_name               : aesl_tmp_0[i_0]
 								// sub_1st_elem           : 0
-								// ori_name_1st_elem      : output[0]
-								// output_left_conversion : output[i_0]
-								// output_type_conversion : (output_V_lv0_0_0_1[hls_map_index]).to_string(SC_BIN).c_str()
-								if (&(output[0]) != NULL) // check the null address if the c port is array or others
+								// ori_name_1st_elem      : aesl_tmp_0[0]
+								// output_left_conversion : aesl_tmp_0[i_0]
+								// output_type_conversion : (output_V_V_lv0_0_0_1[hls_map_index]).to_string(SC_BIN).c_str()
+								if (&(aesl_tmp_0[0]) != NULL) // check the null address if the c port is array or others
 								{
-									output[i_0] = (output_V_lv0_0_0_1[hls_map_index]).to_string(SC_BIN).c_str();
+									aesl_tmp_0[i_0] = (output_V_V_lv0_0_0_1[hls_map_index]).to_string(SC_BIN).c_str();
 									hls_map_index++;
 								}
 							}
@@ -241,9 +275,12 @@ volatile ap_uint<512>* output)
 					}
 				}
 			}
+		}
 
-			// release memory allocation
-			delete [] output_V_pc_buffer;
+		// push back output stream: "output"
+		for (int i = 0; i < aesl_tmp_1; i++)
+		{
+			output.write(aesl_tmp_0[i]);
 		}
 
 		AESL_transaction_pc++;
@@ -263,21 +300,34 @@ volatile ap_uint<512>* output)
 		char* tvin_input_V = new char[50];
 		aesl_fh.touch(AUTOTB_TVIN_input_V);
 
-		// "output_V"
-		char* tvin_output_V = new char[133];
-		aesl_fh.touch(AUTOTB_TVIN_output_V);
-		char* tvout_output_V = new char[133];
-		aesl_fh.touch(AUTOTB_TVOUT_output_V);
+		// "output_V_V"
+		char* tvin_output_V_V = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_output_V_V);
+		char* tvout_output_V_V = new char[50];
+		aesl_fh.touch(AUTOTB_TVOUT_output_V_V);
+		char* wrapc_stream_size_out_output_V_V = new char[50];
+		aesl_fh.touch(WRAPC_STREAM_SIZE_OUT_output_V_V);
+		char* wrapc_stream_egress_status_output_V_V = new char[50];
+		aesl_fh.touch(WRAPC_STREAM_EGRESS_STATUS_output_V_V);
 
 		CodeState = DUMP_INPUTS;
 		static INTER_TCL_FILE tcl_file(INTER_TCL);
 		int leading_zero;
 
+		// dump stream tvin: "output"
+		std::vector<ap_uint<10> > aesl_tmp_0;
+		int aesl_tmp_1 = 0;
+		while (!output.empty())
+		{
+			aesl_tmp_0.push_back(output.read());
+			aesl_tmp_1++;
+		}
+
 		// [[transaction]]
 		sprintf(tvin_gmem0, "[[transaction]] %d\n", AESL_transaction);
 		aesl_fh.write(AUTOTB_TVIN_gmem0, tvin_gmem0);
 
-		sc_bv<512>* gmem0_tvin_wrapc_buffer = new sc_bv<512>[8192];
+		sc_bv<512>* gmem0_tvin_wrapc_buffer = new sc_bv<512>[640];
 
 		// RTL Name: gmem0
 		{
@@ -286,8 +336,8 @@ volatile ap_uint<512>* output)
 				int hls_map_index = 0;
 				// celement: input.V(511, 0)
 				{
-					// carray: (0) => (8191) @ (1)
-					for (int i_0 = 0; i_0 <= 8191; i_0 += 1)
+					// carray: (0) => (639) @ (1)
+					for (int i_0 = 0; i_0 <= 639; i_0 += 1)
 					{
 						// sub                   : i_0
 						// ori_name              : input[i_0]
@@ -308,13 +358,13 @@ volatile ap_uint<512>* output)
 		}
 
 		// dump tv to file
-		for (int i = 0; i < 8192; i++)
+		for (int i = 0; i < 640; i++)
 		{
 			sprintf(tvin_gmem0, "%s\n", (gmem0_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
 			aesl_fh.write(AUTOTB_TVIN_gmem0, tvin_gmem0);
 		}
 
-		tcl_file.set_num(8192, &tcl_file.gmem0_depth);
+		tcl_file.set_num(640, &tcl_file.gmem0_depth);
 		sprintf(tvin_gmem0, "[[/transaction]] \n");
 		aesl_fh.write(AUTOTB_TVIN_gmem0, tvin_gmem0);
 
@@ -342,53 +392,11 @@ volatile ap_uint<512>* output)
 		sprintf(tvin_input_V, "[[/transaction]] \n");
 		aesl_fh.write(AUTOTB_TVIN_input_V, tvin_input_V);
 
-		// [[transaction]]
-		sprintf(tvin_output_V, "[[transaction]] %d\n", AESL_transaction);
-		aesl_fh.write(AUTOTB_TVIN_output_V, tvin_output_V);
-
-		sc_bv<512>* output_V_tvin_wrapc_buffer = new sc_bv<512>[1];
-
-		// RTL Name: output_V
+		// push back input stream: "output"
+		for (int i = 0; i < aesl_tmp_1; i++)
 		{
-			// bitslice(511, 0)
-			{
-				int hls_map_index = 0;
-				// celement: output.V(511, 0)
-				{
-					// carray: (0) => (0) @ (1)
-					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
-					{
-						// sub                   : i_0
-						// ori_name              : output[i_0]
-						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : output[0]
-						// regulate_c_name       : output_V
-						// input_type_conversion : (output[i_0]).to_string(2).c_str()
-						if (&(output[0]) != NULL) // check the null address if the c port is array or others
-						{
-							sc_lv<512> output_V_tmp_mem;
-							output_V_tmp_mem = (output[i_0]).to_string(2).c_str();
-							output_V_tvin_wrapc_buffer[hls_map_index].range(511, 0) = output_V_tmp_mem.range(511, 0);
-                                 	       hls_map_index++;
-						}
-					}
-				}
-			}
+			output.write(aesl_tmp_0[i]);
 		}
-
-		// dump tv to file
-		for (int i = 0; i < 1; i++)
-		{
-			sprintf(tvin_output_V, "%s\n", (output_V_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
-			aesl_fh.write(AUTOTB_TVIN_output_V, tvin_output_V);
-		}
-
-		tcl_file.set_num(1, &tcl_file.output_V_depth);
-		sprintf(tvin_output_V, "[[/transaction]] \n");
-		aesl_fh.write(AUTOTB_TVIN_output_V, tvin_output_V);
-
-		// release memory allocation
-		delete [] output_V_tvin_wrapc_buffer;
 
 // [call_c_dut] ---------->
 
@@ -396,34 +404,43 @@ volatile ap_uint<512>* output)
 		tancalc(input, output);
 
 		CodeState = DUMP_OUTPUTS;
+		// pop output stream: "output"
+		int aesl_tmp_2 = aesl_tmp_1;
+		aesl_tmp_1 = 0;
+     aesl_tmp_0.clear();
+		while (!output.empty())
+		{
+			aesl_tmp_0.push_back(output.read());
+			aesl_tmp_1++;
+		}
 
 		// [[transaction]]
-		sprintf(tvout_output_V, "[[transaction]] %d\n", AESL_transaction);
-		aesl_fh.write(AUTOTB_TVOUT_output_V, tvout_output_V);
+		sprintf(tvout_output_V_V, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVOUT_output_V_V, tvout_output_V_V);
 
-		sc_bv<512>* output_V_tvout_wrapc_buffer = new sc_bv<512>[1];
+		sc_bv<16>* output_V_V_tvout_wrapc_buffer = new sc_bv<16>[aesl_tmp_1 - aesl_tmp_2];
 
-		// RTL Name: output_V
+		// RTL Name: output_V_V
 		{
-			// bitslice(511, 0)
+			// bitslice(9, 0)
 			{
 				int hls_map_index = 0;
-				// celement: output.V(511, 0)
+				// celement: output.V.V(9, 0)
 				{
-					// carray: (0) => (0) @ (1)
-					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+					// carray: (aesl_tmp_2) => (aesl_tmp_1 - 1) @ (1)
+					for (int i_0 = aesl_tmp_2; i_0 <= aesl_tmp_1 - 1; i_0 += 1)
 					{
 						// sub                   : i_0
-						// ori_name              : output[i_0]
+						// ori_name              : aesl_tmp_0[i_0]
 						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : output[0]
-						// regulate_c_name       : output_V
-						// input_type_conversion : (output[i_0]).to_string(2).c_str()
-						if (&(output[0]) != NULL) // check the null address if the c port is array or others
+						// ori_name_1st_elem     : aesl_tmp_0[0]
+						// regulate_c_name       : output_V_V
+						// input_type_conversion : (aesl_tmp_0[i_0]).to_string(2).c_str()
+						if (&(aesl_tmp_0[0]) != NULL) // check the null address if the c port is array or others
 						{
-							sc_lv<512> output_V_tmp_mem;
-							output_V_tmp_mem = (output[i_0]).to_string(2).c_str();
-							output_V_tvout_wrapc_buffer[hls_map_index].range(511, 0) = output_V_tmp_mem.range(511, 0);
+							sc_lv<10> output_V_V_tmp_mem;
+							output_V_V_tmp_mem = (aesl_tmp_0[i_0]).to_string(2).c_str();
+							output_V_V_tvout_wrapc_buffer[hls_map_index].range(9, 0) = output_V_V_tmp_mem.range(9, 0);
                                  	       hls_map_index++;
 						}
 					}
@@ -432,27 +449,42 @@ volatile ap_uint<512>* output)
 		}
 
 		// dump tv to file
-		for (int i = 0; i < 1; i++)
+		for (int i = 0; i < aesl_tmp_1 - aesl_tmp_2; i++)
 		{
-			sprintf(tvout_output_V, "%s\n", (output_V_tvout_wrapc_buffer[i]).to_string(SC_HEX).c_str());
-			aesl_fh.write(AUTOTB_TVOUT_output_V, tvout_output_V);
+			sprintf(tvout_output_V_V, "%s\n", (output_V_V_tvout_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVOUT_output_V_V, tvout_output_V_V);
 		}
 
-		tcl_file.set_num(1, &tcl_file.output_V_depth);
-		sprintf(tvout_output_V, "[[/transaction]] \n");
-		aesl_fh.write(AUTOTB_TVOUT_output_V, tvout_output_V);
+		tcl_file.set_num(aesl_tmp_1 - aesl_tmp_2, &tcl_file.output_V_V_depth);
+		sprintf(tvout_output_V_V, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVOUT_output_V_V, tvout_output_V_V);
 
 		// release memory allocation
-		delete [] output_V_tvout_wrapc_buffer;
+		delete [] output_V_V_tvout_wrapc_buffer;
+
+		// dump stream size
+		sprintf(wrapc_stream_size_out_output_V_V, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(WRAPC_STREAM_SIZE_OUT_output_V_V, wrapc_stream_size_out_output_V_V);
+		sprintf(wrapc_stream_size_out_output_V_V, "%d\n", aesl_tmp_1 - aesl_tmp_2);
+		aesl_fh.write(WRAPC_STREAM_SIZE_OUT_output_V_V, wrapc_stream_size_out_output_V_V);
+		sprintf(wrapc_stream_size_out_output_V_V, "[[/transaction]] \n");
+		aesl_fh.write(WRAPC_STREAM_SIZE_OUT_output_V_V, wrapc_stream_size_out_output_V_V);
+
+		// push back output stream: "output"
+		for (int i = 0; i < aesl_tmp_1; i++)
+		{
+			output.write(aesl_tmp_0[i]);
+		}
 
 		CodeState = DELETE_CHAR_BUFFERS;
 		// release memory allocation: "gmem0"
 		delete [] tvin_gmem0;
 		// release memory allocation: "input_V"
 		delete [] tvin_input_V;
-		// release memory allocation: "output_V"
-		delete [] tvout_output_V;
-		delete [] tvin_output_V;
+		// release memory allocation: "output_V_V"
+		delete [] tvout_output_V_V;
+		delete [] tvin_output_V_V;
+		delete [] wrapc_stream_size_out_output_V_V;
 
 		AESL_transaction++;
 

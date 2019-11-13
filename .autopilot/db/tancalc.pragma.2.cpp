@@ -6952,12 +6952,16 @@ typedef ap_uint<512> din_type;
 typedef ap_uint<11> popcnt_type;
 typedef ap_uint<10> result_type;
 
+struct stream_array {
+ hls::stream<result_type> line[16];
+};
+
 popcnt_type popcnt(din_type x);
 popcnt_type popcntdata(data_type x);
 void data_read(volatile din_type *input, data_type *data_local, popcnt_type *datapop_local, short buffer_size);
 void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *cmprpop_local, result_type *result_local, int num);
-void result_write(result_type *result_local, hls::stream<result_type> &output);
-extern "C" {void tancalc(volatile din_type *input, hls::stream<result_type> &output);}
+void result_write(result_type *result_local, struct stream_array *output);
+extern "C" {void tancalc(volatile din_type *input, struct stream_array *output);}
 # 2 "tancoeff/tancoeff/tancalc.cpp" 2
 
 popcnt_type popcnt(din_type x){
@@ -6990,14 +6994,12 @@ _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
   int num_lo = 512 * (data_part_num % (1024 / 512));
   din_type temp_input = input[data_part_num];
   if(num_lo == 0){
-   data_local[num] = (din_type)temp_input;
-
+   data_local[num] = (data_type)temp_input;
    datapop_local[num] = popcnt(temp_input);
   }
   else{
    din_type data_local_temp = data_local[num].range(512 - 1, 0);
    data_local[num] = (temp_input, data_local_temp);
-
    datapop_local[num] += popcnt(temp_input);
   }
  }
@@ -7018,13 +7020,23 @@ _ssdm_Unroll(0,0,0, "");
 
  }
 }
-# 72 "tancoeff/tancoeff/tancalc.cpp"
-void tancalc(volatile din_type *input, hls::stream<result_type> &output){
+
+void result_write(result_type *result_local, struct stream_array *output){
+_ssdm_InlineSelf(0, "");
+ for(int buffer_num = 0; buffer_num < 16; buffer_num++){
+_ssdm_Unroll(0,0,0, "");
+ if(result_local[buffer_num] != 0){
+   output->line[buffer_num].write(result_local[buffer_num]);
+  }
+ }
+}
+
+void tancalc(volatile din_type *input, struct stream_array *output){
 
 _ssdm_op_SpecInterface(input, "m_axi", 0, 0, "", 0, input_size, "gmem0", "slave", "", 16, 16, 16, 16, "", "");
 
 
-_ssdm_op_SpecInterface(&output, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(output, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(input, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
 
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
@@ -7034,9 +7046,9 @@ _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 
 _ssdm_SpecArrayPartition( cmpr_local, 1, "COMPLETE", 0, "");
  popcnt_type cmprpop_local[16];
 _ssdm_SpecArrayPartition( cmprpop_local, 1, "COMPLETE", 0, "");
- data_type ref_local[1];
+ data_type ref_local[4];
 _ssdm_SpecArrayPartition( ref_local, 1, "COMPLETE", 0, "");
- popcnt_type refpop_local[1];
+ popcnt_type refpop_local[4];
 _ssdm_SpecArrayPartition( refpop_local, 1, "COMPLETE", 0, "");
  result_type result_local[16];
 _ssdm_SpecArrayPartition( result_local, 1, "COMPLETE", 0, "");
@@ -7048,33 +7060,32 @@ _ssdm_SpecStream( resultStream, 0, fifo_size, "");
 
  result_type temp = 0;
 
+ struct stream_array result_streams;
 
  mainloop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < 64/16; cmpr_chunk_num++){
   data_read(&input[64*(1024 / 512)+cmpr_chunk_num*16*(1024 / 512)], cmpr_local, cmprpop_local, 16);
-  subloop:
-  for(int data_num = 0; data_num < 64; data_num++){
-
+# 111 "tancoeff/tancoeff/tancalc.cpp"
+  calculation_loop:
+  for(int data_part_num = 0; data_part_num < 64*(1024 / 512); data_part_num++){
 _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
- data_read(&input[data_num*(1024 / 512)], ref_local, refpop_local, 1);
-   calculation(ref_local, cmpr_local, refpop_local, cmprpop_local, result_local, data_num%1);
+ int num = ((data_part_num - data_part_num % (1024 / 512))/(1024 / 512)) % 4;
+   int num_hi = 512 * (data_part_num % (1024 / 512) + 1) - 1;
+   int num_lo = 512 * (data_part_num % (1024 / 512));
 
-   for(int buffer_num = 0; buffer_num < 16; buffer_num++){
-_ssdm_Unroll(0,0,0, "");
- if(result_local[buffer_num] != 0){
-     resultStream[buffer_num].write(result_local[buffer_num]);
-    }
+   din_type temp_input = input[data_part_num];
+   if(num_lo == 0){
+    ref_local[num] = (data_type)temp_input;
+    refpop_local[num] = popcnt(temp_input);
+   }
+   else{
+    din_type ref_local_temp = ref_local[num].range(512 - 1, 0);
+    ref_local[num] = (temp_input, ref_local_temp);
+    refpop_local[num] += popcnt(temp_input);
    }
 
-
-
-
-
-
-   for(int buffer_num = 0; buffer_num < 16; buffer_num++){
-    if(resultStream[buffer_num].read_nb(temp)){
-     output.write(temp);
-     break;
-    }
+   if(num_hi == 1024 - 1){
+    calculation(ref_local, cmpr_local, refpop_local, cmprpop_local, result_local, num);
+    result_write(result_local, output);
    }
   }
  }

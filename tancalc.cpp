@@ -30,14 +30,12 @@ void data_read(volatile din_type *input, data_type *data_local, popcnt_type *dat
 		int num_lo = DATATYPE_SIZE * (data_part_num % VECTOR_SIZE);
 		din_type temp_input = input[data_part_num];
 		if(num_lo == 0){
-			data_local[num] = (din_type)temp_input;
-			//datapop_local[num] = popcnt(data_local[num].range(num_hi, num_lo));
+			data_local[num] = (data_type)temp_input;
 			datapop_local[num] = popcnt(temp_input);
 		}
 		else{
 			din_type data_local_temp = data_local[num].range(DATATYPE_SIZE - 1, 0);
 			data_local[num] = (temp_input, data_local_temp);
-			//datapop_local[num] += popcnt(data_local[num].range(num_hi, num_lo));
 			datapop_local[num] += popcnt(temp_input);
 		}
 	}
@@ -59,17 +57,17 @@ void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpo
 	}
 }
 
-/*void result_write(result_type *result_local, hls::stream<result_type> &output){
-//#pragma HLS INLINE
-	for(int cmpr_num = 0; cmpr_num < BUFFER_SIZE2; cmpr_num++){
+void result_write(result_type *result_local, struct stream_array *output){
+#pragma HLS INLINE
+	for(int buffer_num = 0; buffer_num < BUFFER_SIZE2; buffer_num++){
 	#pragma HLS unroll
-		if(result_local[cmpr_num] != 0){
-			output.write(result_local[cmpr_num]);
+		if(result_local[buffer_num] != 0){
+			output->line[buffer_num].write(result_local[buffer_num]);
 		}
 	}
-}*/
+}
 
-void tancalc(volatile din_type *input, hls::stream<result_type> &output){
+void tancalc(volatile din_type *input, struct stream_array *output){
 
 	#pragma HLS INTERFACE m_axi depth=input_size port=input offset=slave bundle=gmem0 //max_read_burst_length=256
 	//#pragma HLS INTERFACE axis port=input
@@ -98,6 +96,7 @@ void tancalc(volatile din_type *input, hls::stream<result_type> &output){
 
 	result_type temp = 0;
 
+	struct stream_array result_streams;
 
 	mainloop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < DATA_SIZE2/BUFFER_SIZE2; cmpr_chunk_num++){
 		data_read(&input[DATA_SIZE1*VECTOR_SIZE+cmpr_chunk_num*BUFFER_SIZE2*VECTOR_SIZE], cmpr_local, cmprpop_local, BUFFER_SIZE2);
@@ -107,25 +106,7 @@ void tancalc(volatile din_type *input, hls::stream<result_type> &output){
 		#pragma HLS pipeline II=1
 			data_read(&input[data_num*VECTOR_SIZE], ref_local, refpop_local, BUFFER_SIZE1);
 			calculation(ref_local, cmpr_local, refpop_local, cmprpop_local, result_local, data_num%BUFFER_SIZE1);
-			//result_write(result_local, output);
-			for(int buffer_num = 0; buffer_num < BUFFER_SIZE2; buffer_num++){
-			#pragma HLS unroll
-				if(result_local[buffer_num] != 0){
-					resultStream[buffer_num].write(result_local[buffer_num]);
-				}
-			}
-			/*for(int buffer_num = 0; buffer_num < BUFFER_SIZE2; buffer_num++){
-				if(!resultStream[buffer_num].empty()){
-					output.write(resultStream[buffer_num].read());
-					break;
-				}
-			}*/
-			for(int buffer_num = 0; buffer_num < BUFFER_SIZE2; buffer_num++){
-				if(resultStream[buffer_num].read_nb(temp)){
-					output.write(temp);
-					break;
-				}
-			}
+			result_write(result_local, output);
 		}
 	}
 }

@@ -82,8 +82,36 @@ proc check_tvin_file {} {
     set rtlfilelist {
          "c.tancalc_tancalc.autotvin_gmem0.dat"
          "c.tancalc_tancalc.autotvin_input_V.dat"
-         "c.tancalc_tancalc.autotvin_output_V_V.dat"
-         "c.tancalc_tancalc.autotvout_output_V_V.dat"
+         "c.tancalc_tancalc.autotvin_output_line_1_V_V.dat"
+         "c.tancalc_tancalc.autotvin_output_line_2_V_V.dat"
+         "c.tancalc_tancalc.autotvin_output_line_3_V_V.dat"
+         "c.tancalc_tancalc.autotvin_output_line_4_V_V.dat"
+         "c.tancalc_tancalc.autotvin_output_line_5_V_V.dat"
+         "c.tancalc_tancalc.autotvin_output_line_6_V_V.dat"
+         "c.tancalc_tancalc.autotvin_output_line_7_V_V.dat"
+         "c.tancalc_tancalc.autotvin_output_line_8_V_V.dat"
+         "c.tancalc_tancalc.autotvin_output_line_9_V_V.dat"
+         "c.tancalc_tancalc.autotvin_output_line_10_V_V.dat"
+         "c.tancalc_tancalc.autotvin_output_line_11_V_V.dat"
+         "c.tancalc_tancalc.autotvin_output_line_12_V_V.dat"
+         "c.tancalc_tancalc.autotvin_output_line_13_V_V.dat"
+         "c.tancalc_tancalc.autotvin_output_line_14_V_V.dat"
+         "c.tancalc_tancalc.autotvin_output_line_15_V_V.dat"
+         "c.tancalc_tancalc.autotvout_output_line_1_V_V.dat"
+         "c.tancalc_tancalc.autotvout_output_line_2_V_V.dat"
+         "c.tancalc_tancalc.autotvout_output_line_3_V_V.dat"
+         "c.tancalc_tancalc.autotvout_output_line_4_V_V.dat"
+         "c.tancalc_tancalc.autotvout_output_line_5_V_V.dat"
+         "c.tancalc_tancalc.autotvout_output_line_6_V_V.dat"
+         "c.tancalc_tancalc.autotvout_output_line_7_V_V.dat"
+         "c.tancalc_tancalc.autotvout_output_line_8_V_V.dat"
+         "c.tancalc_tancalc.autotvout_output_line_9_V_V.dat"
+         "c.tancalc_tancalc.autotvout_output_line_10_V_V.dat"
+         "c.tancalc_tancalc.autotvout_output_line_11_V_V.dat"
+         "c.tancalc_tancalc.autotvout_output_line_12_V_V.dat"
+         "c.tancalc_tancalc.autotvout_output_line_13_V_V.dat"
+         "c.tancalc_tancalc.autotvout_output_line_14_V_V.dat"
+         "c.tancalc_tancalc.autotvout_output_line_15_V_V.dat"
     }
     foreach rtlfile $rtlfilelist {
         if {[file isfile $rtlfile]} {
@@ -108,7 +136,21 @@ proc check_tvout_file {} {
 		puts stdout "[debug_prompt arg check_sim.tcl] start...";
 	}
     set rtlfilelist {
-         "rtl.tancalc_tancalc.autotvout_output_V_V.dat"
+         "rtl.tancalc_tancalc.autotvout_output_line_1_V_V.dat"
+         "rtl.tancalc_tancalc.autotvout_output_line_2_V_V.dat"
+         "rtl.tancalc_tancalc.autotvout_output_line_3_V_V.dat"
+         "rtl.tancalc_tancalc.autotvout_output_line_4_V_V.dat"
+         "rtl.tancalc_tancalc.autotvout_output_line_5_V_V.dat"
+         "rtl.tancalc_tancalc.autotvout_output_line_6_V_V.dat"
+         "rtl.tancalc_tancalc.autotvout_output_line_7_V_V.dat"
+         "rtl.tancalc_tancalc.autotvout_output_line_8_V_V.dat"
+         "rtl.tancalc_tancalc.autotvout_output_line_9_V_V.dat"
+         "rtl.tancalc_tancalc.autotvout_output_line_10_V_V.dat"
+         "rtl.tancalc_tancalc.autotvout_output_line_11_V_V.dat"
+         "rtl.tancalc_tancalc.autotvout_output_line_12_V_V.dat"
+         "rtl.tancalc_tancalc.autotvout_output_line_13_V_V.dat"
+         "rtl.tancalc_tancalc.autotvout_output_line_14_V_V.dat"
+         "rtl.tancalc_tancalc.autotvout_output_line_15_V_V.dat"
     }
     foreach rtlfile $rtlfilelist {
         if {[file isfile $rtlfile]} {

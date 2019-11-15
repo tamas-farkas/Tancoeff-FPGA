@@ -54,7 +54,7 @@ wire   [0:0] p_Result_6_fu_2132_p3;
 wire   [0:0] p_Result_7_fu_2144_p3;
 wire   [0:0] p_Result_8_fu_2156_p3;
 wire   [0:0] p_Result_9_fu_2168_p3;
-wire   [0:0] p_Result_s_30_fu_2180_p3;
+wire   [0:0] p_Result_s_13_fu_2180_p3;
 wire   [0:0] p_Result_10_fu_2192_p3;
 wire   [0:0] p_Result_11_fu_2204_p3;
 wire   [0:0] p_Result_12_fu_2216_p3;
@@ -8261,7 +8261,7 @@ assign p_Result_99_fu_3260_p3 = x_V[32'd100];
 
 assign p_Result_9_fu_2168_p3 = x_V[32'd9];
 
-assign p_Result_s_30_fu_2180_p3 = x_V[32'd10];
+assign p_Result_s_13_fu_2180_p3 = x_V[32'd10];
 
 assign p_Result_s_fu_2060_p3 = x_V[32'd0];
 
@@ -10377,7 +10377,7 @@ assign zext_ln791_108_fu_3364_p1 = p_Result_107_fu_3356_p3;
 
 assign zext_ln791_109_fu_3376_p1 = p_Result_108_fu_3368_p3;
 
-assign zext_ln791_10_fu_2188_p1 = p_Result_s_30_fu_2180_p3;
+assign zext_ln791_10_fu_2188_p1 = p_Result_s_13_fu_2180_p3;
 
 assign zext_ln791_110_fu_3388_p1 = p_Result_109_fu_3380_p3;
 

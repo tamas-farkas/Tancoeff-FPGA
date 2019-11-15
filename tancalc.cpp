@@ -1,4 +1,5 @@
 #include "tancalc.h"
+#include <stdio.h>
 
 popcnt_type popcnt(din_type x){
 	popcnt_type popcnt = 0;
@@ -43,12 +44,13 @@ void data_read(volatile din_type *input, data_type *data_local, popcnt_type *dat
 
 void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *cmprpop_local, result_type *result_local, int num){
 #pragma HLS INLINE
-	calculation_loop2:
+	calculation_loop:
 	for(int cmpr_num = 0; cmpr_num < BUFFER_SIZE2; cmpr_num++){
 	#pragma HLS unroll
 		popcnt_type temp = popcntdata(ref_local[num] & cmpr_local[cmpr_num]);
+		//printf("r:%u, c:%u, t:%u \n", (unsigned int)ref_local[num], (unsigned int)cmpr_local[cmpr_num], (unsigned int)temp);
 		if(temp >= (refpop_local[num]  + cmprpop_local[cmpr_num]  - temp)){
-			result_local[cmpr_num] = 1;
+			result_local[cmpr_num] = cmpr_num;
 		}
 		else{
 			result_local[cmpr_num] = 0;
@@ -57,8 +59,9 @@ void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpo
 	}
 }
 
-void result_write(result_type *result_local, struct stream_array *output){
+void result_write(result_type *result_local, stream_array *output){
 #pragma HLS INLINE
+	result_write_loop:
 	for(int buffer_num = 0; buffer_num < BUFFER_SIZE2; buffer_num++){
 	#pragma HLS unroll
 		if(result_local[buffer_num] != 0){
@@ -67,12 +70,13 @@ void result_write(result_type *result_local, struct stream_array *output){
 	}
 }
 
-void tancalc(volatile din_type *input, struct stream_array *output){
+void tancalc(volatile din_type *input, stream_array *output){
+#pragma HLS STREAM variable=output->line depth=fifo_size dim=1
 
 	#pragma HLS INTERFACE m_axi depth=input_size port=input offset=slave bundle=gmem0 //max_read_burst_length=256
 	//#pragma HLS INTERFACE axis port=input
 	//#pragma HLS INTERFACE m_axi depth=output_size port=output offset=slave bundle=gmem1
-	#pragma HLS INTERFACE axis port=output
+	#pragma HLS INTERFACE ap_fifo port=output
 	#pragma HLS INTERFACE s_axilite port = input bundle = control
 	//#pragma HLS INTERFACE s_axilite port = output bundle = control
 	#pragma HLS INTERFACE s_axilite port = return bundle = control
@@ -89,14 +93,6 @@ void tancalc(volatile din_type *input, struct stream_array *output){
 	result_type result_local[BUFFER_SIZE2];
 		#pragma HLS ARRAY_PARTITION variable=result_local complete dim=1
 		//#pragma HLS stream variable=result_local depth=8
-
-
-	hls::stream<result_type> resultStream[BUFFER_SIZE2];
-		#pragma HLS stream variable=resultStream depth=fifo_size
-
-	result_type temp = 0;
-
-	struct stream_array result_streams;
 
 	mainloop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < DATA_SIZE2/BUFFER_SIZE2; cmpr_chunk_num++){
 		data_read(&input[DATA_SIZE1*VECTOR_SIZE+cmpr_chunk_num*BUFFER_SIZE2*VECTOR_SIZE], cmpr_local, cmprpop_local, BUFFER_SIZE2);

@@ -42,7 +42,7 @@ set structParameter1 [list ]
 set structArgument1 [list ]
 set NameSpace1 [list ]
 set structIsPacked1 "0"
-set DataType1 [list "stream_array" "struct stream_array" $structMem1 1 0 $structParameter1 $structArgument1 $NameSpace1 $structIsPacked1]
+set DataType1 [list "stream_array" "struct " $structMem1 0 0 $structParameter1 $structArgument1 $NameSpace1 $structIsPacked1]
 set Port1 [list $PortName1 $Interface1 $DataType1 $Pointer1 $Dims1 $Const1 $Volatile1 $ArrayOpt1]
 lappend PortList $Port1
 set globalAPint "" 

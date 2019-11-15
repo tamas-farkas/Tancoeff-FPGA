@@ -5,34 +5,38 @@
 int main(void){
 	printf("program started\n");
 
-	//din_type input[(DATA_SIZE1+DATA_SIZE2)*2];
-	din_type *input;
-	input = (din_type*) malloc((DATA_SIZE1+DATA_SIZE2)*VECTOR_SIZE*DATATYPE_SIZE);
-	//din_type *output;
-	//output = (din_type*) malloc((DATA_SIZE1*DATA_SIZE2/BUFFER_SIZE2)*DATATYPE_SIZE);
+	din_type *input = (din_type*)malloc((DATA_SIZE1+DATA_SIZE2)*VECTOR_SIZE*DATATYPE_SIZE);
 
-	hls::stream<result_type> output;
+	stream_array output;
 
-	for(int i = 0; i < DATA_SIZE1*VECTOR_SIZE; i++){
-		input[i] = (din_type)2;
+
+	for(int i = 0; i < DATA_SIZE1*VECTOR_SIZE; i+=2){
+		input[i] = (din_type)i;
+		input[i + 1] = (din_type)0;
 	}
-	for(int i = 0; i < DATA_SIZE2*VECTOR_SIZE; i++){
-		input[i + DATA_SIZE1*VECTOR_SIZE] = (din_type)2;
+	for(int i = 0; i < DATA_SIZE2*VECTOR_SIZE; i+=2){
+		input[i + DATA_SIZE1*VECTOR_SIZE] = (din_type)i;
+		input[i + DATA_SIZE1*VECTOR_SIZE + 1] = (din_type)0;
 	}
 
 	unsigned int tmp = 0;
 	int sum = 0;
-	tancalc(input, output);
+	tancalc(input, &output);
 	for(int i = 0; i < DATA_SIZE1*DATA_SIZE2*VECTOR_SIZE; i++){
-		if(!output.empty()){
-			tmp = 0;
-			tmp = (unsigned int)output.read();
-			printf("result:%d \n", tmp);
-			sum += tmp;
+		for(int buffer_num = 0; buffer_num < BUFFER_SIZE2; buffer_num++){
+			if(!output.line[buffer_num].empty()){
+				tmp = 0;
+				tmp = (unsigned int)output.line[buffer_num].read();
+				printf("result:%d \n", tmp);
+				sum += tmp;
+			}
 		}
 	}
 
+
 	printf("result_sum:%d \n", sum);
+
+	free(input);
 
 	printf("program finished \n");
 	return 0;

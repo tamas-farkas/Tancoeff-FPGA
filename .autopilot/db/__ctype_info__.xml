@@ -14,7 +14,7 @@
 <CType>
 <TypeName>ap_uint 10</TypeName>
 <TypeWidth>10</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<PhysicalWidth>10</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -24,7 +24,7 @@
 <CType>
 <TypeName>ap_uint 10</TypeName>
 <TypeWidth>10</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<PhysicalWidth>10</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -34,7 +34,7 @@
 <CType>
 <TypeName>ap_uint 10</TypeName>
 <TypeWidth>10</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<PhysicalWidth>10</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -44,7 +44,7 @@
 <CType>
 <TypeName>ap_uint 10</TypeName>
 <TypeWidth>10</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<PhysicalWidth>10</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -54,7 +54,7 @@
 <CType>
 <TypeName>ap_uint 10</TypeName>
 <TypeWidth>10</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<PhysicalWidth>10</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -64,7 +64,7 @@
 <CType>
 <TypeName>ap_uint 10</TypeName>
 <TypeWidth>10</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<PhysicalWidth>10</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -74,7 +74,7 @@
 <CType>
 <TypeName>ap_uint 10</TypeName>
 <TypeWidth>10</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<PhysicalWidth>10</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -84,7 +84,7 @@
 <CType>
 <TypeName>ap_uint 10</TypeName>
 <TypeWidth>10</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<PhysicalWidth>10</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -94,7 +94,7 @@
 <CType>
 <TypeName>ap_uint 10</TypeName>
 <TypeWidth>10</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<PhysicalWidth>10</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -104,7 +104,7 @@
 <CType>
 <TypeName>ap_uint 10</TypeName>
 <TypeWidth>10</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<PhysicalWidth>10</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -114,7 +114,7 @@
 <CType>
 <TypeName>ap_uint 10</TypeName>
 <TypeWidth>10</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<PhysicalWidth>10</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -124,7 +124,7 @@
 <CType>
 <TypeName>ap_uint 10</TypeName>
 <TypeWidth>10</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<PhysicalWidth>10</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -134,7 +134,7 @@
 <CType>
 <TypeName>ap_uint 10</TypeName>
 <TypeWidth>10</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<PhysicalWidth>10</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -144,7 +144,7 @@
 <CType>
 <TypeName>ap_uint 10</TypeName>
 <TypeWidth>10</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<PhysicalWidth>10</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -154,7 +154,7 @@
 <CType>
 <TypeName>ap_uint 10</TypeName>
 <TypeWidth>10</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<PhysicalWidth>10</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -164,7 +164,7 @@
 <CType>
 <TypeName>ap_uint 10</TypeName>
 <TypeWidth>10</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<PhysicalWidth>10</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>

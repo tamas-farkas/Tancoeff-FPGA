@@ -1,19 +1,19 @@
 
-set TopModule "tancalc"
+set TopModule "hier_func"
 set ClockPeriod 3.333
 set ClockList ap_clk
 set HasVivadoClockPeriod 0
 set CombLogicFlag 0
-set PipelineFlag 0
+set PipelineFlag 1
 set DataflowTaskPipelineFlag 1
 set TrivialPipelineFlag 0
 set noPortSwitchingFlag 0
 set FloatingPointFlag 0
 set FftOrFirFlag 0
-set NbRWValue 0
-set intNbAccess 0
+set NbRWValue 1
+set intNbAccess 1
 set NewDSPMapping 1
-set HasDSPModule 0
+set HasDSPModule 1
 set ResetLevelFlag 0
 set ResetStyle control
 set ResetSyncFlag 1
@@ -21,7 +21,7 @@ set ResetRegisterFlag 1
 set ResetVariableFlag 0
 set FsmEncStyle onehot
 set MaxFanout 0
-set RtlPrefix tancalc_
+set RtlPrefix hier_func_
 set ExtraCCFlags {}
 set ExtraCLdFlags {}
 set SynCheckOptions {}
@@ -40,8 +40,8 @@ set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
 set TargetInfo xcvu9p:-fsgd2104:-2L-e
-set SourceFiles {sc {} c tancalc.cpp}
-set SourceFlags {sc {} c {{}}}
+set SourceFiles {sc {} c {tancalc.cpp hier_func.cpp fifo.cpp}}
+set SourceFlags {sc {} c {{} {} {}}}
 set DirectiveFile /home/student/workspace/tancoeff/tancoeff/tancoeff.directive
 set TBFiles {verilog test.cpp bc test.cpp vhdl test.cpp sc test.cpp cas test.cpp c {}}
 set SpecLanguage C
@@ -58,6 +58,6 @@ set AvePath ../..
 set DefaultPlatform DefaultPlatform
 set multiClockList {}
 set SCPortClockMap {}
-set intNbAccess 0
+set intNbAccess 1
 set PlatformFiles {{DefaultPlatform {xilinx/virtexuplus/virtexuplus xilinx/virtexuplus/virtexuplus_fpv7}}}
 set HPFPO 0

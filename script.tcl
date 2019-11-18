@@ -4,10 +4,15 @@
 ## Copyright (C) 1986-2019 Xilinx, Inc. All Rights Reserved.
 ############################################################
 open_project tancoeff
-set_top tancalc
-add_files tancoeff/tancoeff/tancalc.h
+set_top hier_func
+add_files tancoeff/tancoeff/fifo.cpp
+add_files tancoeff/tancoeff/fifo.h
+add_files tancoeff/tancoeff/hier_func.cpp
+add_files tancoeff/tancoeff/hier_func.h
+add_files tancoeff/tancoeff/parameters.h
 add_files tancoeff/tancoeff/tancalc.cpp
-add_files -tb tancoeff/tancoeff/test.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
+add_files tancoeff/tancoeff/tancalc.h
+add_files -tb tancoeff/tancoeff/test.cpp -cflags "-Wno-unknown-pragmas"
 open_solution "tancoeff"
 set_part {xcvu9p-fsgd2104-2L-e} -tool vivado
 create_clock -period 300MHz -name default
@@ -19,7 +24,7 @@ config_interface -clock_enable=0 -expose_global=0 -m_axi_addr64 -m_axi_offset of
 config_rtl -encoding onehot -kernel_profile=0 -module_auto_prefix -mult_keep_attribute=0 -register_reset_num 3 -reset control -reset_async=0 -reset_level high -verbose=0
 set_clock_uncertainty 27%
 #source "./tancoeff/tancoeff/directives.tcl"
-csim_design
+csim_design -clean
 csynth_design
 cosim_design -wave_debug -trace_level all -tool xsim
 export_design -rtl verilog -format ip_catalog -xo /home/student/workspace/tancalc.xo

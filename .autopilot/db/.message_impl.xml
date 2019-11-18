@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Messages>
-	<Message severity="INFO" prefix="[IMPL 213-8]" key="IMPL_8_1776" tag="" content="Exporting RTL as a Vivado IP."/>
-	<Message severity="ERROR" prefix="[IMPL 213-400]" key="IMPL_400_1716" tag="AXI,SDX_AXI,SDX_KERNEL,KERNEL" content="This design has interfaces which are not supported by SDx. Check interface pragmas to ensure the design only uses one s_axilite interface including the &apos;return&apos; port and one or more m_axi interfaces with offset=slave set to the s_axilite interface; there should not be any other port interface used."/>
-</Messages>

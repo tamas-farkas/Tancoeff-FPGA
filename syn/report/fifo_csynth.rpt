@@ -1,0 +1,270 @@
+
+
+================================================================
+== Vivado HLS Report for 'fifo'
+================================================================
+* Date:           Mon Nov 18 16:03:58 2019
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        tancoeff
+* Solution:       tancoeff
+* Product family: virtexuplus
+* Target device:  xcvu9p-fsgd2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   3.33|     1.534|        0.90|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  4099|  4099|  4099|  4099|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |          |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  4097|  4097|         3|          1|          1|  4096|    yes   |
+        +----------+------+------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+---------+-----+
+|         Name        | BRAM_18K| DSP48E|    FF   |   LUT   | URAM|
++---------------------+---------+-------+---------+---------+-----+
+|DSP                  |        -|      -|        -|        -|    -|
+|Expression           |        -|      -|        0|      144|    -|
+|FIFO                 |        -|      -|        -|        -|    -|
+|Instance             |        -|      -|        -|        -|    -|
+|Memory               |        -|      -|        -|        -|    -|
+|Multiplexer          |        -|      -|        -|      489|    -|
+|Register             |        -|      -|       73|        -|    -|
++---------------------+---------+-------+---------+---------+-----+
+|Total                |        0|      0|       73|      633|    0|
++---------------------+---------+-------+---------+---------+-----+
+|Available SLR        |     1440|   2280|   788160|   394080|  320|
++---------------------+---------+-------+---------+---------+-----+
+|Utilization SLR (%)  |        0|      0|    ~0   |    ~0   |    0|
++---------------------+---------+-------+---------+---------+-----+
+|Available            |     4320|   6840|  2364480|  1182240|  960|
++---------------------+---------+-------+---------+---------+-----+
+|Utilization (%)      |        0|      0|    ~0   |    ~0   |    0|
++---------------------+---------+-------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |add_ln6_fu_466_p2                 |     +    |      0|  0|  13|          13|           1|
+    |buffer_num_fu_490_p2              |     +    |      0|  0|   6|           5|           1|
+    |ap_block_pp0_stage0_01001         |    and   |      0|  0|   2|           1|           1|
+    |ap_block_state3_io                |    and   |      0|  0|   2|           1|           1|
+    |ap_block_state4_io                |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_174                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_180                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_186                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_192                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_198                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_204                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_210                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_216                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_222                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_228                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_234                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_240                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_246                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_252                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_258                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_380                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_432                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_634                  |    and   |      0|  0|   2|           1|           1|
+    |fifo_output_V_V_1_load_A          |    and   |      0|  0|   2|           1|           1|
+    |fifo_output_V_V_1_load_B          |    and   |      0|  0|   2|           1|           1|
+    |tmp10_nbreadreq_fu_156_p3         |    and   |      0|  0|   2|           1|           0|
+    |tmp11_nbreadreq_fu_148_p3         |    and   |      0|  0|   2|           1|           0|
+    |tmp12_nbreadreq_fu_140_p3         |    and   |      0|  0|   2|           1|           0|
+    |tmp13_nbreadreq_fu_132_p3         |    and   |      0|  0|   2|           1|           0|
+    |tmp14_nbreadreq_fu_124_p3         |    and   |      0|  0|   2|           1|           0|
+    |tmp15_nbreadreq_fu_116_p3         |    and   |      0|  0|   2|           1|           0|
+    |tmp1_nbreadreq_fu_188_p3          |    and   |      0|  0|   2|           1|           0|
+    |tmp2_nbreadreq_fu_180_p3          |    and   |      0|  0|   2|           1|           0|
+    |tmp3_nbreadreq_fu_172_p3          |    and   |      0|  0|   2|           1|           0|
+    |tmp4_nbreadreq_fu_164_p3          |    and   |      0|  0|   2|           1|           0|
+    |tmp6_nbreadreq_fu_220_p3          |    and   |      0|  0|   2|           1|           0|
+    |tmp7_nbreadreq_fu_212_p3          |    and   |      0|  0|   2|           1|           0|
+    |tmp8_nbreadreq_fu_204_p3          |    and   |      0|  0|   2|           1|           0|
+    |tmp9_nbreadreq_fu_196_p3          |    and   |      0|  0|   2|           1|           0|
+    |tmp_nbreadreq_fu_236_p3           |    and   |      0|  0|   2|           1|           0|
+    |fifo_output_V_V_1_state_cmp_full  |   icmp   |      0|  0|   8|           2|           1|
+    |icmp_ln6_fu_460_p2                |   icmp   |      0|  0|  13|          13|          14|
+    |icmp_ln7_fu_472_p2                |   icmp   |      0|  0|  11|           5|           6|
+    |ap_block_pp0_stage0_11001         |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state1                   |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state2_pp0_stage0_iter0  |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state5                   |    or    |      0|  0|   2|           1|           1|
+    |buffer_num_0_mid2_fu_478_p3       |  select  |      0|  0|   5|           1|           1|
+    |ap_enable_pp0                     |    xor   |      0|  0|   2|           1|           2|
+    |ap_enable_reg_pp0_iter1           |    xor   |      0|  0|   2|           2|           1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0| 144|          84|          54|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------------------+----+-----------+-----+-----------+
+    |                 Name                | LUT| Input Size| Bits| Total Bits|
+    +-------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                            |  21|          4|    1|          4|
+    |ap_done                              |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1              |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter2              |   9|          2|    1|          2|
+    |ap_phi_mux_tmp_16_phi_fu_372_p32     |  85|         17|    1|         17|
+    |ap_phi_reg_pp0_iter1_temp_V_reg_423  |  85|         17|   10|        170|
+    |buffer_num_0_reg_358                 |   9|          2|    5|         10|
+    |fifo_input_line_10_V_V_blk_n         |   9|          2|    1|          2|
+    |fifo_input_line_11_V_V_blk_n         |   9|          2|    1|          2|
+    |fifo_input_line_12_V_V_blk_n         |   9|          2|    1|          2|
+    |fifo_input_line_13_V_V_blk_n         |   9|          2|    1|          2|
+    |fifo_input_line_14_V_V_blk_n         |   9|          2|    1|          2|
+    |fifo_input_line_15_V_V_blk_n         |   9|          2|    1|          2|
+    |fifo_input_line_1_V_V_blk_n          |   9|          2|    1|          2|
+    |fifo_input_line_2_V_V_blk_n          |   9|          2|    1|          2|
+    |fifo_input_line_3_V_V_blk_n          |   9|          2|    1|          2|
+    |fifo_input_line_4_V_V_blk_n          |   9|          2|    1|          2|
+    |fifo_input_line_5_V_V_blk_n          |   9|          2|    1|          2|
+    |fifo_input_line_6_V_V_blk_n          |   9|          2|    1|          2|
+    |fifo_input_line_7_V_V_blk_n          |   9|          2|    1|          2|
+    |fifo_input_line_8_V_V_blk_n          |   9|          2|    1|          2|
+    |fifo_input_line_9_V_V_blk_n          |   9|          2|    1|          2|
+    |fifo_output_V_V_1_data_out           |   9|          2|   16|         32|
+    |fifo_output_V_V_1_state              |  15|          3|    2|          6|
+    |fifo_output_V_V_TDATA_blk_n          |   9|          2|    1|          2|
+    |indvar_flatten_reg_347               |   9|          2|   13|         26|
+    |tmp_16_reg_369                       |  85|         17|    1|         17|
+    +-------------------------------------+----+-----------+-----+-----------+
+    |Total                                | 489|        102|   68|        320|
+    +-------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------+----+----+-----+-----------+
+    |                 Name                | FF | LUT| Bits| Const Bits|
+    +-------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                            |   3|   0|    3|          0|
+    |ap_done_reg                          |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter0              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2              |   1|   0|    1|          0|
+    |ap_phi_reg_pp0_iter1_temp_V_reg_423  |  10|   0|   10|          0|
+    |buffer_num_0_reg_358                 |   5|   0|    5|          0|
+    |fifo_output_V_V_1_payload_A          |  16|   0|   16|          0|
+    |fifo_output_V_V_1_payload_B          |  16|   0|   16|          0|
+    |fifo_output_V_V_1_sel_rd             |   1|   0|    1|          0|
+    |fifo_output_V_V_1_sel_wr             |   1|   0|    1|          0|
+    |fifo_output_V_V_1_state              |   2|   0|    2|          0|
+    |indvar_flatten_reg_347               |  13|   0|   13|          0|
+    |tmp_16_reg_369                       |   1|   0|    1|          0|
+    |tmp_16_reg_369_pp0_iter1_reg         |   1|   0|    1|          0|
+    +-------------------------------------+----+----+-----+-----------+
+    |Total                                |  73|   0|   73|          0|
+    +-------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------------+-----+-----+------------+------------------------+--------------+
+|            RTL Ports           | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
++--------------------------------+-----+-----+------------+------------------------+--------------+
+|ap_clk                          |  in |    1| ap_ctrl_hs |          fifo          | return value |
+|ap_rst                          |  in |    1| ap_ctrl_hs |          fifo          | return value |
+|ap_start                        |  in |    1| ap_ctrl_hs |          fifo          | return value |
+|ap_done                         | out |    1| ap_ctrl_hs |          fifo          | return value |
+|ap_continue                     |  in |    1| ap_ctrl_hs |          fifo          | return value |
+|ap_idle                         | out |    1| ap_ctrl_hs |          fifo          | return value |
+|ap_ready                        | out |    1| ap_ctrl_hs |          fifo          | return value |
+|fifo_input_line_0_V_V           |  in |   10|   ap_none  |  fifo_input_line_0_V_V |    pointer   |
+|fifo_input_line_1_V_V_dout      |  in |   10|   ap_fifo  |  fifo_input_line_1_V_V |    pointer   |
+|fifo_input_line_1_V_V_empty_n   |  in |    1|   ap_fifo  |  fifo_input_line_1_V_V |    pointer   |
+|fifo_input_line_1_V_V_read      | out |    1|   ap_fifo  |  fifo_input_line_1_V_V |    pointer   |
+|fifo_input_line_2_V_V_dout      |  in |   10|   ap_fifo  |  fifo_input_line_2_V_V |    pointer   |
+|fifo_input_line_2_V_V_empty_n   |  in |    1|   ap_fifo  |  fifo_input_line_2_V_V |    pointer   |
+|fifo_input_line_2_V_V_read      | out |    1|   ap_fifo  |  fifo_input_line_2_V_V |    pointer   |
+|fifo_input_line_3_V_V_dout      |  in |   10|   ap_fifo  |  fifo_input_line_3_V_V |    pointer   |
+|fifo_input_line_3_V_V_empty_n   |  in |    1|   ap_fifo  |  fifo_input_line_3_V_V |    pointer   |
+|fifo_input_line_3_V_V_read      | out |    1|   ap_fifo  |  fifo_input_line_3_V_V |    pointer   |
+|fifo_input_line_4_V_V_dout      |  in |   10|   ap_fifo  |  fifo_input_line_4_V_V |    pointer   |
+|fifo_input_line_4_V_V_empty_n   |  in |    1|   ap_fifo  |  fifo_input_line_4_V_V |    pointer   |
+|fifo_input_line_4_V_V_read      | out |    1|   ap_fifo  |  fifo_input_line_4_V_V |    pointer   |
+|fifo_input_line_5_V_V_dout      |  in |   10|   ap_fifo  |  fifo_input_line_5_V_V |    pointer   |
+|fifo_input_line_5_V_V_empty_n   |  in |    1|   ap_fifo  |  fifo_input_line_5_V_V |    pointer   |
+|fifo_input_line_5_V_V_read      | out |    1|   ap_fifo  |  fifo_input_line_5_V_V |    pointer   |
+|fifo_input_line_6_V_V_dout      |  in |   10|   ap_fifo  |  fifo_input_line_6_V_V |    pointer   |
+|fifo_input_line_6_V_V_empty_n   |  in |    1|   ap_fifo  |  fifo_input_line_6_V_V |    pointer   |
+|fifo_input_line_6_V_V_read      | out |    1|   ap_fifo  |  fifo_input_line_6_V_V |    pointer   |
+|fifo_input_line_7_V_V_dout      |  in |   10|   ap_fifo  |  fifo_input_line_7_V_V |    pointer   |
+|fifo_input_line_7_V_V_empty_n   |  in |    1|   ap_fifo  |  fifo_input_line_7_V_V |    pointer   |
+|fifo_input_line_7_V_V_read      | out |    1|   ap_fifo  |  fifo_input_line_7_V_V |    pointer   |
+|fifo_input_line_8_V_V_dout      |  in |   10|   ap_fifo  |  fifo_input_line_8_V_V |    pointer   |
+|fifo_input_line_8_V_V_empty_n   |  in |    1|   ap_fifo  |  fifo_input_line_8_V_V |    pointer   |
+|fifo_input_line_8_V_V_read      | out |    1|   ap_fifo  |  fifo_input_line_8_V_V |    pointer   |
+|fifo_input_line_9_V_V_dout      |  in |   10|   ap_fifo  |  fifo_input_line_9_V_V |    pointer   |
+|fifo_input_line_9_V_V_empty_n   |  in |    1|   ap_fifo  |  fifo_input_line_9_V_V |    pointer   |
+|fifo_input_line_9_V_V_read      | out |    1|   ap_fifo  |  fifo_input_line_9_V_V |    pointer   |
+|fifo_input_line_10_V_V_dout     |  in |   10|   ap_fifo  | fifo_input_line_10_V_V |    pointer   |
+|fifo_input_line_10_V_V_empty_n  |  in |    1|   ap_fifo  | fifo_input_line_10_V_V |    pointer   |
+|fifo_input_line_10_V_V_read     | out |    1|   ap_fifo  | fifo_input_line_10_V_V |    pointer   |
+|fifo_input_line_11_V_V_dout     |  in |   10|   ap_fifo  | fifo_input_line_11_V_V |    pointer   |
+|fifo_input_line_11_V_V_empty_n  |  in |    1|   ap_fifo  | fifo_input_line_11_V_V |    pointer   |
+|fifo_input_line_11_V_V_read     | out |    1|   ap_fifo  | fifo_input_line_11_V_V |    pointer   |
+|fifo_input_line_12_V_V_dout     |  in |   10|   ap_fifo  | fifo_input_line_12_V_V |    pointer   |
+|fifo_input_line_12_V_V_empty_n  |  in |    1|   ap_fifo  | fifo_input_line_12_V_V |    pointer   |
+|fifo_input_line_12_V_V_read     | out |    1|   ap_fifo  | fifo_input_line_12_V_V |    pointer   |
+|fifo_input_line_13_V_V_dout     |  in |   10|   ap_fifo  | fifo_input_line_13_V_V |    pointer   |
+|fifo_input_line_13_V_V_empty_n  |  in |    1|   ap_fifo  | fifo_input_line_13_V_V |    pointer   |
+|fifo_input_line_13_V_V_read     | out |    1|   ap_fifo  | fifo_input_line_13_V_V |    pointer   |
+|fifo_input_line_14_V_V_dout     |  in |   10|   ap_fifo  | fifo_input_line_14_V_V |    pointer   |
+|fifo_input_line_14_V_V_empty_n  |  in |    1|   ap_fifo  | fifo_input_line_14_V_V |    pointer   |
+|fifo_input_line_14_V_V_read     | out |    1|   ap_fifo  | fifo_input_line_14_V_V |    pointer   |
+|fifo_input_line_15_V_V_dout     |  in |   10|   ap_fifo  | fifo_input_line_15_V_V |    pointer   |
+|fifo_input_line_15_V_V_empty_n  |  in |    1|   ap_fifo  | fifo_input_line_15_V_V |    pointer   |
+|fifo_input_line_15_V_V_read     | out |    1|   ap_fifo  | fifo_input_line_15_V_V |    pointer   |
+|fifo_output_V_V_TDATA           | out |   16|    axis    |     fifo_output_V_V    |    pointer   |
+|fifo_output_V_V_TVALID          | out |    1|    axis    |     fifo_output_V_V    |    pointer   |
+|fifo_output_V_V_TREADY          |  in |    1|    axis    |     fifo_output_V_V    |    pointer   |
++--------------------------------+-----+-----+------------+------------------------+--------------+
+

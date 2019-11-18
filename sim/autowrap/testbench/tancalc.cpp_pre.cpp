@@ -8,448 +8,15 @@
 
 
 
-# 1 "/usr/include/string.h" 1 3 4
-# 26 "/usr/include/string.h" 3 4
-# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
-# 33 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 3 4
-# 1 "/usr/include/features.h" 1 3 4
-# 424 "/usr/include/features.h" 3 4
-# 1 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 1 3 4
-# 427 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 3 4
-# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
-# 428 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
-# 1 "/usr/include/x86_64-linux-gnu/bits/long-double.h" 1 3 4
-# 429 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
-# 425 "/usr/include/features.h" 2 3 4
-# 448 "/usr/include/features.h" 3 4
-# 1 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 1 3 4
-# 10 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 3 4
-# 1 "/usr/include/x86_64-linux-gnu/gnu/stubs-64.h" 1 3 4
-# 11 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 2 3 4
-# 449 "/usr/include/features.h" 2 3 4
-# 34 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 2 3 4
-# 27 "/usr/include/string.h" 2 3 4
+# 1 "/home/student/workspace/tancoeff/tancoeff/parameters.h" 1
 
 
-# 28 "/usr/include/string.h" 3 4
-extern "C" {
 
-
-
-
-# 1 "/tools/Xilinx/Vivado/2019.1/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/include/stddef.h" 1 3 4
-# 216 "/tools/Xilinx/Vivado/2019.1/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/include/stddef.h" 3 4
-typedef long unsigned int size_t;
-# 34 "/usr/include/string.h" 2 3 4
-# 42 "/usr/include/string.h" 3 4
-extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
-       size_t __n) throw () __attribute__ ((__nonnull__ (1, 2)));
-
-
-extern void *memmove (void *__dest, const void *__src, size_t __n)
-     throw () __attribute__ ((__nonnull__ (1, 2)));
-
-
-
-
-
-extern void *memccpy (void *__restrict __dest, const void *__restrict __src,
-        int __c, size_t __n)
-     throw () __attribute__ ((__nonnull__ (1, 2)));
-
-
-
-
-extern void *memset (void *__s, int __c, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
-
-
-extern int memcmp (const void *__s1, const void *__s2, size_t __n)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-
-
-
-extern "C++"
-{
-extern void *memchr (void *__s, int __c, size_t __n)
-      throw () __asm ("memchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-extern const void *memchr (const void *__s, int __c, size_t __n)
-      throw () __asm ("memchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-# 88 "/usr/include/string.h" 3 4
-}
-# 98 "/usr/include/string.h" 3 4
-extern "C++" void *rawmemchr (void *__s, int __c)
-     throw () __asm ("rawmemchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-extern "C++" const void *rawmemchr (const void *__s, int __c)
-     throw () __asm ("rawmemchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-
-
-
-
-
-
-
-extern "C++" void *memrchr (void *__s, int __c, size_t __n)
-      throw () __asm ("memrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-extern "C++" const void *memrchr (const void *__s, int __c, size_t __n)
-      throw () __asm ("memrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-# 121 "/usr/include/string.h" 3 4
-extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
-     throw () __attribute__ ((__nonnull__ (1, 2)));
-
-extern char *strncpy (char *__restrict __dest,
-        const char *__restrict __src, size_t __n)
-     throw () __attribute__ ((__nonnull__ (1, 2)));
-
-
-extern char *strcat (char *__restrict __dest, const char *__restrict __src)
-     throw () __attribute__ ((__nonnull__ (1, 2)));
-
-extern char *strncat (char *__restrict __dest, const char *__restrict __src,
-        size_t __n) throw () __attribute__ ((__nonnull__ (1, 2)));
-
-
-extern int strcmp (const char *__s1, const char *__s2)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-
-extern int strncmp (const char *__s1, const char *__s2, size_t __n)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-
-
-extern int strcoll (const char *__s1, const char *__s2)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-
-extern size_t strxfrm (char *__restrict __dest,
-         const char *__restrict __src, size_t __n)
-     throw () __attribute__ ((__nonnull__ (2)));
-
-
-
-# 1 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 1 3 4
-# 22 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 3 4
-# 1 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h" 1 3 4
-# 28 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h" 3 4
-struct __locale_struct
-{
-
-  struct __locale_data *__locales[13];
-
-
-  const unsigned short int *__ctype_b;
-  const int *__ctype_tolower;
-  const int *__ctype_toupper;
-
-
-  const char *__names[13];
-};
-
-typedef struct __locale_struct *__locale_t;
-# 23 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 2 3 4
-
-typedef __locale_t locale_t;
-# 153 "/usr/include/string.h" 2 3 4
-
-
-extern int strcoll_l (const char *__s1, const char *__s2, locale_t __l)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
-
-
-extern size_t strxfrm_l (char *__dest, const char *__src, size_t __n,
-    locale_t __l) throw () __attribute__ ((__nonnull__ (2, 4)));
-
-
-
-
-
-extern char *strdup (const char *__s)
-     throw () __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
-
-
-
-
-
-
-extern char *strndup (const char *__string, size_t __n)
-     throw () __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
-# 203 "/usr/include/string.h" 3 4
-extern "C++"
-{
-extern char *strchr (char *__s, int __c)
-     throw () __asm ("strchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-extern const char *strchr (const char *__s, int __c)
-     throw () __asm ("strchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-# 223 "/usr/include/string.h" 3 4
-}
-
-
-
-
-
-
-extern "C++"
-{
-extern char *strrchr (char *__s, int __c)
-     throw () __asm ("strrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-extern const char *strrchr (const char *__s, int __c)
-     throw () __asm ("strrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-# 250 "/usr/include/string.h" 3 4
-}
-# 260 "/usr/include/string.h" 3 4
-extern "C++" char *strchrnul (char *__s, int __c)
-     throw () __asm ("strchrnul") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-extern "C++" const char *strchrnul (const char *__s, int __c)
-     throw () __asm ("strchrnul") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-# 272 "/usr/include/string.h" 3 4
-extern size_t strcspn (const char *__s, const char *__reject)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-
-
-extern size_t strspn (const char *__s, const char *__accept)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-
-
-extern "C++"
-{
-extern char *strpbrk (char *__s, const char *__accept)
-     throw () __asm ("strpbrk") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-extern const char *strpbrk (const char *__s, const char *__accept)
-     throw () __asm ("strpbrk") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-# 300 "/usr/include/string.h" 3 4
-}
-
-
-
-
-
-
-extern "C++"
-{
-extern char *strstr (char *__haystack, const char *__needle)
-     throw () __asm ("strstr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-extern const char *strstr (const char *__haystack, const char *__needle)
-     throw () __asm ("strstr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-# 327 "/usr/include/string.h" 3 4
-}
-
-
-
-
-
-
-
-extern char *strtok (char *__restrict __s, const char *__restrict __delim)
-     throw () __attribute__ ((__nonnull__ (2)));
-
-
-
-extern char *__strtok_r (char *__restrict __s,
-    const char *__restrict __delim,
-    char **__restrict __save_ptr)
-     throw () __attribute__ ((__nonnull__ (2, 3)));
-
-extern char *strtok_r (char *__restrict __s, const char *__restrict __delim,
-         char **__restrict __save_ptr)
-     throw () __attribute__ ((__nonnull__ (2, 3)));
-
-
-
-
-
-extern "C++" char *strcasestr (char *__haystack, const char *__needle)
-     throw () __asm ("strcasestr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-extern "C++" const char *strcasestr (const char *__haystack,
-         const char *__needle)
-     throw () __asm ("strcasestr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-# 368 "/usr/include/string.h" 3 4
-extern void *memmem (const void *__haystack, size_t __haystacklen,
-       const void *__needle, size_t __needlelen)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 3)));
-
-
-
-extern void *__mempcpy (void *__restrict __dest,
-   const void *__restrict __src, size_t __n)
-     throw () __attribute__ ((__nonnull__ (1, 2)));
-extern void *mempcpy (void *__restrict __dest,
-        const void *__restrict __src, size_t __n)
-     throw () __attribute__ ((__nonnull__ (1, 2)));
-
-
-
-
-extern size_t strlen (const char *__s)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-
-
-
-
-extern size_t strnlen (const char *__string, size_t __maxlen)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-
-
-
-
-extern char *strerror (int __errnum) throw ();
-# 420 "/usr/include/string.h" 3 4
-extern char *strerror_r (int __errnum, char *__buf, size_t __buflen)
-     throw () __attribute__ ((__nonnull__ (2))) ;
-
-
-
-
-
-extern char *strerror_l (int __errnum, locale_t __l) throw ();
-
-
-
-# 1 "/usr/include/strings.h" 1 3 4
-# 23 "/usr/include/strings.h" 3 4
-# 1 "/tools/Xilinx/Vivado/2019.1/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/include/stddef.h" 1 3 4
-# 24 "/usr/include/strings.h" 2 3 4
-
-
-
-
-
-
-extern "C" {
-
-
-
-extern int bcmp (const void *__s1, const void *__s2, size_t __n)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-
-
-extern void bcopy (const void *__src, void *__dest, size_t __n)
-  throw () __attribute__ ((__nonnull__ (1, 2)));
-
-
-extern void bzero (void *__s, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
-
-
-
-extern "C++"
-{
-extern char *index (char *__s, int __c)
-     throw () __asm ("index") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-extern const char *index (const char *__s, int __c)
-     throw () __asm ("index") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-# 66 "/usr/include/strings.h" 3 4
-}
-
-
-
-
-
-
-
-extern "C++"
-{
-extern char *rindex (char *__s, int __c)
-     throw () __asm ("rindex") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-extern const char *rindex (const char *__s, int __c)
-     throw () __asm ("rindex") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-# 94 "/usr/include/strings.h" 3 4
-}
-# 104 "/usr/include/strings.h" 3 4
-extern int ffs (int __i) throw () __attribute__ ((__const__));
-
-
-
-
-
-extern int ffsl (long int __l) throw () __attribute__ ((__const__));
-__extension__ extern int ffsll (long long int __ll)
-     throw () __attribute__ ((__const__));
-
-
-
-extern int strcasecmp (const char *__s1, const char *__s2)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-
-
-extern int strncasecmp (const char *__s1, const char *__s2, size_t __n)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-
-
-
-
-
-
-extern int strcasecmp_l (const char *__s1, const char *__s2, locale_t __loc)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
-
-
-
-extern int strncasecmp_l (const char *__s1, const char *__s2,
-     size_t __n, locale_t __loc)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 4)));
-
-
-}
-# 432 "/usr/include/string.h" 2 3 4
-
-
-
-extern void explicit_bzero (void *__s, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
-
-
-
-extern char *strsep (char **__restrict __stringp,
-       const char *__restrict __delim)
-     throw () __attribute__ ((__nonnull__ (1, 2)));
-
-
-
-
-extern char *strsignal (int __sig) throw ();
-
-
-extern char *__stpcpy (char *__restrict __dest, const char *__restrict __src)
-     throw () __attribute__ ((__nonnull__ (1, 2)));
-extern char *stpcpy (char *__restrict __dest, const char *__restrict __src)
-     throw () __attribute__ ((__nonnull__ (1, 2)));
-
-
-
-extern char *__stpncpy (char *__restrict __dest,
-   const char *__restrict __src, size_t __n)
-     throw () __attribute__ ((__nonnull__ (1, 2)));
-extern char *stpncpy (char *__restrict __dest,
-        const char *__restrict __src, size_t __n)
-     throw () __attribute__ ((__nonnull__ (1, 2)));
-
-
-
-
-extern int strverscmp (const char *__s1, const char *__s2)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-
-
-extern char *strfry (char *__string) throw () __attribute__ ((__nonnull__ (1)));
-
-
-extern void *memfrob (void *__s, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
-
-
-
-
-
-
-
-extern "C++" char *basename (char *__filename)
-     throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
-extern "C++" const char *basename (const char *__filename)
-     throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
-# 498 "/usr/include/string.h" 3 4
-}
-# 5 "/home/student/workspace/tancoeff/tancoeff/tancalc.h" 2
 # 1 "/tools/Xilinx/Vivado/2019.1/include/ap_int.h" 1
 # 54 "/tools/Xilinx/Vivado/2019.1/include/ap_int.h"
 # 1 "/tools/Xilinx/Vivado/2019.1/include/ap_common.h" 1
 # 57 "/tools/Xilinx/Vivado/2019.1/include/ap_common.h"
 # 1 "/tools/Xilinx/Vivado/2019.1/include/ap_decl.h" 1
-# 100 "/tools/Xilinx/Vivado/2019.1/include/ap_decl.h"
-
 # 100 "/tools/Xilinx/Vivado/2019.1/include/ap_decl.h"
 enum ap_q_mode {
   AP_RND,
@@ -524,6 +91,23 @@ enum {
 # 58 "/tools/Xilinx/Vivado/2019.1/include/ap_common.h" 2
 # 66 "/tools/Xilinx/Vivado/2019.1/include/ap_common.h"
 # 1 "/usr/include/assert.h" 1 3 4
+# 35 "/usr/include/assert.h" 3 4
+# 1 "/usr/include/features.h" 1 3 4
+# 424 "/usr/include/features.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 1 3 4
+# 427 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 428 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/long-double.h" 1 3 4
+# 429 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
+# 425 "/usr/include/features.h" 2 3 4
+# 448 "/usr/include/features.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 1 3 4
+# 10 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/gnu/stubs-64.h" 1 3 4
+# 11 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 2 3 4
+# 449 "/usr/include/features.h" 2 3 4
+# 36 "/usr/include/assert.h" 2 3 4
 # 66 "/usr/include/assert.h" 3 4
 
 # 66 "/usr/include/assert.h" 3 4
@@ -559,6 +143,8 @@ extern "C" {
 
 
 # 1 "/tools/Xilinx/Vivado/2019.1/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/include/stddef.h" 1 3 4
+# 216 "/tools/Xilinx/Vivado/2019.1/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/include/stddef.h" 3 4
+typedef long unsigned int size_t;
 # 34 "/usr/include/stdio.h" 2 3 4
 
 # 1 "/usr/include/x86_64-linux-gnu/bits/types.h" 1 3 4
@@ -1674,7 +1260,31 @@ extern int strfromf32x (char *__dest, size_t __size, const char * __format,
 extern int strfromf64x (char *__dest, size_t __size, const char * __format,
    _Float64x __f)
      throw () __attribute__ ((__nonnull__ (3)));
-# 274 "/usr/include/stdlib.h" 3 4
+# 272 "/usr/include/stdlib.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 1 3 4
+# 22 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h" 1 3 4
+# 28 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h" 3 4
+struct __locale_struct
+{
+
+  struct __locale_data *__locales[13];
+
+
+  const unsigned short int *__ctype_b;
+  const int *__ctype_tolower;
+  const int *__ctype_toupper;
+
+
+  const char *__names[13];
+};
+
+typedef struct __locale_struct *__locale_t;
+# 23 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 2 3 4
+
+typedef __locale_t locale_t;
+# 273 "/usr/include/stdlib.h" 2 3 4
+
 extern long int strtol_l (const char *__restrict __nptr,
      char **__restrict __endptr, int __base,
      locale_t __loc) throw () __attribute__ ((__nonnull__ (1, 4)));
@@ -43226,6 +42836,400 @@ namespace std __attribute__ ((__visibility__ ("default")))
 # 39 "/tools/Xilinx/Vivado/2019.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/cstring" 3
        
 # 40 "/tools/Xilinx/Vivado/2019.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/cstring" 3
+
+
+# 1 "/usr/include/string.h" 1 3 4
+# 26 "/usr/include/string.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 27 "/usr/include/string.h" 2 3 4
+
+extern "C" {
+
+
+
+
+# 1 "/tools/Xilinx/Vivado/2019.1/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/include/stddef.h" 1 3 4
+# 34 "/usr/include/string.h" 2 3 4
+# 42 "/usr/include/string.h" 3 4
+extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+       size_t __n) throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void *memmove (void *__dest, const void *__src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+extern void *memccpy (void *__restrict __dest, const void *__restrict __src,
+        int __c, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern void *memset (void *__s, int __c, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int memcmp (const void *__s1, const void *__s2, size_t __n)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern "C++"
+{
+extern void *memchr (void *__s, int __c, size_t __n)
+      throw () __asm ("memchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern const void *memchr (const void *__s, int __c, size_t __n)
+      throw () __asm ("memchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 88 "/usr/include/string.h" 3 4
+}
+# 98 "/usr/include/string.h" 3 4
+extern "C++" void *rawmemchr (void *__s, int __c)
+     throw () __asm ("rawmemchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern "C++" const void *rawmemchr (const void *__s, int __c)
+     throw () __asm ("rawmemchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+extern "C++" void *memrchr (void *__s, int __c, size_t __n)
+      throw () __asm ("memrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern "C++" const void *memrchr (const void *__s, int __c, size_t __n)
+      throw () __asm ("memrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 121 "/usr/include/string.h" 3 4
+extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+extern char *strncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern char *strcat (char *__restrict __dest, const char *__restrict __src)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+extern char *strncat (char *__restrict __dest, const char *__restrict __src,
+        size_t __n) throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strcmp (const char *__s1, const char *__s2)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern int strncmp (const char *__s1, const char *__s2, size_t __n)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strcoll (const char *__s1, const char *__s2)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern size_t strxfrm (char *__restrict __dest,
+         const char *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+
+extern int strcoll_l (const char *__s1, const char *__s2, locale_t __l)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+
+
+extern size_t strxfrm_l (char *__dest, const char *__src, size_t __n,
+    locale_t __l) throw () __attribute__ ((__nonnull__ (2, 4)));
+
+
+
+
+
+extern char *strdup (const char *__s)
+     throw () __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern char *strndup (const char *__string, size_t __n)
+     throw () __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+# 203 "/usr/include/string.h" 3 4
+extern "C++"
+{
+extern char *strchr (char *__s, int __c)
+     throw () __asm ("strchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern const char *strchr (const char *__s, int __c)
+     throw () __asm ("strchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 223 "/usr/include/string.h" 3 4
+}
+
+
+
+
+
+
+extern "C++"
+{
+extern char *strrchr (char *__s, int __c)
+     throw () __asm ("strrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern const char *strrchr (const char *__s, int __c)
+     throw () __asm ("strrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 250 "/usr/include/string.h" 3 4
+}
+# 260 "/usr/include/string.h" 3 4
+extern "C++" char *strchrnul (char *__s, int __c)
+     throw () __asm ("strchrnul") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern "C++" const char *strchrnul (const char *__s, int __c)
+     throw () __asm ("strchrnul") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 272 "/usr/include/string.h" 3 4
+extern size_t strcspn (const char *__s, const char *__reject)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern size_t strspn (const char *__s, const char *__accept)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern "C++"
+{
+extern char *strpbrk (char *__s, const char *__accept)
+     throw () __asm ("strpbrk") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern const char *strpbrk (const char *__s, const char *__accept)
+     throw () __asm ("strpbrk") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 300 "/usr/include/string.h" 3 4
+}
+
+
+
+
+
+
+extern "C++"
+{
+extern char *strstr (char *__haystack, const char *__needle)
+     throw () __asm ("strstr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern const char *strstr (const char *__haystack, const char *__needle)
+     throw () __asm ("strstr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 327 "/usr/include/string.h" 3 4
+}
+
+
+
+
+
+
+
+extern char *strtok (char *__restrict __s, const char *__restrict __delim)
+     throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+extern char *__strtok_r (char *__restrict __s,
+    const char *__restrict __delim,
+    char **__restrict __save_ptr)
+     throw () __attribute__ ((__nonnull__ (2, 3)));
+
+extern char *strtok_r (char *__restrict __s, const char *__restrict __delim,
+         char **__restrict __save_ptr)
+     throw () __attribute__ ((__nonnull__ (2, 3)));
+
+
+
+
+
+extern "C++" char *strcasestr (char *__haystack, const char *__needle)
+     throw () __asm ("strcasestr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern "C++" const char *strcasestr (const char *__haystack,
+         const char *__needle)
+     throw () __asm ("strcasestr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 368 "/usr/include/string.h" 3 4
+extern void *memmem (const void *__haystack, size_t __haystacklen,
+       const void *__needle, size_t __needlelen)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+extern void *__mempcpy (void *__restrict __dest,
+   const void *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+extern void *mempcpy (void *__restrict __dest,
+        const void *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern size_t strlen (const char *__s)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern size_t strnlen (const char *__string, size_t __maxlen)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern char *strerror (int __errnum) throw ();
+# 420 "/usr/include/string.h" 3 4
+extern char *strerror_r (int __errnum, char *__buf, size_t __buflen)
+     throw () __attribute__ ((__nonnull__ (2))) ;
+
+
+
+
+
+extern char *strerror_l (int __errnum, locale_t __l) throw ();
+
+
+
+# 1 "/usr/include/strings.h" 1 3 4
+# 23 "/usr/include/strings.h" 3 4
+# 1 "/tools/Xilinx/Vivado/2019.1/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/include/stddef.h" 1 3 4
+# 24 "/usr/include/strings.h" 2 3 4
+
+
+
+
+
+
+extern "C" {
+
+
+
+extern int bcmp (const void *__s1, const void *__s2, size_t __n)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void bcopy (const void *__src, void *__dest, size_t __n)
+  throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void bzero (void *__s, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern "C++"
+{
+extern char *index (char *__s, int __c)
+     throw () __asm ("index") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern const char *index (const char *__s, int __c)
+     throw () __asm ("index") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 66 "/usr/include/strings.h" 3 4
+}
+
+
+
+
+
+
+
+extern "C++"
+{
+extern char *rindex (char *__s, int __c)
+     throw () __asm ("rindex") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern const char *rindex (const char *__s, int __c)
+     throw () __asm ("rindex") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 94 "/usr/include/strings.h" 3 4
+}
+# 104 "/usr/include/strings.h" 3 4
+extern int ffs (int __i) throw () __attribute__ ((__const__));
+
+
+
+
+
+extern int ffsl (long int __l) throw () __attribute__ ((__const__));
+__extension__ extern int ffsll (long long int __ll)
+     throw () __attribute__ ((__const__));
+
+
+
+extern int strcasecmp (const char *__s1, const char *__s2)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strncasecmp (const char *__s1, const char *__s2, size_t __n)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+
+extern int strcasecmp_l (const char *__s1, const char *__s2, locale_t __loc)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+
+
+
+extern int strncasecmp_l (const char *__s1, const char *__s2,
+     size_t __n, locale_t __loc)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 4)));
+
+
+}
+# 432 "/usr/include/string.h" 2 3 4
+
+
+
+extern void explicit_bzero (void *__s, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern char *strsep (char **__restrict __stringp,
+       const char *__restrict __delim)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern char *strsignal (int __sig) throw ();
+
+
+extern char *__stpcpy (char *__restrict __dest, const char *__restrict __src)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpcpy (char *__restrict __dest, const char *__restrict __src)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern char *__stpncpy (char *__restrict __dest,
+   const char *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern int strverscmp (const char *__s1, const char *__s2)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern char *strfry (char *__string) throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern void *memfrob (void *__s, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+extern "C++" char *basename (char *__filename)
+     throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
+extern "C++" const char *basename (const char *__filename)
+     throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
+# 498 "/usr/include/string.h" 3 4
+}
+# 43 "/tools/Xilinx/Vivado/2019.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/cstring" 2 3
 # 71 "/tools/Xilinx/Vivado/2019.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/cstring" 3
 namespace std __attribute__ ((__visibility__ ("default")))
 {
@@ -68128,7 +68132,7 @@ inline bool operator!=(
 }
 # 399 "/tools/Xilinx/Vivado/2019.1/include/ap_fixed.h" 2
 # 368 "/tools/Xilinx/Vivado/2019.1/include/ap_int.h" 2
-# 6 "/home/student/workspace/tancoeff/tancoeff/tancalc.h" 2
+# 5 "/home/student/workspace/tancoeff/tancoeff/parameters.h" 2
 # 1 "/tools/Xilinx/Vivado/2019.1/include/hls_stream.h" 1
 # 79 "/tools/Xilinx/Vivado/2019.1/include/hls_stream.h"
 # 1 "/tools/Xilinx/Vivado/2019.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/queue" 1 3
@@ -75431,34 +75435,34 @@ class stream
 };
 
 }
-# 7 "/home/student/workspace/tancoeff/tancoeff/tancalc.h" 2
-# 15 "/home/student/workspace/tancoeff/tancoeff/tancalc.h"
-const int input_size=(64*(1024 / 512)+16*(1024 / 512))*64/16;
+# 6 "/home/student/workspace/tancoeff/tancoeff/parameters.h" 2
+# 14 "/home/student/workspace/tancoeff/tancoeff/parameters.h"
+const int input_size=(64*(32 / 16)+16*(32 / 16))*64/16;
 const int output_size=64*64;
 const int fifo_size=16;
 
-typedef ap_uint<1024> data_type;
-typedef ap_uint<512> din_type;
+typedef ap_uint<32> data_type;
+typedef ap_uint<16> din_type;
 typedef ap_uint<11> popcnt_type;
 typedef ap_uint<10> result_type;
 
 typedef struct{
  hls::stream<result_type> line[16];
 }stream_array;
+# 5 "/home/student/workspace/tancoeff/tancoeff/tancalc.h" 2
 
 popcnt_type popcnt(din_type x);
 popcnt_type popcntdata(data_type x);
-void data_read(volatile din_type *input, data_type *data_local, popcnt_type *datapop_local, short buffer_size);
+void data_read(volatile din_type *tancalc_input, data_type *data_local, popcnt_type *datapop_local, short buffer_size);
 void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *cmprpop_local, result_type *result_local, int num);
-void result_write(result_type *result_local, stream_array *output);
-extern "C" {void tancalc(volatile din_type *input, stream_array *output);}
+void result_write(result_type *result_local, stream_array *tancalc_output);
+extern "C" {void tancalc(volatile din_type *tancalc_input, stream_array *tancalc_output);}
 # 2 "/home/student/workspace/tancoeff/tancoeff/tancalc.cpp" 2
-
 
 popcnt_type popcnt(din_type x){
  popcnt_type popcnt = 0;
  popcnt:
- for(int b = 0; b < 512; b++) {
+ for(int b = 0; b < 16; b++){
 #pragma HLS unroll
      popcnt += x[b];
      }
@@ -75468,28 +75472,28 @@ popcnt_type popcnt(din_type x){
 popcnt_type popcntdata(data_type x){
  popcnt_type popcnt = 0;
  popcntdata:
- for(int b = 0; b < 1024; b++) {
+ for(int b = 0; b < 32; b++){
 #pragma HLS unroll
      popcnt += x[b];
      }
     return popcnt;
 }
 
-void data_read(volatile din_type *input, data_type *data_local, popcnt_type *datapop_local, short buffer_size){
+void data_read(volatile din_type *tancalc_input, data_type *data_local, popcnt_type *datapop_local, short buffer_size){
 #pragma HLS INLINE
  data_read_loop:
- for(int data_part_num = 0; data_part_num < buffer_size*(1024 / 512); data_part_num++){
+ for(int data_part_num = 0; data_part_num < buffer_size*(32 / 16); data_part_num++){
 #pragma HLS pipeline II=1
-  int num = ((data_part_num - data_part_num % (1024 / 512))/(1024 / 512)) % buffer_size;
-  int num_hi = 512 * (data_part_num % (1024 / 512) + 1) - 1;
-  int num_lo = 512 * (data_part_num % (1024 / 512));
-  din_type temp_input = input[data_part_num];
+  int num = ((data_part_num - data_part_num % (32 / 16))/(32 / 16)) % buffer_size;
+  int num_hi = 16 * (data_part_num % (32 / 16) + 1) - 1;
+  int num_lo = 16 * (data_part_num % (32 / 16));
+  din_type temp_input = tancalc_input[data_part_num];
   if(num_lo == 0){
    data_local[num] = (data_type)temp_input;
    datapop_local[num] = popcnt(temp_input);
   }
   else{
-   din_type data_local_temp = data_local[num].range(512 - 1, 0);
+   din_type data_local_temp = data_local[num].range(16 - 1, 0);
    data_local[num] = (temp_input, data_local_temp);
    datapop_local[num] += popcnt(temp_input);
   }
@@ -75502,8 +75506,7 @@ void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpo
  for(int cmpr_num = 0; cmpr_num < 16; cmpr_num++){
 #pragma HLS unroll
   popcnt_type temp = popcntdata(ref_local[num] & cmpr_local[cmpr_num]);
-
-  if(temp >= (refpop_local[num] + cmprpop_local[cmpr_num] - temp)){
+  if(1*temp >= (refpop_local[num] + cmprpop_local[cmpr_num] - temp)*0){
    result_local[cmpr_num] = cmpr_num;
   }
   else{
@@ -75513,28 +75516,19 @@ void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpo
  }
 }
 
-void result_write(result_type *result_local, stream_array *output){
+void result_write(result_type *result_local, stream_array *tancalc_output){
 #pragma HLS INLINE
  result_write_loop:
  for(int buffer_num = 0; buffer_num < 16; buffer_num++){
 #pragma HLS unroll
   if(result_local[buffer_num] != 0){
-   output->line[buffer_num].write(result_local[buffer_num]);
+   tancalc_output->line[buffer_num].write(result_local[buffer_num]);
   }
  }
 }
 
-void tancalc(volatile din_type *input, stream_array *output){
-#pragma HLS STREAM variable=output->line depth=fifo_size dim=1
-
-#pragma HLS INTERFACE m_axi depth=input_size port=input offset=slave bundle=gmem0
-
-
-#pragma HLS INTERFACE ap_fifo port=output
-#pragma HLS INTERFACE s_axilite port = input bundle = control
-
-#pragma HLS INTERFACE s_axilite port = return bundle = control
-
+void tancalc(volatile din_type *tancalc_input, stream_array *tancalc_output){
+#pragma HLS STREAM variable=tancalc_output->line depth=fifo_size dim=1
 
  data_type cmpr_local[16];
 #pragma HLS ARRAY_PARTITION variable=cmpr_local complete dim=1
@@ -75547,16 +75541,14 @@ void tancalc(volatile din_type *input, stream_array *output){
  result_type result_local[16];
 #pragma HLS ARRAY_PARTITION variable=result_local complete dim=1
 
-
  mainloop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < 64/16; cmpr_chunk_num++){
-  data_read(&input[64*(1024 / 512)+cmpr_chunk_num*16*(1024 / 512)], cmpr_local, cmprpop_local, 16);
+  data_read(&tancalc_input[64*(32 / 16)+cmpr_chunk_num*16*(32 / 16)], cmpr_local, cmprpop_local, 16);
   subloop:
   for(int data_num = 0; data_num < 64; data_num++){
-
 #pragma HLS pipeline II=1
-   data_read(&input[data_num*(1024 / 512)], ref_local, refpop_local, 1);
+   data_read(&tancalc_input[data_num*(32 / 16)], ref_local, refpop_local, 1);
    calculation(ref_local, cmpr_local, refpop_local, cmprpop_local, result_local, data_num%1);
-   result_write(result_local, output);
+   result_write(result_local, tancalc_output);
   }
  }
 }

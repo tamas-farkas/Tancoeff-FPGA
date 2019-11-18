@@ -17,15 +17,15 @@
 <PipelineType>function</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>2.148</EstimatedClockPeriod>
+<EstimatedClockPeriod>2.373</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>1</Best-caseLatency>
-<Average-caseLatency>1</Average-caseLatency>
-<Worst-caseLatency>1</Worst-caseLatency>
+<Best-caseLatency>0</Best-caseLatency>
+<Average-caseLatency>0</Average-caseLatency>
+<Worst-caseLatency>0</Worst-caseLatency>
 <PipelineInitiationInterval>1</PipelineInitiationInterval>
-<PipelineDepth>2</PipelineDepth>
+<PipelineDepth>1</PipelineDepth>
 <Interval-min>1</Interval-min>
 <Interval-max>1</Interval-max>
 </SummaryOfOverallLatency>
@@ -33,8 +33,8 @@
 
 <AreaEstimates>
 <Resources>
-<FF>76</FF>
-<LUT>4156</LUT>
+<FF>0</FF>
+<LUT>218</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP48E>0</DSP48E>
 <URAM>0</URAM>
@@ -50,24 +50,13 @@
 
 <InterfaceSummary>
 <RtlPorts>
-<name>ap_clk</name>
+<name>ap_ready</name>
 <Object>popcntdata</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
-<Dir>in</Dir>
-<Bits>1</Bits>
-<Attribute>control</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>ap_rst</name>
-<Object>popcntdata</Object>
-<Type>return value</Type>
-<Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>in</Dir>
+<Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
 </RtlPorts>
@@ -79,19 +68,8 @@
 <IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>11</Bits>
+<Bits>6</Bits>
 <Attribute>data</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>ap_ce</name>
-<Object>popcntdata</Object>
-<Type>return value</Type>
-<Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>in</Dir>
-<Bits>1</Bits>
-<Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>x_V</name>
@@ -101,7 +79,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>1024</Bits>
+<Bits>32</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 </InterfaceSummary>

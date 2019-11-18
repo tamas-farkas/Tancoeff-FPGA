@@ -32,12 +32,12 @@ if {$ret == 1} {
 	return -code error -errorcode $::errorCode
 }
 
-if {[file isfile tancalc_tancalc.autotvin.dat]} {
-	file delete -force tancalc_tancalc.autotvin.dat
+if {[file isfile hier_func_hier_func.autotvin.dat]} {
+	file delete -force hier_func_hier_func.autotvin.dat
 }
 
-if {[file isfile tancalc_tancalc.autotvout.dat]} {
-	file delete -force tancalc_tancalc.autotvout.dat
+if {[file isfile hier_func_hier_func.autotvout.dat]} {
+	file delete -force hier_func_hier_func.autotvout.dat
 }
 
 sc_sim_check $ret $err "temp0.log"

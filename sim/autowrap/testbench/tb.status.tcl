@@ -1,1 +1,1 @@
-set ::AESL_AUTOSIM::gTopFileName /home/student/workspace/tancoeff/tancoeff/./sim/autowrap/testbench/tancalc.cpp_pre.cpp.tb.cpp
+set ::AESL_AUTOSIM::gTopFileName /home/student/workspace/tancoeff/tancoeff/./sim/autowrap/testbench/hier_func.cpp_pre.cpp.tb.cpp

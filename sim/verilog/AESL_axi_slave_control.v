@@ -25,7 +25,7 @@ module AESL_axi_slave_control (
     TRAN_s_axi_control_BVALID,
     TRAN_s_axi_control_BREADY,
     TRAN_s_axi_control_BRESP,
-    TRAN_input_V,
+    TRAN_tancalc_input_V,
     TRAN_control_write_data_finish,
     TRAN_control_start_in,
     TRAN_control_idle_out,
@@ -39,16 +39,16 @@ module AESL_axi_slave_control (
     );
 
 //------------------------Parameter----------------------
-`define TV_IN_input_V "../tv/cdatafile/c.tancalc_tancalc.autotvin_input_V.dat"
+`define TV_IN_tancalc_input_V "../tv/cdatafile/c.hier_func_hier_func.autotvin_tancalc_input_V.dat"
 parameter ADDR_WIDTH = 5;
 parameter DATA_WIDTH = 32;
-parameter input_V_DEPTH = 1;
-reg [31 : 0] input_V_OPERATE_DEPTH = 1;
-parameter input_V_c_bitwidth = 64;
+parameter tancalc_input_V_DEPTH = 1;
+reg [31 : 0] tancalc_input_V_OPERATE_DEPTH = 1;
+parameter tancalc_input_V_c_bitwidth = 64;
 parameter START_ADDR = 0;
-parameter tancalc_continue_addr = 0;
-parameter tancalc_auto_start_addr = 0;
-parameter input_V_data_in_addr = 16;
+parameter hier_func_continue_addr = 0;
+parameter hier_func_auto_start_addr = 0;
+parameter tancalc_input_V_data_in_addr = 16;
 parameter STATUS_ADDR = 0;
 
 output [ADDR_WIDTH - 1 : 0] TRAN_s_axi_control_AWADDR;
@@ -68,7 +68,7 @@ input [2 - 1 : 0] TRAN_s_axi_control_RRESP;
 input  TRAN_s_axi_control_BVALID;
 output  TRAN_s_axi_control_BREADY;
 input [2 - 1 : 0] TRAN_s_axi_control_BRESP;
-input    [64 - 1 : 0] TRAN_input_V;
+input    [64 - 1 : 0] TRAN_tancalc_input_V;
 output TRAN_control_write_data_finish;
 input     clk;
 input     reset;
@@ -92,8 +92,8 @@ reg  ARVALID_reg = 0;
 reg  RREADY_reg = 0;
 reg [DATA_WIDTH - 1 : 0] RDATA_reg = 0;
 reg  BREADY_reg = 0;
-reg [input_V_c_bitwidth - 1 : 0] reg_input_V;
-reg input_V_write_data_finish;
+reg [tancalc_input_V_c_bitwidth - 1 : 0] reg_tancalc_input_V;
+reg tancalc_input_V_write_data_finish;
 reg AESL_ready_out_index_reg = 0;
 reg AESL_write_start_finish = 0;
 reg AESL_ready_reg;
@@ -104,10 +104,10 @@ reg AESL_auto_restart_index_reg;
 reg process_0_finish = 0;
 reg process_1_finish = 0;
 reg process_2_finish = 0;
-//write input_V reg
-reg [31 : 0] write_input_V_count = 0;
-reg write_input_V_run_flag = 0;
-reg write_one_input_V_data_done = 0;
+//write tancalc_input_V reg
+reg [31 : 0] write_tancalc_input_V_count = 0;
+reg write_tancalc_input_V_run_flag = 0;
+reg write_one_tancalc_input_V_data_done = 0;
 reg [31 : 0] write_start_count = 0;
 reg write_start_run_flag = 0;
 
@@ -130,7 +130,7 @@ assign TRAN_control_write_start_finish = AESL_write_start_finish;
 assign TRAN_control_done_out = AESL_done_index_reg;
 assign TRAN_control_ready_out = AESL_ready_out_index_reg;
 assign TRAN_control_idle_out = AESL_idle_index_reg;
-assign TRAN_control_write_data_finish = 1 & input_V_write_data_finish;
+assign TRAN_control_write_data_finish = 1 & tancalc_input_V_write_data_finish;
 always @(TRAN_control_ready_in or ready_initial) 
 begin
     AESL_ready_reg <= TRAN_control_ready_in | ready_initial;
@@ -151,9 +151,9 @@ always @(reset or process_0_finish or process_1_finish or process_2_finish ) beg
     end
 end
 
-always @(TRAN_input_V) 
+always @(TRAN_tancalc_input_V) 
 begin
-    reg_input_V = TRAN_input_V;
+    reg_tancalc_input_V = TRAN_tancalc_input_V;
 end
 task count_c_data_four_byte_num_by_bitwidth;
 input  integer bitwidth;
@@ -321,41 +321,41 @@ end
 
 always @(reset or posedge clk) begin
     if (reset == 0) begin
-        input_V_write_data_finish <= 0;
-        write_input_V_run_flag <= 0; 
-        write_input_V_count = 0;
-        count_operate_depth_by_bitwidth_and_depth (input_V_c_bitwidth, input_V_DEPTH, input_V_OPERATE_DEPTH);
+        tancalc_input_V_write_data_finish <= 0;
+        write_tancalc_input_V_run_flag <= 0; 
+        write_tancalc_input_V_count = 0;
+        count_operate_depth_by_bitwidth_and_depth (tancalc_input_V_c_bitwidth, tancalc_input_V_DEPTH, tancalc_input_V_OPERATE_DEPTH);
     end
     else begin
         if (TRAN_control_start_in === 1) begin
-            input_V_write_data_finish <= 0;
+            tancalc_input_V_write_data_finish <= 0;
         end
         if (AESL_ready_reg === 1) begin
-            write_input_V_run_flag <= 1; 
-            write_input_V_count = 0;
+            write_tancalc_input_V_run_flag <= 1; 
+            write_tancalc_input_V_count = 0;
         end
-        if (write_one_input_V_data_done === 1) begin
-            write_input_V_count = write_input_V_count + 1;
-            if (write_input_V_count == input_V_OPERATE_DEPTH) begin
-                write_input_V_run_flag <= 0; 
-                input_V_write_data_finish <= 1;
+        if (write_one_tancalc_input_V_data_done === 1) begin
+            write_tancalc_input_V_count = write_tancalc_input_V_count + 1;
+            if (write_tancalc_input_V_count == tancalc_input_V_OPERATE_DEPTH) begin
+                write_tancalc_input_V_run_flag <= 0; 
+                tancalc_input_V_write_data_finish <= 1;
             end
         end
     end
 end
 
-initial begin : write_input_V
-    integer write_input_V_resp;
+initial begin : write_tancalc_input_V
+    integer write_tancalc_input_V_resp;
     integer process_num ;
     integer get_ack;
     integer four_byte_num;
     integer c_bitwidth;
     integer i;
     integer j;
-    reg [31 : 0] input_V_data_tmp_reg;
+    reg [31 : 0] tancalc_input_V_data_tmp_reg;
     wait(reset === 1);
     @(posedge clk);
-    c_bitwidth = input_V_c_bitwidth;
+    c_bitwidth = tancalc_input_V_c_bitwidth;
     process_num = 1;
     count_c_data_four_byte_num_by_bitwidth (c_bitwidth , four_byte_num) ;
     while (1) begin
@@ -363,29 +363,29 @@ initial begin : write_input_V
 
         if (ongoing_process_number === process_num && process_busy === 0 ) begin
             get_ack = 1;
-            if (write_input_V_run_flag === 1 && get_ack === 1) begin
+            if (write_tancalc_input_V_run_flag === 1 && get_ack === 1) begin
                 process_busy = 1;
-                //write input_V data 
+                //write tancalc_input_V data 
                 for (i = 0 ; i < four_byte_num ; i = i+1) begin
-                    if (input_V_c_bitwidth < 32) begin
-                        input_V_data_tmp_reg = reg_input_V;
+                    if (tancalc_input_V_c_bitwidth < 32) begin
+                        tancalc_input_V_data_tmp_reg = reg_tancalc_input_V;
                     end
                     else begin
                         for (j=0 ; j<32 ; j = j + 1) begin
-                            if (i*32 + j < input_V_c_bitwidth) begin
-                                input_V_data_tmp_reg[j] = reg_input_V[i*32 + j];
+                            if (i*32 + j < tancalc_input_V_c_bitwidth) begin
+                                tancalc_input_V_data_tmp_reg[j] = reg_tancalc_input_V[i*32 + j];
                             end
                             else begin
-                                input_V_data_tmp_reg[j] = 0;
+                                tancalc_input_V_data_tmp_reg[j] = 0;
                             end
                         end
                     end
-                    write (input_V_data_in_addr + write_input_V_count * four_byte_num * 4 + i * 4, input_V_data_tmp_reg, write_input_V_resp);
+                    write (tancalc_input_V_data_in_addr + write_tancalc_input_V_count * four_byte_num * 4 + i * 4, tancalc_input_V_data_tmp_reg, write_tancalc_input_V_resp);
                 end
                 process_busy = 0;
-                write_one_input_V_data_done <= 1;
+                write_one_tancalc_input_V_data_done <= 1;
                 @(posedge clk);
-                write_one_input_V_data_done <= 0;
+                write_one_tancalc_input_V_data_done <= 0;
             end   
             process_1_finish <= 1;
         end

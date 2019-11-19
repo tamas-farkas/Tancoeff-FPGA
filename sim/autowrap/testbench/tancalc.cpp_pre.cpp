@@ -75436,78 +75436,90 @@ class stream
 
 }
 # 6 "/home/student/workspace/tancoeff/tancoeff/parameters.h" 2
-# 14 "/home/student/workspace/tancoeff/tancoeff/parameters.h"
-const int input_size=(64*(32 / 16)+16*(32 / 16))*64/16;
-const int output_size=64*64;
-const int fifo_size=16;
+# 16 "/home/student/workspace/tancoeff/tancoeff/parameters.h"
+const int input_size=(1024*64*(1024 / 512)+64*(1024 / 512))*1024*64/64;
+const int output_size=1024*64*1024*64;
+const int fifo_size=64*4;
 
-typedef ap_uint<32> data_type;
-typedef ap_uint<16> din_type;
+typedef ap_uint<1024> data_type;
+typedef ap_uint<512> din_type;
 typedef ap_uint<11> popcnt_type;
-typedef ap_uint<10> result_type;
+typedef ap_uint<32> result_type;
+typedef ap_uint<16> halfresult_type;
 
 typedef struct{
- hls::stream<result_type> line[16];
+ hls::stream<result_type> line[64];
 }stream_array;
 # 5 "/home/student/workspace/tancoeff/tancoeff/tancalc.h" 2
 
 popcnt_type popcnt(din_type x);
-popcnt_type popcntdata(data_type x);
-void data_read(volatile din_type *tancalc_input, data_type *data_local, popcnt_type *datapop_local, short buffer_size);
-void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *cmprpop_local, result_type *result_local, int num);
-void result_write(result_type *result_local, stream_array *tancalc_output);
-extern "C" {void tancalc(volatile din_type *tancalc_input, stream_array *tancalc_output);}
+void data_read_cmpr(volatile din_type *input, data_type *data_local, popcnt_type *datapop_local);
+void data_read_ref(volatile din_type *input, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *andpop_local);
+void calculation(popcnt_type *refpop_local, popcnt_type *cmprpop_local, popcnt_type *andpop_local, result_type *result_local, int cmpr_chunk_num, int data_num);
+void result_write(result_type *result_local, stream_array *output);
+extern "C" {void tancalc(volatile din_type *input, stream_array *output);}
 # 2 "/home/student/workspace/tancoeff/tancoeff/tancalc.cpp" 2
 
 popcnt_type popcnt(din_type x){
  popcnt_type popcnt = 0;
  popcnt:
- for(int b = 0; b < 16; b++){
+ for(int b = 0; b < 512; b++){
 #pragma HLS unroll
      popcnt += x[b];
      }
     return popcnt;
 }
 
-popcnt_type popcntdata(data_type x){
- popcnt_type popcnt = 0;
- popcntdata:
- for(int b = 0; b < 32; b++){
-#pragma HLS unroll
-     popcnt += x[b];
-     }
-    return popcnt;
-}
-
-void data_read(volatile din_type *tancalc_input, data_type *data_local, popcnt_type *datapop_local, short buffer_size){
+void data_read_cmpr(volatile din_type *input, data_type *data_local, popcnt_type *datapop_local){
 #pragma HLS INLINE
- data_read_loop:
- for(int data_part_num = 0; data_part_num < buffer_size*(32 / 16); data_part_num++){
+ data_read_cmpr_loop:
+ for(int data_part_num = 0; data_part_num < 64*(1024 / 512); data_part_num++){
 #pragma HLS pipeline II=1
-  int num = ((data_part_num - data_part_num % (32 / 16))/(32 / 16)) % buffer_size;
-  int num_hi = 16 * (data_part_num % (32 / 16) + 1) - 1;
-  int num_lo = 16 * (data_part_num % (32 / 16));
-  din_type temp_input = tancalc_input[data_part_num];
+  int num = ((data_part_num - data_part_num % (1024 / 512))/(1024 / 512));
+  int num_hi = 512 * (data_part_num % (1024 / 512) + 1) - 1;
+  int num_lo = 512 * (data_part_num % (1024 / 512));
+  din_type temp_input = input[data_part_num];
   if(num_lo == 0){
    data_local[num] = (data_type)temp_input;
    datapop_local[num] = popcnt(temp_input);
   }
   else{
-   din_type data_local_temp = data_local[num].range(16 - 1, 0);
+   din_type data_local_temp = data_local[num].range(512 - 1, 0);
    data_local[num] = (temp_input, data_local_temp);
    datapop_local[num] += popcnt(temp_input);
   }
  }
 }
 
-void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *cmprpop_local, result_type *result_local, int num){
+void data_read_ref(volatile din_type *input, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *andpop_local){
+#pragma HLS INLINE
+ data_read_ref_loop:
+ for(int data_part_num = 0; data_part_num < (1024 / 512); data_part_num++){
+  int num_hi = 512 * (data_part_num % (1024 / 512) + 1) - 1;
+  int num_lo = 512 * (data_part_num % (1024 / 512));
+  din_type temp_input = input[data_part_num];
+  and_popcnt__loop:
+  for(int cmpr_num = 0; cmpr_num < 64; cmpr_num++){
+#pragma HLS unroll
+   if(num_lo == 0){
+    *refpop_local = popcnt(temp_input);
+    andpop_local[cmpr_num] = popcnt(temp_input & cmpr_local[cmpr_num].range(num_hi, num_lo));
+   }
+   else{
+    *refpop_local += popcnt(temp_input);
+    andpop_local[cmpr_num] += popcnt(temp_input & cmpr_local[cmpr_num].range(num_hi, num_lo));
+   }
+  }
+ }
+}
+
+void calculation(popcnt_type *refpop_local, popcnt_type *cmprpop_local, popcnt_type *andpop_local, result_type *result_local, int cmpr_chunk_num, int data_num){
 #pragma HLS INLINE
  calculation_loop:
- for(int cmpr_num = 0; cmpr_num < 16; cmpr_num++){
+ for(int cmpr_num = 0; cmpr_num < 64; cmpr_num++){
 #pragma HLS unroll
-  popcnt_type temp = popcntdata(ref_local[num] & cmpr_local[cmpr_num]);
-  if(1*temp >= (refpop_local[num] + cmprpop_local[cmpr_num] - temp)*0){
-   result_local[cmpr_num] = cmpr_num;
+  if(2*andpop_local[cmpr_num] >= (*refpop_local + cmprpop_local[cmpr_num] - andpop_local[cmpr_num])){
+   result_local[cmpr_num] = (result_type)((halfresult_type)data_num + 1,(halfresult_type)(cmpr_chunk_num*64 + cmpr_num));
   }
   else{
    result_local[cmpr_num] = 0;
@@ -75516,39 +75528,37 @@ void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpo
  }
 }
 
-void result_write(result_type *result_local, stream_array *tancalc_output){
+void result_write(result_type *result_local, stream_array *output){
 #pragma HLS INLINE
  result_write_loop:
- for(int buffer_num = 0; buffer_num < 16; buffer_num++){
+ for(int buffer_num = 0; buffer_num < 64; buffer_num++){
 #pragma HLS unroll
-  if(result_local[buffer_num] != 0){
-   tancalc_output->line[buffer_num].write(result_local[buffer_num]);
+  if(result_local[buffer_num]){
+   output->line[buffer_num].write(result_local[buffer_num]);
   }
  }
 }
 
-void tancalc(volatile din_type *tancalc_input, stream_array *tancalc_output){
-#pragma HLS STREAM variable=tancalc_output->line depth=fifo_size dim=1
+void tancalc(volatile din_type *input, stream_array *output){
 
- data_type cmpr_local[16];
+ data_type cmpr_local[64];
 #pragma HLS ARRAY_PARTITION variable=cmpr_local complete dim=1
- popcnt_type cmprpop_local[16];
+ popcnt_type cmprpop_local[64];
 #pragma HLS ARRAY_PARTITION variable=cmprpop_local complete dim=1
- data_type ref_local[1];
-#pragma HLS ARRAY_PARTITION variable=ref_local complete dim=1
- popcnt_type refpop_local[1];
-#pragma HLS ARRAY_PARTITION variable=refpop_local complete dim=1
- result_type result_local[16];
+ popcnt_type refpop_local;
+ popcnt_type andpop_local[64];
+#pragma HLS ARRAY_PARTITION variable=andpop_local complete dim=1
+ result_type result_local[64];
 #pragma HLS ARRAY_PARTITION variable=result_local complete dim=1
 
- mainloop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < 64/16; cmpr_chunk_num++){
-  data_read(&tancalc_input[64*(32 / 16)+cmpr_chunk_num*16*(32 / 16)], cmpr_local, cmprpop_local, 16);
+ mainloop: for(int cmpr_chunk_num = 0; cmpr_chunk_num < 1024*64/64; cmpr_chunk_num++){
+  data_read_cmpr(&input[1024*64*(1024 / 512)+cmpr_chunk_num*64*(1024 / 512)], cmpr_local, cmprpop_local);
   subloop:
-  for(int data_num = 0; data_num < 64; data_num++){
+  for(int data_num = 0; data_num < 1024*64; data_num++){
 #pragma HLS pipeline II=1
-   data_read(&tancalc_input[data_num*(32 / 16)], ref_local, refpop_local, 1);
-   calculation(ref_local, cmpr_local, refpop_local, cmprpop_local, result_local, data_num%1);
-   result_write(result_local, tancalc_output);
+   data_read_ref(&input[data_num*(1024 / 512)], cmpr_local, &refpop_local, andpop_local);
+   calculation(&refpop_local, cmprpop_local, andpop_local, result_local, cmpr_chunk_num, data_num);
+   result_write(result_local, output);
   }
  }
 }

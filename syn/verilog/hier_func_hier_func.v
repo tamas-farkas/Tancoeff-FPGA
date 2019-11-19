@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="hier_func_hier_func,hls_ip_2019_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xcvu9p-fsgd2104-2L-e,HLS_INPUT_CLOCK=3.333000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=2.433000,HLS_SYN_LAT=4127,HLS_SYN_TPT=4100,HLS_SYN_MEM=2,HLS_SYN_DSP=15,HLS_SYN_FF=2963,HLS_SYN_LUT=6265,HLS_VERSION=2019_1}" *)
+(* CORE_GENERATION_INFO="hier_func_hier_func,hls_ip_2019_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xcvu9p-fsgd2104-2L-e,HLS_INPUT_CLOCK=3.333000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=2.433000,HLS_SYN_LAT=134414371,HLS_SYN_TPT=134414341,HLS_SYN_MEM=158,HLS_SYN_DSP=0,HLS_SYN_FF=298390,HLS_SYN_LUT=307173,HLS_VERSION=2019_1}" *)
 
 module hier_func_hier_func (
         s_axi_control_AWVALID,
@@ -75,9 +75,9 @@ module hier_func_hier_func (
         m_axi_gmem0_BRESP,
         m_axi_gmem0_BID,
         m_axi_gmem0_BUSER,
-        fifo_output_V_V_TDATA,
-        fifo_output_V_V_TVALID,
-        fifo_output_V_V_TREADY
+        output_V_V_TDATA,
+        output_V_V_TVALID,
+        output_V_V_TREADY
 );
 
 parameter    C_S_AXI_CONTROL_DATA_WIDTH = 32;
@@ -86,7 +86,7 @@ parameter    C_S_AXI_DATA_WIDTH = 32;
 parameter    C_S_AXI_ADDR_WIDTH = 32;
 parameter    C_M_AXI_GMEM0_ID_WIDTH = 1;
 parameter    C_M_AXI_GMEM0_ADDR_WIDTH = 64;
-parameter    C_M_AXI_GMEM0_DATA_WIDTH = 32;
+parameter    C_M_AXI_GMEM0_DATA_WIDTH = 512;
 parameter    C_M_AXI_GMEM0_AWUSER_WIDTH = 1;
 parameter    C_M_AXI_GMEM0_ARUSER_WIDTH = 1;
 parameter    C_M_AXI_GMEM0_WUSER_WIDTH = 1;
@@ -106,7 +106,7 @@ parameter    C_M_AXI_BUSER_WIDTH = 1;
 
 parameter C_S_AXI_CONTROL_WSTRB_WIDTH = (32 / 8);
 parameter C_S_AXI_WSTRB_WIDTH = (32 / 8);
-parameter C_M_AXI_GMEM0_WSTRB_WIDTH = (32 / 8);
+parameter C_M_AXI_GMEM0_WSTRB_WIDTH = (512 / 8);
 parameter C_M_AXI_WSTRB_WIDTH = (32 / 8);
 
 input   s_axi_control_AWVALID;
@@ -174,9 +174,9 @@ output   m_axi_gmem0_BREADY;
 input  [1:0] m_axi_gmem0_BRESP;
 input  [C_M_AXI_GMEM0_ID_WIDTH - 1:0] m_axi_gmem0_BID;
 input  [C_M_AXI_GMEM0_BUSER_WIDTH - 1:0] m_axi_gmem0_BUSER;
-output  [15:0] fifo_output_V_V_TDATA;
-output   fifo_output_V_V_TVALID;
-input   fifo_output_V_V_TREADY;
+output  [31:0] output_V_V_TDATA;
+output   output_V_V_TVALID;
+input   output_V_V_TREADY;
 
 (* shreg_extract = "no" *) reg    ap_rst_reg_2;
 (* shreg_extract = "no" *) reg    ap_rst_reg_1;
@@ -185,12 +185,12 @@ wire    ap_start;
 wire    ap_ready;
 wire    ap_done;
 wire    ap_idle;
-wire   [63:0] tancalc_input_V;
+wire   [63:0] input_V;
 wire    gmem0_AWREADY;
 wire    gmem0_WREADY;
 wire    gmem0_ARREADY;
 wire    gmem0_RVALID;
-wire   [15:0] gmem0_RDATA;
+wire   [511:0] gmem0_RDATA;
 wire    gmem0_RLAST;
 wire   [0:0] gmem0_RID;
 wire   [0:0] gmem0_RUSER;
@@ -206,136 +206,430 @@ wire    tancalc_U0_ap_idle;
 wire    tancalc_U0_ap_ready;
 wire    tancalc_U0_start_out;
 wire    tancalc_U0_start_write;
-wire    tancalc_U0_m_axi_tancalc_input_V_AWVALID;
-wire   [63:0] tancalc_U0_m_axi_tancalc_input_V_AWADDR;
-wire   [0:0] tancalc_U0_m_axi_tancalc_input_V_AWID;
-wire   [31:0] tancalc_U0_m_axi_tancalc_input_V_AWLEN;
-wire   [2:0] tancalc_U0_m_axi_tancalc_input_V_AWSIZE;
-wire   [1:0] tancalc_U0_m_axi_tancalc_input_V_AWBURST;
-wire   [1:0] tancalc_U0_m_axi_tancalc_input_V_AWLOCK;
-wire   [3:0] tancalc_U0_m_axi_tancalc_input_V_AWCACHE;
-wire   [2:0] tancalc_U0_m_axi_tancalc_input_V_AWPROT;
-wire   [3:0] tancalc_U0_m_axi_tancalc_input_V_AWQOS;
-wire   [3:0] tancalc_U0_m_axi_tancalc_input_V_AWREGION;
-wire   [0:0] tancalc_U0_m_axi_tancalc_input_V_AWUSER;
-wire    tancalc_U0_m_axi_tancalc_input_V_WVALID;
-wire   [15:0] tancalc_U0_m_axi_tancalc_input_V_WDATA;
-wire   [1:0] tancalc_U0_m_axi_tancalc_input_V_WSTRB;
-wire    tancalc_U0_m_axi_tancalc_input_V_WLAST;
-wire   [0:0] tancalc_U0_m_axi_tancalc_input_V_WID;
-wire   [0:0] tancalc_U0_m_axi_tancalc_input_V_WUSER;
-wire    tancalc_U0_m_axi_tancalc_input_V_ARVALID;
-wire   [63:0] tancalc_U0_m_axi_tancalc_input_V_ARADDR;
-wire   [0:0] tancalc_U0_m_axi_tancalc_input_V_ARID;
-wire   [31:0] tancalc_U0_m_axi_tancalc_input_V_ARLEN;
-wire   [2:0] tancalc_U0_m_axi_tancalc_input_V_ARSIZE;
-wire   [1:0] tancalc_U0_m_axi_tancalc_input_V_ARBURST;
-wire   [1:0] tancalc_U0_m_axi_tancalc_input_V_ARLOCK;
-wire   [3:0] tancalc_U0_m_axi_tancalc_input_V_ARCACHE;
-wire   [2:0] tancalc_U0_m_axi_tancalc_input_V_ARPROT;
-wire   [3:0] tancalc_U0_m_axi_tancalc_input_V_ARQOS;
-wire   [3:0] tancalc_U0_m_axi_tancalc_input_V_ARREGION;
-wire   [0:0] tancalc_U0_m_axi_tancalc_input_V_ARUSER;
-wire    tancalc_U0_m_axi_tancalc_input_V_RREADY;
-wire    tancalc_U0_m_axi_tancalc_input_V_BREADY;
-wire   [9:0] tancalc_U0_tancalc_output_line_1_V_V_din;
-wire    tancalc_U0_tancalc_output_line_1_V_V_write;
-wire   [9:0] tancalc_U0_tancalc_output_line_2_V_V_din;
-wire    tancalc_U0_tancalc_output_line_2_V_V_write;
-wire   [9:0] tancalc_U0_tancalc_output_line_3_V_V_din;
-wire    tancalc_U0_tancalc_output_line_3_V_V_write;
-wire   [9:0] tancalc_U0_tancalc_output_line_4_V_V_din;
-wire    tancalc_U0_tancalc_output_line_4_V_V_write;
-wire   [9:0] tancalc_U0_tancalc_output_line_5_V_V_din;
-wire    tancalc_U0_tancalc_output_line_5_V_V_write;
-wire   [9:0] tancalc_U0_tancalc_output_line_6_V_V_din;
-wire    tancalc_U0_tancalc_output_line_6_V_V_write;
-wire   [9:0] tancalc_U0_tancalc_output_line_7_V_V_din;
-wire    tancalc_U0_tancalc_output_line_7_V_V_write;
-wire   [9:0] tancalc_U0_tancalc_output_line_8_V_V_din;
-wire    tancalc_U0_tancalc_output_line_8_V_V_write;
-wire   [9:0] tancalc_U0_tancalc_output_line_9_V_V_din;
-wire    tancalc_U0_tancalc_output_line_9_V_V_write;
-wire   [9:0] tancalc_U0_tancalc_output_line_10_V_V_din;
-wire    tancalc_U0_tancalc_output_line_10_V_V_write;
-wire   [9:0] tancalc_U0_tancalc_output_line_11_V_V_din;
-wire    tancalc_U0_tancalc_output_line_11_V_V_write;
-wire   [9:0] tancalc_U0_tancalc_output_line_12_V_V_din;
-wire    tancalc_U0_tancalc_output_line_12_V_V_write;
-wire   [9:0] tancalc_U0_tancalc_output_line_13_V_V_din;
-wire    tancalc_U0_tancalc_output_line_13_V_V_write;
-wire   [9:0] tancalc_U0_tancalc_output_line_14_V_V_din;
-wire    tancalc_U0_tancalc_output_line_14_V_V_write;
-wire   [9:0] tancalc_U0_tancalc_output_line_15_V_V_din;
-wire    tancalc_U0_tancalc_output_line_15_V_V_write;
+wire    tancalc_U0_m_axi_input_V_AWVALID;
+wire   [63:0] tancalc_U0_m_axi_input_V_AWADDR;
+wire   [0:0] tancalc_U0_m_axi_input_V_AWID;
+wire   [31:0] tancalc_U0_m_axi_input_V_AWLEN;
+wire   [2:0] tancalc_U0_m_axi_input_V_AWSIZE;
+wire   [1:0] tancalc_U0_m_axi_input_V_AWBURST;
+wire   [1:0] tancalc_U0_m_axi_input_V_AWLOCK;
+wire   [3:0] tancalc_U0_m_axi_input_V_AWCACHE;
+wire   [2:0] tancalc_U0_m_axi_input_V_AWPROT;
+wire   [3:0] tancalc_U0_m_axi_input_V_AWQOS;
+wire   [3:0] tancalc_U0_m_axi_input_V_AWREGION;
+wire   [0:0] tancalc_U0_m_axi_input_V_AWUSER;
+wire    tancalc_U0_m_axi_input_V_WVALID;
+wire   [511:0] tancalc_U0_m_axi_input_V_WDATA;
+wire   [63:0] tancalc_U0_m_axi_input_V_WSTRB;
+wire    tancalc_U0_m_axi_input_V_WLAST;
+wire   [0:0] tancalc_U0_m_axi_input_V_WID;
+wire   [0:0] tancalc_U0_m_axi_input_V_WUSER;
+wire    tancalc_U0_m_axi_input_V_ARVALID;
+wire   [63:0] tancalc_U0_m_axi_input_V_ARADDR;
+wire   [0:0] tancalc_U0_m_axi_input_V_ARID;
+wire   [31:0] tancalc_U0_m_axi_input_V_ARLEN;
+wire   [2:0] tancalc_U0_m_axi_input_V_ARSIZE;
+wire   [1:0] tancalc_U0_m_axi_input_V_ARBURST;
+wire   [1:0] tancalc_U0_m_axi_input_V_ARLOCK;
+wire   [3:0] tancalc_U0_m_axi_input_V_ARCACHE;
+wire   [2:0] tancalc_U0_m_axi_input_V_ARPROT;
+wire   [3:0] tancalc_U0_m_axi_input_V_ARQOS;
+wire   [3:0] tancalc_U0_m_axi_input_V_ARREGION;
+wire   [0:0] tancalc_U0_m_axi_input_V_ARUSER;
+wire    tancalc_U0_m_axi_input_V_RREADY;
+wire    tancalc_U0_m_axi_input_V_BREADY;
+wire   [31:0] tancalc_U0_output_line_0_V_V_din;
+wire    tancalc_U0_output_line_0_V_V_write;
+wire   [31:0] tancalc_U0_output_line_1_V_V_din;
+wire    tancalc_U0_output_line_1_V_V_write;
+wire   [31:0] tancalc_U0_output_line_2_V_V_din;
+wire    tancalc_U0_output_line_2_V_V_write;
+wire   [31:0] tancalc_U0_output_line_3_V_V_din;
+wire    tancalc_U0_output_line_3_V_V_write;
+wire   [31:0] tancalc_U0_output_line_4_V_V_din;
+wire    tancalc_U0_output_line_4_V_V_write;
+wire   [31:0] tancalc_U0_output_line_5_V_V_din;
+wire    tancalc_U0_output_line_5_V_V_write;
+wire   [31:0] tancalc_U0_output_line_6_V_V_din;
+wire    tancalc_U0_output_line_6_V_V_write;
+wire   [31:0] tancalc_U0_output_line_7_V_V_din;
+wire    tancalc_U0_output_line_7_V_V_write;
+wire   [31:0] tancalc_U0_output_line_8_V_V_din;
+wire    tancalc_U0_output_line_8_V_V_write;
+wire   [31:0] tancalc_U0_output_line_9_V_V_din;
+wire    tancalc_U0_output_line_9_V_V_write;
+wire   [31:0] tancalc_U0_output_line_10_V_V_din;
+wire    tancalc_U0_output_line_10_V_V_write;
+wire   [31:0] tancalc_U0_output_line_11_V_V_din;
+wire    tancalc_U0_output_line_11_V_V_write;
+wire   [31:0] tancalc_U0_output_line_12_V_V_din;
+wire    tancalc_U0_output_line_12_V_V_write;
+wire   [31:0] tancalc_U0_output_line_13_V_V_din;
+wire    tancalc_U0_output_line_13_V_V_write;
+wire   [31:0] tancalc_U0_output_line_14_V_V_din;
+wire    tancalc_U0_output_line_14_V_V_write;
+wire   [31:0] tancalc_U0_output_line_15_V_V_din;
+wire    tancalc_U0_output_line_15_V_V_write;
+wire   [31:0] tancalc_U0_output_line_16_V_V_din;
+wire    tancalc_U0_output_line_16_V_V_write;
+wire   [31:0] tancalc_U0_output_line_17_V_V_din;
+wire    tancalc_U0_output_line_17_V_V_write;
+wire   [31:0] tancalc_U0_output_line_18_V_V_din;
+wire    tancalc_U0_output_line_18_V_V_write;
+wire   [31:0] tancalc_U0_output_line_19_V_V_din;
+wire    tancalc_U0_output_line_19_V_V_write;
+wire   [31:0] tancalc_U0_output_line_20_V_V_din;
+wire    tancalc_U0_output_line_20_V_V_write;
+wire   [31:0] tancalc_U0_output_line_21_V_V_din;
+wire    tancalc_U0_output_line_21_V_V_write;
+wire   [31:0] tancalc_U0_output_line_22_V_V_din;
+wire    tancalc_U0_output_line_22_V_V_write;
+wire   [31:0] tancalc_U0_output_line_23_V_V_din;
+wire    tancalc_U0_output_line_23_V_V_write;
+wire   [31:0] tancalc_U0_output_line_24_V_V_din;
+wire    tancalc_U0_output_line_24_V_V_write;
+wire   [31:0] tancalc_U0_output_line_25_V_V_din;
+wire    tancalc_U0_output_line_25_V_V_write;
+wire   [31:0] tancalc_U0_output_line_26_V_V_din;
+wire    tancalc_U0_output_line_26_V_V_write;
+wire   [31:0] tancalc_U0_output_line_27_V_V_din;
+wire    tancalc_U0_output_line_27_V_V_write;
+wire   [31:0] tancalc_U0_output_line_28_V_V_din;
+wire    tancalc_U0_output_line_28_V_V_write;
+wire   [31:0] tancalc_U0_output_line_29_V_V_din;
+wire    tancalc_U0_output_line_29_V_V_write;
+wire   [31:0] tancalc_U0_output_line_30_V_V_din;
+wire    tancalc_U0_output_line_30_V_V_write;
+wire   [31:0] tancalc_U0_output_line_31_V_V_din;
+wire    tancalc_U0_output_line_31_V_V_write;
+wire   [31:0] tancalc_U0_output_line_32_V_V_din;
+wire    tancalc_U0_output_line_32_V_V_write;
+wire   [31:0] tancalc_U0_output_line_33_V_V_din;
+wire    tancalc_U0_output_line_33_V_V_write;
+wire   [31:0] tancalc_U0_output_line_34_V_V_din;
+wire    tancalc_U0_output_line_34_V_V_write;
+wire   [31:0] tancalc_U0_output_line_35_V_V_din;
+wire    tancalc_U0_output_line_35_V_V_write;
+wire   [31:0] tancalc_U0_output_line_36_V_V_din;
+wire    tancalc_U0_output_line_36_V_V_write;
+wire   [31:0] tancalc_U0_output_line_37_V_V_din;
+wire    tancalc_U0_output_line_37_V_V_write;
+wire   [31:0] tancalc_U0_output_line_38_V_V_din;
+wire    tancalc_U0_output_line_38_V_V_write;
+wire   [31:0] tancalc_U0_output_line_39_V_V_din;
+wire    tancalc_U0_output_line_39_V_V_write;
+wire   [31:0] tancalc_U0_output_line_40_V_V_din;
+wire    tancalc_U0_output_line_40_V_V_write;
+wire   [31:0] tancalc_U0_output_line_41_V_V_din;
+wire    tancalc_U0_output_line_41_V_V_write;
+wire   [31:0] tancalc_U0_output_line_42_V_V_din;
+wire    tancalc_U0_output_line_42_V_V_write;
+wire   [31:0] tancalc_U0_output_line_43_V_V_din;
+wire    tancalc_U0_output_line_43_V_V_write;
+wire   [31:0] tancalc_U0_output_line_44_V_V_din;
+wire    tancalc_U0_output_line_44_V_V_write;
+wire   [31:0] tancalc_U0_output_line_45_V_V_din;
+wire    tancalc_U0_output_line_45_V_V_write;
+wire   [31:0] tancalc_U0_output_line_46_V_V_din;
+wire    tancalc_U0_output_line_46_V_V_write;
+wire   [31:0] tancalc_U0_output_line_47_V_V_din;
+wire    tancalc_U0_output_line_47_V_V_write;
+wire   [31:0] tancalc_U0_output_line_48_V_V_din;
+wire    tancalc_U0_output_line_48_V_V_write;
+wire   [31:0] tancalc_U0_output_line_49_V_V_din;
+wire    tancalc_U0_output_line_49_V_V_write;
+wire   [31:0] tancalc_U0_output_line_50_V_V_din;
+wire    tancalc_U0_output_line_50_V_V_write;
+wire   [31:0] tancalc_U0_output_line_51_V_V_din;
+wire    tancalc_U0_output_line_51_V_V_write;
+wire   [31:0] tancalc_U0_output_line_52_V_V_din;
+wire    tancalc_U0_output_line_52_V_V_write;
+wire   [31:0] tancalc_U0_output_line_53_V_V_din;
+wire    tancalc_U0_output_line_53_V_V_write;
+wire   [31:0] tancalc_U0_output_line_54_V_V_din;
+wire    tancalc_U0_output_line_54_V_V_write;
+wire   [31:0] tancalc_U0_output_line_55_V_V_din;
+wire    tancalc_U0_output_line_55_V_V_write;
+wire   [31:0] tancalc_U0_output_line_56_V_V_din;
+wire    tancalc_U0_output_line_56_V_V_write;
+wire   [31:0] tancalc_U0_output_line_57_V_V_din;
+wire    tancalc_U0_output_line_57_V_V_write;
+wire   [31:0] tancalc_U0_output_line_58_V_V_din;
+wire    tancalc_U0_output_line_58_V_V_write;
+wire   [31:0] tancalc_U0_output_line_59_V_V_din;
+wire    tancalc_U0_output_line_59_V_V_write;
+wire   [31:0] tancalc_U0_output_line_60_V_V_din;
+wire    tancalc_U0_output_line_60_V_V_write;
+wire   [31:0] tancalc_U0_output_line_61_V_V_din;
+wire    tancalc_U0_output_line_61_V_V_write;
+wire   [31:0] tancalc_U0_output_line_62_V_V_din;
+wire    tancalc_U0_output_line_62_V_V_write;
+wire   [31:0] tancalc_U0_output_line_63_V_V_din;
+wire    tancalc_U0_output_line_63_V_V_write;
 wire    fifo_U0_ap_start;
 wire    fifo_U0_ap_done;
 wire    fifo_U0_ap_continue;
 wire    fifo_U0_ap_idle;
 wire    fifo_U0_ap_ready;
-wire    fifo_U0_fifo_input_line_1_V_V_read;
-wire    fifo_U0_fifo_input_line_2_V_V_read;
-wire    fifo_U0_fifo_input_line_3_V_V_read;
-wire    fifo_U0_fifo_input_line_4_V_V_read;
-wire    fifo_U0_fifo_input_line_5_V_V_read;
-wire    fifo_U0_fifo_input_line_6_V_V_read;
-wire    fifo_U0_fifo_input_line_7_V_V_read;
-wire    fifo_U0_fifo_input_line_8_V_V_read;
-wire    fifo_U0_fifo_input_line_9_V_V_read;
-wire    fifo_U0_fifo_input_line_10_V_V_read;
-wire    fifo_U0_fifo_input_line_11_V_V_read;
-wire    fifo_U0_fifo_input_line_12_V_V_read;
-wire    fifo_U0_fifo_input_line_13_V_V_read;
-wire    fifo_U0_fifo_input_line_14_V_V_read;
-wire    fifo_U0_fifo_input_line_15_V_V_read;
-wire   [15:0] fifo_U0_fifo_output_V_V_TDATA;
-wire    fifo_U0_fifo_output_V_V_TVALID;
+wire    fifo_U0_input_line_0_V_V_read;
+wire    fifo_U0_input_line_1_V_V_read;
+wire    fifo_U0_input_line_2_V_V_read;
+wire    fifo_U0_input_line_3_V_V_read;
+wire    fifo_U0_input_line_4_V_V_read;
+wire    fifo_U0_input_line_5_V_V_read;
+wire    fifo_U0_input_line_6_V_V_read;
+wire    fifo_U0_input_line_7_V_V_read;
+wire    fifo_U0_input_line_8_V_V_read;
+wire    fifo_U0_input_line_9_V_V_read;
+wire    fifo_U0_input_line_10_V_V_read;
+wire    fifo_U0_input_line_11_V_V_read;
+wire    fifo_U0_input_line_12_V_V_read;
+wire    fifo_U0_input_line_13_V_V_read;
+wire    fifo_U0_input_line_14_V_V_read;
+wire    fifo_U0_input_line_15_V_V_read;
+wire    fifo_U0_input_line_16_V_V_read;
+wire    fifo_U0_input_line_17_V_V_read;
+wire    fifo_U0_input_line_18_V_V_read;
+wire    fifo_U0_input_line_19_V_V_read;
+wire    fifo_U0_input_line_20_V_V_read;
+wire    fifo_U0_input_line_21_V_V_read;
+wire    fifo_U0_input_line_22_V_V_read;
+wire    fifo_U0_input_line_23_V_V_read;
+wire    fifo_U0_input_line_24_V_V_read;
+wire    fifo_U0_input_line_25_V_V_read;
+wire    fifo_U0_input_line_26_V_V_read;
+wire    fifo_U0_input_line_27_V_V_read;
+wire    fifo_U0_input_line_28_V_V_read;
+wire    fifo_U0_input_line_29_V_V_read;
+wire    fifo_U0_input_line_30_V_V_read;
+wire    fifo_U0_input_line_31_V_V_read;
+wire    fifo_U0_input_line_32_V_V_read;
+wire    fifo_U0_input_line_33_V_V_read;
+wire    fifo_U0_input_line_34_V_V_read;
+wire    fifo_U0_input_line_35_V_V_read;
+wire    fifo_U0_input_line_36_V_V_read;
+wire    fifo_U0_input_line_37_V_V_read;
+wire    fifo_U0_input_line_38_V_V_read;
+wire    fifo_U0_input_line_39_V_V_read;
+wire    fifo_U0_input_line_40_V_V_read;
+wire    fifo_U0_input_line_41_V_V_read;
+wire    fifo_U0_input_line_42_V_V_read;
+wire    fifo_U0_input_line_43_V_V_read;
+wire    fifo_U0_input_line_44_V_V_read;
+wire    fifo_U0_input_line_45_V_V_read;
+wire    fifo_U0_input_line_46_V_V_read;
+wire    fifo_U0_input_line_47_V_V_read;
+wire    fifo_U0_input_line_48_V_V_read;
+wire    fifo_U0_input_line_49_V_V_read;
+wire    fifo_U0_input_line_50_V_V_read;
+wire    fifo_U0_input_line_51_V_V_read;
+wire    fifo_U0_input_line_52_V_V_read;
+wire    fifo_U0_input_line_53_V_V_read;
+wire    fifo_U0_input_line_54_V_V_read;
+wire    fifo_U0_input_line_55_V_V_read;
+wire    fifo_U0_input_line_56_V_V_read;
+wire    fifo_U0_input_line_57_V_V_read;
+wire    fifo_U0_input_line_58_V_V_read;
+wire    fifo_U0_input_line_59_V_V_read;
+wire    fifo_U0_input_line_60_V_V_read;
+wire    fifo_U0_input_line_61_V_V_read;
+wire    fifo_U0_input_line_62_V_V_read;
+wire    fifo_U0_input_line_63_V_V_read;
+wire   [31:0] fifo_U0_output_V_V_TDATA;
+wire    fifo_U0_output_V_V_TVALID;
 wire    ap_sync_continue;
+wire    stream_array_line_0_V_V_full_n;
+wire   [31:0] stream_array_line_0_V_V_dout;
+wire    stream_array_line_0_V_V_empty_n;
 wire    stream_array_line_1_V_V_full_n;
-wire   [9:0] stream_array_line_1_V_V_dout;
+wire   [31:0] stream_array_line_1_V_V_dout;
 wire    stream_array_line_1_V_V_empty_n;
 wire    stream_array_line_2_V_V_full_n;
-wire   [9:0] stream_array_line_2_V_V_dout;
+wire   [31:0] stream_array_line_2_V_V_dout;
 wire    stream_array_line_2_V_V_empty_n;
 wire    stream_array_line_3_V_V_full_n;
-wire   [9:0] stream_array_line_3_V_V_dout;
+wire   [31:0] stream_array_line_3_V_V_dout;
 wire    stream_array_line_3_V_V_empty_n;
 wire    stream_array_line_4_V_V_full_n;
-wire   [9:0] stream_array_line_4_V_V_dout;
+wire   [31:0] stream_array_line_4_V_V_dout;
 wire    stream_array_line_4_V_V_empty_n;
 wire    stream_array_line_5_V_V_full_n;
-wire   [9:0] stream_array_line_5_V_V_dout;
+wire   [31:0] stream_array_line_5_V_V_dout;
 wire    stream_array_line_5_V_V_empty_n;
 wire    stream_array_line_6_V_V_full_n;
-wire   [9:0] stream_array_line_6_V_V_dout;
+wire   [31:0] stream_array_line_6_V_V_dout;
 wire    stream_array_line_6_V_V_empty_n;
 wire    stream_array_line_7_V_V_full_n;
-wire   [9:0] stream_array_line_7_V_V_dout;
+wire   [31:0] stream_array_line_7_V_V_dout;
 wire    stream_array_line_7_V_V_empty_n;
 wire    stream_array_line_8_V_V_full_n;
-wire   [9:0] stream_array_line_8_V_V_dout;
+wire   [31:0] stream_array_line_8_V_V_dout;
 wire    stream_array_line_8_V_V_empty_n;
 wire    stream_array_line_9_V_V_full_n;
-wire   [9:0] stream_array_line_9_V_V_dout;
+wire   [31:0] stream_array_line_9_V_V_dout;
 wire    stream_array_line_9_V_V_empty_n;
 wire    stream_array_line_10_V_V_full_n;
-wire   [9:0] stream_array_line_10_V_V_dout;
+wire   [31:0] stream_array_line_10_V_V_dout;
 wire    stream_array_line_10_V_V_empty_n;
 wire    stream_array_line_11_V_V_full_n;
-wire   [9:0] stream_array_line_11_V_V_dout;
+wire   [31:0] stream_array_line_11_V_V_dout;
 wire    stream_array_line_11_V_V_empty_n;
 wire    stream_array_line_12_V_V_full_n;
-wire   [9:0] stream_array_line_12_V_V_dout;
+wire   [31:0] stream_array_line_12_V_V_dout;
 wire    stream_array_line_12_V_V_empty_n;
 wire    stream_array_line_13_V_V_full_n;
-wire   [9:0] stream_array_line_13_V_V_dout;
+wire   [31:0] stream_array_line_13_V_V_dout;
 wire    stream_array_line_13_V_V_empty_n;
 wire    stream_array_line_14_V_V_full_n;
-wire   [9:0] stream_array_line_14_V_V_dout;
+wire   [31:0] stream_array_line_14_V_V_dout;
 wire    stream_array_line_14_V_V_empty_n;
 wire    stream_array_line_15_V_V_full_n;
-wire   [9:0] stream_array_line_15_V_V_dout;
+wire   [31:0] stream_array_line_15_V_V_dout;
 wire    stream_array_line_15_V_V_empty_n;
+wire    stream_array_line_16_V_V_full_n;
+wire   [31:0] stream_array_line_16_V_V_dout;
+wire    stream_array_line_16_V_V_empty_n;
+wire    stream_array_line_17_V_V_full_n;
+wire   [31:0] stream_array_line_17_V_V_dout;
+wire    stream_array_line_17_V_V_empty_n;
+wire    stream_array_line_18_V_V_full_n;
+wire   [31:0] stream_array_line_18_V_V_dout;
+wire    stream_array_line_18_V_V_empty_n;
+wire    stream_array_line_19_V_V_full_n;
+wire   [31:0] stream_array_line_19_V_V_dout;
+wire    stream_array_line_19_V_V_empty_n;
+wire    stream_array_line_20_V_V_full_n;
+wire   [31:0] stream_array_line_20_V_V_dout;
+wire    stream_array_line_20_V_V_empty_n;
+wire    stream_array_line_21_V_V_full_n;
+wire   [31:0] stream_array_line_21_V_V_dout;
+wire    stream_array_line_21_V_V_empty_n;
+wire    stream_array_line_22_V_V_full_n;
+wire   [31:0] stream_array_line_22_V_V_dout;
+wire    stream_array_line_22_V_V_empty_n;
+wire    stream_array_line_23_V_V_full_n;
+wire   [31:0] stream_array_line_23_V_V_dout;
+wire    stream_array_line_23_V_V_empty_n;
+wire    stream_array_line_24_V_V_full_n;
+wire   [31:0] stream_array_line_24_V_V_dout;
+wire    stream_array_line_24_V_V_empty_n;
+wire    stream_array_line_25_V_V_full_n;
+wire   [31:0] stream_array_line_25_V_V_dout;
+wire    stream_array_line_25_V_V_empty_n;
+wire    stream_array_line_26_V_V_full_n;
+wire   [31:0] stream_array_line_26_V_V_dout;
+wire    stream_array_line_26_V_V_empty_n;
+wire    stream_array_line_27_V_V_full_n;
+wire   [31:0] stream_array_line_27_V_V_dout;
+wire    stream_array_line_27_V_V_empty_n;
+wire    stream_array_line_28_V_V_full_n;
+wire   [31:0] stream_array_line_28_V_V_dout;
+wire    stream_array_line_28_V_V_empty_n;
+wire    stream_array_line_29_V_V_full_n;
+wire   [31:0] stream_array_line_29_V_V_dout;
+wire    stream_array_line_29_V_V_empty_n;
+wire    stream_array_line_30_V_V_full_n;
+wire   [31:0] stream_array_line_30_V_V_dout;
+wire    stream_array_line_30_V_V_empty_n;
+wire    stream_array_line_31_V_V_full_n;
+wire   [31:0] stream_array_line_31_V_V_dout;
+wire    stream_array_line_31_V_V_empty_n;
+wire    stream_array_line_32_V_V_full_n;
+wire   [31:0] stream_array_line_32_V_V_dout;
+wire    stream_array_line_32_V_V_empty_n;
+wire    stream_array_line_33_V_V_full_n;
+wire   [31:0] stream_array_line_33_V_V_dout;
+wire    stream_array_line_33_V_V_empty_n;
+wire    stream_array_line_34_V_V_full_n;
+wire   [31:0] stream_array_line_34_V_V_dout;
+wire    stream_array_line_34_V_V_empty_n;
+wire    stream_array_line_35_V_V_full_n;
+wire   [31:0] stream_array_line_35_V_V_dout;
+wire    stream_array_line_35_V_V_empty_n;
+wire    stream_array_line_36_V_V_full_n;
+wire   [31:0] stream_array_line_36_V_V_dout;
+wire    stream_array_line_36_V_V_empty_n;
+wire    stream_array_line_37_V_V_full_n;
+wire   [31:0] stream_array_line_37_V_V_dout;
+wire    stream_array_line_37_V_V_empty_n;
+wire    stream_array_line_38_V_V_full_n;
+wire   [31:0] stream_array_line_38_V_V_dout;
+wire    stream_array_line_38_V_V_empty_n;
+wire    stream_array_line_39_V_V_full_n;
+wire   [31:0] stream_array_line_39_V_V_dout;
+wire    stream_array_line_39_V_V_empty_n;
+wire    stream_array_line_40_V_V_full_n;
+wire   [31:0] stream_array_line_40_V_V_dout;
+wire    stream_array_line_40_V_V_empty_n;
+wire    stream_array_line_41_V_V_full_n;
+wire   [31:0] stream_array_line_41_V_V_dout;
+wire    stream_array_line_41_V_V_empty_n;
+wire    stream_array_line_42_V_V_full_n;
+wire   [31:0] stream_array_line_42_V_V_dout;
+wire    stream_array_line_42_V_V_empty_n;
+wire    stream_array_line_43_V_V_full_n;
+wire   [31:0] stream_array_line_43_V_V_dout;
+wire    stream_array_line_43_V_V_empty_n;
+wire    stream_array_line_44_V_V_full_n;
+wire   [31:0] stream_array_line_44_V_V_dout;
+wire    stream_array_line_44_V_V_empty_n;
+wire    stream_array_line_45_V_V_full_n;
+wire   [31:0] stream_array_line_45_V_V_dout;
+wire    stream_array_line_45_V_V_empty_n;
+wire    stream_array_line_46_V_V_full_n;
+wire   [31:0] stream_array_line_46_V_V_dout;
+wire    stream_array_line_46_V_V_empty_n;
+wire    stream_array_line_47_V_V_full_n;
+wire   [31:0] stream_array_line_47_V_V_dout;
+wire    stream_array_line_47_V_V_empty_n;
+wire    stream_array_line_48_V_V_full_n;
+wire   [31:0] stream_array_line_48_V_V_dout;
+wire    stream_array_line_48_V_V_empty_n;
+wire    stream_array_line_49_V_V_full_n;
+wire   [31:0] stream_array_line_49_V_V_dout;
+wire    stream_array_line_49_V_V_empty_n;
+wire    stream_array_line_50_V_V_full_n;
+wire   [31:0] stream_array_line_50_V_V_dout;
+wire    stream_array_line_50_V_V_empty_n;
+wire    stream_array_line_51_V_V_full_n;
+wire   [31:0] stream_array_line_51_V_V_dout;
+wire    stream_array_line_51_V_V_empty_n;
+wire    stream_array_line_52_V_V_full_n;
+wire   [31:0] stream_array_line_52_V_V_dout;
+wire    stream_array_line_52_V_V_empty_n;
+wire    stream_array_line_53_V_V_full_n;
+wire   [31:0] stream_array_line_53_V_V_dout;
+wire    stream_array_line_53_V_V_empty_n;
+wire    stream_array_line_54_V_V_full_n;
+wire   [31:0] stream_array_line_54_V_V_dout;
+wire    stream_array_line_54_V_V_empty_n;
+wire    stream_array_line_55_V_V_full_n;
+wire   [31:0] stream_array_line_55_V_V_dout;
+wire    stream_array_line_55_V_V_empty_n;
+wire    stream_array_line_56_V_V_full_n;
+wire   [31:0] stream_array_line_56_V_V_dout;
+wire    stream_array_line_56_V_V_empty_n;
+wire    stream_array_line_57_V_V_full_n;
+wire   [31:0] stream_array_line_57_V_V_dout;
+wire    stream_array_line_57_V_V_empty_n;
+wire    stream_array_line_58_V_V_full_n;
+wire   [31:0] stream_array_line_58_V_V_dout;
+wire    stream_array_line_58_V_V_empty_n;
+wire    stream_array_line_59_V_V_full_n;
+wire   [31:0] stream_array_line_59_V_V_dout;
+wire    stream_array_line_59_V_V_empty_n;
+wire    stream_array_line_60_V_V_full_n;
+wire   [31:0] stream_array_line_60_V_V_dout;
+wire    stream_array_line_60_V_V_empty_n;
+wire    stream_array_line_61_V_V_full_n;
+wire   [31:0] stream_array_line_61_V_V_dout;
+wire    stream_array_line_61_V_V_empty_n;
+wire    stream_array_line_62_V_V_full_n;
+wire   [31:0] stream_array_line_62_V_V_dout;
+wire    stream_array_line_62_V_V_empty_n;
+wire    stream_array_line_63_V_V_full_n;
+wire   [31:0] stream_array_line_63_V_V_dout;
+wire    stream_array_line_63_V_V_empty_n;
 wire    ap_sync_done;
 wire    ap_sync_ready;
 wire   [0:0] start_for_fifo_U0_din;
@@ -381,12 +675,12 @@ hier_func_control_s_axi_U(
     .ap_ready(ap_ready),
     .ap_done(ap_done),
     .ap_idle(ap_idle),
-    .tancalc_input_V(tancalc_input_V)
+    .input_V(input_V)
 );
 
 hier_func_hier_func_gmem0_m_axi #(
     .CONSERVATIVE( 0 ),
-    .USER_DW( 16 ),
+    .USER_DW( 512 ),
     .USER_AW( 64 ),
     .USER_MAXREQS( 5 ),
     .NUM_READ_OUTSTANDING( 16 ),
@@ -453,21 +747,21 @@ hier_func_gmem0_m_axi_U(
     .ACLK(ap_clk),
     .ARESET(ap_rst_n_inv),
     .ACLK_EN(1'b1),
-    .I_ARVALID(tancalc_U0_m_axi_tancalc_input_V_ARVALID),
+    .I_ARVALID(tancalc_U0_m_axi_input_V_ARVALID),
     .I_ARREADY(gmem0_ARREADY),
-    .I_ARADDR(tancalc_U0_m_axi_tancalc_input_V_ARADDR),
-    .I_ARID(tancalc_U0_m_axi_tancalc_input_V_ARID),
-    .I_ARLEN(tancalc_U0_m_axi_tancalc_input_V_ARLEN),
-    .I_ARSIZE(tancalc_U0_m_axi_tancalc_input_V_ARSIZE),
-    .I_ARLOCK(tancalc_U0_m_axi_tancalc_input_V_ARLOCK),
-    .I_ARCACHE(tancalc_U0_m_axi_tancalc_input_V_ARCACHE),
-    .I_ARQOS(tancalc_U0_m_axi_tancalc_input_V_ARQOS),
-    .I_ARPROT(tancalc_U0_m_axi_tancalc_input_V_ARPROT),
-    .I_ARUSER(tancalc_U0_m_axi_tancalc_input_V_ARUSER),
-    .I_ARBURST(tancalc_U0_m_axi_tancalc_input_V_ARBURST),
-    .I_ARREGION(tancalc_U0_m_axi_tancalc_input_V_ARREGION),
+    .I_ARADDR(tancalc_U0_m_axi_input_V_ARADDR),
+    .I_ARID(tancalc_U0_m_axi_input_V_ARID),
+    .I_ARLEN(tancalc_U0_m_axi_input_V_ARLEN),
+    .I_ARSIZE(tancalc_U0_m_axi_input_V_ARSIZE),
+    .I_ARLOCK(tancalc_U0_m_axi_input_V_ARLOCK),
+    .I_ARCACHE(tancalc_U0_m_axi_input_V_ARCACHE),
+    .I_ARQOS(tancalc_U0_m_axi_input_V_ARQOS),
+    .I_ARPROT(tancalc_U0_m_axi_input_V_ARPROT),
+    .I_ARUSER(tancalc_U0_m_axi_input_V_ARUSER),
+    .I_ARBURST(tancalc_U0_m_axi_input_V_ARBURST),
+    .I_ARREGION(tancalc_U0_m_axi_input_V_ARREGION),
     .I_RVALID(gmem0_RVALID),
-    .I_RREADY(tancalc_U0_m_axi_tancalc_input_V_RREADY),
+    .I_RREADY(tancalc_U0_m_axi_input_V_RREADY),
     .I_RDATA(gmem0_RDATA),
     .I_RID(gmem0_RID),
     .I_RUSER(gmem0_RUSER),
@@ -488,11 +782,11 @@ hier_func_gmem0_m_axi_U(
     .I_AWREGION(4'd0),
     .I_WVALID(1'b0),
     .I_WREADY(gmem0_WREADY),
-    .I_WDATA(16'd0),
+    .I_WDATA(512'd0),
     .I_WID(1'd0),
     .I_WUSER(1'd0),
     .I_WLAST(1'b0),
-    .I_WSTRB(2'd0),
+    .I_WSTRB(64'd0),
     .I_BVALID(gmem0_BVALID),
     .I_BREADY(1'b0),
     .I_BRESP(gmem0_BRESP),
@@ -511,97 +805,244 @@ hier_func_tancalc tancalc_U0(
     .ap_ready(tancalc_U0_ap_ready),
     .start_out(tancalc_U0_start_out),
     .start_write(tancalc_U0_start_write),
-    .m_axi_tancalc_input_V_AWVALID(tancalc_U0_m_axi_tancalc_input_V_AWVALID),
-    .m_axi_tancalc_input_V_AWREADY(1'b0),
-    .m_axi_tancalc_input_V_AWADDR(tancalc_U0_m_axi_tancalc_input_V_AWADDR),
-    .m_axi_tancalc_input_V_AWID(tancalc_U0_m_axi_tancalc_input_V_AWID),
-    .m_axi_tancalc_input_V_AWLEN(tancalc_U0_m_axi_tancalc_input_V_AWLEN),
-    .m_axi_tancalc_input_V_AWSIZE(tancalc_U0_m_axi_tancalc_input_V_AWSIZE),
-    .m_axi_tancalc_input_V_AWBURST(tancalc_U0_m_axi_tancalc_input_V_AWBURST),
-    .m_axi_tancalc_input_V_AWLOCK(tancalc_U0_m_axi_tancalc_input_V_AWLOCK),
-    .m_axi_tancalc_input_V_AWCACHE(tancalc_U0_m_axi_tancalc_input_V_AWCACHE),
-    .m_axi_tancalc_input_V_AWPROT(tancalc_U0_m_axi_tancalc_input_V_AWPROT),
-    .m_axi_tancalc_input_V_AWQOS(tancalc_U0_m_axi_tancalc_input_V_AWQOS),
-    .m_axi_tancalc_input_V_AWREGION(tancalc_U0_m_axi_tancalc_input_V_AWREGION),
-    .m_axi_tancalc_input_V_AWUSER(tancalc_U0_m_axi_tancalc_input_V_AWUSER),
-    .m_axi_tancalc_input_V_WVALID(tancalc_U0_m_axi_tancalc_input_V_WVALID),
-    .m_axi_tancalc_input_V_WREADY(1'b0),
-    .m_axi_tancalc_input_V_WDATA(tancalc_U0_m_axi_tancalc_input_V_WDATA),
-    .m_axi_tancalc_input_V_WSTRB(tancalc_U0_m_axi_tancalc_input_V_WSTRB),
-    .m_axi_tancalc_input_V_WLAST(tancalc_U0_m_axi_tancalc_input_V_WLAST),
-    .m_axi_tancalc_input_V_WID(tancalc_U0_m_axi_tancalc_input_V_WID),
-    .m_axi_tancalc_input_V_WUSER(tancalc_U0_m_axi_tancalc_input_V_WUSER),
-    .m_axi_tancalc_input_V_ARVALID(tancalc_U0_m_axi_tancalc_input_V_ARVALID),
-    .m_axi_tancalc_input_V_ARREADY(gmem0_ARREADY),
-    .m_axi_tancalc_input_V_ARADDR(tancalc_U0_m_axi_tancalc_input_V_ARADDR),
-    .m_axi_tancalc_input_V_ARID(tancalc_U0_m_axi_tancalc_input_V_ARID),
-    .m_axi_tancalc_input_V_ARLEN(tancalc_U0_m_axi_tancalc_input_V_ARLEN),
-    .m_axi_tancalc_input_V_ARSIZE(tancalc_U0_m_axi_tancalc_input_V_ARSIZE),
-    .m_axi_tancalc_input_V_ARBURST(tancalc_U0_m_axi_tancalc_input_V_ARBURST),
-    .m_axi_tancalc_input_V_ARLOCK(tancalc_U0_m_axi_tancalc_input_V_ARLOCK),
-    .m_axi_tancalc_input_V_ARCACHE(tancalc_U0_m_axi_tancalc_input_V_ARCACHE),
-    .m_axi_tancalc_input_V_ARPROT(tancalc_U0_m_axi_tancalc_input_V_ARPROT),
-    .m_axi_tancalc_input_V_ARQOS(tancalc_U0_m_axi_tancalc_input_V_ARQOS),
-    .m_axi_tancalc_input_V_ARREGION(tancalc_U0_m_axi_tancalc_input_V_ARREGION),
-    .m_axi_tancalc_input_V_ARUSER(tancalc_U0_m_axi_tancalc_input_V_ARUSER),
-    .m_axi_tancalc_input_V_RVALID(gmem0_RVALID),
-    .m_axi_tancalc_input_V_RREADY(tancalc_U0_m_axi_tancalc_input_V_RREADY),
-    .m_axi_tancalc_input_V_RDATA(gmem0_RDATA),
-    .m_axi_tancalc_input_V_RLAST(gmem0_RLAST),
-    .m_axi_tancalc_input_V_RID(gmem0_RID),
-    .m_axi_tancalc_input_V_RUSER(gmem0_RUSER),
-    .m_axi_tancalc_input_V_RRESP(gmem0_RRESP),
-    .m_axi_tancalc_input_V_BVALID(1'b0),
-    .m_axi_tancalc_input_V_BREADY(tancalc_U0_m_axi_tancalc_input_V_BREADY),
-    .m_axi_tancalc_input_V_BRESP(2'd0),
-    .m_axi_tancalc_input_V_BID(1'd0),
-    .m_axi_tancalc_input_V_BUSER(1'd0),
-    .tancalc_input_V_offset(tancalc_input_V),
-    .tancalc_output_line_1_V_V_din(tancalc_U0_tancalc_output_line_1_V_V_din),
-    .tancalc_output_line_1_V_V_full_n(stream_array_line_1_V_V_full_n),
-    .tancalc_output_line_1_V_V_write(tancalc_U0_tancalc_output_line_1_V_V_write),
-    .tancalc_output_line_2_V_V_din(tancalc_U0_tancalc_output_line_2_V_V_din),
-    .tancalc_output_line_2_V_V_full_n(stream_array_line_2_V_V_full_n),
-    .tancalc_output_line_2_V_V_write(tancalc_U0_tancalc_output_line_2_V_V_write),
-    .tancalc_output_line_3_V_V_din(tancalc_U0_tancalc_output_line_3_V_V_din),
-    .tancalc_output_line_3_V_V_full_n(stream_array_line_3_V_V_full_n),
-    .tancalc_output_line_3_V_V_write(tancalc_U0_tancalc_output_line_3_V_V_write),
-    .tancalc_output_line_4_V_V_din(tancalc_U0_tancalc_output_line_4_V_V_din),
-    .tancalc_output_line_4_V_V_full_n(stream_array_line_4_V_V_full_n),
-    .tancalc_output_line_4_V_V_write(tancalc_U0_tancalc_output_line_4_V_V_write),
-    .tancalc_output_line_5_V_V_din(tancalc_U0_tancalc_output_line_5_V_V_din),
-    .tancalc_output_line_5_V_V_full_n(stream_array_line_5_V_V_full_n),
-    .tancalc_output_line_5_V_V_write(tancalc_U0_tancalc_output_line_5_V_V_write),
-    .tancalc_output_line_6_V_V_din(tancalc_U0_tancalc_output_line_6_V_V_din),
-    .tancalc_output_line_6_V_V_full_n(stream_array_line_6_V_V_full_n),
-    .tancalc_output_line_6_V_V_write(tancalc_U0_tancalc_output_line_6_V_V_write),
-    .tancalc_output_line_7_V_V_din(tancalc_U0_tancalc_output_line_7_V_V_din),
-    .tancalc_output_line_7_V_V_full_n(stream_array_line_7_V_V_full_n),
-    .tancalc_output_line_7_V_V_write(tancalc_U0_tancalc_output_line_7_V_V_write),
-    .tancalc_output_line_8_V_V_din(tancalc_U0_tancalc_output_line_8_V_V_din),
-    .tancalc_output_line_8_V_V_full_n(stream_array_line_8_V_V_full_n),
-    .tancalc_output_line_8_V_V_write(tancalc_U0_tancalc_output_line_8_V_V_write),
-    .tancalc_output_line_9_V_V_din(tancalc_U0_tancalc_output_line_9_V_V_din),
-    .tancalc_output_line_9_V_V_full_n(stream_array_line_9_V_V_full_n),
-    .tancalc_output_line_9_V_V_write(tancalc_U0_tancalc_output_line_9_V_V_write),
-    .tancalc_output_line_10_V_V_din(tancalc_U0_tancalc_output_line_10_V_V_din),
-    .tancalc_output_line_10_V_V_full_n(stream_array_line_10_V_V_full_n),
-    .tancalc_output_line_10_V_V_write(tancalc_U0_tancalc_output_line_10_V_V_write),
-    .tancalc_output_line_11_V_V_din(tancalc_U0_tancalc_output_line_11_V_V_din),
-    .tancalc_output_line_11_V_V_full_n(stream_array_line_11_V_V_full_n),
-    .tancalc_output_line_11_V_V_write(tancalc_U0_tancalc_output_line_11_V_V_write),
-    .tancalc_output_line_12_V_V_din(tancalc_U0_tancalc_output_line_12_V_V_din),
-    .tancalc_output_line_12_V_V_full_n(stream_array_line_12_V_V_full_n),
-    .tancalc_output_line_12_V_V_write(tancalc_U0_tancalc_output_line_12_V_V_write),
-    .tancalc_output_line_13_V_V_din(tancalc_U0_tancalc_output_line_13_V_V_din),
-    .tancalc_output_line_13_V_V_full_n(stream_array_line_13_V_V_full_n),
-    .tancalc_output_line_13_V_V_write(tancalc_U0_tancalc_output_line_13_V_V_write),
-    .tancalc_output_line_14_V_V_din(tancalc_U0_tancalc_output_line_14_V_V_din),
-    .tancalc_output_line_14_V_V_full_n(stream_array_line_14_V_V_full_n),
-    .tancalc_output_line_14_V_V_write(tancalc_U0_tancalc_output_line_14_V_V_write),
-    .tancalc_output_line_15_V_V_din(tancalc_U0_tancalc_output_line_15_V_V_din),
-    .tancalc_output_line_15_V_V_full_n(stream_array_line_15_V_V_full_n),
-    .tancalc_output_line_15_V_V_write(tancalc_U0_tancalc_output_line_15_V_V_write)
+    .m_axi_input_V_AWVALID(tancalc_U0_m_axi_input_V_AWVALID),
+    .m_axi_input_V_AWREADY(1'b0),
+    .m_axi_input_V_AWADDR(tancalc_U0_m_axi_input_V_AWADDR),
+    .m_axi_input_V_AWID(tancalc_U0_m_axi_input_V_AWID),
+    .m_axi_input_V_AWLEN(tancalc_U0_m_axi_input_V_AWLEN),
+    .m_axi_input_V_AWSIZE(tancalc_U0_m_axi_input_V_AWSIZE),
+    .m_axi_input_V_AWBURST(tancalc_U0_m_axi_input_V_AWBURST),
+    .m_axi_input_V_AWLOCK(tancalc_U0_m_axi_input_V_AWLOCK),
+    .m_axi_input_V_AWCACHE(tancalc_U0_m_axi_input_V_AWCACHE),
+    .m_axi_input_V_AWPROT(tancalc_U0_m_axi_input_V_AWPROT),
+    .m_axi_input_V_AWQOS(tancalc_U0_m_axi_input_V_AWQOS),
+    .m_axi_input_V_AWREGION(tancalc_U0_m_axi_input_V_AWREGION),
+    .m_axi_input_V_AWUSER(tancalc_U0_m_axi_input_V_AWUSER),
+    .m_axi_input_V_WVALID(tancalc_U0_m_axi_input_V_WVALID),
+    .m_axi_input_V_WREADY(1'b0),
+    .m_axi_input_V_WDATA(tancalc_U0_m_axi_input_V_WDATA),
+    .m_axi_input_V_WSTRB(tancalc_U0_m_axi_input_V_WSTRB),
+    .m_axi_input_V_WLAST(tancalc_U0_m_axi_input_V_WLAST),
+    .m_axi_input_V_WID(tancalc_U0_m_axi_input_V_WID),
+    .m_axi_input_V_WUSER(tancalc_U0_m_axi_input_V_WUSER),
+    .m_axi_input_V_ARVALID(tancalc_U0_m_axi_input_V_ARVALID),
+    .m_axi_input_V_ARREADY(gmem0_ARREADY),
+    .m_axi_input_V_ARADDR(tancalc_U0_m_axi_input_V_ARADDR),
+    .m_axi_input_V_ARID(tancalc_U0_m_axi_input_V_ARID),
+    .m_axi_input_V_ARLEN(tancalc_U0_m_axi_input_V_ARLEN),
+    .m_axi_input_V_ARSIZE(tancalc_U0_m_axi_input_V_ARSIZE),
+    .m_axi_input_V_ARBURST(tancalc_U0_m_axi_input_V_ARBURST),
+    .m_axi_input_V_ARLOCK(tancalc_U0_m_axi_input_V_ARLOCK),
+    .m_axi_input_V_ARCACHE(tancalc_U0_m_axi_input_V_ARCACHE),
+    .m_axi_input_V_ARPROT(tancalc_U0_m_axi_input_V_ARPROT),
+    .m_axi_input_V_ARQOS(tancalc_U0_m_axi_input_V_ARQOS),
+    .m_axi_input_V_ARREGION(tancalc_U0_m_axi_input_V_ARREGION),
+    .m_axi_input_V_ARUSER(tancalc_U0_m_axi_input_V_ARUSER),
+    .m_axi_input_V_RVALID(gmem0_RVALID),
+    .m_axi_input_V_RREADY(tancalc_U0_m_axi_input_V_RREADY),
+    .m_axi_input_V_RDATA(gmem0_RDATA),
+    .m_axi_input_V_RLAST(gmem0_RLAST),
+    .m_axi_input_V_RID(gmem0_RID),
+    .m_axi_input_V_RUSER(gmem0_RUSER),
+    .m_axi_input_V_RRESP(gmem0_RRESP),
+    .m_axi_input_V_BVALID(1'b0),
+    .m_axi_input_V_BREADY(tancalc_U0_m_axi_input_V_BREADY),
+    .m_axi_input_V_BRESP(2'd0),
+    .m_axi_input_V_BID(1'd0),
+    .m_axi_input_V_BUSER(1'd0),
+    .input_V_offset(input_V),
+    .output_line_0_V_V_din(tancalc_U0_output_line_0_V_V_din),
+    .output_line_0_V_V_full_n(stream_array_line_0_V_V_full_n),
+    .output_line_0_V_V_write(tancalc_U0_output_line_0_V_V_write),
+    .output_line_1_V_V_din(tancalc_U0_output_line_1_V_V_din),
+    .output_line_1_V_V_full_n(stream_array_line_1_V_V_full_n),
+    .output_line_1_V_V_write(tancalc_U0_output_line_1_V_V_write),
+    .output_line_2_V_V_din(tancalc_U0_output_line_2_V_V_din),
+    .output_line_2_V_V_full_n(stream_array_line_2_V_V_full_n),
+    .output_line_2_V_V_write(tancalc_U0_output_line_2_V_V_write),
+    .output_line_3_V_V_din(tancalc_U0_output_line_3_V_V_din),
+    .output_line_3_V_V_full_n(stream_array_line_3_V_V_full_n),
+    .output_line_3_V_V_write(tancalc_U0_output_line_3_V_V_write),
+    .output_line_4_V_V_din(tancalc_U0_output_line_4_V_V_din),
+    .output_line_4_V_V_full_n(stream_array_line_4_V_V_full_n),
+    .output_line_4_V_V_write(tancalc_U0_output_line_4_V_V_write),
+    .output_line_5_V_V_din(tancalc_U0_output_line_5_V_V_din),
+    .output_line_5_V_V_full_n(stream_array_line_5_V_V_full_n),
+    .output_line_5_V_V_write(tancalc_U0_output_line_5_V_V_write),
+    .output_line_6_V_V_din(tancalc_U0_output_line_6_V_V_din),
+    .output_line_6_V_V_full_n(stream_array_line_6_V_V_full_n),
+    .output_line_6_V_V_write(tancalc_U0_output_line_6_V_V_write),
+    .output_line_7_V_V_din(tancalc_U0_output_line_7_V_V_din),
+    .output_line_7_V_V_full_n(stream_array_line_7_V_V_full_n),
+    .output_line_7_V_V_write(tancalc_U0_output_line_7_V_V_write),
+    .output_line_8_V_V_din(tancalc_U0_output_line_8_V_V_din),
+    .output_line_8_V_V_full_n(stream_array_line_8_V_V_full_n),
+    .output_line_8_V_V_write(tancalc_U0_output_line_8_V_V_write),
+    .output_line_9_V_V_din(tancalc_U0_output_line_9_V_V_din),
+    .output_line_9_V_V_full_n(stream_array_line_9_V_V_full_n),
+    .output_line_9_V_V_write(tancalc_U0_output_line_9_V_V_write),
+    .output_line_10_V_V_din(tancalc_U0_output_line_10_V_V_din),
+    .output_line_10_V_V_full_n(stream_array_line_10_V_V_full_n),
+    .output_line_10_V_V_write(tancalc_U0_output_line_10_V_V_write),
+    .output_line_11_V_V_din(tancalc_U0_output_line_11_V_V_din),
+    .output_line_11_V_V_full_n(stream_array_line_11_V_V_full_n),
+    .output_line_11_V_V_write(tancalc_U0_output_line_11_V_V_write),
+    .output_line_12_V_V_din(tancalc_U0_output_line_12_V_V_din),
+    .output_line_12_V_V_full_n(stream_array_line_12_V_V_full_n),
+    .output_line_12_V_V_write(tancalc_U0_output_line_12_V_V_write),
+    .output_line_13_V_V_din(tancalc_U0_output_line_13_V_V_din),
+    .output_line_13_V_V_full_n(stream_array_line_13_V_V_full_n),
+    .output_line_13_V_V_write(tancalc_U0_output_line_13_V_V_write),
+    .output_line_14_V_V_din(tancalc_U0_output_line_14_V_V_din),
+    .output_line_14_V_V_full_n(stream_array_line_14_V_V_full_n),
+    .output_line_14_V_V_write(tancalc_U0_output_line_14_V_V_write),
+    .output_line_15_V_V_din(tancalc_U0_output_line_15_V_V_din),
+    .output_line_15_V_V_full_n(stream_array_line_15_V_V_full_n),
+    .output_line_15_V_V_write(tancalc_U0_output_line_15_V_V_write),
+    .output_line_16_V_V_din(tancalc_U0_output_line_16_V_V_din),
+    .output_line_16_V_V_full_n(stream_array_line_16_V_V_full_n),
+    .output_line_16_V_V_write(tancalc_U0_output_line_16_V_V_write),
+    .output_line_17_V_V_din(tancalc_U0_output_line_17_V_V_din),
+    .output_line_17_V_V_full_n(stream_array_line_17_V_V_full_n),
+    .output_line_17_V_V_write(tancalc_U0_output_line_17_V_V_write),
+    .output_line_18_V_V_din(tancalc_U0_output_line_18_V_V_din),
+    .output_line_18_V_V_full_n(stream_array_line_18_V_V_full_n),
+    .output_line_18_V_V_write(tancalc_U0_output_line_18_V_V_write),
+    .output_line_19_V_V_din(tancalc_U0_output_line_19_V_V_din),
+    .output_line_19_V_V_full_n(stream_array_line_19_V_V_full_n),
+    .output_line_19_V_V_write(tancalc_U0_output_line_19_V_V_write),
+    .output_line_20_V_V_din(tancalc_U0_output_line_20_V_V_din),
+    .output_line_20_V_V_full_n(stream_array_line_20_V_V_full_n),
+    .output_line_20_V_V_write(tancalc_U0_output_line_20_V_V_write),
+    .output_line_21_V_V_din(tancalc_U0_output_line_21_V_V_din),
+    .output_line_21_V_V_full_n(stream_array_line_21_V_V_full_n),
+    .output_line_21_V_V_write(tancalc_U0_output_line_21_V_V_write),
+    .output_line_22_V_V_din(tancalc_U0_output_line_22_V_V_din),
+    .output_line_22_V_V_full_n(stream_array_line_22_V_V_full_n),
+    .output_line_22_V_V_write(tancalc_U0_output_line_22_V_V_write),
+    .output_line_23_V_V_din(tancalc_U0_output_line_23_V_V_din),
+    .output_line_23_V_V_full_n(stream_array_line_23_V_V_full_n),
+    .output_line_23_V_V_write(tancalc_U0_output_line_23_V_V_write),
+    .output_line_24_V_V_din(tancalc_U0_output_line_24_V_V_din),
+    .output_line_24_V_V_full_n(stream_array_line_24_V_V_full_n),
+    .output_line_24_V_V_write(tancalc_U0_output_line_24_V_V_write),
+    .output_line_25_V_V_din(tancalc_U0_output_line_25_V_V_din),
+    .output_line_25_V_V_full_n(stream_array_line_25_V_V_full_n),
+    .output_line_25_V_V_write(tancalc_U0_output_line_25_V_V_write),
+    .output_line_26_V_V_din(tancalc_U0_output_line_26_V_V_din),
+    .output_line_26_V_V_full_n(stream_array_line_26_V_V_full_n),
+    .output_line_26_V_V_write(tancalc_U0_output_line_26_V_V_write),
+    .output_line_27_V_V_din(tancalc_U0_output_line_27_V_V_din),
+    .output_line_27_V_V_full_n(stream_array_line_27_V_V_full_n),
+    .output_line_27_V_V_write(tancalc_U0_output_line_27_V_V_write),
+    .output_line_28_V_V_din(tancalc_U0_output_line_28_V_V_din),
+    .output_line_28_V_V_full_n(stream_array_line_28_V_V_full_n),
+    .output_line_28_V_V_write(tancalc_U0_output_line_28_V_V_write),
+    .output_line_29_V_V_din(tancalc_U0_output_line_29_V_V_din),
+    .output_line_29_V_V_full_n(stream_array_line_29_V_V_full_n),
+    .output_line_29_V_V_write(tancalc_U0_output_line_29_V_V_write),
+    .output_line_30_V_V_din(tancalc_U0_output_line_30_V_V_din),
+    .output_line_30_V_V_full_n(stream_array_line_30_V_V_full_n),
+    .output_line_30_V_V_write(tancalc_U0_output_line_30_V_V_write),
+    .output_line_31_V_V_din(tancalc_U0_output_line_31_V_V_din),
+    .output_line_31_V_V_full_n(stream_array_line_31_V_V_full_n),
+    .output_line_31_V_V_write(tancalc_U0_output_line_31_V_V_write),
+    .output_line_32_V_V_din(tancalc_U0_output_line_32_V_V_din),
+    .output_line_32_V_V_full_n(stream_array_line_32_V_V_full_n),
+    .output_line_32_V_V_write(tancalc_U0_output_line_32_V_V_write),
+    .output_line_33_V_V_din(tancalc_U0_output_line_33_V_V_din),
+    .output_line_33_V_V_full_n(stream_array_line_33_V_V_full_n),
+    .output_line_33_V_V_write(tancalc_U0_output_line_33_V_V_write),
+    .output_line_34_V_V_din(tancalc_U0_output_line_34_V_V_din),
+    .output_line_34_V_V_full_n(stream_array_line_34_V_V_full_n),
+    .output_line_34_V_V_write(tancalc_U0_output_line_34_V_V_write),
+    .output_line_35_V_V_din(tancalc_U0_output_line_35_V_V_din),
+    .output_line_35_V_V_full_n(stream_array_line_35_V_V_full_n),
+    .output_line_35_V_V_write(tancalc_U0_output_line_35_V_V_write),
+    .output_line_36_V_V_din(tancalc_U0_output_line_36_V_V_din),
+    .output_line_36_V_V_full_n(stream_array_line_36_V_V_full_n),
+    .output_line_36_V_V_write(tancalc_U0_output_line_36_V_V_write),
+    .output_line_37_V_V_din(tancalc_U0_output_line_37_V_V_din),
+    .output_line_37_V_V_full_n(stream_array_line_37_V_V_full_n),
+    .output_line_37_V_V_write(tancalc_U0_output_line_37_V_V_write),
+    .output_line_38_V_V_din(tancalc_U0_output_line_38_V_V_din),
+    .output_line_38_V_V_full_n(stream_array_line_38_V_V_full_n),
+    .output_line_38_V_V_write(tancalc_U0_output_line_38_V_V_write),
+    .output_line_39_V_V_din(tancalc_U0_output_line_39_V_V_din),
+    .output_line_39_V_V_full_n(stream_array_line_39_V_V_full_n),
+    .output_line_39_V_V_write(tancalc_U0_output_line_39_V_V_write),
+    .output_line_40_V_V_din(tancalc_U0_output_line_40_V_V_din),
+    .output_line_40_V_V_full_n(stream_array_line_40_V_V_full_n),
+    .output_line_40_V_V_write(tancalc_U0_output_line_40_V_V_write),
+    .output_line_41_V_V_din(tancalc_U0_output_line_41_V_V_din),
+    .output_line_41_V_V_full_n(stream_array_line_41_V_V_full_n),
+    .output_line_41_V_V_write(tancalc_U0_output_line_41_V_V_write),
+    .output_line_42_V_V_din(tancalc_U0_output_line_42_V_V_din),
+    .output_line_42_V_V_full_n(stream_array_line_42_V_V_full_n),
+    .output_line_42_V_V_write(tancalc_U0_output_line_42_V_V_write),
+    .output_line_43_V_V_din(tancalc_U0_output_line_43_V_V_din),
+    .output_line_43_V_V_full_n(stream_array_line_43_V_V_full_n),
+    .output_line_43_V_V_write(tancalc_U0_output_line_43_V_V_write),
+    .output_line_44_V_V_din(tancalc_U0_output_line_44_V_V_din),
+    .output_line_44_V_V_full_n(stream_array_line_44_V_V_full_n),
+    .output_line_44_V_V_write(tancalc_U0_output_line_44_V_V_write),
+    .output_line_45_V_V_din(tancalc_U0_output_line_45_V_V_din),
+    .output_line_45_V_V_full_n(stream_array_line_45_V_V_full_n),
+    .output_line_45_V_V_write(tancalc_U0_output_line_45_V_V_write),
+    .output_line_46_V_V_din(tancalc_U0_output_line_46_V_V_din),
+    .output_line_46_V_V_full_n(stream_array_line_46_V_V_full_n),
+    .output_line_46_V_V_write(tancalc_U0_output_line_46_V_V_write),
+    .output_line_47_V_V_din(tancalc_U0_output_line_47_V_V_din),
+    .output_line_47_V_V_full_n(stream_array_line_47_V_V_full_n),
+    .output_line_47_V_V_write(tancalc_U0_output_line_47_V_V_write),
+    .output_line_48_V_V_din(tancalc_U0_output_line_48_V_V_din),
+    .output_line_48_V_V_full_n(stream_array_line_48_V_V_full_n),
+    .output_line_48_V_V_write(tancalc_U0_output_line_48_V_V_write),
+    .output_line_49_V_V_din(tancalc_U0_output_line_49_V_V_din),
+    .output_line_49_V_V_full_n(stream_array_line_49_V_V_full_n),
+    .output_line_49_V_V_write(tancalc_U0_output_line_49_V_V_write),
+    .output_line_50_V_V_din(tancalc_U0_output_line_50_V_V_din),
+    .output_line_50_V_V_full_n(stream_array_line_50_V_V_full_n),
+    .output_line_50_V_V_write(tancalc_U0_output_line_50_V_V_write),
+    .output_line_51_V_V_din(tancalc_U0_output_line_51_V_V_din),
+    .output_line_51_V_V_full_n(stream_array_line_51_V_V_full_n),
+    .output_line_51_V_V_write(tancalc_U0_output_line_51_V_V_write),
+    .output_line_52_V_V_din(tancalc_U0_output_line_52_V_V_din),
+    .output_line_52_V_V_full_n(stream_array_line_52_V_V_full_n),
+    .output_line_52_V_V_write(tancalc_U0_output_line_52_V_V_write),
+    .output_line_53_V_V_din(tancalc_U0_output_line_53_V_V_din),
+    .output_line_53_V_V_full_n(stream_array_line_53_V_V_full_n),
+    .output_line_53_V_V_write(tancalc_U0_output_line_53_V_V_write),
+    .output_line_54_V_V_din(tancalc_U0_output_line_54_V_V_din),
+    .output_line_54_V_V_full_n(stream_array_line_54_V_V_full_n),
+    .output_line_54_V_V_write(tancalc_U0_output_line_54_V_V_write),
+    .output_line_55_V_V_din(tancalc_U0_output_line_55_V_V_din),
+    .output_line_55_V_V_full_n(stream_array_line_55_V_V_full_n),
+    .output_line_55_V_V_write(tancalc_U0_output_line_55_V_V_write),
+    .output_line_56_V_V_din(tancalc_U0_output_line_56_V_V_din),
+    .output_line_56_V_V_full_n(stream_array_line_56_V_V_full_n),
+    .output_line_56_V_V_write(tancalc_U0_output_line_56_V_V_write),
+    .output_line_57_V_V_din(tancalc_U0_output_line_57_V_V_din),
+    .output_line_57_V_V_full_n(stream_array_line_57_V_V_full_n),
+    .output_line_57_V_V_write(tancalc_U0_output_line_57_V_V_write),
+    .output_line_58_V_V_din(tancalc_U0_output_line_58_V_V_din),
+    .output_line_58_V_V_full_n(stream_array_line_58_V_V_full_n),
+    .output_line_58_V_V_write(tancalc_U0_output_line_58_V_V_write),
+    .output_line_59_V_V_din(tancalc_U0_output_line_59_V_V_din),
+    .output_line_59_V_V_full_n(stream_array_line_59_V_V_full_n),
+    .output_line_59_V_V_write(tancalc_U0_output_line_59_V_V_write),
+    .output_line_60_V_V_din(tancalc_U0_output_line_60_V_V_din),
+    .output_line_60_V_V_full_n(stream_array_line_60_V_V_full_n),
+    .output_line_60_V_V_write(tancalc_U0_output_line_60_V_V_write),
+    .output_line_61_V_V_din(tancalc_U0_output_line_61_V_V_din),
+    .output_line_61_V_V_full_n(stream_array_line_61_V_V_full_n),
+    .output_line_61_V_V_write(tancalc_U0_output_line_61_V_V_write),
+    .output_line_62_V_V_din(tancalc_U0_output_line_62_V_V_din),
+    .output_line_62_V_V_full_n(stream_array_line_62_V_V_full_n),
+    .output_line_62_V_V_write(tancalc_U0_output_line_62_V_V_write),
+    .output_line_63_V_V_din(tancalc_U0_output_line_63_V_V_din),
+    .output_line_63_V_V_full_n(stream_array_line_63_V_V_full_n),
+    .output_line_63_V_V_write(tancalc_U0_output_line_63_V_V_write)
 );
 
 hier_func_fifo fifo_U0(
@@ -612,250 +1053,1033 @@ hier_func_fifo fifo_U0(
     .ap_continue(fifo_U0_ap_continue),
     .ap_idle(fifo_U0_ap_idle),
     .ap_ready(fifo_U0_ap_ready),
-    .fifo_input_line_0_V_V(10'd0),
-    .fifo_input_line_1_V_V_dout(stream_array_line_1_V_V_dout),
-    .fifo_input_line_1_V_V_empty_n(stream_array_line_1_V_V_empty_n),
-    .fifo_input_line_1_V_V_read(fifo_U0_fifo_input_line_1_V_V_read),
-    .fifo_input_line_2_V_V_dout(stream_array_line_2_V_V_dout),
-    .fifo_input_line_2_V_V_empty_n(stream_array_line_2_V_V_empty_n),
-    .fifo_input_line_2_V_V_read(fifo_U0_fifo_input_line_2_V_V_read),
-    .fifo_input_line_3_V_V_dout(stream_array_line_3_V_V_dout),
-    .fifo_input_line_3_V_V_empty_n(stream_array_line_3_V_V_empty_n),
-    .fifo_input_line_3_V_V_read(fifo_U0_fifo_input_line_3_V_V_read),
-    .fifo_input_line_4_V_V_dout(stream_array_line_4_V_V_dout),
-    .fifo_input_line_4_V_V_empty_n(stream_array_line_4_V_V_empty_n),
-    .fifo_input_line_4_V_V_read(fifo_U0_fifo_input_line_4_V_V_read),
-    .fifo_input_line_5_V_V_dout(stream_array_line_5_V_V_dout),
-    .fifo_input_line_5_V_V_empty_n(stream_array_line_5_V_V_empty_n),
-    .fifo_input_line_5_V_V_read(fifo_U0_fifo_input_line_5_V_V_read),
-    .fifo_input_line_6_V_V_dout(stream_array_line_6_V_V_dout),
-    .fifo_input_line_6_V_V_empty_n(stream_array_line_6_V_V_empty_n),
-    .fifo_input_line_6_V_V_read(fifo_U0_fifo_input_line_6_V_V_read),
-    .fifo_input_line_7_V_V_dout(stream_array_line_7_V_V_dout),
-    .fifo_input_line_7_V_V_empty_n(stream_array_line_7_V_V_empty_n),
-    .fifo_input_line_7_V_V_read(fifo_U0_fifo_input_line_7_V_V_read),
-    .fifo_input_line_8_V_V_dout(stream_array_line_8_V_V_dout),
-    .fifo_input_line_8_V_V_empty_n(stream_array_line_8_V_V_empty_n),
-    .fifo_input_line_8_V_V_read(fifo_U0_fifo_input_line_8_V_V_read),
-    .fifo_input_line_9_V_V_dout(stream_array_line_9_V_V_dout),
-    .fifo_input_line_9_V_V_empty_n(stream_array_line_9_V_V_empty_n),
-    .fifo_input_line_9_V_V_read(fifo_U0_fifo_input_line_9_V_V_read),
-    .fifo_input_line_10_V_V_dout(stream_array_line_10_V_V_dout),
-    .fifo_input_line_10_V_V_empty_n(stream_array_line_10_V_V_empty_n),
-    .fifo_input_line_10_V_V_read(fifo_U0_fifo_input_line_10_V_V_read),
-    .fifo_input_line_11_V_V_dout(stream_array_line_11_V_V_dout),
-    .fifo_input_line_11_V_V_empty_n(stream_array_line_11_V_V_empty_n),
-    .fifo_input_line_11_V_V_read(fifo_U0_fifo_input_line_11_V_V_read),
-    .fifo_input_line_12_V_V_dout(stream_array_line_12_V_V_dout),
-    .fifo_input_line_12_V_V_empty_n(stream_array_line_12_V_V_empty_n),
-    .fifo_input_line_12_V_V_read(fifo_U0_fifo_input_line_12_V_V_read),
-    .fifo_input_line_13_V_V_dout(stream_array_line_13_V_V_dout),
-    .fifo_input_line_13_V_V_empty_n(stream_array_line_13_V_V_empty_n),
-    .fifo_input_line_13_V_V_read(fifo_U0_fifo_input_line_13_V_V_read),
-    .fifo_input_line_14_V_V_dout(stream_array_line_14_V_V_dout),
-    .fifo_input_line_14_V_V_empty_n(stream_array_line_14_V_V_empty_n),
-    .fifo_input_line_14_V_V_read(fifo_U0_fifo_input_line_14_V_V_read),
-    .fifo_input_line_15_V_V_dout(stream_array_line_15_V_V_dout),
-    .fifo_input_line_15_V_V_empty_n(stream_array_line_15_V_V_empty_n),
-    .fifo_input_line_15_V_V_read(fifo_U0_fifo_input_line_15_V_V_read),
-    .fifo_output_V_V_TDATA(fifo_U0_fifo_output_V_V_TDATA),
-    .fifo_output_V_V_TVALID(fifo_U0_fifo_output_V_V_TVALID),
-    .fifo_output_V_V_TREADY(fifo_output_V_V_TREADY)
+    .input_line_0_V_V_dout(stream_array_line_0_V_V_dout),
+    .input_line_0_V_V_empty_n(stream_array_line_0_V_V_empty_n),
+    .input_line_0_V_V_read(fifo_U0_input_line_0_V_V_read),
+    .input_line_1_V_V_dout(stream_array_line_1_V_V_dout),
+    .input_line_1_V_V_empty_n(stream_array_line_1_V_V_empty_n),
+    .input_line_1_V_V_read(fifo_U0_input_line_1_V_V_read),
+    .input_line_2_V_V_dout(stream_array_line_2_V_V_dout),
+    .input_line_2_V_V_empty_n(stream_array_line_2_V_V_empty_n),
+    .input_line_2_V_V_read(fifo_U0_input_line_2_V_V_read),
+    .input_line_3_V_V_dout(stream_array_line_3_V_V_dout),
+    .input_line_3_V_V_empty_n(stream_array_line_3_V_V_empty_n),
+    .input_line_3_V_V_read(fifo_U0_input_line_3_V_V_read),
+    .input_line_4_V_V_dout(stream_array_line_4_V_V_dout),
+    .input_line_4_V_V_empty_n(stream_array_line_4_V_V_empty_n),
+    .input_line_4_V_V_read(fifo_U0_input_line_4_V_V_read),
+    .input_line_5_V_V_dout(stream_array_line_5_V_V_dout),
+    .input_line_5_V_V_empty_n(stream_array_line_5_V_V_empty_n),
+    .input_line_5_V_V_read(fifo_U0_input_line_5_V_V_read),
+    .input_line_6_V_V_dout(stream_array_line_6_V_V_dout),
+    .input_line_6_V_V_empty_n(stream_array_line_6_V_V_empty_n),
+    .input_line_6_V_V_read(fifo_U0_input_line_6_V_V_read),
+    .input_line_7_V_V_dout(stream_array_line_7_V_V_dout),
+    .input_line_7_V_V_empty_n(stream_array_line_7_V_V_empty_n),
+    .input_line_7_V_V_read(fifo_U0_input_line_7_V_V_read),
+    .input_line_8_V_V_dout(stream_array_line_8_V_V_dout),
+    .input_line_8_V_V_empty_n(stream_array_line_8_V_V_empty_n),
+    .input_line_8_V_V_read(fifo_U0_input_line_8_V_V_read),
+    .input_line_9_V_V_dout(stream_array_line_9_V_V_dout),
+    .input_line_9_V_V_empty_n(stream_array_line_9_V_V_empty_n),
+    .input_line_9_V_V_read(fifo_U0_input_line_9_V_V_read),
+    .input_line_10_V_V_dout(stream_array_line_10_V_V_dout),
+    .input_line_10_V_V_empty_n(stream_array_line_10_V_V_empty_n),
+    .input_line_10_V_V_read(fifo_U0_input_line_10_V_V_read),
+    .input_line_11_V_V_dout(stream_array_line_11_V_V_dout),
+    .input_line_11_V_V_empty_n(stream_array_line_11_V_V_empty_n),
+    .input_line_11_V_V_read(fifo_U0_input_line_11_V_V_read),
+    .input_line_12_V_V_dout(stream_array_line_12_V_V_dout),
+    .input_line_12_V_V_empty_n(stream_array_line_12_V_V_empty_n),
+    .input_line_12_V_V_read(fifo_U0_input_line_12_V_V_read),
+    .input_line_13_V_V_dout(stream_array_line_13_V_V_dout),
+    .input_line_13_V_V_empty_n(stream_array_line_13_V_V_empty_n),
+    .input_line_13_V_V_read(fifo_U0_input_line_13_V_V_read),
+    .input_line_14_V_V_dout(stream_array_line_14_V_V_dout),
+    .input_line_14_V_V_empty_n(stream_array_line_14_V_V_empty_n),
+    .input_line_14_V_V_read(fifo_U0_input_line_14_V_V_read),
+    .input_line_15_V_V_dout(stream_array_line_15_V_V_dout),
+    .input_line_15_V_V_empty_n(stream_array_line_15_V_V_empty_n),
+    .input_line_15_V_V_read(fifo_U0_input_line_15_V_V_read),
+    .input_line_16_V_V_dout(stream_array_line_16_V_V_dout),
+    .input_line_16_V_V_empty_n(stream_array_line_16_V_V_empty_n),
+    .input_line_16_V_V_read(fifo_U0_input_line_16_V_V_read),
+    .input_line_17_V_V_dout(stream_array_line_17_V_V_dout),
+    .input_line_17_V_V_empty_n(stream_array_line_17_V_V_empty_n),
+    .input_line_17_V_V_read(fifo_U0_input_line_17_V_V_read),
+    .input_line_18_V_V_dout(stream_array_line_18_V_V_dout),
+    .input_line_18_V_V_empty_n(stream_array_line_18_V_V_empty_n),
+    .input_line_18_V_V_read(fifo_U0_input_line_18_V_V_read),
+    .input_line_19_V_V_dout(stream_array_line_19_V_V_dout),
+    .input_line_19_V_V_empty_n(stream_array_line_19_V_V_empty_n),
+    .input_line_19_V_V_read(fifo_U0_input_line_19_V_V_read),
+    .input_line_20_V_V_dout(stream_array_line_20_V_V_dout),
+    .input_line_20_V_V_empty_n(stream_array_line_20_V_V_empty_n),
+    .input_line_20_V_V_read(fifo_U0_input_line_20_V_V_read),
+    .input_line_21_V_V_dout(stream_array_line_21_V_V_dout),
+    .input_line_21_V_V_empty_n(stream_array_line_21_V_V_empty_n),
+    .input_line_21_V_V_read(fifo_U0_input_line_21_V_V_read),
+    .input_line_22_V_V_dout(stream_array_line_22_V_V_dout),
+    .input_line_22_V_V_empty_n(stream_array_line_22_V_V_empty_n),
+    .input_line_22_V_V_read(fifo_U0_input_line_22_V_V_read),
+    .input_line_23_V_V_dout(stream_array_line_23_V_V_dout),
+    .input_line_23_V_V_empty_n(stream_array_line_23_V_V_empty_n),
+    .input_line_23_V_V_read(fifo_U0_input_line_23_V_V_read),
+    .input_line_24_V_V_dout(stream_array_line_24_V_V_dout),
+    .input_line_24_V_V_empty_n(stream_array_line_24_V_V_empty_n),
+    .input_line_24_V_V_read(fifo_U0_input_line_24_V_V_read),
+    .input_line_25_V_V_dout(stream_array_line_25_V_V_dout),
+    .input_line_25_V_V_empty_n(stream_array_line_25_V_V_empty_n),
+    .input_line_25_V_V_read(fifo_U0_input_line_25_V_V_read),
+    .input_line_26_V_V_dout(stream_array_line_26_V_V_dout),
+    .input_line_26_V_V_empty_n(stream_array_line_26_V_V_empty_n),
+    .input_line_26_V_V_read(fifo_U0_input_line_26_V_V_read),
+    .input_line_27_V_V_dout(stream_array_line_27_V_V_dout),
+    .input_line_27_V_V_empty_n(stream_array_line_27_V_V_empty_n),
+    .input_line_27_V_V_read(fifo_U0_input_line_27_V_V_read),
+    .input_line_28_V_V_dout(stream_array_line_28_V_V_dout),
+    .input_line_28_V_V_empty_n(stream_array_line_28_V_V_empty_n),
+    .input_line_28_V_V_read(fifo_U0_input_line_28_V_V_read),
+    .input_line_29_V_V_dout(stream_array_line_29_V_V_dout),
+    .input_line_29_V_V_empty_n(stream_array_line_29_V_V_empty_n),
+    .input_line_29_V_V_read(fifo_U0_input_line_29_V_V_read),
+    .input_line_30_V_V_dout(stream_array_line_30_V_V_dout),
+    .input_line_30_V_V_empty_n(stream_array_line_30_V_V_empty_n),
+    .input_line_30_V_V_read(fifo_U0_input_line_30_V_V_read),
+    .input_line_31_V_V_dout(stream_array_line_31_V_V_dout),
+    .input_line_31_V_V_empty_n(stream_array_line_31_V_V_empty_n),
+    .input_line_31_V_V_read(fifo_U0_input_line_31_V_V_read),
+    .input_line_32_V_V_dout(stream_array_line_32_V_V_dout),
+    .input_line_32_V_V_empty_n(stream_array_line_32_V_V_empty_n),
+    .input_line_32_V_V_read(fifo_U0_input_line_32_V_V_read),
+    .input_line_33_V_V_dout(stream_array_line_33_V_V_dout),
+    .input_line_33_V_V_empty_n(stream_array_line_33_V_V_empty_n),
+    .input_line_33_V_V_read(fifo_U0_input_line_33_V_V_read),
+    .input_line_34_V_V_dout(stream_array_line_34_V_V_dout),
+    .input_line_34_V_V_empty_n(stream_array_line_34_V_V_empty_n),
+    .input_line_34_V_V_read(fifo_U0_input_line_34_V_V_read),
+    .input_line_35_V_V_dout(stream_array_line_35_V_V_dout),
+    .input_line_35_V_V_empty_n(stream_array_line_35_V_V_empty_n),
+    .input_line_35_V_V_read(fifo_U0_input_line_35_V_V_read),
+    .input_line_36_V_V_dout(stream_array_line_36_V_V_dout),
+    .input_line_36_V_V_empty_n(stream_array_line_36_V_V_empty_n),
+    .input_line_36_V_V_read(fifo_U0_input_line_36_V_V_read),
+    .input_line_37_V_V_dout(stream_array_line_37_V_V_dout),
+    .input_line_37_V_V_empty_n(stream_array_line_37_V_V_empty_n),
+    .input_line_37_V_V_read(fifo_U0_input_line_37_V_V_read),
+    .input_line_38_V_V_dout(stream_array_line_38_V_V_dout),
+    .input_line_38_V_V_empty_n(stream_array_line_38_V_V_empty_n),
+    .input_line_38_V_V_read(fifo_U0_input_line_38_V_V_read),
+    .input_line_39_V_V_dout(stream_array_line_39_V_V_dout),
+    .input_line_39_V_V_empty_n(stream_array_line_39_V_V_empty_n),
+    .input_line_39_V_V_read(fifo_U0_input_line_39_V_V_read),
+    .input_line_40_V_V_dout(stream_array_line_40_V_V_dout),
+    .input_line_40_V_V_empty_n(stream_array_line_40_V_V_empty_n),
+    .input_line_40_V_V_read(fifo_U0_input_line_40_V_V_read),
+    .input_line_41_V_V_dout(stream_array_line_41_V_V_dout),
+    .input_line_41_V_V_empty_n(stream_array_line_41_V_V_empty_n),
+    .input_line_41_V_V_read(fifo_U0_input_line_41_V_V_read),
+    .input_line_42_V_V_dout(stream_array_line_42_V_V_dout),
+    .input_line_42_V_V_empty_n(stream_array_line_42_V_V_empty_n),
+    .input_line_42_V_V_read(fifo_U0_input_line_42_V_V_read),
+    .input_line_43_V_V_dout(stream_array_line_43_V_V_dout),
+    .input_line_43_V_V_empty_n(stream_array_line_43_V_V_empty_n),
+    .input_line_43_V_V_read(fifo_U0_input_line_43_V_V_read),
+    .input_line_44_V_V_dout(stream_array_line_44_V_V_dout),
+    .input_line_44_V_V_empty_n(stream_array_line_44_V_V_empty_n),
+    .input_line_44_V_V_read(fifo_U0_input_line_44_V_V_read),
+    .input_line_45_V_V_dout(stream_array_line_45_V_V_dout),
+    .input_line_45_V_V_empty_n(stream_array_line_45_V_V_empty_n),
+    .input_line_45_V_V_read(fifo_U0_input_line_45_V_V_read),
+    .input_line_46_V_V_dout(stream_array_line_46_V_V_dout),
+    .input_line_46_V_V_empty_n(stream_array_line_46_V_V_empty_n),
+    .input_line_46_V_V_read(fifo_U0_input_line_46_V_V_read),
+    .input_line_47_V_V_dout(stream_array_line_47_V_V_dout),
+    .input_line_47_V_V_empty_n(stream_array_line_47_V_V_empty_n),
+    .input_line_47_V_V_read(fifo_U0_input_line_47_V_V_read),
+    .input_line_48_V_V_dout(stream_array_line_48_V_V_dout),
+    .input_line_48_V_V_empty_n(stream_array_line_48_V_V_empty_n),
+    .input_line_48_V_V_read(fifo_U0_input_line_48_V_V_read),
+    .input_line_49_V_V_dout(stream_array_line_49_V_V_dout),
+    .input_line_49_V_V_empty_n(stream_array_line_49_V_V_empty_n),
+    .input_line_49_V_V_read(fifo_U0_input_line_49_V_V_read),
+    .input_line_50_V_V_dout(stream_array_line_50_V_V_dout),
+    .input_line_50_V_V_empty_n(stream_array_line_50_V_V_empty_n),
+    .input_line_50_V_V_read(fifo_U0_input_line_50_V_V_read),
+    .input_line_51_V_V_dout(stream_array_line_51_V_V_dout),
+    .input_line_51_V_V_empty_n(stream_array_line_51_V_V_empty_n),
+    .input_line_51_V_V_read(fifo_U0_input_line_51_V_V_read),
+    .input_line_52_V_V_dout(stream_array_line_52_V_V_dout),
+    .input_line_52_V_V_empty_n(stream_array_line_52_V_V_empty_n),
+    .input_line_52_V_V_read(fifo_U0_input_line_52_V_V_read),
+    .input_line_53_V_V_dout(stream_array_line_53_V_V_dout),
+    .input_line_53_V_V_empty_n(stream_array_line_53_V_V_empty_n),
+    .input_line_53_V_V_read(fifo_U0_input_line_53_V_V_read),
+    .input_line_54_V_V_dout(stream_array_line_54_V_V_dout),
+    .input_line_54_V_V_empty_n(stream_array_line_54_V_V_empty_n),
+    .input_line_54_V_V_read(fifo_U0_input_line_54_V_V_read),
+    .input_line_55_V_V_dout(stream_array_line_55_V_V_dout),
+    .input_line_55_V_V_empty_n(stream_array_line_55_V_V_empty_n),
+    .input_line_55_V_V_read(fifo_U0_input_line_55_V_V_read),
+    .input_line_56_V_V_dout(stream_array_line_56_V_V_dout),
+    .input_line_56_V_V_empty_n(stream_array_line_56_V_V_empty_n),
+    .input_line_56_V_V_read(fifo_U0_input_line_56_V_V_read),
+    .input_line_57_V_V_dout(stream_array_line_57_V_V_dout),
+    .input_line_57_V_V_empty_n(stream_array_line_57_V_V_empty_n),
+    .input_line_57_V_V_read(fifo_U0_input_line_57_V_V_read),
+    .input_line_58_V_V_dout(stream_array_line_58_V_V_dout),
+    .input_line_58_V_V_empty_n(stream_array_line_58_V_V_empty_n),
+    .input_line_58_V_V_read(fifo_U0_input_line_58_V_V_read),
+    .input_line_59_V_V_dout(stream_array_line_59_V_V_dout),
+    .input_line_59_V_V_empty_n(stream_array_line_59_V_V_empty_n),
+    .input_line_59_V_V_read(fifo_U0_input_line_59_V_V_read),
+    .input_line_60_V_V_dout(stream_array_line_60_V_V_dout),
+    .input_line_60_V_V_empty_n(stream_array_line_60_V_V_empty_n),
+    .input_line_60_V_V_read(fifo_U0_input_line_60_V_V_read),
+    .input_line_61_V_V_dout(stream_array_line_61_V_V_dout),
+    .input_line_61_V_V_empty_n(stream_array_line_61_V_V_empty_n),
+    .input_line_61_V_V_read(fifo_U0_input_line_61_V_V_read),
+    .input_line_62_V_V_dout(stream_array_line_62_V_V_dout),
+    .input_line_62_V_V_empty_n(stream_array_line_62_V_V_empty_n),
+    .input_line_62_V_V_read(fifo_U0_input_line_62_V_V_read),
+    .input_line_63_V_V_dout(stream_array_line_63_V_V_dout),
+    .input_line_63_V_V_empty_n(stream_array_line_63_V_V_empty_n),
+    .input_line_63_V_V_read(fifo_U0_input_line_63_V_V_read),
+    .output_V_V_TDATA(fifo_U0_output_V_V_TDATA),
+    .output_V_V_TVALID(fifo_U0_output_V_V_TVALID),
+    .output_V_V_TREADY(output_V_V_TREADY)
 );
 
-hier_func_fifo_w10_d16_A stream_array_line_1_V_V_U(
+hier_func_fifo_w32_d256_A stream_array_line_0_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(tancalc_U0_tancalc_output_line_1_V_V_din),
+    .if_din(tancalc_U0_output_line_0_V_V_din),
+    .if_full_n(stream_array_line_0_V_V_full_n),
+    .if_write(tancalc_U0_output_line_0_V_V_write),
+    .if_dout(stream_array_line_0_V_V_dout),
+    .if_empty_n(stream_array_line_0_V_V_empty_n),
+    .if_read(fifo_U0_input_line_0_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_1_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_1_V_V_din),
     .if_full_n(stream_array_line_1_V_V_full_n),
-    .if_write(tancalc_U0_tancalc_output_line_1_V_V_write),
+    .if_write(tancalc_U0_output_line_1_V_V_write),
     .if_dout(stream_array_line_1_V_V_dout),
     .if_empty_n(stream_array_line_1_V_V_empty_n),
-    .if_read(fifo_U0_fifo_input_line_1_V_V_read)
+    .if_read(fifo_U0_input_line_1_V_V_read)
 );
 
-hier_func_fifo_w10_d16_A stream_array_line_2_V_V_U(
+hier_func_fifo_w32_d256_A stream_array_line_2_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(tancalc_U0_tancalc_output_line_2_V_V_din),
+    .if_din(tancalc_U0_output_line_2_V_V_din),
     .if_full_n(stream_array_line_2_V_V_full_n),
-    .if_write(tancalc_U0_tancalc_output_line_2_V_V_write),
+    .if_write(tancalc_U0_output_line_2_V_V_write),
     .if_dout(stream_array_line_2_V_V_dout),
     .if_empty_n(stream_array_line_2_V_V_empty_n),
-    .if_read(fifo_U0_fifo_input_line_2_V_V_read)
+    .if_read(fifo_U0_input_line_2_V_V_read)
 );
 
-hier_func_fifo_w10_d16_A stream_array_line_3_V_V_U(
+hier_func_fifo_w32_d256_A stream_array_line_3_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(tancalc_U0_tancalc_output_line_3_V_V_din),
+    .if_din(tancalc_U0_output_line_3_V_V_din),
     .if_full_n(stream_array_line_3_V_V_full_n),
-    .if_write(tancalc_U0_tancalc_output_line_3_V_V_write),
+    .if_write(tancalc_U0_output_line_3_V_V_write),
     .if_dout(stream_array_line_3_V_V_dout),
     .if_empty_n(stream_array_line_3_V_V_empty_n),
-    .if_read(fifo_U0_fifo_input_line_3_V_V_read)
+    .if_read(fifo_U0_input_line_3_V_V_read)
 );
 
-hier_func_fifo_w10_d16_A stream_array_line_4_V_V_U(
+hier_func_fifo_w32_d256_A stream_array_line_4_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(tancalc_U0_tancalc_output_line_4_V_V_din),
+    .if_din(tancalc_U0_output_line_4_V_V_din),
     .if_full_n(stream_array_line_4_V_V_full_n),
-    .if_write(tancalc_U0_tancalc_output_line_4_V_V_write),
+    .if_write(tancalc_U0_output_line_4_V_V_write),
     .if_dout(stream_array_line_4_V_V_dout),
     .if_empty_n(stream_array_line_4_V_V_empty_n),
-    .if_read(fifo_U0_fifo_input_line_4_V_V_read)
+    .if_read(fifo_U0_input_line_4_V_V_read)
 );
 
-hier_func_fifo_w10_d16_A stream_array_line_5_V_V_U(
+hier_func_fifo_w32_d256_A stream_array_line_5_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(tancalc_U0_tancalc_output_line_5_V_V_din),
+    .if_din(tancalc_U0_output_line_5_V_V_din),
     .if_full_n(stream_array_line_5_V_V_full_n),
-    .if_write(tancalc_U0_tancalc_output_line_5_V_V_write),
+    .if_write(tancalc_U0_output_line_5_V_V_write),
     .if_dout(stream_array_line_5_V_V_dout),
     .if_empty_n(stream_array_line_5_V_V_empty_n),
-    .if_read(fifo_U0_fifo_input_line_5_V_V_read)
+    .if_read(fifo_U0_input_line_5_V_V_read)
 );
 
-hier_func_fifo_w10_d16_A stream_array_line_6_V_V_U(
+hier_func_fifo_w32_d256_A stream_array_line_6_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(tancalc_U0_tancalc_output_line_6_V_V_din),
+    .if_din(tancalc_U0_output_line_6_V_V_din),
     .if_full_n(stream_array_line_6_V_V_full_n),
-    .if_write(tancalc_U0_tancalc_output_line_6_V_V_write),
+    .if_write(tancalc_U0_output_line_6_V_V_write),
     .if_dout(stream_array_line_6_V_V_dout),
     .if_empty_n(stream_array_line_6_V_V_empty_n),
-    .if_read(fifo_U0_fifo_input_line_6_V_V_read)
+    .if_read(fifo_U0_input_line_6_V_V_read)
 );
 
-hier_func_fifo_w10_d16_A stream_array_line_7_V_V_U(
+hier_func_fifo_w32_d256_A stream_array_line_7_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(tancalc_U0_tancalc_output_line_7_V_V_din),
+    .if_din(tancalc_U0_output_line_7_V_V_din),
     .if_full_n(stream_array_line_7_V_V_full_n),
-    .if_write(tancalc_U0_tancalc_output_line_7_V_V_write),
+    .if_write(tancalc_U0_output_line_7_V_V_write),
     .if_dout(stream_array_line_7_V_V_dout),
     .if_empty_n(stream_array_line_7_V_V_empty_n),
-    .if_read(fifo_U0_fifo_input_line_7_V_V_read)
+    .if_read(fifo_U0_input_line_7_V_V_read)
 );
 
-hier_func_fifo_w10_d16_A stream_array_line_8_V_V_U(
+hier_func_fifo_w32_d256_A stream_array_line_8_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(tancalc_U0_tancalc_output_line_8_V_V_din),
+    .if_din(tancalc_U0_output_line_8_V_V_din),
     .if_full_n(stream_array_line_8_V_V_full_n),
-    .if_write(tancalc_U0_tancalc_output_line_8_V_V_write),
+    .if_write(tancalc_U0_output_line_8_V_V_write),
     .if_dout(stream_array_line_8_V_V_dout),
     .if_empty_n(stream_array_line_8_V_V_empty_n),
-    .if_read(fifo_U0_fifo_input_line_8_V_V_read)
+    .if_read(fifo_U0_input_line_8_V_V_read)
 );
 
-hier_func_fifo_w10_d16_A stream_array_line_9_V_V_U(
+hier_func_fifo_w32_d256_A stream_array_line_9_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(tancalc_U0_tancalc_output_line_9_V_V_din),
+    .if_din(tancalc_U0_output_line_9_V_V_din),
     .if_full_n(stream_array_line_9_V_V_full_n),
-    .if_write(tancalc_U0_tancalc_output_line_9_V_V_write),
+    .if_write(tancalc_U0_output_line_9_V_V_write),
     .if_dout(stream_array_line_9_V_V_dout),
     .if_empty_n(stream_array_line_9_V_V_empty_n),
-    .if_read(fifo_U0_fifo_input_line_9_V_V_read)
+    .if_read(fifo_U0_input_line_9_V_V_read)
 );
 
-hier_func_fifo_w10_d16_A stream_array_line_10_V_V_U(
+hier_func_fifo_w32_d256_A stream_array_line_10_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(tancalc_U0_tancalc_output_line_10_V_V_din),
+    .if_din(tancalc_U0_output_line_10_V_V_din),
     .if_full_n(stream_array_line_10_V_V_full_n),
-    .if_write(tancalc_U0_tancalc_output_line_10_V_V_write),
+    .if_write(tancalc_U0_output_line_10_V_V_write),
     .if_dout(stream_array_line_10_V_V_dout),
     .if_empty_n(stream_array_line_10_V_V_empty_n),
-    .if_read(fifo_U0_fifo_input_line_10_V_V_read)
+    .if_read(fifo_U0_input_line_10_V_V_read)
 );
 
-hier_func_fifo_w10_d16_A stream_array_line_11_V_V_U(
+hier_func_fifo_w32_d256_A stream_array_line_11_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(tancalc_U0_tancalc_output_line_11_V_V_din),
+    .if_din(tancalc_U0_output_line_11_V_V_din),
     .if_full_n(stream_array_line_11_V_V_full_n),
-    .if_write(tancalc_U0_tancalc_output_line_11_V_V_write),
+    .if_write(tancalc_U0_output_line_11_V_V_write),
     .if_dout(stream_array_line_11_V_V_dout),
     .if_empty_n(stream_array_line_11_V_V_empty_n),
-    .if_read(fifo_U0_fifo_input_line_11_V_V_read)
+    .if_read(fifo_U0_input_line_11_V_V_read)
 );
 
-hier_func_fifo_w10_d16_A stream_array_line_12_V_V_U(
+hier_func_fifo_w32_d256_A stream_array_line_12_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(tancalc_U0_tancalc_output_line_12_V_V_din),
+    .if_din(tancalc_U0_output_line_12_V_V_din),
     .if_full_n(stream_array_line_12_V_V_full_n),
-    .if_write(tancalc_U0_tancalc_output_line_12_V_V_write),
+    .if_write(tancalc_U0_output_line_12_V_V_write),
     .if_dout(stream_array_line_12_V_V_dout),
     .if_empty_n(stream_array_line_12_V_V_empty_n),
-    .if_read(fifo_U0_fifo_input_line_12_V_V_read)
+    .if_read(fifo_U0_input_line_12_V_V_read)
 );
 
-hier_func_fifo_w10_d16_A stream_array_line_13_V_V_U(
+hier_func_fifo_w32_d256_A stream_array_line_13_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(tancalc_U0_tancalc_output_line_13_V_V_din),
+    .if_din(tancalc_U0_output_line_13_V_V_din),
     .if_full_n(stream_array_line_13_V_V_full_n),
-    .if_write(tancalc_U0_tancalc_output_line_13_V_V_write),
+    .if_write(tancalc_U0_output_line_13_V_V_write),
     .if_dout(stream_array_line_13_V_V_dout),
     .if_empty_n(stream_array_line_13_V_V_empty_n),
-    .if_read(fifo_U0_fifo_input_line_13_V_V_read)
+    .if_read(fifo_U0_input_line_13_V_V_read)
 );
 
-hier_func_fifo_w10_d16_A stream_array_line_14_V_V_U(
+hier_func_fifo_w32_d256_A stream_array_line_14_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(tancalc_U0_tancalc_output_line_14_V_V_din),
+    .if_din(tancalc_U0_output_line_14_V_V_din),
     .if_full_n(stream_array_line_14_V_V_full_n),
-    .if_write(tancalc_U0_tancalc_output_line_14_V_V_write),
+    .if_write(tancalc_U0_output_line_14_V_V_write),
     .if_dout(stream_array_line_14_V_V_dout),
     .if_empty_n(stream_array_line_14_V_V_empty_n),
-    .if_read(fifo_U0_fifo_input_line_14_V_V_read)
+    .if_read(fifo_U0_input_line_14_V_V_read)
 );
 
-hier_func_fifo_w10_d16_A stream_array_line_15_V_V_U(
+hier_func_fifo_w32_d256_A stream_array_line_15_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(tancalc_U0_tancalc_output_line_15_V_V_din),
+    .if_din(tancalc_U0_output_line_15_V_V_din),
     .if_full_n(stream_array_line_15_V_V_full_n),
-    .if_write(tancalc_U0_tancalc_output_line_15_V_V_write),
+    .if_write(tancalc_U0_output_line_15_V_V_write),
     .if_dout(stream_array_line_15_V_V_dout),
     .if_empty_n(stream_array_line_15_V_V_empty_n),
-    .if_read(fifo_U0_fifo_input_line_15_V_V_read)
+    .if_read(fifo_U0_input_line_15_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_16_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_16_V_V_din),
+    .if_full_n(stream_array_line_16_V_V_full_n),
+    .if_write(tancalc_U0_output_line_16_V_V_write),
+    .if_dout(stream_array_line_16_V_V_dout),
+    .if_empty_n(stream_array_line_16_V_V_empty_n),
+    .if_read(fifo_U0_input_line_16_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_17_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_17_V_V_din),
+    .if_full_n(stream_array_line_17_V_V_full_n),
+    .if_write(tancalc_U0_output_line_17_V_V_write),
+    .if_dout(stream_array_line_17_V_V_dout),
+    .if_empty_n(stream_array_line_17_V_V_empty_n),
+    .if_read(fifo_U0_input_line_17_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_18_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_18_V_V_din),
+    .if_full_n(stream_array_line_18_V_V_full_n),
+    .if_write(tancalc_U0_output_line_18_V_V_write),
+    .if_dout(stream_array_line_18_V_V_dout),
+    .if_empty_n(stream_array_line_18_V_V_empty_n),
+    .if_read(fifo_U0_input_line_18_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_19_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_19_V_V_din),
+    .if_full_n(stream_array_line_19_V_V_full_n),
+    .if_write(tancalc_U0_output_line_19_V_V_write),
+    .if_dout(stream_array_line_19_V_V_dout),
+    .if_empty_n(stream_array_line_19_V_V_empty_n),
+    .if_read(fifo_U0_input_line_19_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_20_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_20_V_V_din),
+    .if_full_n(stream_array_line_20_V_V_full_n),
+    .if_write(tancalc_U0_output_line_20_V_V_write),
+    .if_dout(stream_array_line_20_V_V_dout),
+    .if_empty_n(stream_array_line_20_V_V_empty_n),
+    .if_read(fifo_U0_input_line_20_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_21_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_21_V_V_din),
+    .if_full_n(stream_array_line_21_V_V_full_n),
+    .if_write(tancalc_U0_output_line_21_V_V_write),
+    .if_dout(stream_array_line_21_V_V_dout),
+    .if_empty_n(stream_array_line_21_V_V_empty_n),
+    .if_read(fifo_U0_input_line_21_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_22_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_22_V_V_din),
+    .if_full_n(stream_array_line_22_V_V_full_n),
+    .if_write(tancalc_U0_output_line_22_V_V_write),
+    .if_dout(stream_array_line_22_V_V_dout),
+    .if_empty_n(stream_array_line_22_V_V_empty_n),
+    .if_read(fifo_U0_input_line_22_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_23_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_23_V_V_din),
+    .if_full_n(stream_array_line_23_V_V_full_n),
+    .if_write(tancalc_U0_output_line_23_V_V_write),
+    .if_dout(stream_array_line_23_V_V_dout),
+    .if_empty_n(stream_array_line_23_V_V_empty_n),
+    .if_read(fifo_U0_input_line_23_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_24_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_24_V_V_din),
+    .if_full_n(stream_array_line_24_V_V_full_n),
+    .if_write(tancalc_U0_output_line_24_V_V_write),
+    .if_dout(stream_array_line_24_V_V_dout),
+    .if_empty_n(stream_array_line_24_V_V_empty_n),
+    .if_read(fifo_U0_input_line_24_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_25_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_25_V_V_din),
+    .if_full_n(stream_array_line_25_V_V_full_n),
+    .if_write(tancalc_U0_output_line_25_V_V_write),
+    .if_dout(stream_array_line_25_V_V_dout),
+    .if_empty_n(stream_array_line_25_V_V_empty_n),
+    .if_read(fifo_U0_input_line_25_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_26_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_26_V_V_din),
+    .if_full_n(stream_array_line_26_V_V_full_n),
+    .if_write(tancalc_U0_output_line_26_V_V_write),
+    .if_dout(stream_array_line_26_V_V_dout),
+    .if_empty_n(stream_array_line_26_V_V_empty_n),
+    .if_read(fifo_U0_input_line_26_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_27_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_27_V_V_din),
+    .if_full_n(stream_array_line_27_V_V_full_n),
+    .if_write(tancalc_U0_output_line_27_V_V_write),
+    .if_dout(stream_array_line_27_V_V_dout),
+    .if_empty_n(stream_array_line_27_V_V_empty_n),
+    .if_read(fifo_U0_input_line_27_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_28_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_28_V_V_din),
+    .if_full_n(stream_array_line_28_V_V_full_n),
+    .if_write(tancalc_U0_output_line_28_V_V_write),
+    .if_dout(stream_array_line_28_V_V_dout),
+    .if_empty_n(stream_array_line_28_V_V_empty_n),
+    .if_read(fifo_U0_input_line_28_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_29_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_29_V_V_din),
+    .if_full_n(stream_array_line_29_V_V_full_n),
+    .if_write(tancalc_U0_output_line_29_V_V_write),
+    .if_dout(stream_array_line_29_V_V_dout),
+    .if_empty_n(stream_array_line_29_V_V_empty_n),
+    .if_read(fifo_U0_input_line_29_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_30_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_30_V_V_din),
+    .if_full_n(stream_array_line_30_V_V_full_n),
+    .if_write(tancalc_U0_output_line_30_V_V_write),
+    .if_dout(stream_array_line_30_V_V_dout),
+    .if_empty_n(stream_array_line_30_V_V_empty_n),
+    .if_read(fifo_U0_input_line_30_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_31_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_31_V_V_din),
+    .if_full_n(stream_array_line_31_V_V_full_n),
+    .if_write(tancalc_U0_output_line_31_V_V_write),
+    .if_dout(stream_array_line_31_V_V_dout),
+    .if_empty_n(stream_array_line_31_V_V_empty_n),
+    .if_read(fifo_U0_input_line_31_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_32_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_32_V_V_din),
+    .if_full_n(stream_array_line_32_V_V_full_n),
+    .if_write(tancalc_U0_output_line_32_V_V_write),
+    .if_dout(stream_array_line_32_V_V_dout),
+    .if_empty_n(stream_array_line_32_V_V_empty_n),
+    .if_read(fifo_U0_input_line_32_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_33_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_33_V_V_din),
+    .if_full_n(stream_array_line_33_V_V_full_n),
+    .if_write(tancalc_U0_output_line_33_V_V_write),
+    .if_dout(stream_array_line_33_V_V_dout),
+    .if_empty_n(stream_array_line_33_V_V_empty_n),
+    .if_read(fifo_U0_input_line_33_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_34_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_34_V_V_din),
+    .if_full_n(stream_array_line_34_V_V_full_n),
+    .if_write(tancalc_U0_output_line_34_V_V_write),
+    .if_dout(stream_array_line_34_V_V_dout),
+    .if_empty_n(stream_array_line_34_V_V_empty_n),
+    .if_read(fifo_U0_input_line_34_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_35_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_35_V_V_din),
+    .if_full_n(stream_array_line_35_V_V_full_n),
+    .if_write(tancalc_U0_output_line_35_V_V_write),
+    .if_dout(stream_array_line_35_V_V_dout),
+    .if_empty_n(stream_array_line_35_V_V_empty_n),
+    .if_read(fifo_U0_input_line_35_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_36_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_36_V_V_din),
+    .if_full_n(stream_array_line_36_V_V_full_n),
+    .if_write(tancalc_U0_output_line_36_V_V_write),
+    .if_dout(stream_array_line_36_V_V_dout),
+    .if_empty_n(stream_array_line_36_V_V_empty_n),
+    .if_read(fifo_U0_input_line_36_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_37_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_37_V_V_din),
+    .if_full_n(stream_array_line_37_V_V_full_n),
+    .if_write(tancalc_U0_output_line_37_V_V_write),
+    .if_dout(stream_array_line_37_V_V_dout),
+    .if_empty_n(stream_array_line_37_V_V_empty_n),
+    .if_read(fifo_U0_input_line_37_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_38_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_38_V_V_din),
+    .if_full_n(stream_array_line_38_V_V_full_n),
+    .if_write(tancalc_U0_output_line_38_V_V_write),
+    .if_dout(stream_array_line_38_V_V_dout),
+    .if_empty_n(stream_array_line_38_V_V_empty_n),
+    .if_read(fifo_U0_input_line_38_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_39_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_39_V_V_din),
+    .if_full_n(stream_array_line_39_V_V_full_n),
+    .if_write(tancalc_U0_output_line_39_V_V_write),
+    .if_dout(stream_array_line_39_V_V_dout),
+    .if_empty_n(stream_array_line_39_V_V_empty_n),
+    .if_read(fifo_U0_input_line_39_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_40_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_40_V_V_din),
+    .if_full_n(stream_array_line_40_V_V_full_n),
+    .if_write(tancalc_U0_output_line_40_V_V_write),
+    .if_dout(stream_array_line_40_V_V_dout),
+    .if_empty_n(stream_array_line_40_V_V_empty_n),
+    .if_read(fifo_U0_input_line_40_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_41_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_41_V_V_din),
+    .if_full_n(stream_array_line_41_V_V_full_n),
+    .if_write(tancalc_U0_output_line_41_V_V_write),
+    .if_dout(stream_array_line_41_V_V_dout),
+    .if_empty_n(stream_array_line_41_V_V_empty_n),
+    .if_read(fifo_U0_input_line_41_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_42_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_42_V_V_din),
+    .if_full_n(stream_array_line_42_V_V_full_n),
+    .if_write(tancalc_U0_output_line_42_V_V_write),
+    .if_dout(stream_array_line_42_V_V_dout),
+    .if_empty_n(stream_array_line_42_V_V_empty_n),
+    .if_read(fifo_U0_input_line_42_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_43_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_43_V_V_din),
+    .if_full_n(stream_array_line_43_V_V_full_n),
+    .if_write(tancalc_U0_output_line_43_V_V_write),
+    .if_dout(stream_array_line_43_V_V_dout),
+    .if_empty_n(stream_array_line_43_V_V_empty_n),
+    .if_read(fifo_U0_input_line_43_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_44_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_44_V_V_din),
+    .if_full_n(stream_array_line_44_V_V_full_n),
+    .if_write(tancalc_U0_output_line_44_V_V_write),
+    .if_dout(stream_array_line_44_V_V_dout),
+    .if_empty_n(stream_array_line_44_V_V_empty_n),
+    .if_read(fifo_U0_input_line_44_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_45_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_45_V_V_din),
+    .if_full_n(stream_array_line_45_V_V_full_n),
+    .if_write(tancalc_U0_output_line_45_V_V_write),
+    .if_dout(stream_array_line_45_V_V_dout),
+    .if_empty_n(stream_array_line_45_V_V_empty_n),
+    .if_read(fifo_U0_input_line_45_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_46_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_46_V_V_din),
+    .if_full_n(stream_array_line_46_V_V_full_n),
+    .if_write(tancalc_U0_output_line_46_V_V_write),
+    .if_dout(stream_array_line_46_V_V_dout),
+    .if_empty_n(stream_array_line_46_V_V_empty_n),
+    .if_read(fifo_U0_input_line_46_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_47_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_47_V_V_din),
+    .if_full_n(stream_array_line_47_V_V_full_n),
+    .if_write(tancalc_U0_output_line_47_V_V_write),
+    .if_dout(stream_array_line_47_V_V_dout),
+    .if_empty_n(stream_array_line_47_V_V_empty_n),
+    .if_read(fifo_U0_input_line_47_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_48_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_48_V_V_din),
+    .if_full_n(stream_array_line_48_V_V_full_n),
+    .if_write(tancalc_U0_output_line_48_V_V_write),
+    .if_dout(stream_array_line_48_V_V_dout),
+    .if_empty_n(stream_array_line_48_V_V_empty_n),
+    .if_read(fifo_U0_input_line_48_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_49_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_49_V_V_din),
+    .if_full_n(stream_array_line_49_V_V_full_n),
+    .if_write(tancalc_U0_output_line_49_V_V_write),
+    .if_dout(stream_array_line_49_V_V_dout),
+    .if_empty_n(stream_array_line_49_V_V_empty_n),
+    .if_read(fifo_U0_input_line_49_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_50_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_50_V_V_din),
+    .if_full_n(stream_array_line_50_V_V_full_n),
+    .if_write(tancalc_U0_output_line_50_V_V_write),
+    .if_dout(stream_array_line_50_V_V_dout),
+    .if_empty_n(stream_array_line_50_V_V_empty_n),
+    .if_read(fifo_U0_input_line_50_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_51_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_51_V_V_din),
+    .if_full_n(stream_array_line_51_V_V_full_n),
+    .if_write(tancalc_U0_output_line_51_V_V_write),
+    .if_dout(stream_array_line_51_V_V_dout),
+    .if_empty_n(stream_array_line_51_V_V_empty_n),
+    .if_read(fifo_U0_input_line_51_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_52_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_52_V_V_din),
+    .if_full_n(stream_array_line_52_V_V_full_n),
+    .if_write(tancalc_U0_output_line_52_V_V_write),
+    .if_dout(stream_array_line_52_V_V_dout),
+    .if_empty_n(stream_array_line_52_V_V_empty_n),
+    .if_read(fifo_U0_input_line_52_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_53_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_53_V_V_din),
+    .if_full_n(stream_array_line_53_V_V_full_n),
+    .if_write(tancalc_U0_output_line_53_V_V_write),
+    .if_dout(stream_array_line_53_V_V_dout),
+    .if_empty_n(stream_array_line_53_V_V_empty_n),
+    .if_read(fifo_U0_input_line_53_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_54_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_54_V_V_din),
+    .if_full_n(stream_array_line_54_V_V_full_n),
+    .if_write(tancalc_U0_output_line_54_V_V_write),
+    .if_dout(stream_array_line_54_V_V_dout),
+    .if_empty_n(stream_array_line_54_V_V_empty_n),
+    .if_read(fifo_U0_input_line_54_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_55_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_55_V_V_din),
+    .if_full_n(stream_array_line_55_V_V_full_n),
+    .if_write(tancalc_U0_output_line_55_V_V_write),
+    .if_dout(stream_array_line_55_V_V_dout),
+    .if_empty_n(stream_array_line_55_V_V_empty_n),
+    .if_read(fifo_U0_input_line_55_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_56_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_56_V_V_din),
+    .if_full_n(stream_array_line_56_V_V_full_n),
+    .if_write(tancalc_U0_output_line_56_V_V_write),
+    .if_dout(stream_array_line_56_V_V_dout),
+    .if_empty_n(stream_array_line_56_V_V_empty_n),
+    .if_read(fifo_U0_input_line_56_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_57_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_57_V_V_din),
+    .if_full_n(stream_array_line_57_V_V_full_n),
+    .if_write(tancalc_U0_output_line_57_V_V_write),
+    .if_dout(stream_array_line_57_V_V_dout),
+    .if_empty_n(stream_array_line_57_V_V_empty_n),
+    .if_read(fifo_U0_input_line_57_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_58_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_58_V_V_din),
+    .if_full_n(stream_array_line_58_V_V_full_n),
+    .if_write(tancalc_U0_output_line_58_V_V_write),
+    .if_dout(stream_array_line_58_V_V_dout),
+    .if_empty_n(stream_array_line_58_V_V_empty_n),
+    .if_read(fifo_U0_input_line_58_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_59_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_59_V_V_din),
+    .if_full_n(stream_array_line_59_V_V_full_n),
+    .if_write(tancalc_U0_output_line_59_V_V_write),
+    .if_dout(stream_array_line_59_V_V_dout),
+    .if_empty_n(stream_array_line_59_V_V_empty_n),
+    .if_read(fifo_U0_input_line_59_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_60_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_60_V_V_din),
+    .if_full_n(stream_array_line_60_V_V_full_n),
+    .if_write(tancalc_U0_output_line_60_V_V_write),
+    .if_dout(stream_array_line_60_V_V_dout),
+    .if_empty_n(stream_array_line_60_V_V_empty_n),
+    .if_read(fifo_U0_input_line_60_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_61_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_61_V_V_din),
+    .if_full_n(stream_array_line_61_V_V_full_n),
+    .if_write(tancalc_U0_output_line_61_V_V_write),
+    .if_dout(stream_array_line_61_V_V_dout),
+    .if_empty_n(stream_array_line_61_V_V_empty_n),
+    .if_read(fifo_U0_input_line_61_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_62_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_62_V_V_din),
+    .if_full_n(stream_array_line_62_V_V_full_n),
+    .if_write(tancalc_U0_output_line_62_V_V_write),
+    .if_dout(stream_array_line_62_V_V_dout),
+    .if_empty_n(stream_array_line_62_V_V_empty_n),
+    .if_read(fifo_U0_input_line_62_V_V_read)
+);
+
+hier_func_fifo_w32_d256_A stream_array_line_63_V_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(tancalc_U0_output_line_63_V_V_din),
+    .if_full_n(stream_array_line_63_V_V_full_n),
+    .if_write(tancalc_U0_output_line_63_V_V_write),
+    .if_dout(stream_array_line_63_V_V_dout),
+    .if_empty_n(stream_array_line_63_V_V_empty_n),
+    .if_read(fifo_U0_input_line_63_V_V_read)
 );
 
 hier_func_start_for_fifo_U0 start_for_fifo_U0_U(
@@ -903,9 +2127,9 @@ assign fifo_U0_start_full_n = 1'b1;
 
 assign fifo_U0_start_write = 1'b0;
 
-assign fifo_output_V_V_TDATA = fifo_U0_fifo_output_V_V_TDATA;
+assign output_V_V_TDATA = fifo_U0_output_V_V_TDATA;
 
-assign fifo_output_V_V_TVALID = fifo_U0_fifo_output_V_V_TVALID;
+assign output_V_V_TVALID = fifo_U0_output_V_V_TVALID;
 
 assign start_for_fifo_U0_din = 1'b1;
 

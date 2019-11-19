@@ -1,51 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Messages>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;tancoeff/tancoeff/tancalc.cpp&apos; ..."/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;tancoeff/tancoeff/hier_func.cpp&apos; ..."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;tancoeff/tancoeff/fifo.cpp&apos; ..."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 14418 ; free virtual = 22308"/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 14418 ; free virtual = 22308"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;tancoeff/tancoeff/hier_func.cpp&apos; ..."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;tancoeff/tancoeff/tancalc.cpp&apos; ..."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 14058 ; free virtual = 22010"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 14058 ; free virtual = 22010"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;data_read&apos; into &apos;tancalc&apos; (tancoeff/tancoeff/tancalc.cpp:90)."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;data_read&apos; into &apos;tancalc&apos; (tancoeff/tancoeff/tancalc.cpp:86)."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;calculation&apos; into &apos;tancalc&apos; (tancoeff/tancoeff/tancalc.cpp:91)."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;result_write&apos; into &apos;tancalc&apos; (tancoeff/tancoeff/tancalc.cpp:92)."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 14408 ; free virtual = 22299"/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;data_read_cmpr&apos; into &apos;tancalc&apos; (tancoeff/tancoeff/tancalc.cpp:95)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;data_read_ref&apos; into &apos;tancalc&apos; (tancoeff/tancoeff/tancalc.cpp:99)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;calculation&apos; into &apos;tancalc&apos; (tancoeff/tancoeff/tancalc.cpp:100)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;result_write&apos; into &apos;tancalc&apos; (tancoeff/tancoeff/tancalc.cpp:101)."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 14046 ; free virtual = 21999"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1472" tag="" content="Checking synthesizability ..."/>
-	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;popcntdata&apos; into &apos;tancalc&apos; (tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:91) automatically."/>
-	<Message severity="WARNING" prefix="[SYNCHK 200-23]" key="SYNCHK_VAR_INDEX_RANGE_359" tag="" content="tancoeff/tancoeff/tancalc.cpp:18: variable-indexed range selection may cause suboptimal QoR."/>
+	<Message severity="WARNING" prefix="[SYNCHK 200-23]" key="SYNCHK_VAR_INDEX_RANGE_359" tag="" content="tancoeff/tancoeff/tancalc.cpp:46: variable-indexed range selection may cause suboptimal QoR."/>
 	<Message severity="INFO" prefix="[SYNCHK 200-10]" key="SYNCHK_SYNCHK_SUMMARY_377" tag="" content="0 error(s), 1 warning(s)."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 14403 ; free virtual = 22295"/>
-	<Message severity="INFO" prefix="[XFORM 203-510]" key="XFORM_AUTO_PIPELINE_STATUS_244" tag="" content="Pipelining loop &apos;Loop-2.1&apos; (tancoeff/tancoeff/fifo.cpp:7) in function &apos;fifo&apos; automatically."/>
-	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;subloop&apos; (tancoeff/tancoeff/tancalc.cpp:88) in function &apos;tancalc&apos; for pipelining."/>
-	<Message severity="WARNING" prefix="[XFORM 203-505]" key="XFORM_UNROLL_DEAD_PIPELINE_247" tag="" content="Ignored pipeline directive for loop &apos;data_read_loop&apos; (tancoeff/tancoeff/tancalc.cpp:26) because its parent loop or function is pipelined."/>
-	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;popcntdata&apos; (tancoeff/tancoeff/tancalc.cpp:16:25)."/>
-	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;popcnt&apos; (tancoeff/tancoeff/tancalc.cpp:6:25)."/>
-	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;data_read_loop&apos; (tancoeff/tancoeff/tancalc.cpp:26) in function &apos;tancalc&apos; completely with a factor of 2."/>
-	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;calculation_loop&apos; (tancoeff/tancoeff/tancalc.cpp:47) in function &apos;tancalc&apos; completely with a factor of 16."/>
-	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;result_write_loop&apos; (tancoeff/tancoeff/tancalc.cpp:63) in function &apos;tancalc&apos; completely with a factor of 16."/>
-	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;popcntdata&apos; (tancoeff/tancoeff/tancalc.cpp:16) in function &apos;popcntdata&apos; completely with a factor of 32."/>
-	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;popcnt&apos; (tancoeff/tancoeff/tancalc.cpp:6) in function &apos;popcnt&apos; completely with a factor of 16."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 14038 ; free virtual = 21992"/>
+	<Message severity="INFO" prefix="[XFORM 203-510]" key="XFORM_AUTO_PIPELINE_STATUS_244" tag="" content="Pipelining loop &apos;fifo_loop2&apos; (tancoeff/tancoeff/fifo.cpp:9) in function &apos;fifo&apos; automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;subloop&apos; (tancoeff/tancoeff/tancalc.cpp:97) in function &apos;tancalc&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;popcnt&apos; (tancoeff/tancoeff/tancalc.cpp:6:26)."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;data_read_ref_loop&apos; (tancoeff/tancoeff/tancalc.cpp:37) in function &apos;tancalc&apos; completely with a factor of 2."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;and_popcnt__loop&apos; (tancoeff/tancoeff/tancalc.cpp:42) in function &apos;tancalc&apos; completely with a factor of 64."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;calculation_loop&apos; (tancoeff/tancoeff/tancalc.cpp:59) in function &apos;tancalc&apos; completely with a factor of 64."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;result_write_loop&apos; (tancoeff/tancoeff/tancalc.cpp:74) in function &apos;tancalc&apos; completely with a factor of 64."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;popcnt&apos; (tancoeff/tancoeff/tancalc.cpp:6) in function &apos;popcnt&apos; completely with a factor of 512."/>
 	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_112" tag="" content="Automatically partitioning streamed array &apos;stream_array.line.V.V&apos; (tancoeff/tancoeff/hier_func.cpp:11) ."/>
-	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;cmpr_local.V&apos; (tancoeff/tancoeff/tancalc.cpp:74) in dimension 1 completely."/>
-	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;cmprpop_local.V&apos; (tancoeff/tancoeff/tancalc.cpp:76) in dimension 1 completely."/>
-	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;ref_local.V&apos; (tancoeff/tancoeff/tancalc.cpp:78) in dimension 1 completely."/>
-	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;refpop_local.V&apos; (tancoeff/tancoeff/tancalc.cpp:80) in dimension 1 completely."/>
-	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;result_local.V&apos; (tancoeff/tancoeff/tancalc.cpp:82) in dimension 1 completely."/>
+	<Message severity="WARNING" prefix="[XFORM 203-104]" key="XFORM_PARTITION_VAR_INDEX_118" tag="ARRAY,SDX_ARRAY" content="Completely partitioning array &apos;cmpr_local.V&apos; (tancoeff/tancoeff/tancalc.cpp:84) accessed through non-constant indices on dimension 1 (tancoeff/tancoeff/tancalc.cpp:23:4), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;cmpr_local.V&apos; (tancoeff/tancoeff/tancalc.cpp:84) in dimension 1 completely."/>
+	<Message severity="WARNING" prefix="[XFORM 203-104]" key="XFORM_PARTITION_VAR_INDEX_118" tag="ARRAY,SDX_ARRAY" content="Completely partitioning array &apos;cmprpop_local.V&apos; (tancoeff/tancoeff/tancalc.cpp:86) accessed through non-constant indices on dimension 1 (tancoeff/tancoeff/tancalc.cpp:24:25), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;cmprpop_local.V&apos; (tancoeff/tancoeff/tancalc.cpp:86) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;andpop_local.V&apos; (tancoeff/tancoeff/tancalc.cpp:89) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;result_local.V&apos; (tancoeff/tancoeff/tancalc.cpp:91) in dimension 1 completely."/>
 	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;stream_array.line.V.V&apos; (tancoeff/tancoeff/hier_func.cpp:11) in dimension 1 completely."/>
-	<Message severity="WARNING" prefix="[XFORM 203-731]" key="XFORM_HLS_STREAM_INVALID_630" tag="" content="Internal stream variable &apos;stream_array.line[0].V.V&apos; (tancoeff/tancoeff/hier_func.cpp:11) is invalid: it has no data producer"/>
+	<Message severity="WARNING" prefix="[XFORM 203-104]" key="XFORM_PARTITION_VAR_INDEX_118" tag="ARRAY,SDX_ARRAY" content="Completely partitioning array &apos;stream_array.line.V.V&apos; (tancoeff/tancoeff/hier_func.cpp:11) accessed through non-constant indices on dimension 1 (tancoeff/tancoeff/fifo.cpp:10:8), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead."/>
 	<Message severity="INFO" prefix="[XFORM 203-712]" key="XFORM_DATAFLOW_TRANSFORM_230" tag="DATAFLOW" content="Applying dataflow to function &apos;hier_func&apos;, detected/extracted 2 process function(s): 
 	 &apos;tancalc&apos;
 	 &apos;fifo&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;popcntdata&apos; (tancoeff/tancoeff/tancalc.cpp:18:5)...28 expression(s) balanced."/>
-	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;popcnt&apos; (tancoeff/tancoeff/tancalc.cpp:8:5)...12 expression(s) balanced."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 837.750 ; gain = 128.000 ; free physical = 14376 ; free virtual = 22269"/>
-	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="LOOP,SDX_LOOP" content="Cannot flatten a loop nest &apos;mainloop&apos; (tancoeff/tancoeff/tancalc.cpp:85:82) in function &apos;tancalc&apos; : 
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (tancoeff/tancoeff/tancalc.cpp:97:57) to (tancoeff/tancoeff/tancalc.cpp:76:5) in function &apos;tancalc&apos;... converting 129 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;tancalc&apos; (tancoeff/tancoeff/tancalc.cpp:82)...64 expression(s) balanced."/>
+	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;popcnt&apos; (tancoeff/tancoeff/tancalc.cpp:8:12)...508 expression(s) balanced."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:01:33 ; elapsed = 00:01:35 . Memory (MB): peak = 901.750 ; gain = 192.000 ; free physical = 13984 ; free virtual = 21939"/>
+	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="LOOP,SDX_LOOP" content="Cannot flatten a loop nest &apos;mainloop&apos; (tancoeff/tancoeff/tancalc.cpp:94:87) in function &apos;tancalc&apos; : 
 
 more than one sub loop."/>
-	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Loop-1&apos; (tancoeff/tancoeff/fifo.cpp:6:15) in function &apos;fifo&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst read of a total cumulative length 32 on port &apos;tancalc_input.V&apos; (tancoeff/tancoeff/tancalc.cpp:31:53). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 911.250 ; gain = 201.500 ; free physical = 14344 ; free virtual = 22237"/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;fifo_loop1&apos; (tancoeff/tancoeff/fifo.cpp:7:57) in function &apos;fifo&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-444]" key="HLS 200-444" tag="AXI,SDX_AXI" content="Inferring multiple bus burst read of a total cumulative length 128 on port &apos;input.V&apos; (tancoeff/tancoeff/tancalc.cpp:21:45). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:01:59 ; elapsed = 00:02:01 . Memory (MB): peak = 901.750 ; gain = 192.000 ; free physical = 13943 ; free virtual = 21899"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1317" tag="" content="Starting hardware synthesis ..."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1385" tag="" content="Synthesizing &apos;hier_func&apos; ..."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
@@ -53,15 +52,91 @@ more than one sub loop."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
 	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
-   a  &apos;add&apos; operation (&apos;add_ln700_40&apos;, tancoeff/tancoeff/tancalc.cpp:8)
-   b  &apos;add&apos; operation (&apos;add_ln700_34&apos;, tancoeff/tancoeff/tancalc.cpp:8)
-   c  &apos;add&apos; operation (&apos;add_ln700_35&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+   a  &apos;add&apos; operation (&apos;add_ln700_540&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;add&apos; operation (&apos;add_ln700_346&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;add&apos; operation (&apos;add_ln700_409&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
 	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
-   a  &apos;bitselect&apos; operation (&apos;p_Result_12&apos;, tancoeff/tancoeff/tancalc.cpp:8)
-   b  &apos;bitselect&apos; operation (&apos;p_Result_13&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   a  &apos;bitselect&apos; operation (&apos;p_Result_507&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;bitselect&apos; operation (&apos;p_Result_508&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;bitselect&apos; operation (&apos;p_Result_509&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;add&apos; operation (&apos;add_ln700_345&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;add&apos; operation (&apos;add_ln700_298&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;add&apos; operation (&apos;add_ln700_313&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;add&apos; operation (&apos;add_ln700_297&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;add&apos; operation (&apos;add_ln700_286&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;add&apos; operation (&apos;add_ln700_289&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;add&apos; operation (&apos;add_ln700_285&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;add&apos; operation (&apos;add_ln700_253&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;bitselect&apos; operation (&apos;p_Result_254&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;add&apos; operation (&apos;add_ln700_283&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;add&apos; operation (&apos;add_ln700_186&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;add&apos; operation (&apos;add_ln700_217&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;bitselect&apos; operation (&apos;p_Result_251&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;bitselect&apos; operation (&apos;p_Result_252&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;bitselect&apos; operation (&apos;p_Result_253&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;add&apos; operation (&apos;add_ln700_185&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;add&apos; operation (&apos;add_ln700_162&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;add&apos; operation (&apos;add_ln700_169&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;add&apos; operation (&apos;add_ln700_161&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;add&apos; operation (&apos;add_ln700_156&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;add&apos; operation (&apos;add_ln700_157&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;add&apos; operation (&apos;add_ln700_155&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;add&apos; operation (&apos;add_ln700_106&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;add&apos; operation (&apos;add_ln700_121&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;bitselect&apos; operation (&apos;p_Result_123&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;bitselect&apos; operation (&apos;p_Result_124&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;bitselect&apos; operation (&apos;p_Result_125&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;add&apos; operation (&apos;add_ln700_105&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;add&apos; operation (&apos;add_ln700_94&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;add&apos; operation (&apos;add_ln700_97&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;add&apos; operation (&apos;add_ln700_93&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;add&apos; operation (&apos;add_ln700_62&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;bitselect&apos; operation (&apos;p_Result_62&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;add&apos; operation (&apos;add_ln700_91&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;add&apos; operation (&apos;add_ln700_67&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;add&apos; operation (&apos;add_ln700_74&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;bitselect&apos; operation (&apos;p_Result_59&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;bitselect&apos; operation (&apos;p_Result_60&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;bitselect&apos; operation (&apos;p_Result_61&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;add&apos; operation (&apos;add_ln700_66&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;add&apos; operation (&apos;add_ln700_60&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;add&apos; operation (&apos;add_ln700_61&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;add&apos; operation (&apos;add_ln700_59&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;add&apos; operation (&apos;add_ln700_47&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;add&apos; operation (&apos;add_ln700_50&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;bitselect&apos; operation (&apos;p_Result_27&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;bitselect&apos; operation (&apos;p_Result_28&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;bitselect&apos; operation (&apos;p_Result_29&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;add&apos; operation (&apos;add_ln700_46&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;add&apos; operation (&apos;add_ln700_14&apos;, tancoeff/tancoeff/tancalc.cpp:8)
    c  &apos;bitselect&apos; operation (&apos;p_Result_14&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
 	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
-   a  &apos;add&apos; operation (&apos;add_ln700_33&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   a  &apos;add&apos; operation (&apos;add_ln700_44&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;add&apos; operation (&apos;add_ln700_38&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;add&apos; operation (&apos;add_ln700_39&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;bitselect&apos; operation (&apos;p_Result_11&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   b  &apos;bitselect&apos; operation (&apos;p_Result_12&apos;, tancoeff/tancoeff/tancalc.cpp:8)
+   c  &apos;bitselect&apos; operation (&apos;p_Result_13&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;add&apos; operation (&apos;add_ln700_37&apos;, tancoeff/tancoeff/tancalc.cpp:8)
    b  &apos;add&apos; operation (&apos;add_ln700_2&apos;, tancoeff/tancoeff/tancalc.cpp:8)
    c  &apos;bitselect&apos; operation (&apos;p_Result_3&apos;, tancoeff/tancoeff/tancalc.cpp:8)"/>
 	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
@@ -83,7 +158,7 @@ more than one sub loop."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Supporting dependence constraints ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Pipeline constraints ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_46" tag="" content="Pipelining function &apos;popcnt&apos;."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 1."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 7."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating DSP mapping constraints ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Supporting dependence constraints ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Resource constraints ..."/>
@@ -102,165 +177,37 @@ more than one sub loop."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_16" tag="" content="Start constructing STG ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_15" tag="" content="Finished constructing STG."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 53.39 seconds; current allocated memory: 155.258 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 122.08 seconds; current allocated memory: 197.739 MB."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.03 seconds; current allocated memory: 155.450 MB."/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
-	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;popcntdata&apos;"/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
-   a  &apos;add&apos; operation (&apos;add_ln700_28&apos;, tancoeff/tancoeff/tancalc.cpp:18)
-   b  &apos;add&apos; operation (&apos;add_ln700_16&apos;, tancoeff/tancoeff/tancalc.cpp:18)
-   c  &apos;add&apos; operation (&apos;add_ln700_19&apos;, tancoeff/tancoeff/tancalc.cpp:18)"/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
-   a  &apos;bitselect&apos; operation (&apos;p_Result_27&apos;, tancoeff/tancoeff/tancalc.cpp:18)
-   b  &apos;bitselect&apos; operation (&apos;p_Result_28&apos;, tancoeff/tancoeff/tancalc.cpp:18)
-   c  &apos;bitselect&apos; operation (&apos;p_Result_29&apos;, tancoeff/tancoeff/tancalc.cpp:18)"/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
-   a  &apos;add&apos; operation (&apos;add_ln700_15&apos;, tancoeff/tancoeff/tancalc.cpp:18)
-   b  &apos;add&apos; operation (&apos;add_ln700_13&apos;, tancoeff/tancoeff/tancalc.cpp:18)
-   c  &apos;bitselect&apos; operation (&apos;p_Result_14&apos;, tancoeff/tancoeff/tancalc.cpp:18)"/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
-   a  &apos;add&apos; operation (&apos;add_ln700_12&apos;, tancoeff/tancoeff/tancalc.cpp:18)
-   b  &apos;add&apos; operation (&apos;add_ln700_6&apos;, tancoeff/tancoeff/tancalc.cpp:18)
-   c  &apos;add&apos; operation (&apos;add_ln700_7&apos;, tancoeff/tancoeff/tancalc.cpp:18)"/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
-   a  &apos;bitselect&apos; operation (&apos;p_Result_11&apos;, tancoeff/tancoeff/tancalc.cpp:18)
-   b  &apos;bitselect&apos; operation (&apos;p_Result_12&apos;, tancoeff/tancoeff/tancalc.cpp:18)
-   c  &apos;bitselect&apos; operation (&apos;p_Result_13&apos;, tancoeff/tancoeff/tancalc.cpp:18)"/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
-   a  &apos;add&apos; operation (&apos;add_ln700_4&apos;, tancoeff/tancoeff/tancalc.cpp:18)
-   b  &apos;add&apos; operation (&apos;add_ln700&apos;, tancoeff/tancoeff/tancalc.cpp:18)
-   c  &apos;bitselect&apos; operation (&apos;p_Result_3&apos;, tancoeff/tancoeff/tancalc.cpp:18)"/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
-   a  &apos;bitselect&apos; operation (&apos;p_Result_4&apos;, tancoeff/tancoeff/tancalc.cpp:18)
-   b  &apos;bitselect&apos; operation (&apos;p_Result_5&apos;, tancoeff/tancoeff/tancalc.cpp:18)
-   c  &apos;bitselect&apos; operation (&apos;p_Result_6&apos;, tancoeff/tancoeff/tancalc.cpp:18)"/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
-   a  &apos;bitselect&apos; operation (&apos;p_Result_s&apos;, tancoeff/tancoeff/tancalc.cpp:18)
-   b  &apos;bitselect&apos; operation (&apos;p_Result_1&apos;, tancoeff/tancoeff/tancalc.cpp:18)
-   c  &apos;bitselect&apos; operation (&apos;p_Result_2&apos;, tancoeff/tancoeff/tancalc.cpp:18)"/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating True dependence constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Auxiliary dependence constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Ternary mapping constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Lut Grouping constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Node latency constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Relative time constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Protocol constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Precedence constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Supporting dependence constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Pipeline constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_46" tag="" content="Pipelining function &apos;popcntdata&apos;."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 1."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating DSP mapping constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Supporting dependence constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Resource constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Latency constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Latency constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Cycle time constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Blocking node constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Chaining constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Operation gating constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Variable bound constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating PHI node constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_22" tag="" content="Start checking consistency (resolving sdc graph) ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_21" tag="" content="Finished checking consistency."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_19" tag="" content="Start scheduling optimization (solving LP) ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_18" tag="" content="Finished scheduling optimization."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_16" tag="" content="Start constructing STG ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_15" tag="" content="Finished constructing STG."/>
-	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.15 seconds; current allocated memory: 155.789 MB."/>
-	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
-	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
-	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
-	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
-	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.07 seconds; current allocated memory: 156.146 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 2.14 seconds; current allocated memory: 203.703 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;tancalc&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
-	<Message severity="INFO" prefix="[HLS 200-486]" key="HLS 200-486" tag="" content="Changing DSP48 latency (root=mul_ln1352_14) to 3 in order to utilize available DSP registers."/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a DSP.
-   a  constant 10000
-   b  &apos;call&apos; operation (&apos;temp_V_0_14&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:91) to &apos;popcntdata&apos;
-  DSP Expression: mul_ln1352_14 = 10000 * zext_ln1352_14"/>
-	<Message severity="INFO" prefix="[HLS 200-486]" key="HLS 200-486" tag="" content="Changing DSP48 latency (root=mul_ln1352_13) to 3 in order to utilize available DSP registers."/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a DSP.
-   a  constant 10000
-   b  &apos;call&apos; operation (&apos;temp_V_0_13&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:91) to &apos;popcntdata&apos;
-  DSP Expression: mul_ln1352_13 = 10000 * zext_ln1352_13"/>
-	<Message severity="INFO" prefix="[HLS 200-486]" key="HLS 200-486" tag="" content="Changing DSP48 latency (root=mul_ln1352_12) to 3 in order to utilize available DSP registers."/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a DSP.
-   a  constant 10000
-   b  &apos;call&apos; operation (&apos;temp_V_0_12&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:91) to &apos;popcntdata&apos;
-  DSP Expression: mul_ln1352_12 = 10000 * zext_ln1352_12"/>
-	<Message severity="INFO" prefix="[HLS 200-486]" key="HLS 200-486" tag="" content="Changing DSP48 latency (root=mul_ln1352_11) to 3 in order to utilize available DSP registers."/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a DSP.
-   a  constant 10000
-   b  &apos;call&apos; operation (&apos;temp_V_0_11&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:91) to &apos;popcntdata&apos;
-  DSP Expression: mul_ln1352_11 = 10000 * zext_ln1352_11"/>
-	<Message severity="INFO" prefix="[HLS 200-486]" key="HLS 200-486" tag="" content="Changing DSP48 latency (root=mul_ln1352_10) to 3 in order to utilize available DSP registers."/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a DSP.
-   a  constant 10000
-   b  &apos;call&apos; operation (&apos;temp_V_0_10&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:91) to &apos;popcntdata&apos;
-  DSP Expression: mul_ln1352_10 = 10000 * zext_ln1352_10"/>
-	<Message severity="INFO" prefix="[HLS 200-486]" key="HLS 200-486" tag="" content="Changing DSP48 latency (root=mul_ln1352_9) to 3 in order to utilize available DSP registers."/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a DSP.
-   a  constant 10000
-   b  &apos;call&apos; operation (&apos;temp_V_0_s&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:91) to &apos;popcntdata&apos;
-  DSP Expression: mul_ln1352_9 = 10000 * zext_ln1352_9"/>
-	<Message severity="INFO" prefix="[HLS 200-486]" key="HLS 200-486" tag="" content="Changing DSP48 latency (root=mul_ln1352_8) to 3 in order to utilize available DSP registers."/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a DSP.
-   a  constant 10000
-   b  &apos;call&apos; operation (&apos;temp_V_0_9&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:91) to &apos;popcntdata&apos;
-  DSP Expression: mul_ln1352_8 = 10000 * zext_ln1352_8"/>
-	<Message severity="INFO" prefix="[HLS 200-486]" key="HLS 200-486" tag="" content="Changing DSP48 latency (root=mul_ln1352_7) to 3 in order to utilize available DSP registers."/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a DSP.
-   a  constant 10000
-   b  &apos;call&apos; operation (&apos;temp_V_0_8&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:91) to &apos;popcntdata&apos;
-  DSP Expression: mul_ln1352_7 = 10000 * zext_ln1352_7"/>
-	<Message severity="INFO" prefix="[HLS 200-486]" key="HLS 200-486" tag="" content="Changing DSP48 latency (root=mul_ln1352_6) to 3 in order to utilize available DSP registers."/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a DSP.
-   a  constant 10000
-   b  &apos;call&apos; operation (&apos;temp_V_0_7&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:91) to &apos;popcntdata&apos;
-  DSP Expression: mul_ln1352_6 = 10000 * zext_ln1352_6"/>
-	<Message severity="INFO" prefix="[HLS 200-486]" key="HLS 200-486" tag="" content="Changing DSP48 latency (root=mul_ln1352_5) to 3 in order to utilize available DSP registers."/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a DSP.
-   a  constant 10000
-   b  &apos;call&apos; operation (&apos;temp_V_0_6&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:91) to &apos;popcntdata&apos;
-  DSP Expression: mul_ln1352_5 = 10000 * zext_ln1352_5"/>
-	<Message severity="INFO" prefix="[HLS 200-486]" key="HLS 200-486" tag="" content="Changing DSP48 latency (root=mul_ln1352_4) to 3 in order to utilize available DSP registers."/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a DSP.
-   a  constant 10000
-   b  &apos;call&apos; operation (&apos;temp_V_0_5&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:91) to &apos;popcntdata&apos;
-  DSP Expression: mul_ln1352_4 = 10000 * zext_ln1352_4"/>
-	<Message severity="INFO" prefix="[HLS 200-486]" key="HLS 200-486" tag="" content="Changing DSP48 latency (root=mul_ln1352_3) to 3 in order to utilize available DSP registers."/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a DSP.
-   a  constant 10000
-   b  &apos;call&apos; operation (&apos;temp_V_0_4&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:91) to &apos;popcntdata&apos;
-  DSP Expression: mul_ln1352_3 = 10000 * zext_ln1352_3"/>
-	<Message severity="INFO" prefix="[HLS 200-486]" key="HLS 200-486" tag="" content="Changing DSP48 latency (root=mul_ln1352_2) to 3 in order to utilize available DSP registers."/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a DSP.
-   a  constant 10000
-   b  &apos;call&apos; operation (&apos;temp_V_0_3&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:91) to &apos;popcntdata&apos;
-  DSP Expression: mul_ln1352_2 = 10000 * zext_ln1352_2"/>
-	<Message severity="INFO" prefix="[HLS 200-486]" key="HLS 200-486" tag="" content="Changing DSP48 latency (root=mul_ln1352_1) to 3 in order to utilize available DSP registers."/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a DSP.
-   a  constant 10000
-   b  &apos;call&apos; operation (&apos;temp_V_0_2&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:91) to &apos;popcntdata&apos;
-  DSP Expression: mul_ln1352_1 = 10000 * zext_ln1352_1"/>
-	<Message severity="INFO" prefix="[HLS 200-486]" key="HLS 200-486" tag="" content="Changing DSP48 latency (root=mul_ln1352) to 3 in order to utilize available DSP registers."/>
-	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a DSP.
-   a  constant 10000
-   b  &apos;call&apos; operation (&apos;temp_V_0_1&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:91) to &apos;popcntdata&apos;
-  DSP Expression: mul_ln1352 = 10000 * zext_ln1352"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;add&apos; operation (&apos;add_ln700_15&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:99)
+   b  &apos;bitconcatenate&apos; operation (&apos;add_ln700_s&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:99)
+   c  &apos;add&apos; operation (&apos;add_ln700_30&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:99)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;bitconcatenate&apos; operation (&apos;add_ln700_6&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:99)
+   b  &apos;bitconcatenate&apos; operation (&apos;add_ln700_2&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:99)
+   c  &apos;add&apos; operation (&apos;add_ln700_28&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:99)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;bitconcatenate&apos; operation (&apos;shl_ln2&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:99)
+   b  &apos;bitconcatenate&apos; operation (&apos;shl_ln2&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:99)
+   c  &apos;call&apos; operation (&apos;op2_V_assign_1_0_1&apos;, tancoeff/tancoeff/tancalc.cpp:45-&gt;tancoeff/tancoeff/tancalc.cpp:99) to &apos;popcnt&apos;"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;bitconcatenate&apos; operation (&apos;add_ln700_s&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:99)
+   b  &apos;add&apos; operation (&apos;add_ln700_3&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:99)
+   c  &apos;bitconcatenate&apos; operation (&apos;add_ln700_6&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:99)"/>
+	<Message severity="INFO" prefix="[SYN 201-351]" key="PREPROC_IPBLOCK_MAPPING_6" tag="" content="The following objects are mapped to a ternary adder tree.
+   a  &apos;bitconcatenate&apos; operation (&apos;add_ln700_2&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:99)
+   b  &apos;add&apos; operation (&apos;add_ln700&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:99)
+   c  &apos;bitconcatenate&apos; operation (&apos;shl_ln2&apos;, tancoeff/tancoeff/tancalc.cpp:49-&gt;tancoeff/tancoeff/tancalc.cpp:99)"/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating True dependence constraints ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Auxiliary dependence constraints ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Ternary mapping constraints ..."/>
@@ -271,17 +218,17 @@ more than one sub loop."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Precedence constraints ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Supporting dependence constraints ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Pipeline constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;data_read_loop&apos;."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 4."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;data_read_cmpr_loop&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 11."/>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;subloop&apos;."/>
-	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_38" tag="SDX_KERNEL,SCHEDULE" content="Unable to schedule bus request on port &apos;tancalc_input_V&apos; (tancoeff/tancoeff/tancalc.cpp:31-&gt;tancoeff/tancoeff/tancalc.cpp:90) due to limited memory ports. Please consider using a memory core with more ports or partitioning the array."/>
-	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_40" tag="SCHEDULE" content="The resource limit of core:m_axi:tancalc_input_V:1150 is 1, current assignments:"/>
-	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_40" tag="SCHEDULE" content="The resource limit of core:m_axi:tancalc_input_V:1151 is 1, current assignments:"/>
-	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_40" tag="SCHEDULE" content="The resource limit of core:m_axi:tancalc_input_V:1154 is 1, current assignments:"/>
-	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_1083" tag="" content="    bus request on port &apos;tancalc_input_V&apos; (tancoeff/tancoeff/tancalc.cpp:31-&gt;tancoeff/tancoeff/tancalc.cpp:90),"/>
-	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_40" tag="SCHEDULE" content="The resource limit of core:m_axi:tancalc_input_V:1155 is 1, current assignments:"/>
-	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_40" tag="SCHEDULE" content="The resource limit of core:m_axi:tancalc_input_V:1158 is 1, current assignments:"/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 2, Depth = 18."/>
+	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_38" tag="SDX_KERNEL,SCHEDULE" content="Unable to schedule bus request on port &apos;input_V&apos; (tancoeff/tancoeff/tancalc.cpp:40-&gt;tancoeff/tancoeff/tancalc.cpp:99) due to limited memory ports. Please consider using a memory core with more ports or partitioning the array."/>
+	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_40" tag="SCHEDULE" content="The resource limit of core:m_axi:input_V:1150 is 1, current assignments:"/>
+	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_40" tag="SCHEDULE" content="The resource limit of core:m_axi:input_V:1151 is 1, current assignments:"/>
+	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_40" tag="SCHEDULE" content="The resource limit of core:m_axi:input_V:1154 is 1, current assignments:"/>
+	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_1083" tag="" content="    bus request on port &apos;input_V&apos; (tancoeff/tancoeff/tancalc.cpp:40-&gt;tancoeff/tancoeff/tancalc.cpp:99),"/>
+	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_40" tag="SCHEDULE" content="The resource limit of core:m_axi:input_V:1155 is 1, current assignments:"/>
+	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_40" tag="SCHEDULE" content="The resource limit of core:m_axi:input_V:1158 is 1, current assignments:"/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 2, Depth = 22."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating DSP mapping constraints ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Supporting dependence constraints ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Resource constraints ..."/>
@@ -300,14 +247,14 @@ more than one sub loop."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_16" tag="" content="Start constructing STG ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_15" tag="" content="Finished constructing STG."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.12 seconds; current allocated memory: 158.071 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 6.58 seconds; current allocated memory: 219.803 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-434]" key="HLS 200-434" tag="SDX" content="Only 2 loops out of a total 3 loops have been pipelined in this design."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.68 seconds; current allocated memory: 160.140 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 19.5 seconds; current allocated memory: 248.090 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;fifo&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
@@ -322,8 +269,8 @@ more than one sub loop."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Precedence constraints ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Supporting dependence constraints ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Pipeline constraints ..."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Loop 1&apos;."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;fifo_loop1_fifo_loop2&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 4."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating DSP mapping constraints ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Supporting dependence constraints ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_11" tag="" content="Generating Resource constraints ..."/>
@@ -342,13 +289,13 @@ more than one sub loop."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_16" tag="" content="Start constructing STG ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_15" tag="" content="Finished constructing STG."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 2.02 seconds; current allocated memory: 160.890 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 54.14 seconds; current allocated memory: 279.349 MB."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.08 seconds; current allocated memory: 161.474 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.33 seconds; current allocated memory: 281.515 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;hier_func&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
@@ -381,64 +328,108 @@ more than one sub loop."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_16" tag="" content="Start constructing STG ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_15" tag="" content="Finished constructing STG."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.16 seconds; current allocated memory: 161.615 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.42 seconds; current allocated memory: 281.898 MB."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.48 seconds; current allocated memory: 162.082 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 32.55 seconds; current allocated memory: 302.217 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;popcnt&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;popcnt&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.69 seconds; current allocated memory: 162.715 MB."/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;popcntdata&apos;"/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;popcntdata&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.15 seconds; current allocated memory: 164.182 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 49.15 seconds; current allocated memory: 340.784 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;tancalc&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;hier_func_mul_mul_15ns_6ns_21_4_1&apos;: 15 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;hier_func_mux_164_11_1_1&apos;: 1 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;hier_func_mux_164_32_1_1&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-104]" key="RTGEN_104_852" tag="" content="Estimated max fanout for &apos;tancalc&apos; is 66158 from HDL expression: ((1&apos;b0 == ap_block_pp1_stage1_11001) &amp; (1&apos;b1 == ap_CS_fsm_pp1_stage1))"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;hier_func_mux_646_1024_1_1&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;hier_func_mux_646_11_1_1&apos;: 1 instance(s)."/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;tancalc&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.36 seconds; current allocated memory: 168.916 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 6.62 seconds; current allocated memory: 384.867 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;fifo&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;fifo&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.77 seconds; current allocated memory: 177.993 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 55.3 seconds; current allocated memory: 455.236 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;hier_func&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_918" tag="" content="Design contains AXI ports. Reset is fixed to synchronous and active low."/>
 	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;hier_func/gmem0&apos; to &apos;m_axi&apos;."/>
-	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;hier_func/tancalc_input_V&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
-	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;hier_func/fifo_output_V_V&apos; to &apos;axis&apos; (register, both mode)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;hier_func/input_V&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;hier_func/output_V_V&apos; to &apos;axis&apos; (register, both mode)."/>
 	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on function &apos;hier_func&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_851" tag="" content="Bundling port &apos;return&apos; and &apos;tancalc_input_V&apos; to AXI-Lite port control."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_851" tag="" content="Bundling port &apos;return&apos; and &apos;input_V&apos; to AXI-Lite port control."/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;hier_func&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.42 seconds; current allocated memory: 180.968 MB."/>
-	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_1_V_V_U(hier_func_fifo_w10_d16_A)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_2_V_V_U(hier_func_fifo_w10_d16_A)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_3_V_V_U(hier_func_fifo_w10_d16_A)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_4_V_V_U(hier_func_fifo_w10_d16_A)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_5_V_V_U(hier_func_fifo_w10_d16_A)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_6_V_V_U(hier_func_fifo_w10_d16_A)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_7_V_V_U(hier_func_fifo_w10_d16_A)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_8_V_V_U(hier_func_fifo_w10_d16_A)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_9_V_V_U(hier_func_fifo_w10_d16_A)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_10_V_V_U(hier_func_fifo_w10_d16_A)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_11_V_V_U(hier_func_fifo_w10_d16_A)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_12_V_V_U(hier_func_fifo_w10_d16_A)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_13_V_V_U(hier_func_fifo_w10_d16_A)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_14_V_V_U(hier_func_fifo_w10_d16_A)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_15_V_V_U(hier_func_fifo_w10_d16_A)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.75 seconds; current allocated memory: 463.781 MB."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_0_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_1_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_2_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_3_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_4_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_5_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_6_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_7_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_8_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_9_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_10_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_11_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_12_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_13_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_14_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_15_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_16_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_17_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_18_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_19_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_20_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_21_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_22_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_23_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_24_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_25_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_26_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_27_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_28_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_29_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_30_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_31_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_32_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_33_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_34_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_35_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_36_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_37_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_38_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_39_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_40_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_41_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_42_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_43_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_44_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_45_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_46_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_47_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_48_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_49_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_50_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_51_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_52_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_53_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_54_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_55_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_56_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_57_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_58_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_59_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_60_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_61_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_62_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;stream_array_line_63_V_V_U(hier_func_fifo_w32_d256_A)&apos; using Block RAMs."/>
 	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;start_for_fifo_U0_U(hier_func_start_for_fifo_U0)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:01:01 ; elapsed = 00:01:04 . Memory (MB): peak = 911.250 ; gain = 201.500 ; free physical = 14296 ; free virtual = 22202"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:05:37 ; elapsed = 00:06:46 . Memory (MB): peak = 1173.750 ; gain = 464.000 ; free physical = 13555 ; free virtual = 21577"/>
 	<Message severity="INFO" prefix="[VHDL 208-304]" key="VHDL_304_1063" tag="" content="Generating VHDL RTL for hier_func with prefix hier_func_."/>
 	<Message severity="INFO" prefix="[VLOG 209-307]" key="VLOG_307_1064" tag="" content="Generating Verilog RTL for hier_func with prefix hier_func_."/>
 </Messages>

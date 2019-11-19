@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'tancalc'" level="0">
-<item name = "Date">Mon Nov 18 16:03:52 2019
+<item name = "Date">Tue Nov 19 19:45:27 2019
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">tancoeff</item>
@@ -24,29 +24,85 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">757, 757, 757, 757, none</column>
+<column name="">134389761, 134389761, 134389761, 134389761, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_popcntdata_fu_506">popcntdata, 0, 0, 1, 1, function</column>
-<column name="grp_popcntdata_fu_511">popcntdata, 0, 0, 1, 1, function</column>
-<column name="grp_popcntdata_fu_516">popcntdata, 0, 0, 1, 1, function</column>
-<column name="grp_popcntdata_fu_521">popcntdata, 0, 0, 1, 1, function</column>
-<column name="grp_popcntdata_fu_526">popcntdata, 0, 0, 1, 1, function</column>
-<column name="grp_popcntdata_fu_531">popcntdata, 0, 0, 1, 1, function</column>
-<column name="grp_popcntdata_fu_536">popcntdata, 0, 0, 1, 1, function</column>
-<column name="temp_V_0_8_popcntdata_fu_541">popcntdata, 0, 0, 1, 1, function</column>
-<column name="grp_popcnt_fu_546">popcnt, 0, 0, 1, 1, function</column>
+<column name="grp_popcnt_fu_2315">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2320">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2325">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2330">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2335">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2340">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2345">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2350">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2355">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2360">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2365">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2370">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2375">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2380">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2385">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2390">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2395">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2400">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2405">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2410">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2415">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2420">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2425">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2430">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2435">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2440">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2445">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2450">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2455">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2460">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2465">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2470">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2475">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2480">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2485">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2490">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2495">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2500">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2505">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2510">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2515">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2520">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2525">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2530">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2535">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2540">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2545">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2550">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2555">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2560">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2565">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2570">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2575">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2580">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2585">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2590">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2595">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2600">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2605">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2610">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2615">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2620">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2625">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2630">popcnt, 6, 6, 1, 1, function</column>
+<column name="grp_popcnt_fu_2635">popcnt, 6, 6, 1, 1, function</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- mainloop">756, 756, 189, -, -, 4, no</column>
-<column name=" + data_read_loop">34, 34, 4, 1, 1, 32, yes</column>
-<column name=" + subloop">143, 143, 18, 2, 1, 64, yes</column>
+<column name="- mainloop">134389760, 134389760, 131240, -, -, 1024, no</column>
+<column name=" + data_read_cmpr_loop">137, 137, 11, 1, 1, 128, yes</column>
+<column name=" + subloop">131091, 131091, 22, 2, 1, 65536, yes</column>
 </table>
 </item>
 </section>

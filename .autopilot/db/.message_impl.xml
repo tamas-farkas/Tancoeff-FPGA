@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[IMPL 213-8]" key="IMPL_8_1776" tag="" content="Exporting RTL as a Vivado IP."/>
+	<Message severity="ERROR" prefix="[HLS 200-613]" key="HLS 200-613" tag="" content="All AXIS ports (e.g. &apos;output&apos;) must use hls::stream&lt;T&gt; where T is ap_axis | ap_axiu | qdma_axi(tancoeff/tancoeff/hier_func.cpp:3)."/>
+	<Message severity="ERROR" prefix="[HLS 200-70]" key="HLS_70_1439" tag="" content="command &apos;transform&apos; returned error code"/>
+</Messages>

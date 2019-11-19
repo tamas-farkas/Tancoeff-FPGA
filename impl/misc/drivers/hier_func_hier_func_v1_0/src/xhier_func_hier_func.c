@@ -73,22 +73,22 @@ void XHier_func_hier_func_DisableAutoRestart(XHier_func_hier_func *InstancePtr) 
     XHier_func_hier_func_WriteReg(InstancePtr->Control_BaseAddress, XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_AP_CTRL, 0);
 }
 
-void XHier_func_hier_func_Set_tancalc_input_V(XHier_func_hier_func *InstancePtr, u64 Data) {
+void XHier_func_hier_func_Set_input_V(XHier_func_hier_func *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XHier_func_hier_func_WriteReg(InstancePtr->Control_BaseAddress, XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_TANCALC_INPUT_V_DATA, (u32)(Data));
-    XHier_func_hier_func_WriteReg(InstancePtr->Control_BaseAddress, XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_TANCALC_INPUT_V_DATA + 4, (u32)(Data >> 32));
+    XHier_func_hier_func_WriteReg(InstancePtr->Control_BaseAddress, XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_INPUT_V_DATA, (u32)(Data));
+    XHier_func_hier_func_WriteReg(InstancePtr->Control_BaseAddress, XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_INPUT_V_DATA + 4, (u32)(Data >> 32));
 }
 
-u64 XHier_func_hier_func_Get_tancalc_input_V(XHier_func_hier_func *InstancePtr) {
+u64 XHier_func_hier_func_Get_input_V(XHier_func_hier_func *InstancePtr) {
     u64 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XHier_func_hier_func_ReadReg(InstancePtr->Control_BaseAddress, XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_TANCALC_INPUT_V_DATA);
-    Data += (u64)XHier_func_hier_func_ReadReg(InstancePtr->Control_BaseAddress, XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_TANCALC_INPUT_V_DATA + 4) << 32;
+    Data = XHier_func_hier_func_ReadReg(InstancePtr->Control_BaseAddress, XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_INPUT_V_DATA);
+    Data += (u64)XHier_func_hier_func_ReadReg(InstancePtr->Control_BaseAddress, XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_INPUT_V_DATA + 4) << 32;
     return Data;
 }
 

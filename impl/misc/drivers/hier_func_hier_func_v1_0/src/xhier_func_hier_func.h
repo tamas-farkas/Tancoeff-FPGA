@@ -84,8 +84,8 @@ u32 XHier_func_hier_func_IsReady(XHier_func_hier_func *InstancePtr);
 void XHier_func_hier_func_EnableAutoRestart(XHier_func_hier_func *InstancePtr);
 void XHier_func_hier_func_DisableAutoRestart(XHier_func_hier_func *InstancePtr);
 
-void XHier_func_hier_func_Set_tancalc_input_V(XHier_func_hier_func *InstancePtr, u64 Data);
-u64 XHier_func_hier_func_Get_tancalc_input_V(XHier_func_hier_func *InstancePtr);
+void XHier_func_hier_func_Set_input_V(XHier_func_hier_func *InstancePtr, u64 Data);
+u64 XHier_func_hier_func_Get_input_V(XHier_func_hier_func *InstancePtr);
 
 void XHier_func_hier_func_InterruptGlobalEnable(XHier_func_hier_func *InstancePtr);
 void XHier_func_hier_func_InterruptGlobalDisable(XHier_func_hier_func *InstancePtr);

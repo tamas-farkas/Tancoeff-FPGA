@@ -14,7 +14,7 @@ int main(void){
 		input[i + 1] = (din_type)0;
 	}
 	for(int i = 0; i < DATA_SIZE2*VECTOR_SIZE; i+=2){
-		input[i + DATA_SIZE1*VECTOR_SIZE] = (din_type)4;
+		input[i + DATA_SIZE1*VECTOR_SIZE] = (din_type)i;
 		input[i + DATA_SIZE1*VECTOR_SIZE + 1] = (din_type)0;
 	}
 
@@ -25,12 +25,9 @@ int main(void){
 		if(!output.empty()){
 			tmp = 0;
 			tmp = (unsigned int)output.read();
-			printf("result:%d \n", tmp);
-			sum += tmp;
+			printf("result:%d,	%d \n", (tmp>>16), (tmp & 0x0000ffff));
 		}
 	}
-
-	printf("result_sum:%d \n", sum);
 
 	free(input);
 

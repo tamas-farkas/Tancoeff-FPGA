@@ -6564,39 +6564,35 @@ class stream
 
 }
 # 6 "tancoeff/tancoeff/parameters.h" 2
+# 16 "tancoeff/tancoeff/parameters.h"
+const int input_size=(1024*64*(1024 / 512)+64*(1024 / 512))*1024*64/64;
+const int output_size=1024*64*1024*64;
+const int fifo_size=64*4;
 
-
-
-
-
-
-
-
-const int input_size=(64*(32 / 16)+16*(32 / 16))*64/16;
-const int output_size=64*64;
-const int fifo_size=16;
-
-typedef ap_uint<32> data_type;
-typedef ap_uint<16> din_type;
+typedef ap_uint<1024> data_type;
+typedef ap_uint<512> din_type;
 typedef ap_uint<11> popcnt_type;
-typedef ap_uint<10> result_type;
+typedef ap_uint<32> result_type;
+typedef ap_uint<16> halfresult_type;
 
 typedef struct{
- hls::stream<result_type> line[16];
+ hls::stream<result_type> line[64];
 }stream_array;
 # 5 "tancoeff/tancoeff/fifo.h" 2
 
-extern "C" {void fifo(stream_array *fifo_input, hls::stream<result_type> &fifo_output);}
+extern "C" {void fifo(stream_array *input, hls::stream<result_type> &output);}
 # 2 "tancoeff/tancoeff/fifo.cpp" 2
 
 
-void fifo(stream_array *fifo_input, hls::stream<result_type> &fifo_output){
+void fifo(stream_array *input, hls::stream<result_type> &output){
  result_type temp;
- for(int i = 0;i < 64*16/4; i++){
-  for(int buffer_num = 0;buffer_num < 16; buffer_num++){
-   if(!fifo_input->line[buffer_num].empty()){
-    fifo_input->line[buffer_num].read(temp);
-    fifo_output.write(temp);
+ fifo_loop1:
+ for(int i = 0;i < 32*1024*64 +16*64*2+1024*64/64; i++){
+  fifo_loop2:
+  for(int buffer_num = 0;buffer_num < 64; buffer_num++){
+   if(!input->line[buffer_num].empty()){
+    input->line[buffer_num].read(temp);
+    output.write(temp);
    }
   }
  }

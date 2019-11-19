@@ -21,17 +21,17 @@
 //        bit 0  - Channel 0 (ap_done)
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
-// 0x10 : Data signal of tancalc_input_V
-//        bit 31~0 - tancalc_input_V[31:0] (Read/Write)
-// 0x14 : Data signal of tancalc_input_V
-//        bit 31~0 - tancalc_input_V[63:32] (Read/Write)
+// 0x10 : Data signal of input_V
+//        bit 31~0 - input_V[31:0] (Read/Write)
+// 0x14 : Data signal of input_V
+//        bit 31~0 - input_V[63:32] (Read/Write)
 // 0x18 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
-#define XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_AP_CTRL              0x00
-#define XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_GIE                  0x04
-#define XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_IER                  0x08
-#define XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_ISR                  0x0c
-#define XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_TANCALC_INPUT_V_DATA 0x10
-#define XHIER_FUNC_HIER_FUNC_CONTROL_BITS_TANCALC_INPUT_V_DATA 64
+#define XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_AP_CTRL      0x00
+#define XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_GIE          0x04
+#define XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_IER          0x08
+#define XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_ISR          0x0c
+#define XHIER_FUNC_HIER_FUNC_CONTROL_ADDR_INPUT_V_DATA 0x10
+#define XHIER_FUNC_HIER_FUNC_CONTROL_BITS_INPUT_V_DATA 64
 

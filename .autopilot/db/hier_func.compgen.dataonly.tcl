@@ -6,7 +6,7 @@ ap_start { }
 ap_done { }
 ap_ready { }
 ap_idle { }
-tancalc_input_V { 
+input_V { 
 	dir I
 	width 64
 	depth 1

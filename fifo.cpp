@@ -1,13 +1,15 @@
 #include "fifo.h"
 
 
-void fifo(stream_array *fifo_input, hls::stream<result_type> &fifo_output){
+void fifo(stream_array *input, hls::stream<result_type> &output){
 	result_type temp;
-	for(int i = 0;i < DATA_SIZE2*BUFFER_SIZE2/4; i++){
-		for(int buffer_num = 0;buffer_num < BUFFER_SIZE2; buffer_num++){
-			if(!fifo_input->line[buffer_num].empty()){
-				fifo_input->line[buffer_num].read(temp);
-				fifo_output.write(temp);
+	fifo_loop1:
+	for(int i = 0;i < 32*DATA_SIZE2+16*BUFFER_SIZE*2+DATA_SIZE1/BUFFER_SIZE; i++){
+		fifo_loop2:
+		for(int buffer_num = 0;buffer_num < BUFFER_SIZE; buffer_num++){
+			if(!input->line[buffer_num].empty()){
+				input->line[buffer_num].read(temp);
+				output.write(temp);
 			}
 		}
 	}

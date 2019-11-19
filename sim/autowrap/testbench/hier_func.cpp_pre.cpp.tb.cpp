@@ -75444,27 +75444,28 @@ class stream
 
 }
 # 6 "/home/student/workspace/tancoeff/tancoeff/parameters.h" 2
-# 14 "/home/student/workspace/tancoeff/tancoeff/parameters.h"
-const int input_size=(64*(32 / 16)+16*(32 / 16))*64/16;
-const int output_size=64*64;
-const int fifo_size=16;
+# 16 "/home/student/workspace/tancoeff/tancoeff/parameters.h"
+const int input_size=(1024*64*(1024 / 512)+64*(1024 / 512))*1024*64/64;
+const int output_size=1024*64*1024*64;
+const int fifo_size=64*4;
 
-typedef ap_uint<32> data_type;
-typedef ap_uint<16> din_type;
+typedef ap_uint<1024> data_type;
+typedef ap_uint<512> din_type;
 typedef ap_uint<11> popcnt_type;
-typedef ap_uint<10> result_type;
+typedef ap_uint<32> result_type;
+typedef ap_uint<16> halfresult_type;
 
 typedef struct{
- hls::stream<result_type> line[16];
+ hls::stream<result_type> line[64];
 }stream_array;
 # 5 "/home/student/workspace/tancoeff/tancoeff/tancalc.h" 2
 
 popcnt_type popcnt(din_type x);
-popcnt_type popcntdata(data_type x);
-void data_read(volatile din_type *tancalc_input, data_type *data_local, popcnt_type *datapop_local, short buffer_size);
-void calculation(data_type *ref_local, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *cmprpop_local, result_type *result_local, int num);
-void result_write(result_type *result_local, stream_array *tancalc_output);
-extern "C" {void tancalc(volatile din_type *tancalc_input, stream_array *tancalc_output);}
+void data_read_cmpr(volatile din_type *input, data_type *data_local, popcnt_type *datapop_local);
+void data_read_ref(volatile din_type *input, data_type *cmpr_local, popcnt_type *refpop_local, popcnt_type *andpop_local);
+void calculation(popcnt_type *refpop_local, popcnt_type *cmprpop_local, popcnt_type *andpop_local, result_type *result_local, int cmpr_chunk_num, int data_num);
+void result_write(result_type *result_local, stream_array *output);
+extern "C" {void tancalc(volatile din_type *input, stream_array *output);}
 # 5 "/home/student/workspace/tancoeff/tancoeff/hier_func.h" 2
 # 1 "/home/student/workspace/tancoeff/tancoeff/fifo.h" 1
 
@@ -75472,23 +75473,24 @@ extern "C" {void tancalc(volatile din_type *tancalc_input, stream_array *tancalc
 
 
 
-extern "C" {void fifo(stream_array *fifo_input, hls::stream<result_type> &fifo_output);}
+extern "C" {void fifo(stream_array *input, hls::stream<result_type> &output);}
 # 6 "/home/student/workspace/tancoeff/tancoeff/hier_func.h" 2
 
 
-void hier_func(volatile din_type *tancalc_input, hls::stream<result_type> &fifo_output);
+void hier_func(volatile din_type *input, hls::stream<result_type> &output);
 # 2 "/home/student/workspace/tancoeff/tancoeff/hier_func.cpp" 2
 
-void hier_func(volatile din_type *tancalc_input, hls::stream<result_type> &fifo_output){
-#pragma HLS INTERFACE m_axi depth=input_size port=tancalc_input offset=slave bundle=gmem0
-#pragma HLS INTERFACE axis port=fifo_output
-#pragma HLS INTERFACE s_axilite port = tancalc_input bundle = control
+void hier_func(volatile din_type *input, hls::stream<result_type> &output){
+#pragma HLS INTERFACE m_axi depth=input_size port=input offset=slave bundle=gmem0
+#pragma HLS INTERFACE axis port=output
+#pragma HLS INTERFACE s_axilite port = input bundle = control
 #pragma HLS INTERFACE s_axilite port = return bundle = control
 
 #pragma HLS dataflow
 
  stream_array stream_array;
+#pragma HLS STREAM variable=stream_array.line depth=fifo_size dim=1
 
- tancalc(tancalc_input, &stream_array);
- fifo(&stream_array, fifo_output);
+ tancalc(input, &stream_array);
+ fifo(&stream_array, output);
 }

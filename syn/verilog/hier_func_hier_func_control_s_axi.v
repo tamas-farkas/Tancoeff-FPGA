@@ -33,7 +33,7 @@ module hier_func_hier_func_control_s_axi
     input  wire                          ap_done,
     input  wire                          ap_ready,
     input  wire                          ap_idle,
-    output wire [63:0]                   tancalc_input_V
+    output wire [63:0]                   input_V
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -54,29 +54,29 @@ module hier_func_hier_func_control_s_axi
 //        bit 0  - Channel 0 (ap_done)
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
-// 0x10 : Data signal of tancalc_input_V
-//        bit 31~0 - tancalc_input_V[31:0] (Read/Write)
-// 0x14 : Data signal of tancalc_input_V
-//        bit 31~0 - tancalc_input_V[63:32] (Read/Write)
+// 0x10 : Data signal of input_V
+//        bit 31~0 - input_V[31:0] (Read/Write)
+// 0x14 : Data signal of input_V
+//        bit 31~0 - input_V[63:32] (Read/Write)
 // 0x18 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL                = 5'h00,
-    ADDR_GIE                    = 5'h04,
-    ADDR_IER                    = 5'h08,
-    ADDR_ISR                    = 5'h0c,
-    ADDR_TANCALC_INPUT_V_DATA_0 = 5'h10,
-    ADDR_TANCALC_INPUT_V_DATA_1 = 5'h14,
-    ADDR_TANCALC_INPUT_V_CTRL   = 5'h18,
-    WRIDLE                      = 2'd0,
-    WRDATA                      = 2'd1,
-    WRRESP                      = 2'd2,
-    WRRESET                     = 2'd3,
-    RDIDLE                      = 2'd0,
-    RDDATA                      = 2'd1,
-    RDRESET                     = 2'd2,
+    ADDR_AP_CTRL        = 5'h00,
+    ADDR_GIE            = 5'h04,
+    ADDR_IER            = 5'h08,
+    ADDR_ISR            = 5'h0c,
+    ADDR_INPUT_V_DATA_0 = 5'h10,
+    ADDR_INPUT_V_DATA_1 = 5'h14,
+    ADDR_INPUT_V_CTRL   = 5'h18,
+    WRIDLE              = 2'd0,
+    WRDATA              = 2'd1,
+    WRRESP              = 2'd2,
+    WRRESET             = 2'd3,
+    RDIDLE              = 2'd0,
+    RDDATA              = 2'd1,
+    RDRESET             = 2'd2,
     ADDR_BITS         = 5;
 
 //------------------------Local signal-------------------
@@ -100,7 +100,7 @@ localparam
     reg                           int_gie = 1'b0;
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
-    reg  [63:0]                   int_tancalc_input_V = 'b0;
+    reg  [63:0]                   int_input_V = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -208,11 +208,11 @@ always @(posedge ACLK) begin
                 ADDR_ISR: begin
                     rdata <= int_isr;
                 end
-                ADDR_TANCALC_INPUT_V_DATA_0: begin
-                    rdata <= int_tancalc_input_V[31:0];
+                ADDR_INPUT_V_DATA_0: begin
+                    rdata <= int_input_V[31:0];
                 end
-                ADDR_TANCALC_INPUT_V_DATA_1: begin
-                    rdata <= int_tancalc_input_V[63:32];
+                ADDR_INPUT_V_DATA_1: begin
+                    rdata <= int_input_V[63:32];
                 end
             endcase
         end
@@ -221,9 +221,9 @@ end
 
 
 //------------------------Register logic-----------------
-assign interrupt       = int_gie & (|int_isr);
-assign ap_start        = int_ap_start;
-assign tancalc_input_V = int_tancalc_input_V;
+assign interrupt = int_gie & (|int_isr);
+assign ap_start  = int_ap_start;
+assign input_V   = int_input_V;
 // int_ap_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -320,23 +320,23 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_tancalc_input_V[31:0]
+// int_input_V[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_tancalc_input_V[31:0] <= 0;
+        int_input_V[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_TANCALC_INPUT_V_DATA_0)
-            int_tancalc_input_V[31:0] <= (WDATA[31:0] & wmask) | (int_tancalc_input_V[31:0] & ~wmask);
+        if (w_hs && waddr == ADDR_INPUT_V_DATA_0)
+            int_input_V[31:0] <= (WDATA[31:0] & wmask) | (int_input_V[31:0] & ~wmask);
     end
 end
 
-// int_tancalc_input_V[63:32]
+// int_input_V[63:32]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_tancalc_input_V[63:32] <= 0;
+        int_input_V[63:32] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_TANCALC_INPUT_V_DATA_1)
-            int_tancalc_input_V[63:32] <= (WDATA[31:0] & wmask) | (int_tancalc_input_V[63:32] & ~wmask);
+        if (w_hs && waddr == ADDR_INPUT_V_DATA_1)
+            int_input_V[63:32] <= (WDATA[31:0] & wmask) | (int_input_V[63:32] & ~wmask);
     end
 end
 

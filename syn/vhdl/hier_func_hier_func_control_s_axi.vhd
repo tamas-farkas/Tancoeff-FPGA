@@ -36,7 +36,7 @@ port (
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
     ap_idle               :in   STD_LOGIC;
-    tancalc_input_V       :out  STD_LOGIC_VECTOR(63 downto 0)
+    input_V               :out  STD_LOGIC_VECTOR(63 downto 0)
 );
 end entity hier_func_hier_func_control_s_axi;
 
@@ -59,10 +59,10 @@ end entity hier_func_hier_func_control_s_axi;
 --        bit 0  - Channel 0 (ap_done)
 --        bit 1  - Channel 1 (ap_ready)
 --        others - reserved
--- 0x10 : Data signal of tancalc_input_V
---        bit 31~0 - tancalc_input_V[31:0] (Read/Write)
--- 0x14 : Data signal of tancalc_input_V
---        bit 31~0 - tancalc_input_V[63:32] (Read/Write)
+-- 0x10 : Data signal of input_V
+--        bit 31~0 - input_V[31:0] (Read/Write)
+-- 0x14 : Data signal of input_V
+--        bit 31~0 - input_V[63:32] (Read/Write)
 -- 0x18 : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -71,13 +71,13 @@ architecture behave of hier_func_hier_func_control_s_axi is
     signal wstate  : states := wrreset;
     signal rstate  : states := rdreset;
     signal wnext, rnext: states;
-    constant ADDR_AP_CTRL                : INTEGER := 16#00#;
-    constant ADDR_GIE                    : INTEGER := 16#04#;
-    constant ADDR_IER                    : INTEGER := 16#08#;
-    constant ADDR_ISR                    : INTEGER := 16#0c#;
-    constant ADDR_TANCALC_INPUT_V_DATA_0 : INTEGER := 16#10#;
-    constant ADDR_TANCALC_INPUT_V_DATA_1 : INTEGER := 16#14#;
-    constant ADDR_TANCALC_INPUT_V_CTRL   : INTEGER := 16#18#;
+    constant ADDR_AP_CTRL        : INTEGER := 16#00#;
+    constant ADDR_GIE            : INTEGER := 16#04#;
+    constant ADDR_IER            : INTEGER := 16#08#;
+    constant ADDR_ISR            : INTEGER := 16#0c#;
+    constant ADDR_INPUT_V_DATA_0 : INTEGER := 16#10#;
+    constant ADDR_INPUT_V_DATA_1 : INTEGER := 16#14#;
+    constant ADDR_INPUT_V_CTRL   : INTEGER := 16#18#;
     constant ADDR_BITS         : INTEGER := 5;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -100,7 +100,7 @@ architecture behave of hier_func_hier_func_control_s_axi is
     signal int_gie             : STD_LOGIC := '0';
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
-    signal int_tancalc_input_V : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_input_V         : UNSIGNED(63 downto 0) := (others => '0');
 
 
 begin
@@ -222,10 +222,10 @@ begin
                         rdata_data <= (1 => int_ier(1), 0 => int_ier(0), others => '0');
                     when ADDR_ISR =>
                         rdata_data <= (1 => int_isr(1), 0 => int_isr(0), others => '0');
-                    when ADDR_TANCALC_INPUT_V_DATA_0 =>
-                        rdata_data <= RESIZE(int_tancalc_input_V(31 downto 0), 32);
-                    when ADDR_TANCALC_INPUT_V_DATA_1 =>
-                        rdata_data <= RESIZE(int_tancalc_input_V(63 downto 32), 32);
+                    when ADDR_INPUT_V_DATA_0 =>
+                        rdata_data <= RESIZE(int_input_V(31 downto 0), 32);
+                    when ADDR_INPUT_V_DATA_1 =>
+                        rdata_data <= RESIZE(int_input_V(63 downto 32), 32);
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -237,7 +237,7 @@ begin
 -- ----------------------- Register logic ----------------
     interrupt            <= int_gie and (int_isr(0) or int_isr(1));
     ap_start             <= int_ap_start;
-    tancalc_input_V      <= STD_LOGIC_VECTOR(int_tancalc_input_V);
+    input_V              <= STD_LOGIC_VECTOR(int_input_V);
 
     process (ACLK)
     begin
@@ -368,8 +368,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_TANCALC_INPUT_V_DATA_0) then
-                    int_tancalc_input_V(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_tancalc_input_V(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_INPUT_V_DATA_0) then
+                    int_input_V(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_input_V(31 downto 0));
                 end if;
             end if;
         end if;
@@ -379,8 +379,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_TANCALC_INPUT_V_DATA_1) then
-                    int_tancalc_input_V(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_tancalc_input_V(63 downto 32));
+                if (w_hs = '1' and waddr = ADDR_INPUT_V_DATA_1) then
+                    int_input_V(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_input_V(63 downto 32));
                 end if;
             end if;
         end if;

@@ -5,6 +5,6 @@
 #include "fifo.h"
 #include "parameters.h"
 
-void hier_func(volatile din_type *tancalc_input, hls::stream<result_type> &fifo_output);
+extern "C" {void hier_func(volatile din_type *input, hls::stream<result_type> &output);}
 
 #endif

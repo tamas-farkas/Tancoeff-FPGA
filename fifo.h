@@ -3,6 +3,6 @@
 
 #include "parameters.h"
 
-extern "C" {void fifo(stream_array *input, hls::stream<result_type> &output);}
+extern "C" {void fifo(stream_array *input, volatile din_type *output);}
 
 #endif

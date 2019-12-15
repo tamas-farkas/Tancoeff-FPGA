@@ -1,7 +1,7 @@
 <profile>
 
 <ReportVersion>
-<Version>2019.1</Version>
+<Version>2018.3</Version>
 </ReportVersion>
 
 <UserAssignments>
@@ -21,29 +21,29 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>134389761</Best-caseLatency>
-<Average-caseLatency>134389761</Average-caseLatency>
-<Worst-caseLatency>134389761</Worst-caseLatency>
-<Interval-min>134389761</Interval-min>
-<Interval-max>134389761</Interval-max>
+<Best-caseLatency>134387713</Best-caseLatency>
+<Average-caseLatency>134387713</Average-caseLatency>
+<Worst-caseLatency>134387713</Worst-caseLatency>
+<Interval-min>134387713</Interval-min>
+<Interval-max>134387713</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <mainloop>
 <TripCount>1024</TripCount>
-<Latency>134389760</Latency>
-<IterationLatency>131240</IterationLatency>
+<Latency>134387712</Latency>
+<IterationLatency>131238</IterationLatency>
 <data_read_cmpr_loop>
 <TripCount>128</TripCount>
 <Latency>137</Latency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>11</PipelineDepth>
 </data_read_cmpr_loop>
-<subloop>
-<TripCount>65536</TripCount>
-<Latency>131091</Latency>
-<PipelineII>2</PipelineII>
-<PipelineDepth>22</PipelineDepth>
-</subloop>
+<subloop_data_read_ref_loop>
+<TripCount>131072</TripCount>
+<Latency>131083</Latency>
+<PipelineII>1</PipelineII>
+<PipelineDepth>13</PipelineDepth>
+</subloop_data_read_ref_loop>
 </mainloop>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
@@ -51,8 +51,8 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>0</BRAM_18K>
-<FF>290922</FF>
-<LUT>299723</LUT>
+<FF>230034</FF>
+<LUT>881979</LUT>
 <DSP48E>0</DSP48E>
 <URAM>0</URAM>
 </Resources>
@@ -691,7 +691,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_0_V_V_full_n</name>
@@ -724,7 +724,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_1_V_V_full_n</name>
@@ -757,7 +757,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_2_V_V_full_n</name>
@@ -790,7 +790,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_3_V_V_full_n</name>
@@ -823,7 +823,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_4_V_V_full_n</name>
@@ -856,7 +856,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_5_V_V_full_n</name>
@@ -889,7 +889,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_6_V_V_full_n</name>
@@ -922,7 +922,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_7_V_V_full_n</name>
@@ -955,7 +955,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_8_V_V_full_n</name>
@@ -988,7 +988,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_9_V_V_full_n</name>
@@ -1021,7 +1021,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_10_V_V_full_n</name>
@@ -1054,7 +1054,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_11_V_V_full_n</name>
@@ -1087,7 +1087,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_12_V_V_full_n</name>
@@ -1120,7 +1120,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_13_V_V_full_n</name>
@@ -1153,7 +1153,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_14_V_V_full_n</name>
@@ -1186,7 +1186,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_15_V_V_full_n</name>
@@ -1219,7 +1219,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_16_V_V_full_n</name>
@@ -1252,7 +1252,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_17_V_V_full_n</name>
@@ -1285,7 +1285,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_18_V_V_full_n</name>
@@ -1318,7 +1318,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_19_V_V_full_n</name>
@@ -1351,7 +1351,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_20_V_V_full_n</name>
@@ -1384,7 +1384,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_21_V_V_full_n</name>
@@ -1417,7 +1417,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_22_V_V_full_n</name>
@@ -1450,7 +1450,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_23_V_V_full_n</name>
@@ -1483,7 +1483,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_24_V_V_full_n</name>
@@ -1516,7 +1516,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_25_V_V_full_n</name>
@@ -1549,7 +1549,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_26_V_V_full_n</name>
@@ -1582,7 +1582,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_27_V_V_full_n</name>
@@ -1615,7 +1615,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_28_V_V_full_n</name>
@@ -1648,7 +1648,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_29_V_V_full_n</name>
@@ -1681,7 +1681,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_30_V_V_full_n</name>
@@ -1714,7 +1714,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_31_V_V_full_n</name>
@@ -1747,7 +1747,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_32_V_V_full_n</name>
@@ -1780,7 +1780,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_33_V_V_full_n</name>
@@ -1813,7 +1813,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_34_V_V_full_n</name>
@@ -1846,7 +1846,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_35_V_V_full_n</name>
@@ -1879,7 +1879,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_36_V_V_full_n</name>
@@ -1912,7 +1912,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_37_V_V_full_n</name>
@@ -1945,7 +1945,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_38_V_V_full_n</name>
@@ -1978,7 +1978,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_39_V_V_full_n</name>
@@ -2011,7 +2011,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_40_V_V_full_n</name>
@@ -2044,7 +2044,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_41_V_V_full_n</name>
@@ -2077,7 +2077,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_42_V_V_full_n</name>
@@ -2110,7 +2110,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_43_V_V_full_n</name>
@@ -2143,7 +2143,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_44_V_V_full_n</name>
@@ -2176,7 +2176,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_45_V_V_full_n</name>
@@ -2209,7 +2209,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_46_V_V_full_n</name>
@@ -2242,7 +2242,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_47_V_V_full_n</name>
@@ -2275,7 +2275,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_48_V_V_full_n</name>
@@ -2308,7 +2308,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_49_V_V_full_n</name>
@@ -2341,7 +2341,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_50_V_V_full_n</name>
@@ -2374,7 +2374,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_51_V_V_full_n</name>
@@ -2407,7 +2407,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_52_V_V_full_n</name>
@@ -2440,7 +2440,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_53_V_V_full_n</name>
@@ -2473,7 +2473,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_54_V_V_full_n</name>
@@ -2506,7 +2506,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_55_V_V_full_n</name>
@@ -2539,7 +2539,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_56_V_V_full_n</name>
@@ -2572,7 +2572,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_57_V_V_full_n</name>
@@ -2605,7 +2605,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_58_V_V_full_n</name>
@@ -2638,7 +2638,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_59_V_V_full_n</name>
@@ -2671,7 +2671,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_60_V_V_full_n</name>
@@ -2704,7 +2704,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_61_V_V_full_n</name>
@@ -2737,7 +2737,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_62_V_V_full_n</name>
@@ -2770,7 +2770,7 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>control</Attribute>
+<Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>output_line_63_V_V_full_n</name>

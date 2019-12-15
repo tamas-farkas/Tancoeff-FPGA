@@ -1,9 +1,11 @@
 // ==============================================================
-// Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
-// Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+// File generated on Sun Dec 15 14:25:02 CET 2019
+// Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+// SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+// IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+// Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
 `timescale 1ns/1ps
-`default_nettype none
 
 module hier_func_hier_func_gmem0_m_axi
 #(parameter
@@ -309,7 +311,6 @@ hier_func_hier_func_gmem0_m_axi_read #(
     .rrsp              ( I_RRESP )
 );
 endmodule
-`default_nettype wire
 
 module hier_func_hier_func_gmem0_m_axi_reg_slice
 #(parameter
@@ -716,27 +717,27 @@ module hier_func_hier_func_gmem0_m_axi_throttl
     CONSERVATIVE   = 0, 
     AVERAGE_MODE   = 0 
 )(
-    input  wire                      clk,
-    input  wire                      reset,
-    input  wire                      ce,
-    input  wire [ADDR_WIDTH-1:0]     in_addr,
-    input  wire [7:0]                in_len,
-    input  wire                      in_req_valid,
-    output wire                      out_req_ready,
-    output wire [ADDR_WIDTH-1:0]     out_addr,
-    output wire [7:0]                out_len,
-    output wire                      out_req_valid,
-    input  wire                      in_req_ready,
-    input  wire [DATA_WIDTH-1:0]     in_data,
-    input  wire [DATA_WIDTH/8-1:0]   in_strb,
-    input  wire                      in_last,
-    input  wire                      in_data_valid,
-    output wire                      out_data_ready,
-    output wire [DATA_WIDTH-1:0]     out_data,
-    output wire [DATA_WIDTH/8-1:0]   out_strb,
-    output wire                      out_last,
-    output wire                      out_data_valid,
-    input  wire                      in_data_ready
+    input                       clk,
+    input                       reset,
+    input                       ce,
+    input  [ADDR_WIDTH-1:0]     in_addr,
+    input  [7:0]                in_len,
+    input                       in_req_valid,
+    output                      out_req_ready,
+    output [ADDR_WIDTH-1:0]     out_addr,
+    output [7:0]                out_len,
+    output                      out_req_valid,
+    input                       in_req_ready,
+    input  [DATA_WIDTH-1:0]     in_data,
+    input  [DATA_WIDTH/8-1:0]   in_strb,
+    input                       in_last,
+    input                       in_data_valid,
+    output                      out_data_ready,
+    output [DATA_WIDTH-1:0]     out_data,
+    output [DATA_WIDTH/8-1:0]   out_strb,
+    output                      out_last,
+    output                      out_data_valid,
+    input                       in_data_ready
 );
 
 function integer log2;
@@ -1863,7 +1864,6 @@ endfunction
     wire                                    burst_valid;
     wire                                    fifo_burst_ready;
     wire                                    next_burst;
-    wire                                    data_valid;
     reg                                     WVALID_Dummy;
     reg                                     WLAST_Dummy;
     //B channel

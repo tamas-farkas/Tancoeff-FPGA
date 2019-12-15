@@ -1,6 +1,9 @@
 // ==============================================================
-// Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
-// Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+// File generated on Sun Dec 15 14:25:02 CET 2019
+// Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+// SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+// IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+// Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
 `timescale 1ns/1ps
 module hier_func_hier_func_control_s_axi
@@ -8,6 +11,7 @@ module hier_func_hier_func_control_s_axi
     C_S_AXI_ADDR_WIDTH = 5,
     C_S_AXI_DATA_WIDTH = 32
 )(
+    // axi4 lite slave signals
     input  wire                          ACLK,
     input  wire                          ARESET,
     input  wire                          ACLK_EN,
@@ -29,6 +33,7 @@ module hier_func_hier_func_control_s_axi
     output wire                          RVALID,
     input  wire                          RREADY,
     output wire                          interrupt,
+    // user signals
     output wire                          ap_start,
     input  wire                          ap_done,
     input  wire                          ap_ready,

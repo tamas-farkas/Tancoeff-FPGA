@@ -1,6 +1,9 @@
 // ==============================================================
-// Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
-// Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+// File generated on Sun Dec 15 14:25:02 CET 2019
+// Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+// SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+// IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+// Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
 
 `timescale 1 ns / 1 ps
@@ -71,11 +74,10 @@ wire[ADDR_WIDTH - 1:0] shiftReg_addr ;
 wire[DATA_WIDTH - 1:0] shiftReg_data, shiftReg_q;
 wire                     shiftReg_ce;
 reg[ADDR_WIDTH:0] mOutPtr = ~{(ADDR_WIDTH+1){1'b0}};
-reg internal_empty_n = 0;
-reg internal_full_n = 1;
+reg internal_empty_n = 0, internal_full_n = 1;
 
-assign if_full_n = internal_full_n;
 assign if_empty_n = internal_empty_n;
+assign if_full_n = internal_full_n;
 assign shiftReg_data = if_din;
 assign if_dout = shiftReg_q;
 

@@ -12,7 +12,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -29,7 +28,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -59,7 +57,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -81,7 +78,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -98,7 +94,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -128,7 +123,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -150,7 +144,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -167,7 +160,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -197,7 +189,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -219,7 +210,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -236,7 +226,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -266,7 +255,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -288,7 +276,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -305,7 +292,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -335,7 +321,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -357,7 +342,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -374,7 +358,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -404,7 +387,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -426,7 +408,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -443,7 +424,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -473,7 +453,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -495,7 +474,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -512,7 +490,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -542,7 +519,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -564,7 +540,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -581,7 +556,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -611,7 +585,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -633,7 +606,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -650,7 +622,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -680,7 +651,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -702,7 +672,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -719,7 +688,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -749,7 +717,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -771,7 +738,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -788,7 +754,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -818,7 +783,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -840,7 +804,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -857,7 +820,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -887,7 +849,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -909,7 +870,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -926,7 +886,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -956,7 +915,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -978,7 +936,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -995,7 +952,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -1025,7 +981,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -1047,7 +1002,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -1064,7 +1018,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -1094,7 +1047,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -1116,7 +1068,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -1133,7 +1084,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -1163,7 +1113,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -1185,7 +1134,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -1202,7 +1150,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -1232,7 +1179,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -1254,7 +1200,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -1271,7 +1216,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -1301,7 +1245,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -1323,7 +1266,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -1340,7 +1282,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -1370,7 +1311,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -1392,7 +1332,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -1409,7 +1348,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -1439,7 +1377,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -1461,7 +1398,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -1478,7 +1414,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -1508,7 +1443,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -1530,7 +1464,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -1547,7 +1480,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -1577,7 +1509,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -1599,7 +1530,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -1616,7 +1546,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -1646,7 +1575,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -1668,7 +1596,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -1685,7 +1612,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -1715,7 +1641,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -1737,7 +1662,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -1754,7 +1678,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -1784,7 +1707,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -1806,7 +1728,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -1823,7 +1744,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -1853,7 +1773,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -1875,7 +1794,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -1892,7 +1810,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -1922,7 +1839,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -1944,7 +1860,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -1961,7 +1876,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -1991,7 +1905,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -2013,7 +1926,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -2030,7 +1942,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -2060,7 +1971,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -2082,7 +1992,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -2099,7 +2008,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -2129,7 +2037,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -2151,7 +2058,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -2168,7 +2074,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -2198,7 +2103,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -2220,7 +2124,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -2237,7 +2140,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -2267,7 +2169,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -2289,7 +2190,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -2306,7 +2206,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -2336,7 +2235,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -2358,7 +2256,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -2375,7 +2272,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -2405,7 +2301,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -2427,7 +2322,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -2444,7 +2338,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -2474,7 +2367,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -2496,7 +2388,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -2513,7 +2404,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -2543,7 +2433,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -2565,7 +2454,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -2582,7 +2470,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -2612,7 +2499,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -2634,7 +2520,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -2651,7 +2536,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -2681,7 +2565,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -2703,7 +2586,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -2720,7 +2602,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -2750,7 +2631,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -2772,7 +2652,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -2789,7 +2668,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -2819,7 +2697,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -2841,7 +2718,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -2858,7 +2734,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -2888,7 +2763,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -2910,7 +2784,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -2927,7 +2800,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -2957,7 +2829,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -2979,7 +2850,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -2996,7 +2866,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -3026,7 +2895,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -3048,7 +2916,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -3065,7 +2932,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -3095,7 +2961,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -3117,7 +2982,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -3134,7 +2998,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -3164,7 +3027,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -3186,7 +3048,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -3203,7 +3064,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -3233,7 +3093,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -3255,7 +3114,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -3272,7 +3130,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -3302,7 +3159,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -3324,7 +3180,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -3341,7 +3196,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -3371,7 +3225,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -3393,7 +3246,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -3410,7 +3262,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -3440,7 +3291,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -3462,7 +3312,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -3479,7 +3328,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -3509,7 +3357,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -3531,7 +3378,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -3548,7 +3394,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -3578,7 +3423,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -3600,7 +3444,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -3617,7 +3460,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -3647,7 +3489,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -3669,7 +3510,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -3686,7 +3526,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -3716,7 +3555,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -3738,7 +3576,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -3755,7 +3592,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -3785,7 +3621,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -3807,7 +3642,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -3824,7 +3658,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -3854,7 +3687,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -3876,7 +3708,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -3893,7 +3724,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -3923,7 +3753,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -3945,7 +3774,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -3962,7 +3790,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -3992,7 +3819,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -4014,7 +3840,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -4031,7 +3856,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -4061,7 +3885,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -4083,7 +3906,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -4100,7 +3922,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -4130,7 +3951,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -4152,7 +3972,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -4169,7 +3988,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -4199,7 +4017,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -4221,7 +4038,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -4238,7 +4054,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -4268,7 +4083,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -4290,7 +4104,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -4307,7 +4120,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -4337,7 +4149,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -4359,7 +4170,6 @@ set Depth 256
 set DataWd 32
 set AddrWd 8
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -4376,7 +4186,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -4406,7 +4215,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -4428,7 +4236,6 @@ set Depth 2
 set DataWd 1
 set AddrWd 1
 set FullThresh 0
-set EmptyThresh 0
 set impl_style auto
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -4445,7 +4252,6 @@ eval "ap_gen_simcore_fifo { \
     sync_rst true \
     dual_clk 0\
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
 }"
 } else {
@@ -4475,7 +4281,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     sync_rst true \
     dual_clk 0 \
     depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
     full_thresh ${FullThresh} \
     style ${impl_style} \
 }"
@@ -4492,7 +4297,6 @@ if {${::AESL::PGuard_autoexp_gen}} {
     AESL_LIB_XILADAPTER::native_axis_begin
 }
 
-set axilite_register_dict [dict create]
 set port_control {
 ap_start { }
 ap_done { }
@@ -4507,7 +4311,6 @@ input_V {
 	offset_end 27
 }
 }
-dict set axilite_register_dict control $port_control
 
 
 # Native S_AXILite:

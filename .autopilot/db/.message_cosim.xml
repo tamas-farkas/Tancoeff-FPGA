@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="WARNING" prefix="[COSIM 212-384]" key="COSIM_TCL_384_1255" tag="COSIM" content="This design has internal non-blocking FIFO/Stream accesses, which may result in mismatches or simulation hanging."/>
+	<Message severity="INFO" prefix="[COSIM 212-47]" key="COSIM_TCL_47_1115" tag="" content="Using XSIM for RTL simulation."/>
+	<Message severity="INFO" prefix="[COSIM 212-14]" key="COSIM_TCL_14_1084" tag="" content="Instrumenting C test bench ..."/>
+	<Message severity="WARNING" prefix="[COSIM 212-369]" key="COSIM_TCL_369_1240" tag="COSIM" content="AXI_master port &apos;gmem0&apos; has a depth of &apos;131072&apos;. Insufficient depth may result in simulation mismatch or freeze."/>
+	<Message severity="INFO" prefix="[COSIM 212-302]" key="COSIM_TCL_302_1177" tag="" content="Starting C TB testing ..."/>
+</Messages>

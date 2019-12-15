@@ -1,9 +1,7 @@
 set moduleName popcnt
-set isTopModule 0
 set isTaskLevelControl 1
 set isCombinational 0
 set isDatapathOnly 1
-set isFreeRunPipelineModule 0
 set isPipelined 1
 set pipeline_type function
 set FunctionProtocol ap_ctrl_hs

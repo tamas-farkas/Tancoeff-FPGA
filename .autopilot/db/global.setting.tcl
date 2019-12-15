@@ -19,7 +19,7 @@ set ResetStyle control
 set ResetSyncFlag 1
 set ResetRegisterFlag 1
 set ResetVariableFlag 0
-set FsmEncStyle onehot
+set FsmEncStyle auto
 set MaxFanout 0
 set RtlPrefix hier_func_
 set ExtraCCFlags {}
@@ -40,7 +40,7 @@ set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
 set TargetInfo xcvu9p:-fsgd2104:-2L-e
-set SourceFiles {sc {} c {fifo.cpp hier_func.cpp tancalc.cpp}}
+set SourceFiles {sc {} c {tancalc.cpp hier_func.cpp fifo.cpp}}
 set SourceFlags {sc {} c {{} {} {}}}
 set DirectiveFile /home/student/workspace/tancoeff/tancoeff/tancoeff.directive
 set TBFiles {verilog test.cpp bc test.cpp vhdl test.cpp sc test.cpp cas test.cpp c {}}

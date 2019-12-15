@@ -1,9 +1,9 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'hier_func'" level="0">
-<item name = "Date">Tue Nov 19 19:48:48 2019
+<item name = "Date">Sun Dec 15 14:23:43 2019
 </item>
-<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
 <item name = "Project">tancoeff</item>
 <item name = "Solution">tancoeff</item>
 <item name = "Product family">virtexuplus</item>
@@ -24,14 +24,14 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">134414371, 134414371, 134414341, 134414341, dataflow</column>
+<column name="">134414368, 134414368, 134414341, 134414341, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="tancalc_U0">tancalc, 134389761, 134389761, 134389761, 134389761, none</column>
+<column name="tancalc_U0">tancalc, 134387713, 134387713, 134387713, 134387713, none</column>
 <column name="fifo_U0">fifo, 134414340, 134414340, 134414340, 134414340, none</column>
 </table>
 </item>
@@ -51,100 +51,98 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 2, -</column>
 <column name="FIFO">128, -, 3648, 3712, -</column>
-<column name="Instance">30, -, 294739, 303459, -</column>
+<column name="Instance">30, -, 233850, 885600, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, -, -</column>
 <column name="Register">-, -, 3, -, -</column>
-<specialColumn name="Available SLR">1440, 2280, 788160, 394080, 320</specialColumn>
-<specialColumn name="Utilization SLR (%)">10, 0, 37, 77, 0</specialColumn>
 <specialColumn name="Available">4320, 6840, 2364480, 1182240, 960</specialColumn>
-<specialColumn name="Utilization (%)">3, 0, 12, 25, 0</specialColumn>
+<specialColumn name="Utilization (%)">3, 0, 10, 75, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
-<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
-<column name="fifo_U0">fifo, 0, 0, 2296, 1983, 0</column>
-<column name="hier_func_control_s_axi_U">hier_func_control_s_axi, 0, 0, 106, 168, 0</column>
-<column name="hier_func_gmem0_m_axi_U">hier_func_gmem0_m_axi, 30, 0, 1415, 1585, 0</column>
-<column name="tancalc_U0">tancalc, 0, 0, 290922, 299723, 0</column>
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="fifo_U0">fifo, 0, 0, 2295, 1868</column>
+<column name="hier_func_control_s_axi_U">hier_func_control_s_axi, 0, 0, 106, 168</column>
+<column name="hier_func_gmem0_m_axi_U">hier_func_gmem0_m_axi, 30, 0, 1415, 1585</column>
+<column name="tancalc_U0">tancalc, 0, 0, 230034, 881979</column>
 </table>
 </item>
-<item name = "DSP48E"><table name="" hasTotal="0">
+<item name = "DSP48"><table name="" hasTotal="0">
 <keys size="3">Instance, Module, Expression</keys>
 </table>
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
-<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
 </table>
 </item>
 <item name = "FIFO"><table name="" hasTotal="1">
-<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
-<column name="stream_array_line_0_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_10_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_11_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_12_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_13_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_14_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_15_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_16_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_17_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_18_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_19_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_1_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_20_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_21_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_22_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_23_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_24_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_25_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_26_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_27_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_28_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_29_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_2_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_30_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_31_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_32_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_33_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_34_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_35_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_36_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_37_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_38_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_39_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_3_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_40_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_41_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_42_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_43_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_44_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_45_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_46_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_47_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_48_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_49_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_4_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_50_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_51_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_52_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_53_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_54_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_55_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_56_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_57_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_58_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_59_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_5_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_60_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_61_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_62_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_63_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_6_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_7_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_8_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
-<column name="stream_array_line_9_V_V_U">2, 57, 0, -, 256, 32, 8192</column>
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+<column name="stream_array_line_0_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_10_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_11_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_12_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_13_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_14_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_15_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_16_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_17_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_18_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_19_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_1_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_20_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_21_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_22_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_23_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_24_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_25_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_26_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_27_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_28_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_29_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_2_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_30_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_31_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_32_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_33_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_34_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_35_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_36_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_37_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_38_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_39_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_3_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_40_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_41_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_42_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_43_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_44_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_45_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_46_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_47_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_48_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_49_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_4_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_50_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_51_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_52_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_53_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_54_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_55_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_56_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_57_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_58_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_59_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_5_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_60_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_61_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_62_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_63_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_6_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_7_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_8_V_V_U">2, 57, 58, 256, 32, 8192</column>
+<column name="stream_array_line_9_V_V_U">2, 57, 58, 256, 32, 8192</column>
 </table>
 </item>
 <item name = "Expression"><table name="" hasTotal="1">

@@ -18,6 +18,8 @@ int main(void){
 		input[i + DATA_SIZE1*VECTOR_SIZE + 1] = (din_type)0;
 	}
 
+	//input[DATA_SIZE1*VECTOR_SIZE + 2] = (din_type)6;
+
 	unsigned int tmp = 0;
 	int sum = 0;
 	hier_func(input, output);
@@ -25,7 +27,7 @@ int main(void){
 		if(!output.empty()){
 			tmp = 0;
 			tmp = (unsigned int)output.read();
-			printf("result:%d,	%d \n", (tmp>>16), (tmp & 0x0000ffff));
+			printf("data_num:%d,	cmpr_num:%d \n", (tmp>>16), (tmp & 0x0000ffff));
 		}
 	}
 
